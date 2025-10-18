@@ -4,7 +4,7 @@
 This site hosts public documentation and artifacts from the Waveframe research lineage.
 
 🔗 **Live site:** [https://waveframelabs.org](https://waveframelabs.org)  
-📄 **DOI (Zenodo):** [10.5281/zenodo.xxxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxxx)
+📄 **DOI:** Pending release (Waveframe Labs master archive)  
 
 ---
 
