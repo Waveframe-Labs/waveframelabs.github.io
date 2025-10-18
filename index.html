@@ -8,29 +8,35 @@
   <style>
     :root{
       --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1000px; --rad:18px;
+      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
     a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
     a:hover{border-color:var(--ink)}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 56px}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
     header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
-    .brand{font-weight:800;font-size:clamp(1.25rem,2.8vw,1.75rem);letter-spacing:.2px}
+    .brand{font-weight:800;font-size:clamp(1.25rem,2.8vw,1.85rem);letter-spacing:.2px}
     .nav a{display:inline-block;padding:.45rem .75rem;border:1px solid var(--edge);border-radius:999px;margin-left:.35rem}
-    .hero{margin:16px 0 22px;padding:20px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.09),transparent)}
-    h1{font-size:clamp(1.6rem,3.6vw,2.35rem);margin:.2rem 0 .6rem}
-    p{line-height:1.6}
+    .hero{margin:16px 0 22px;padding:22px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.09),transparent)}
+    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
+    h2{font-size:clamp(1.2rem,2.6vw,1.4rem);margin:1.6rem 0 .6rem}
+    p{line-height:1.65}
     .kicker{color:var(--accent);font-weight:700;letter-spacing:.6px;font-size:.8rem;text-transform:uppercase}
     .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
-    @media(min-width:780px){.grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
     .card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;min-height:170px}
     .card h3{margin:.2rem 0 .45rem}
     .muted{color:var(--muted)}
-    .cta{display:inline-block;margin-top:.7rem;padding:.55rem .8rem;border-radius:12px;border:1px solid var(--ink)}
+    .cta{display:inline-block;margin:.6rem .5rem 0 0;padding:.55rem .9rem;border-radius:12px;border:1px solid var(--ink)}
     .cta:hover{background:var(--ink);color:#0b0c10}
-    footer{margin-top:34px;color:var(--muted);font-size:.95rem}
+    .list{display:grid;gap:10px;margin-top:10px}
+    .bullet{display:flex;gap:10px;align-items:flex-start}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:.55rem}
+    footer{margin-top:38px;color:var(--muted);font-size:.95rem}
     code{background:#0f1117;border:1px solid var(--edge);padding:.12rem .28rem;border-radius:6px}
+    .two{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:820px){.two{grid-template-columns:1.3fr .7fr}}
   </style>
 </head>
 <body>
@@ -42,23 +48,35 @@
         <a href="mailto:swright@waveframelabs.org">Email</a>
         <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">ORCID</a>
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
+        <a href="#updates">Updates</a>
       </nav>
     </header>
 
-    <section class="hero" id="about">
+    <section class="hero">
       <div class="kicker">Organization</div>
       <h1>The hub for the Aurora Research Initiative.</h1>
-      <p>
-        <strong>Waveframe Labs</strong> is an independent research organization focused on
-        reproducible, audit-first science. We build and publish the <em>Aurora Workflow Orchestration</em> (AWO)
-        method, ship the <em>CRI-CORE</em> tooling that makes it deterministic and auditable, and apply the stack to frontier problems—
-        including <em>Waveframe v4.0</em>, a falsifiable cosmology program.
-      </p>
-      <p class="muted">
-        Everything here is open by default: method first, artifacts cited, human-in-the-loop by design.
-        Text & media: CC BY-NC-SA 4.0 · Code: Apache-2.0.
-      </p>
+      <div class="two">
+        <div>
+          <p>
+            <strong>Waveframe Labs</strong> is an independent research organization focused on reproducible, audit-first science.
+            We publish the <em>Aurora Workflow Orchestration</em> (AWO) method, ship the <em>CRI-CORE</em> tooling that makes it
+            deterministic, and apply the stack to frontier work—e.g., <em>Waveframe v4.0</em> (cosmology) and the <em>Societal
+            Progress Simulator</em>.
+          </p>
+          <div class="list">
+            <div class="bullet"><div class="dot"></div><div><strong>Method-first:</strong> AWO defines roles, artifacts, and falsifiability.</div></div>
+            <div class="bullet"><div class="dot"></div><div><strong>Deterministic tooling:</strong> CRI-CORE records run manifests and provenance.</div></div>
+            <div class="bullet"><div class="dot"></div><div><strong>Open artifacts:</strong> Text & media CC BY-NC-SA 4.0 · Code Apache-2.0.</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Quick Links</h3>
+          <p class="muted">Anchor points for the org.</p>
+          <a class="cta" href="https://github.com/Waveframe-Labs/.github" target="_blank" rel="noopener">Org Profile</a>
+          <a class="cta" href="#projects">Projects</a>
+          <a class="cta" href="#updates">News & Updates</a>
+        </div>
+      </div>
     </section>
 
     <section id="projects">
@@ -69,18 +87,16 @@
           <p class="muted">The methodology: role-structured, audit-first research with human validation and falsifiability manifests.</p>
           <a class="cta" href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration" target="_blank" rel="noopener">AWO Repository</a>
         </article>
-
         <article class="card">
           <h3>CRI-CORE</h3>
           <p class="muted">The tooling layer: execution, provenance, run manifests, and immutable audit logs that make AWO deterministic.</p>
-          <!-- TODO: replace LINK below with the actual CRI-CORE repo URL when it’s live -->
+          <!-- TODO: replace this with the actual CRI-CORE repo URL -->
           <a class="cta" href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">CRI-CORE (coming online)</a>
         </article>
-
         <article class="card">
           <h3>CRI-CORE Enterprise</h3>
           <p class="muted">Commercial extensions for regulated environments (policy packs, hardened pipelines, governance dashboards).</p>
-          <span class="cta" aria-disabled="true" style="opacity:.6;cursor:not-allowed;">Roadmap</span>
+          <span class="cta" style="opacity:.6;cursor:not-allowed;" aria-disabled="true">Roadmap</span>
         </article>
       </div>
     </section>
@@ -90,28 +106,49 @@
       <div class="grid">
         <article class="card">
           <h3>Waveframe v4.0 (Cosmology)</h3>
-          <p class="muted">Entropy–action, observer-aware cosmology. Formal derivations and falsifiable predictions.</p  
-          <a class="cta" href="https://github.com/Waveframe-Labs/Waveframe-v4.o" target="_blank" rel="noopener">Repository</a>  
+          <p class="muted">Entropy–action, observer-aware cosmology. Formal derivations and falsifiable predictions.</p>
+          <!-- TODO: replace with your actual repo URL -->
+          <a class="cta" href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank" rel="noopener">Repository</a>
         </article>
 
         <article class="card">
           <h3>Societal Progress Simulator</h3>
           <p class="muted">Interactive model for societal dynamics and interventions. Streamlit prototype.</p>
-          <a class="cta" href="https://github.com/Waveframe-Labs/Societal-Progress-Simulator" target="_blank" rel="noopener">Repository</a>  
-          <a class="cta" href="https://wrightsocietalmodel.com" target="_blank" rel="noopener">Live Demo</a>  
+          <!-- TODO: replace both with your real links -->
+          <a class="cta" href="https://github.com/Waveframe-Labs/Societal-Progress-Simulator" target="_blank" rel="noopener">Repository</a>
+          <a class="cta" href="https://wrightsocietalmodel.com" target="_blank" rel="noopener">Live Demo</a>
         </article>
 
         <article class="card">
           <h3>Organization Resources</h3>
-          <p class="muted">Org profile, contribution guidelines, and public logs.</p>
+          <p class="muted">Consolidated references: contribution notes, public logs, and org docs.</p>
           <a class="cta" href="https://github.com/Waveframe-Labs/.github" target="_blank" rel="noopener">Org Profile</a>
         </article>
       </div>
     </section>
 
+    <section id="updates" style="margin-top:22px">
+      <div class="kicker">News & Updates</div>
+      <div class="card">
+        <p class="muted">Hand-edited snapshot. For full history, see <code>meta/SITE_LOG.md</code>.</p>
+        <ul>
+          <li><strong>2025-10-18:</strong> Org site launched on GitHub Pages with custom domain & HTTPS. Added pillars, research cards, and org description.</li>
+          <li><strong>2025-10-18:</strong> Dual licensing applied. Added ORCID and contact surface.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="margin-top:22px">
+      <div class="kicker">Cite & Contact</div>
+      <div class="card">
+        <p>For now, cite individual repos (e.g., AWO) using their <code>CITATION.cff</code> / DOI. The org site will receive its own DOI after v1.0.0.</p>
+        <p>Contact: <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> · ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">0009-0006-6043-9295</a></p>
+      </div>
+    </section>
+
     <section style="margin-top:22px">
       <div class="kicker">Notes</div>
-      <p>Custom domain: <code>waveframelabs.org</code>. This is a no-build static site. Keep <code>.nojekyll</code> in the repo root. Edit <code>index.html</code> and push to <code>main</code> to deploy.</p>
+      <p>Custom domain: <code>waveframelabs.org</code>. No-build static site. Keep <code>.nojekyll</code> in repo root. Edit <code>index.html</code> and push to <code>main</code> to deploy.</p>
     </section>
 
     <footer>
