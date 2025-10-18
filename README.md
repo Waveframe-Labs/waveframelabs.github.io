@@ -12,3 +12,9 @@ Open `index.html` and push to `main`. No bundlers. No config.
 4. After DNS propagates, enable **Enforce HTTPS**.
 
 > Keep `.nojekyll` if you have folders that start with `_` (e.g., `_assets/`).
+>
+> ## License
+
+- **Text & Media:** [CC BY-NC-SA 4.0](LICENSE-NC.md)
+- **Code & Scripts:** [Apache 2.0](LICENSE)
+© 2025 Waveframe Labs. All rights reserved.
