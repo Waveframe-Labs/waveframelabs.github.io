@@ -30,7 +30,14 @@
     header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(1.25rem,2.8vw,1.85rem);letter-spacing:.2px}
     .nav a{display:inline-block;padding:.45rem .75rem;border:1px solid var(--edge);border-radius:999px;margin-left:.35rem}
-    .hero{margin:16px 0 22px;padding:22px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.09),transparent)}
+    .hero{
+      margin:16px 0 22px;
+      padding:22px;
+      border:1px solid var(--edge);
+      border-radius:var(--rad);
+      background:linear-gradient(180deg,rgba(255,122,24,.10) 0%,rgba(11,12,16,0) 100%);
+      animation: fadeIn 1.2s ease-out;
+    }
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
     h2{font-size:clamp(1.2rem,2.6vw,1.4rem);margin:1.6rem 0 .6rem}
     p{line-height:1.65}
@@ -50,6 +57,7 @@
     .two{display:grid;grid-template-columns:1fr;gap:18px}
     @media(min-width:820px){.two{grid-template-columns:1.3fr .7fr}}
     @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.75;transform:scale(1.05)}}
+    @keyframes fadeIn{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
@@ -72,12 +80,12 @@
     <section class="hero">
       <div class="kicker">Organization</div>
       <h1>The hub for the Aurora Research Initiative.</h1>
-      <!-- micro-summary -->
       <p class="muted" style="margin-top:-4px;">
         Independent AI-oriented research organization developing reproducible, <em>falsifiable</em> scientific workflows.
       </p>
+      <a class="cta" href="#projects">Explore Projects</a>
 
-      <img src="waveframe-logo-full.png" alt="Waveframe Labs logo" style="margin: 12px 0; max-width: 260px;" />
+      <img src="waveframe-logo-banner-mark.png" alt="Waveframe Labs logo" style="margin: 18px 0; max-width: 320px; border-radius: 10px; display:block;" />
       <div class="two">
         <div>
           <p>
@@ -116,7 +124,6 @@
         <article class="card">
           <h3>CRI-CORE</h3>
           <p class="muted">The tooling layer: ensures deterministic execution and verifiable provenance for each workflow run.</p>
-          <!-- TODO: replace with the actual CRI-CORE repo URL when ready -->
           <a class="cta" href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">CRI-CORE (coming online)</a>
         </article>
         <article class="card">
@@ -155,7 +162,7 @@
         <p class="muted">Hand-edited snapshot. For full history, see <code>meta/SITE_LOG.md</code>.</p>
         <ul>
           <li><strong>2025-10-18:</strong> Org site launched on GitHub Pages with custom domain & HTTPS. Added pillars, research cards, and org description.</li>
-          <li><strong>2025-10-18:</strong> Dual licensing applied. Added ORCID and contact surface.</li>
+          <li><strong>2025-10-19:</strong> Visual and metadata polish: tagline, CRI-CORE clarity, fade-in hero animation, and Aurora tagline added.</li>
         </ul>
       </div>
     </section>
@@ -181,6 +188,9 @@
     <footer>
       <img src="waveframe-logo-mark.png" alt="Waveframe logo" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" />
       <span style="color: var(--accent); font-weight: 600;">Waveframe Labs</span>
+      <span style="margin: 0 6px; color: var(--muted);">
+        Operating under the Aurora Research Initiative — AI-assisted reproducibility & epistemic orchestration.
+      </span>
       · <span id="y"></span> · Text: CC BY-NC-SA 4.0 · Code: Apache-2.0 ·
       <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> ·
       <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">ORCID</a> ·
