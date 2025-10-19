@@ -1,5 +1,5 @@
 # Version
-**Current version:** 0.9.2 (pre-release)
+**Current version:** 0.9.3 (pre-release)
 
 **Scope:** Org-as-hub homepage with About, Pillars (AWO / CRI-CORE / Enterprise), Active Research (Waveframe v4.0, Societal Simulator), Updates, and Cite & Contact. Dark, no-build.
 
