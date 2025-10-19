@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WAVEFRAME LABS</title>
   <meta name="description" content="Waveframe Labs — independent research organization under the Aurora Research Initiative. AWO (method), CRI-CORE (tooling), and Waveframe v4.0 (cosmology).">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
+  <!-- discoverability / sharing -->
   <link rel="canonical" href="https://waveframelabs.org" />
   <meta property="og:title" content="Waveframe Labs" />
-  <meta property="og:description" content="Independent research organization under the Aurora Research Initiative. AWO (method), CRI-CORE (tooling), Waveframe v4.0 (cosmology)." />
+  <meta property="og:description" content="Independent AI-oriented research organization developing reproducible, falsifiable scientific workflows." />
   <meta property="og:url" content="https://waveframelabs.org" />
   <meta property="og:type" content="website" />
-<!-- If you have a share image, add it and upload it as og-image.png -->
-<!-- <meta property="og:image" content="https://waveframelabs.org/og-image.png" /> -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Waveframe Labs" />
+  <meta name="twitter:description" content="Independent AI-oriented research organization developing reproducible, falsifiable scientific workflows." />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Waveframe Labs" />
-<meta name="twitter:description" content="Independent research organization under the Aurora Research Initiative." />
-
-  <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <style>
     :root{
       --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
@@ -50,10 +49,7 @@
     code{background:#0f1117;border:1px solid var(--edge);padding:.12rem .28rem;border-radius:6px}
     .two{display:grid;grid-template-columns:1fr;gap:18px}
     @media(min-width:820px){.two{grid-template-columns:1.3fr .7fr}}
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.75; transform: scale(1.05); }
-    }
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.75;transform:scale(1.05)}}
   </style>
 </head>
 <body>
@@ -69,20 +65,28 @@
         <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">ORCID</a>
         <a href="#projects">Projects</a>
         <a href="#updates">Updates</a>
+        <a href="#founder">Founder</a>
       </nav>
     </header>
 
     <section class="hero">
       <div class="kicker">Organization</div>
       <h1>The hub for the Aurora Research Initiative.</h1>
+      <!-- micro-summary -->
+      <p class="muted" style="margin-top:-4px;">
+        Independent AI-oriented research organization developing reproducible, <em>falsifiable</em> scientific workflows.
+      </p>
+
       <img src="waveframe-logo-full.png" alt="Waveframe Labs logo" style="margin: 12px 0; max-width: 260px;" />
       <div class="two">
         <div>
           <p>
-            <strong>Waveframe Labs</strong> is an independent research organization focused on reproducible, audit-first science.
-            We publish the <em>Aurora Workflow Orchestration</em> (AWO) method, ship the <em>CRI-CORE</em> tooling that makes it
-            deterministic, and apply the stack to frontier work—e.g., <em>Waveframe v4.0</em> (cosmology) and the <em>Societal
-            Progress Simulator</em>.
+            <strong>Waveframe Labs</strong> is focused on reproducible, audit-first science.
+            We publish the <em>Aurora Workflow Orchestration</em> (AWO) method, ship the
+            <em>CRI-CORE</em> tooling that ensures <strong>deterministic execution</strong> and
+            <strong>verifiable provenance</strong> for each workflow run, and apply the stack to
+            frontier work—e.g., <em>Waveframe v4.0</em> (cosmology) and the
+            <em>Societal Progress Simulator</em>.
           </p>
           <div class="list">
             <div class="bullet"><div class="dot"></div><div><strong>Method-first:</strong> AWO defines roles, artifacts, and falsifiability.</div></div>
@@ -96,6 +100,7 @@
           <a class="cta" href="https://github.com/Waveframe-Labs/.github" target="_blank" rel="noopener">Org Profile</a>
           <a class="cta" href="#projects">Projects</a>
           <a class="cta" href="#updates">News & Updates</a>
+          <a class="cta" href="#founder">About the Founder</a>
         </div>
       </div>
     </section>
@@ -110,7 +115,8 @@
         </article>
         <article class="card">
           <h3>CRI-CORE</h3>
-          <p class="muted">The tooling layer: execution, provenance, run manifests, and immutable audit logs that make AWO deterministic.</p>
+          <p class="muted">The tooling layer: ensures deterministic execution and verifiable provenance for each workflow run.</p>
+          <!-- TODO: replace with the actual CRI-CORE repo URL when ready -->
           <a class="cta" href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">CRI-CORE (coming online)</a>
         </article>
         <article class="card">
@@ -131,7 +137,7 @@
         </article>
         <article class="card">
           <h3>Societal Progress Simulator</h3>
-          <p class="muted">Interactive model for societal dynamics and interventions. Streamlit prototype.</p>
+          <p class="muted">Interactive model for <strong>societal and policy dynamics</strong> (with cultural signals). Built with Streamlit.</p>
           <a class="cta" href="https://github.com/Waveframe-Labs/Societal-Progress-Simulator" target="_blank" rel="noopener">Repository</a>
           <a class="cta" href="https://wrightsocietalmodel.com" target="_blank" rel="noopener">Live Demo</a>
         </article>
@@ -154,11 +160,16 @@
       </div>
     </section>
 
-    <section style="margin-top:22px">
-      <div class="kicker">Cite & Contact</div>
+    <section id="founder" style="margin-top:22px">
+      <div class="kicker">About the Founder</div>
       <div class="card">
-        <p>For now, cite individual repos (e.g., AWO) using their <code>CITATION.cff</code> / DOI. The org site will receive its own DOI after v1.0.0.</p>
-        <p>Contact: <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> · ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">0009-0006-6043-9295</a></p>
+        <p>
+          I’m <strong>Shawn C. Wright</strong>, an independent researcher building reproducible AI-human workflows and
+          applying them to hard problems—from cosmology to societal modeling. I care about falsifiability, audit trails,
+          and publishing artifacts the community can verify. If you want to collaborate or review our methods, email me
+          at <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> or find me on ORCID
+          <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">0009-0006-6043-9295</a>.
+        </p>
       </div>
     </section>
 
@@ -168,7 +179,7 @@
     </section>
 
     <footer>
-      <img src="waveframe-logo-mark.png" alt="Waveform logo" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" />
+      <img src="waveframe-logo-mark.png" alt="Waveframe logo" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" />
       <span style="color: var(--accent); font-weight: 600;">Waveframe Labs</span>
       · <span id="y"></span> · Text: CC BY-NC-SA 4.0 · Code: Apache-2.0 ·
       <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> ·
