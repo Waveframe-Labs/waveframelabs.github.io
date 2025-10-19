@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Waveframe Labs</title>
   <meta name="description" content="Waveframe Labs — independent research organization under the Aurora Research Initiative. AWO (method), CRI-CORE (tooling), and Waveframe v4.0 (cosmology).">
+  <link rel="icon" type="image/png" href="favicon-32x32[1].png" />
   <style>
     :root{
       --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
@@ -16,7 +17,7 @@
     a:hover{border-color:var(--ink)}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
     header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
-    .brand{font-weight:800;font-size:clamp(1.25rem,2.8vw,1.85rem);letter-spacing:.2px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(1.25rem,2.8vw,1.85rem);letter-spacing:.2px}
     .nav a{display:inline-block;padding:.45rem .75rem;border:1px solid var(--edge);border-radius:999px;margin-left:.35rem}
     .hero{margin:16px 0 22px;padding:22px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.09),transparent)}
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
@@ -33,16 +34,23 @@
     .list{display:grid;gap:10px;margin-top:10px}
     .bullet{display:flex;gap:10px;align-items:flex-start}
     .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:.55rem}
-    footer{margin-top:38px;color:var(--muted);font-size:.95rem}
+    footer{margin-top:38px;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
     code{background:#0f1117;border:1px solid var(--edge);padding:.12rem .28rem;border-radius:6px}
     .two{display:grid;grid-template-columns:1fr;gap:18px}
     @media(min-width:820px){.two{grid-template-columns:1.3fr .7fr}}
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.75; transform: scale(1.05); }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">Waveframe Labs</div>
+      <div class="brand">
+        <img src="waveframe-logo-mark.PNG" alt="Waveframe logo" width="32" height="32" style="border-radius:6px; animation: pulse 3s infinite ease-in-out;" />
+        <span><strong style="color:var(--ink)">waveframe</strong><strong style="color:var(--accent)">labs</strong></span>
+      </div>
       <nav class="nav">
         <a href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">GitHub</a>
         <a href="mailto:swright@waveframelabs.org">Email</a>
@@ -55,6 +63,7 @@
     <section class="hero">
       <div class="kicker">Organization</div>
       <h1>The hub for the Aurora Research Initiative.</h1>
+      <img src="waveframe-logo-full.PNG" alt="Waveframe Labs logo" style="margin: 12px 0; max-width: 260px;" />
       <div class="two">
         <div>
           <p>
@@ -90,7 +99,6 @@
         <article class="card">
           <h3>CRI-CORE</h3>
           <p class="muted">The tooling layer: execution, provenance, run manifests, and immutable audit logs that make AWO deterministic.</p>
-          <!-- TODO: replace this with the actual CRI-CORE repo URL -->
           <a class="cta" href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">CRI-CORE (coming online)</a>
         </article>
         <article class="card">
@@ -107,18 +115,14 @@
         <article class="card">
           <h3>Waveframe v4.0 (Cosmology)</h3>
           <p class="muted">Entropy–action, observer-aware cosmology. Formal derivations and falsifiable predictions.</p>
-          <!-- TODO: replace with your actual repo URL -->
           <a class="cta" href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank" rel="noopener">Repository</a>
         </article>
-
         <article class="card">
           <h3>Societal Progress Simulator</h3>
           <p class="muted">Interactive model for societal dynamics and interventions. Streamlit prototype.</p>
-          <!-- TODO: replace both with your real links -->
           <a class="cta" href="https://github.com/Waveframe-Labs/Societal-Progress-Simulator" target="_blank" rel="noopener">Repository</a>
           <a class="cta" href="https://wrightsocietalmodel.com" target="_blank" rel="noopener">Live Demo</a>
         </article>
-
         <article class="card">
           <h3>Organization Resources</h3>
           <p class="muted">Consolidated references: contribution notes, public logs, and org docs.</p>
@@ -152,7 +156,9 @@
     </section>
 
     <footer>
-      © <span id="y"></span> Waveframe Labs · Text: CC BY-NC-SA 4.0 · Code: Apache-2.0 ·
+      <img src="waveframe-logo-mark.png" alt="Waveform logo" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" />
+      <span style="color: var(--accent); font-weight: 600;">Waveframe Labs</span>
+      · <span id="y"></span> · Text: CC BY-NC-SA 4.0 · Code: Apache-2.0 ·
       <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> ·
       <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">ORCID</a> ·
       <a href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">GitHub</a>
