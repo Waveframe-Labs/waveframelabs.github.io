@@ -13,3 +13,9 @@ Structured notes tracking public changes to the Waveframe Labs website.
 - Upgraded homepage: About section, pillars vs. research, repo + demo links, Updates feed, Cite & Contact.
 - Surfaced ORCID and email; removed Outlook dependency.
 - Fixed case-sensitive image paths; added OpenGraph/Twitter metadata; added favicon.
+
+## 2025-10-19
+- Updated tagline
+- Clarified CRI-CORE wording
+- Added simulator keywords
+- Added Founder section
