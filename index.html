@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WAVEFRAME LABS</title>
-  <meta name="description" content="Waveframe Labs — independent research organization under the Aurora Research Initiative. AWO (method), CRI-CORE (tooling), and Waveframe v4.0 (cosmology).">
+  <meta name="description" content="Waveframe Labs — independent research organization under the Aurora Research Initiative. AWO (method), CRI-CORE (tooling), Waveframe v4.0, and applied reproducibility systems.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
 
   <!-- discoverability / sharing -->
@@ -30,6 +30,8 @@
     header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(1.25rem,2.8vw,1.85rem);letter-spacing:.2px}
     .nav a{display:inline-block;padding:.45rem .75rem;border:1px solid var(--edge);border-radius:999px;margin-left:.35rem}
+
+    /* HERO blocks */
     .hero{
       margin:16px 0 22px;
       padding:22px;
@@ -38,30 +40,45 @@
       background:linear-gradient(180deg,rgba(255,122,24,.10) 0%,rgba(11,12,16,0) 100%);
       animation: fadeIn 1.2s ease-out;
     }
+
+    /* ARI hero modifier */
+    .ari-hero{
+      background:linear-gradient(180deg,rgba(255,122,24,.18) 0%,rgba(11,12,16,0) 100%);
+      border:1px solid var(--accent);
+    }
+
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
     h2{font-size:clamp(1.2rem,2.6vw,1.4rem);margin:1.6rem 0 .6rem}
     p{line-height:1.65}
     .kicker{color:var(--accent);font-weight:700;letter-spacing:.6px;font-size:.8rem;text-transform:uppercase}
+
     .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
     @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
+
     .card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;min-height:170px}
     .card h3{margin:.2rem 0 .45rem}
     .muted{color:var(--muted)}
     .cta{display:inline-block;margin:.6rem .5rem 0 0;padding:.55rem .9rem;border-radius:12px;border:1px solid var(--ink)}
     .cta:hover{background:var(--ink);color:#0b0c10}
+
     .list{display:grid;gap:10px;margin-top:10px}
     .bullet{display:flex;gap:10px;align-items:flex-start}
     .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:.55rem}
+
     footer{margin-top:38px;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
     code{background:#0f1117;border:1px solid var(--edge);padding:.12rem .28rem;border-radius:6px}
     .two{display:grid;grid-template-columns:1fr;gap:18px}
     @media(min-width:820px){.two{grid-template-columns:1.3fr .7fr}}
+
     @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.75;transform:scale(1.05)}}
     @keyframes fadeIn{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
   </style>
 </head>
+
 <body>
   <div class="wrap">
+
+    <!-- HEADER -->
     <header>
       <div class="brand">
         <img src="waveframe-logo-mark.png" alt="Waveframe logo" width="32" height="32" style="border-radius:6px; animation: pulse 3s infinite ease-in-out;" />
@@ -77,6 +94,18 @@
       </nav>
     </header>
 
+    <!-- NEW ARI HERO BLOCK -->
+    <section class="hero ari-hero" id="ari">
+      <div class="kicker">Institutional Framework</div>
+      <h1>The Aurora Research Initiative (ARI)</h1>
+      <p class="muted" style="margin-top:-4px;">
+        The governance, epistemic, and methodological foundation that defines how scientific AI
+        must be conducted across the Aurora ecosystem.
+      </p>
+      <a class="cta" href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank" rel="noopener">Explore ARI</a>
+    </section>
+
+    <!-- ORIGINAL HERO (Waveframe Labs) -->
     <section class="hero">
       <div class="kicker">Organization</div>
       <h1>The hub for the Aurora Research Initiative.</h1>
@@ -86,22 +115,25 @@
       <a class="cta" href="#projects">Explore Projects</a>
 
       <img src="waveframe-logo-banner-mark.png" alt="Waveframe Labs logo" style="margin: 18px 0; max-width: 320px; border-radius: 10px; display:block;" />
+
       <div class="two">
         <div>
           <p>
-            <strong>Waveframe Labs</strong> is focused on reproducible, audit-first science.
+            <strong>Waveframe Labs</strong> is the operational hub for ARI.
             We publish the <em>Aurora Workflow Orchestration</em> (AWO) method, ship the
             <em>CRI-CORE</em> tooling that ensures <strong>deterministic execution</strong> and
             <strong>verifiable provenance</strong> for each workflow run, and apply the stack to
-            frontier work—e.g., <em>Waveframe v4.0</em> (cosmology) and the
+            frontier research—e.g., <em>Waveframe v4.0</em> (cosmology) and the
             <em>Societal Progress Simulator</em>.
           </p>
+
           <div class="list">
             <div class="bullet"><div class="dot"></div><div><strong>Method-first:</strong> AWO defines roles, artifacts, and falsifiability.</div></div>
-            <div class="bullet"><div class="dot"></div><div><strong>Deterministic tooling:</strong> CRI-CORE records run manifests and provenance.</div></div>
+            <div class="bullet"><div class="dot"></div><div><strong>Deterministic tooling:</strong> CRI-CORE enforces run-level provenance.</div></div>
             <div class="bullet"><div class="dot"></div><div><strong>Open artifacts:</strong> Text & media CC BY-NC-SA 4.0 · Code Apache-2.0.</div></div>
           </div>
         </div>
+
         <div class="card">
           <h3>Quick Links</h3>
           <p class="muted">Anchor points for the org.</p>
@@ -113,6 +145,7 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="kicker">Core Pillars</div>
       <div class="grid">
@@ -121,19 +154,22 @@
           <p class="muted">The methodology: role-structured, audit-first research with human validation and falsifiability manifests.</p>
           <a class="cta" href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration" target="_blank" rel="noopener">AWO Repository</a>
         </article>
+
         <article class="card">
           <h3>CRI-CORE</h3>
-          <p class="muted">The tooling layer: ensures deterministic execution and verifiable provenance for each workflow run.</p>
+          <p class="muted">The tooling layer: deterministic execution and cryptographically verifiable provenance.</p>
           <a class="cta" href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">CRI-CORE (coming online)</a>
         </article>
+
         <article class="card">
           <h3>CRI-CORE Enterprise</h3>
-          <p class="muted">Commercial extensions for regulated environments (policy packs, hardened pipelines, governance dashboards).</p>
+          <p class="muted">Commercialized governance layers for regulated environments (policy packs, hardened pipelines, dashboards).</p>
           <span class="cta" style="opacity:.6;cursor:not-allowed;" aria-disabled="true">Roadmap</span>
         </article>
       </div>
     </section>
 
+    <!-- ACTIVE RESEARCH -->
     <section style="margin-top:22px">
       <div class="kicker">Active Research</div>
       <div class="grid">
@@ -142,61 +178,76 @@
           <p class="muted">Entropy–action, observer-aware cosmology. Formal derivations and falsifiable predictions.</p>
           <a class="cta" href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank" rel="noopener">Repository</a>
         </article>
+
         <article class="card">
           <h3>Societal Progress Simulator</h3>
-          <p class="muted">Interactive model for <strong>societal and policy dynamics</strong> (with cultural signals). Built with Streamlit.</p>
+          <p class="muted">Interactive model for <strong>societal and policy dynamics</strong>. Built with Streamlit.</p>
           <a class="cta" href="https://github.com/Waveframe-Labs/Societal-Progress-Simulator" target="_blank" rel="noopener">Repository</a>
           <a class="cta" href="https://wrightsocietalmodel.com" target="_blank" rel="noopener">Live Demo</a>
         </article>
+
         <article class="card">
           <h3>Organization Resources</h3>
-          <p class="muted">Consolidated references: contribution notes, public logs, and org docs.</p>
+          <p class="muted">Docs, logs, governance references.</p>
           <a class="cta" href="https://github.com/Waveframe-Labs/.github" target="_blank" rel="noopener">Org Profile</a>
         </article>
       </div>
     </section>
 
+    <!-- UPDATES -->
     <section id="updates" style="margin-top:22px">
       <div class="kicker">News & Updates</div>
       <div class="card">
         <p class="muted">Hand-edited snapshot. For full history, see <code>meta/SITE_LOG.md</code>.</p>
         <ul>
-          <li><strong>2025-10-18:</strong> Org site launched on GitHub Pages with custom domain & HTTPS. Added pillars, research cards, and org description.</li>
-          <li><strong>2025-10-19:</strong> Visual and metadata polish: tagline, CRI-CORE clarity, fade-in hero animation, and Aurora tagline added.</li>
+          <li><strong>2025-11-28:</strong> Added ARI hero section + updated organizational hierarchy.</li>
+          <li><strong>2025-10-19:</strong> Visual and metadata polish: tagline, CRI-CORE clarity, fade-in hero animation.</li>
+          <li><strong>2025-10-18:</strong> Initial launch of Waveframe Labs site with custom domain.</li>
         </ul>
       </div>
     </section>
 
+    <!-- FOUNDER -->
     <section id="founder" style="margin-top:22px">
       <div class="kicker">About the Founder</div>
       <div class="card">
         <p>
           I’m <strong>Shawn C. Wright</strong>, an independent researcher building reproducible AI-human workflows and
           applying them to hard problems—from cosmology to societal modeling. I care about falsifiability, audit trails,
-          and publishing artifacts the community can verify. If you want to collaborate or review our methods, email me
-          at <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> or find me on ORCID
-          <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">0009-0006-6043-9295</a>.
+          and publishing artifacts the community can independently verify.  
+          Contact: <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> ·  
+          ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">0009-0006-6043-9295</a>
         </p>
       </div>
     </section>
 
+    <!-- NOTES -->
     <section style="margin-top:22px">
       <div class="kicker">Notes</div>
-      <p>Custom domain: <code>waveframelabs.org</code>. No-build static site. Keep <code>.nojekyll</code> in repo root. Edit <code>index.html</code> and push to <code>main</code> to deploy.</p>
+      <p>
+        Custom domain: <code>waveframelabs.org</code>.  
+        No-build static site. Keep <code>.nojekyll</code> in root.  
+        Edit <code>index.html</code> and push to <code>main</code> to deploy.
+      </p>
     </section>
 
+    <!-- FOOTER -->
     <footer>
       <img src="waveframe-logo-mark.png" alt="Waveframe logo" width="20" height="20" style="vertical-align: middle; margin-right: 6px;" />
       <span style="color: var(--accent); font-weight: 600;">Waveframe Labs</span>
       <span style="margin: 0 6px; color: var(--muted);">
-        Operating under the Aurora Research Initiative — AI-assisted reproducibility & epistemic orchestration.
+        Operating under the Aurora Research Initiative — governance for reproducible AI research.
       </span>
       · <span id="y"></span> · Text: CC BY-NC-SA 4.0 · Code: Apache-2.0 ·
       <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> ·
       <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">ORCID</a> ·
       <a href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">GitHub</a>
     </footer>
+
   </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
