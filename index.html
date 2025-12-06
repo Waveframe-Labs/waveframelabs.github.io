@@ -6,7 +6,6 @@
   <title>Waveframe Labs</title>
 
   <meta name="description" content="Waveframe Labs — independent research institute under the Aurora Research Initiative. Focus: reproducible AI–human workflows, governance systems, CRI-CORE, AWO, and applied research.">
-
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
 
   <!-- social -->
@@ -21,15 +20,51 @@
       --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    html,body{
+      margin:0; padding:0;
+      background:var(--bg); color:var(--ink);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
     a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
     a:hover{border-color:var(--ink)}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(1.2rem,2.4vw,1.8rem)}
-    .nav a{padding:.45rem .75rem;border:1px solid var(--edge);border-radius:999px;margin-left:.35rem}
 
-    /* Hero blocks */
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+
+    /* === HEADER (MATCHES SUBPAGE STYLE) === */
+    .hdr{
+      padding:22px 18px;
+      border:1px solid var(--edge);
+      border-radius:var(--rad);
+      background:var(--card);
+      margin-bottom:22px;
+    }
+    .hdr-top{
+      display:flex;align-items:center;gap:12px;margin-bottom:4px;
+    }
+    .hdr-top .title{
+      font-size:clamp(1.45rem,2.8vw,2rem);
+      font-weight:700;
+    }
+    .hdr-sub{
+      color:var(--muted);
+      font-size:1rem;
+      margin-bottom:12px;
+    }
+    .topnav{
+      display:flex;flex-wrap:wrap;gap:18px;
+      font-size:1.05rem;
+    }
+    .topnav a{
+      border:none;
+      padding:0;
+    }
+    .active-link{
+      color:var(--accent);
+      font-weight:600;
+      border-bottom:1px solid var(--accent);
+    }
+
+    /* === HERO BLOCKS === */
     .hero{
       margin:16px 0 22px;
       padding:22px;
@@ -46,46 +81,75 @@
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
     h3{margin:.2rem 0 .45rem}
     p{line-height:1.65}
-    .kicker{color:var(--accent);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+    .kicker{
+      color:var(--accent);
+      font-size:.8rem;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
 
     .grid{display:grid;gap:14px;margin-top:16px}
     @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-    .card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;min-height:170px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--edge);
+      border-radius:var(--rad);
+      padding:18px;
+      min-height:170px;
+    }
     .muted{color:var(--muted)}
-    .cta{display:inline-block;margin-top:.6rem;padding:.55rem .9rem;border-radius:12px;border:1px solid var(--ink)}
+    .cta{
+      display:inline-block;
+      margin-top:.6rem;
+      padding:.55rem .9rem;
+      border-radius:12px;
+      border:1px solid var(--ink)
+    }
     .cta:hover{background:var(--ink);color:var(--bg)}
 
     .two{display:grid;gap:18px}
     @media(min-width:820px){.two{grid-template-columns:1.3fr .7fr}}
 
-    footer{margin-top:40px;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    footer{
+      margin-top:40px;
+      color:var(--muted);
+      font-size:.95rem;
+      display:flex;flex-wrap:wrap;gap:6px;align-items:center
+    }
 
-    @keyframes fadeIn{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{
+      0%{opacity:0;transform:translateY(10px)}
+      100%{opacity:1;transform:translateY(0)}
+    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <!-- HEADER -->
-  <header>
-    <div class="brand">
+  <!-- ======= UNIFIED INSTITUTIONAL HEADER ======= -->
+  <header class="hdr">
+    <div class="hdr-top">
       <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-      <span><strong style="color:var(--ink)">waveframe</strong><strong style="color:var(--accent)">labs</strong></span>
+      <div class="title">Waveframe Labs</div>
     </div>
+    <div class="hdr-sub">Independent institute for AI–human reproducibility and epistemic governance.</div>
 
-    <nav class="nav">
-      <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub</a>
-      <a href="mailto:swright@waveframelabs.org">Email</a>
-      <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">ORCID</a>
-      <a href="#projects">Projects</a>
-      <a href="#updates">Updates</a>
-      <a href="#founder">Founder</a>
+    <nav class="topnav">
+      <a class="active-link" href="index.html">Home</a>
+      <a href="hierarchy.html">Aurora Hierarchy</a>
+      <a href="doctrine.html">Neurotransparency Doctrine</a>
+      <a href="ari.html">ARI</a>
+      <a href="awo.html">AWO</a>
+      <a href="cri-core.html">CRI-CORE</a>
+      <a href="tools.html">Tools</a>
+      <a href="case-studies.html">Case Studies</a>
     </nav>
   </header>
 
-  <!-- ARI HERO -->
+  <!-- === ARI HERO === -->
   <section class="hero ari-hero" id="ari">
     <div class="kicker">Institutional Framework</div>
     <h1>The Aurora Research Initiative (ARI)</h1>
@@ -101,7 +165,7 @@
     <a class="cta" href="ari.html">Learn More</a>
   </section>
 
-  <!-- MINI HIERARCHY -->
+  <!-- === MINI HIERARCHY === -->
   <section class="hero">
     <div class="kicker">Aurora Architecture</div>
     <h1>The Aurora Hierarchy</h1>
@@ -111,7 +175,7 @@
     <a class="cta" href="hierarchy.html">Hierarchy Overview</a>
   </section>
 
-  <!-- ORG HERO -->
+  <!-- === ORG HERO === -->
   <section class="hero">
     <div class="kicker">Organization</div>
     <h1>The operational hub for the Aurora ecosystem.</h1>
@@ -125,7 +189,7 @@
     <div class="two">
       <div>
         <p>
-          We publish the <strong>Aurora Workflow Orchestration</strong> (AWO) method,
+          We publish the <strong>Aurora Workflow Orchestration</strong> (AWO),
           maintain the <strong>CRI-CORE</strong> enforcement layer,
           and drive frontier research including <em>Waveframe v4.0</em> and the
           <em>Societal Health Simulator</em>.
@@ -149,7 +213,7 @@
     </div>
   </section>
 
-  <!-- CORE PILLARS -->
+  <!-- === CORE PILLARS === -->
   <section id="projects">
     <div class="kicker">Core Pillars</div>
 
@@ -200,7 +264,7 @@
     </div>
   </section>
 
-  <!-- ACTIVE RESEARCH -->
+  <!-- === ACTIVE RESEARCH === -->
   <section style="margin-top:22px">
     <div class="kicker">Active Research</div>
 
@@ -228,7 +292,7 @@
     </div>
   </section>
 
-  <!-- UPDATES -->
+  <!-- === UPDATES === -->
   <section id="updates" style="margin-top:22px">
     <div class="kicker">News & Updates</div>
     <div class="card">
@@ -241,7 +305,7 @@
     </div>
   </section>
 
-  <!-- FOUNDER -->
+  <!-- === FOUNDER === -->
   <section id="founder" style="margin-top:22px">
     <div class="kicker">Founder</div>
     <div class="card">
@@ -255,7 +319,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- === FOOTER === -->
   <footer>
     <img src="waveframe-logo-mark.png" width="20" height="20" />
     <span style="color:var(--accent);font-weight:600;">Waveframe Labs</span>
