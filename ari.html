@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aurora Research Initiative (ARI) · Waveframe Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="The Aurora Research Initiative (ARI) is the governance layer of Waveframe Labs, defining authority, roles, and institutional rules."
+  />
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <style>
+    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; padding:0; background:#050608; color:#f5f5f5; line-height:1.6; }
+    header { background:#050608; border-bottom:1px solid #252736; padding:1.5rem 1.5rem 1rem; }
+    .logo-row { display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem; }
+    .logo-row img { height:32px; width:auto; }
+    h1 { font-size:1.6rem; margin:0; }
+    .tagline { margin:0.2rem 0 0; color:#c3c6d8; font-size:0.9rem; }
+    nav { margin-top:0.75rem; }
+    nav a { color:#c3c6d8; text-decoration:none; margin-right:1rem; font-size:0.9rem; padding-bottom:0.2rem; border-bottom:2px solid transparent; }
+    nav a:hover { color:#ffffff; border-bottom-color:#ff6b3d; }
+    main { max-width:860px; margin:0 auto; padding:2rem 1.5rem 3rem; }
+    h2 { margin-top:1.5rem; font-size:1.4rem; border-bottom:1px solid #252736; padding-bottom:0.25rem; }
+    h3 { margin-top:1.2rem; font-size:1.1rem; }
+    .pill { display:inline-block; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; border:1px solid #ff6b3d; color:#ffb199; margin-bottom:0.75rem; }
+    .box { background:#0c0f18; border-radius:0.75rem; padding:0.9rem 1rem; border:1px solid #252736; margin-top:0.9rem; }
+    .meta { font-size:0.8rem; color:#9fa3ba; }
+    ul { padding-left:1.2rem; }
+    a { color:#ffb199; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    @media (max-width:640px) {
+      header { padding:1rem; }
+      main { padding:1.5rem 1rem 2.5rem; }
+      nav a { display:inline-block; margin-bottom:0.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-row">
+      <img src="waveframe-logo-mark.png" alt="Waveframe Labs logo" />
+      <div>
+        <h1>Aurora Research Initiative (ARI)</h1>
+        <p class="tagline">Institutional governance for AI–human research.</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="hierarchy.html">Aurora Hierarchy</a>
+      <a href="doctrine.html">Neurotransparency Doctrine</a>
+      <a href="ari.html">ARI</a>
+      <a href="awo.html">AWO</a>
+      <a href="cri-core.html">CRI-CORE</a>
+      <a href="tools.html">Tools</a>
+      <a href="case-studies.html">Case Studies</a>
+    </nav>
+  </header>
+
+  <main>
+    <span class="pill">Layer 1 — Governance</span>
+    <h2>Mission</h2>
+    <p>
+      The <strong>Aurora Research Initiative (ARI)</strong> is the institutional
+      skin of Waveframe Labs. Its mission is to ensure that AI–human research
+      conducted under the Waveframe umbrella is:
+    </p>
+    <ul>
+      <li><strong>Epistemically grounded</strong> in the Neurotransparency Doctrine.</li>
+      <li><strong>Procedurally aligned</strong> with the Aurora Workflow Orchestration (AWO) standard.</li>
+      <li><strong>Enforceable</strong> through CRI-CORE and related tooling.</li>
+    </ul>
+
+    <h2>What ARI Owns</h2>
+    <div class="box">
+      <h3>1. Governance Documents</h3>
+      <p>
+        ARI maintains the governance charter, role definitions, metadata
+        policy, and invariants. These documents define the boundaries of any
+        project claiming to run “under Aurora governance”.
+      </p>
+
+      <h3>2. Role Separation</h3>
+      <p>
+        ARI codifies the separation between <em>builder</em> and
+        <em>reviewer</em> roles, and between <em>workflow orchestration</em>
+        and <em>governance approval</em>. This separation is later enforced
+        in AWO and CRI-CORE.
+      </p>
+
+      <h3>3. Approval &amp; Override Rules</h3>
+      <p>
+        ARI defines how work is approved, when governance can override
+        automation, and how such overrides are logged as first-class events.
+      </p>
+    </div>
+
+    <h2>Interface to AWO and CRI-CORE</h2>
+    <p>
+      ARI does not describe the step-by-step workflow of a research project.
+      Instead, it sets the <strong>constraints</strong> under which workflows
+      are considered legitimate. AWO then implements those constraints as
+      a method, and CRI-CORE enforces them mechanically.
+    </p>
+
+    <h2>Repository & Artefacts</h2>
+    <p>
+      ARI is maintained as its own public repository within the Waveframe Labs
+      organization. It includes:
+    </p>
+    <ul>
+      <li>Governance model and charter.</li>
+      <li>Neurotransparency alignment statements.</li>
+      <li>Metadata and logging policy.</li>
+      <li>Invariants and compliance expectations for tools and workflows.</li>
+    </ul>
+
+    <p class="meta">
+      For the latest version and DOIs, see the
+      <code>Waveframe-Labs/Aurora-Research-Initiative</code> repository.
+    </p>
+  </main>
+
+  <footer>
+    <div class="meta">
+      Text &amp; media: CC BY-NC-SA 4.0 · Code &amp; scripts: Apache 2.0 · © 2025 Waveframe Labs.
+    </div>
+  </footer>
+</body>
+</html>
