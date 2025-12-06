@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Aurora Workflow Orchestration (AWO) · Waveframe Labs</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Aurora Workflow Orchestration (AWO) is the method specification for reproducible, attested AI–human research workflows."
-  />
+  <title>Aurora Workflow Orchestration (AWO) · Waveframe Labs</title>
+
+  <meta name="description" content="Aurora Workflow Orchestration (AWO) — method specification for reproducible, attested AI–human workflows.">
+
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
   <style>
-    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; padding:0; background:#050608; color:#f5f5f5; line-height:1.6; }
-    header { background:#050608; border-bottom:1px solid #252736; padding:1.5rem 1.5rem 1rem; }
-    .logo-row { display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem; }
-    .logo-row img { height:32px; width:auto; }
-    h1 { font-size:1.6rem; margin:0; }
-    .tagline { margin:0.2rem 0 0; color:#c3c6d8; font-size:0.9rem; }
-    nav { margin-top:0.75rem; }
-    nav a { color:#c3c6d8; text-decoration:none; margin-right:1rem; font-size:0.9rem; padding-bottom:0.2rem; border-bottom:2px solid transparent; }
-    nav a:hover { color:#ffffff; border-bottom-color:#ff6b3d; }
-    main { max-width:860px; margin:0 auto; padding:2rem 1.5rem 3rem; }
-    h2 { margin-top:1.5rem; font-size:1.4rem; border-bottom:1px solid #252736; padding-bottom:0.25rem; }
-    h3 { margin-top:1.2rem; font-size:1.1rem; }
-    .pill { display:inline-block; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; border:1px solid #ff6b3d; color:#ffb199; margin-bottom:0.75rem; }
-    .box { background:#0c0f18; border-radius:0.75rem; padding:0.9rem 1rem; border:1px solid #252736; margin-top:0.9rem; }
-    .meta { font-size:0.8rem; color:#9fa3ba; }
-    ul { padding-left:1.2rem; }
-    a { color:#ffb199; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    @media (max-width:640px) {
-      header { padding:1rem; }
-      main { padding:1.5rem 1rem 2.5rem; }
-      nav a { display:inline-block; margin-bottom:0.25rem; }
+    :root{
+      --bg:#050609; --surface:#0c0f14; --card:#151821;
+      --ink:#f3f4f7; --muted:#9aa3b2; --edge:#22252f;
+      --accent:#ff7a18; --rad:18px; --maxw:980px;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+    a:hover{border-color:var(--ink)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 16px 64px}
+
+    .page-header{background:var(--surface);border-radius:16px;padding:18px 20px;border:1px solid var(--edge);margin-bottom:18px}
+    .page-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+    .logo-mark{border-radius:6px}
+    .title-block h1{margin:0;font-size:1.6rem}
+    .title-block p{margin:3px 0 0;font-size:.9rem;color:var(--muted)}
+    .page-nav{margin-top:10px;font-size:.95rem}
+    .page-nav a{margin-right:14px;padding-bottom:2px}
+    .page-nav a.active{border-color:var(--accent);color:var(--accent)}
+
+    main{margin-top:18px}
+    .kicker-pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
+    h2{margin:0 0 10px;font-size:1.3rem}
+    p{line-height:1.7;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .section{margin-bottom:26px}
+    .card{background:var(--card);border-radius:var(--rad);border:1px solid var(--edge);padding:18px 20px;margin-top:10px}
+    .card h3{margin:0 0 8px;font-size:1.05rem}
+    ul{margin:6px 0 6px 20px;padding:0}
+    li{margin-bottom:4px}
+
+    footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--edge);font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-row">
-      <img src="waveframe-logo-mark.png" alt="Waveframe Labs logo" />
-      <div>
+<div class="wrap">
+
+  <header class="page-header">
+    <div class="page-top">
+      <img src="waveframe-logo-mark.png" width="28" height="28" class="logo-mark" alt="Waveframe Labs">
+      <div class="title-block">
         <h1>Aurora Workflow Orchestration (AWO)</h1>
-        <p class="tagline">Method specification for AI–human research workflows.</p>
+        <p>Method specification for reproducible, attested AI–human workflows.</p>
       </div>
     </div>
-    <nav>
+
+    <nav class="page-nav">
       <a href="index.html">Home</a>
       <a href="hierarchy.html">Aurora Hierarchy</a>
       <a href="doctrine.html">Neurotransparency Doctrine</a>
       <a href="ari.html">ARI</a>
-      <a href="awo.html">AWO</a>
+      <a href="awo.html" class="active">AWO</a>
       <a href="cri-core.html">CRI-CORE</a>
       <a href="tools.html">Tools</a>
       <a href="case-studies.html">Case Studies</a>
@@ -57,79 +69,83 @@
   </header>
 
   <main>
-    <span class="pill">Layer 2 — Method</span>
-    <h2>Purpose</h2>
-    <p>
-      <strong>Aurora Workflow Orchestration (AWO)</strong> is the method
-      specification that turns the Neurotransparency Doctrine into a concrete,
-      repeatable workflow for AI–human research.
-    </p>
-    <p>
-      AWO defines how projects are declared, how prompts and models are
-      orchestrated, what logs must be kept, and how approvals and overrides
-      are recorded.
-    </p>
 
-    <h2>Key Concepts</h2>
-    <div class="box">
-      <h3>1. Project Manifest</h3>
+    <section class="section">
+      <span class="kicker-pill">Layer 2 — Method</span>
+      <h2>What AWO defines</h2>
       <p>
-        A structured document describing what is being attempted, which
-        models and tools are in scope, and which governance rules apply.
+        AWO is the operational method that turns ARI governance and the Neurotransparency Specification into
+        concrete workflows. It defines which roles exist, which artifacts they must produce, and how a research
+        run progresses from idea to attested result.
       </p>
+      <p class="muted">
+        Think of AWO as the “how” layer: if a claim is made under Waveframe Labs, AWO specifies the path that
+        claim must have taken.
+      </p>
+    </section>
 
-      <h3>2. Role Separation</h3>
-      <p>
-        AWO enforces a conceptual distinction between:
+    <section class="section">
+      <h2>Core Artifacts</h2>
+      <div class="card">
+        <h3>Minimum required artifacts</h3>
+        <ul class="muted">
+          <li><strong>Run manifest:</strong> machine-readable description of the run, roles, models, and parameters.</li>
+          <li><strong>Attestation log:</strong> human approvals, notes, and override justifications.</li>
+          <li><strong>Evidence bundle:</strong> outputs, prompts, and intermediate reasoning artifacts.</li>
+          <li><strong>Metadata headers:</strong> standardized headers applied to all relevant files.</li>
+          <li><strong>Governance log:</strong> record of exceptions, failed checks, and corrective actions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Role Separation</h2>
+      <p class="muted">
+        AWO enforces separation between at least three conceptual roles:
       </p>
-      <ul>
-        <li><strong>Builder</strong> — runs workflows, prompts models, edits artefacts.</li>
-        <li><strong>Reviewer</strong> — audits runs, verifies claims, approves releases.</li>
+      <ul class="muted">
+        <li><strong>Builder:</strong> assembles workflows, prompts, and experiments.</li>
+        <li><strong>Reviewer:</strong> audits artifacts, checks claims, and approves or rejects runs.</li>
+        <li><strong>Orchestrator:</strong> coordinates automation and connects AWO to CRI-CORE.</li>
       </ul>
-
-      <h3>3. Attestation &amp; Logs</h3>
-      <p>
-        Every significant step in a workflow has an associated log entry and,
-        where appropriate, a human or automated attestation that the step
-        conforms to AWO and ARI rules.
+      <p class="muted">
+        These roles may be implemented by one or more humans plus AI systems, but their responsibilities must
+        remain distinguishable in the logs.
       </p>
+    </section>
 
-      <h3>4. Override &amp; Governance Logs</h3>
-      <p>
-        When governance rules are intentionally relaxed or bypassed, AWO
-        requires those decisions to be logged explicitly with rationale.
-      </p>
-    </div>
+    <section class="section">
+      <h2>Alignment with Doctrine & ARI</h2>
+      <ul class="muted">
+        <li>AWO encodes the <strong>Neurotransparency Specification</strong> as explicit workflow rules.</li>
+        <li>AWO complies with ARI’s governance decisions around approvals, oversight, and exceptions.</li>
+        <li>CRI-CORE is expected to treat AWO manifests as contractual input for enforcement.</li>
+      </ul>
+    </section>
 
-    <h2>Alignment with Neurotransparency &amp; ARI</h2>
-    <p>
-      AWO is not value-neutral. It is explicitly aligned with the
-      Neurotransparency Doctrine and governed by ARI:
-    </p>
-    <ul>
-      <li>Workflows must satisfy neurotransparency requirements.</li>
-      <li>Metadata and logging rules are inherited from ARI policy.</li>
-      <li>CRI-CORE will eventually use AWO as its ground truth.</li>
-    </ul>
+    <section class="section">
+      <h2>Where to Read the Method Specification</h2>
+      <ul class="muted">
+        <li>
+          <strong>GitHub repository:</strong>
+          <a href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration" target="_blank">
+            Waveframe-Labs/Aurora-Workflow-Orchestration
+          </a>
+        </li>
+        <li>
+          <strong>Specification PDF:</strong> see the latest release artifacts in the repository.
+        </li>
+      </ul>
+    </section>
 
-    <h2>Repository & Specification</h2>
-    <p>
-      The full method specification, including sectioned requirements for
-      manifests, logs, and validation, is maintained in the
-      <code>Waveframe-Labs/Aurora-Workflow-Orchestration</code> repository.
-    </p>
-
-    <p class="meta">
-      Current focus: revising AWO to v1.3.x to fully integrate ARI, the
-      Neurotransparency Specification, and metadata compliance tooling
-      (Stamp, validators, and the metadata pipeline).
-    </p>
   </main>
 
   <footer>
-    <div class="meta">
-      Text &amp; media: CC BY-NC-SA 4.0 · Code &amp; scripts: Apache 2.0 · © 2025 Waveframe Labs.
-    </div>
+    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
+    <span>· Code &amp; scripts: Apache-2.0</span>
+    <span>· © 2025 Waveframe Labs.</span>
   </footer>
+
+</div>
 </body>
 </html>
