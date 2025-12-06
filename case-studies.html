@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Case Studies · Waveframe Labs</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Waveframe Labs case studies, including Waveframe v4.0 cosmology, Societal Health Simulator, and related research artefacts."
-  />
+  <title>Case Studies · Waveframe Labs</title>
+
+  <meta name="description" content="Case studies demonstrating the Aurora Hierarchy in practice — Waveframe v4.0 cosmology, Societal Health Simulator, and more.">
+
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
   <style>
-    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; padding:0; background:#050608; color:#f5f5f5; line-height:1.6; }
-    header { background:#050608; border-bottom:1px solid #252736; padding:1.5rem 1.5rem 1rem; }
-    .logo-row { display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem; }
-    .logo-row img { height:32px; width:auto; }
-    h1 { font-size:1.6rem; margin:0; }
-    .tagline { margin:0.2rem 0 0; color:#c3c6d8; font-size:0.9rem; }
-    nav { margin-top:0.75rem; }
-    nav a { color:#c3c6d8; text-decoration:none; margin-right:1rem; font-size:0.9rem; padding-bottom:0.2rem; border-bottom:2px solid transparent; }
-    nav a:hover { color:#ffffff; border-bottom-color:#ff6b3d; }
-    main { max-width:860px; margin:0 auto; padding:2rem 1.5rem 3rem; }
-    h2 { margin-top:1.5rem; font-size:1.4rem; border-bottom:1px solid #252736; padding-bottom:0.25rem; }
-    h3 { margin-top:1.2rem; font-size:1.1rem; }
-    .pill { display:inline-block; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; border:1px solid #ff6b3d; color:#ffb199; margin-bottom:0.75rem; }
-    .case-card { background:#0c0f18; border-radius:0.75rem; padding:0.9rem 1rem; border:1px solid #252736; margin-top:0.9rem; }
-    .meta { font-size:0.8rem; color:#9fa3ba; }
-    a { color:#ffb199; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    @media (max-width:640px) {
-      header { padding:1rem; }
-      main { padding:1.5rem 1rem 2.5rem; }
-      nav a { display:inline-block; margin-bottom:0.25rem; }
+    :root{
+      --bg:#050609; --surface:#0c0f14; --card:#151821;
+      --ink:#f3f4f7; --muted:#9aa3b2; --edge:#22252f;
+      --accent:#ff7a18; --rad:18px; --maxw:980px;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+    a:hover{border-color:var(--ink)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 16px 64px}
+
+    .page-header{background:var(--surface);border-radius:16px;padding:18px 20px;border:1px solid var(--edge);margin-bottom:18px}
+    .page-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+    .logo-mark{border-radius:6px}
+    .title-block h1{margin:0;font-size:1.6rem}
+    .title-block p{margin:3px 0 0;font-size:.9rem;color:var(--muted)}
+    .page-nav{margin-top:10px;font-size:.95rem}
+    .page-nav a{margin-right:14px;padding-bottom:2px}
+    .page-nav a.active{border-color:var(--accent);color:var(--accent)}
+
+    main{margin-top:18px}
+    .kicker-pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
+    h2{margin:0 0 10px;font-size:1.3rem}
+    p{line-height:1.7;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .section{margin-bottom:24px}
+    .grid{display:grid;gap:14px;margin-top:10px}
+    @media(min-width:820px){.grid{grid-template-columns:repeat(2,1fr)}}
+    .card{background:var(--card);border-radius:var(--rad);border:1px solid var(--edge);padding:18px 20px}
+    .card h3{margin:0 0 8px;font-size:1.05rem}
+    ul{margin:6px 0 6px 20px;padding:0}
+    li{margin-bottom:4px}
+
+    footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--edge);font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-row">
-      <img src="waveframe-logo-mark.png" alt="Waveframe Labs logo" />
-      <div>
+<div class="wrap">
+
+  <header class="page-header">
+    <div class="page-top">
+      <img src="waveframe-logo-mark.png" width="28" height="28" class="logo-mark" alt="Waveframe Labs">
+      <div class="title-block">
         <h1>Case Studies</h1>
-        <p class="tagline">Applied demonstrations of the Aurora stack.</p>
+        <p>Applied research built under the Aurora Hierarchy.</p>
       </div>
     </div>
-    <nav>
+
+    <nav class="page-nav">
       <a href="index.html">Home</a>
       <a href="hierarchy.html">Aurora Hierarchy</a>
       <a href="doctrine.html">Neurotransparency Doctrine</a>
@@ -51,70 +66,60 @@
       <a href="awo.html">AWO</a>
       <a href="cri-core.html">CRI-CORE</a>
       <a href="tools.html">Tools</a>
-      <a href="case-studies.html">Case Studies</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
     </nav>
   </header>
 
   <main>
-    <span class="pill">Layer 4 — Proof in Practice</span>
-    <h2>Purpose</h2>
-    <p>
-      Case studies show that the Aurora Hierarchy is not just theory. Each
-      project is an end-to-end application of the doctrine, governance, and
-      workflow stack to a concrete scientific or sociotechnical question.
-    </p>
 
-    <div class="case-card">
-      <h3>Waveframe v4.0 — Cosmology</h3>
+    <section class="section">
+      <span class="kicker-pill">Layer 4 — Case Studies</span>
+      <h2>Purpose of case studies</h2>
       <p>
-        A cosmological model exploring spacetime and expansion through an
-        information-first lens. Waveframe v4.0 acts as the flagship case
-        study for applying AWO to theoretical physics and simulation-based
-        research.
+        Case studies are not side projects; they are proofs that the Aurora stack can support serious research.
+        Each project is expected to conform to ARI, implement AWO, pass CRI-CORE validation, and document
+        neurotransparency in practice.
       </p>
-      <p class="meta">
-        Repository: <code>Waveframe-Labs/Waveframe-v4.0</code><br />
-        Status: active development under Aurora governance.
-      </p>
-    </div>
+    </section>
 
-    <div class="case-card">
-      <h3>Societal Health Simulator (SHS)</h3>
-      <p>
-        A sociotechnical modelling project exploring how institutional,
-        cultural, and informational variables affect societal health over
-        time. SHS demonstrates AWO and governance in a domain closer to
-        policy and social science.
-      </p>
-      <p class="meta">
-        Repository: <code>Waveframe-Labs/Societal-Health-Simulator</code>
-      </p>
-    </div>
+    <section class="section">
+      <h2>Current Flagship Projects</h2>
+      <div class="grid">
 
-    <div class="case-card">
-      <h3>Tauwarp &amp; Waveframe Lineage (Archived)</h3>
-      <p>
-        Earlier explorations of time reparameterization, emergent cosmology,
-        and Waveframe v3.x are preserved as research artefacts. They provide
-        historical context for how the current governance and workflow
-        stack emerged.
-      </p>
-      <p class="meta">
-        Repositories: <code>Wright-Shawn/Tauwarp</code>, <code>Wright-Shawn/waveframe-v3</code>,
-        <code>Wright-Shawn/waveframe-v3.1</code>, and related archives.
-      </p>
-    </div>
+        <article class="card">
+          <h3>Waveframe v4.0 (Cosmology)</h3>
+          <p class="muted">
+            Entropy–action, observer-aware cosmology built under the AWO + CRI-CORE stack. Demonstrates how
+            speculative theoretical work can still be reproducible and audit-ready.
+          </p>
+          <ul class="muted">
+            <li>Repository: <a href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank">Waveframe-v4.0</a></li>
+          </ul>
+        </article>
 
-    <p class="meta">
-      New case studies will be added as additional projects are brought
-      under the Aurora stack.
-    </p>
+        <article class="card">
+          <h3>Societal Health Simulator</h3>
+          <p class="muted">
+            Streamlit-based simulator for sociotechnical dynamics and policy interventions. Serves as a
+            sociological case study for method-driven research outside traditional institutions.
+          </p>
+          <ul class="muted">
+            <li>Repo: <a href="https://github.com/Waveframe-Labs/Societal-Health-Simulator" target="_blank">Societal-Health-Simulator</a></li>
+            <li>Live demo: <a href="https://wrightsocietalmodel.com" target="_blank">wrightsocietalmodel.com</a></li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <div class="meta">
-      Text &amp; media: CC BY-NC-SA 4.0 · Code &amp; scripts: Apache 2.0 · © 2025 Waveframe Labs.
-    </div>
+    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
+    <span>· Code &amp; scripts: Apache-2.0</span>
+    <span>· © 2025 Waveframe Labs.</span>
   </footer>
+
+</div>
 </body>
 </html>
