@@ -1,6 +1,7 @@
 <p align="center">
   <img src="waveframe-logo-banner-mark.png" alt="Waveframe Labs Banner" width="650">
 </p>  
+
 # Waveframe Labs — Website Repository
 
 This repository hosts the static website for **Waveframe Labs**, the independent research institute operating under the **Aurora Research Initiative (ARI)**.  
