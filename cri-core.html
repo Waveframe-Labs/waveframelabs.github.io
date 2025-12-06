@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRI-CORE Enforcement Engine · Waveframe Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="CRI-CORE is the enforcement engine for Aurora Workflow Orchestration, validating metadata, manifests, and governance rules."
+  />
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <style>
+    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; padding:0; background:#050608; color:#f5f5f5; line-height:1.6; }
+    header { background:#050608; border-bottom:1px solid #252736; padding:1.5rem 1.5rem 1rem; }
+    .logo-row { display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem; }
+    .logo-row img { height:32px; width:auto; }
+    h1 { font-size:1.6rem; margin:0; }
+    .tagline { margin:0.2rem 0 0; color:#c3c6d8; font-size:0.9rem; }
+    nav { margin-top:0.75rem; }
+    nav a { color:#c3c6d8; text-decoration:none; margin-right:1rem; font-size:0.9rem; padding-bottom:0.2rem; border-bottom:2px solid transparent; }
+    nav a:hover { color:#ffffff; border-bottom-color:#ff6b3d; }
+    main { max-width:860px; margin:0 auto; padding:2rem 1.5rem 3rem; }
+    h2 { margin-top:1.5rem; font-size:1.4rem; border-bottom:1px solid #252736; padding-bottom:0.25rem; }
+    h3 { margin-top:1.2rem; font-size:1.1rem; }
+    .pill { display:inline-block; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; border:1px solid #ff6b3d; color:#ffb199; margin-bottom:0.75rem; }
+    .box { background:#0c0f18; border-radius:0.75rem; padding:0.9rem 1rem; border:1px solid #252736; margin-top:0.9rem; }
+    .meta { font-size:0.8rem; color:#9fa3ba; }
+    ul { padding-left:1.2rem; }
+    a { color:#ffb199; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    @media (max-width:640px) {
+      header { padding:1rem; }
+      main { padding:1.5rem 1rem 2.5rem; }
+      nav a { display:inline-block; margin-bottom:0.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-row">
+      <img src="waveframe-logo-mark.png" alt="Waveframe Labs logo" />
+      <div>
+        <h1>CRI-CORE Enforcement Engine</h1>
+        <p class="tagline">Turning AWO into an enforceable standard.</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="hierarchy.html">Aurora Hierarchy</a>
+      <a href="doctrine.html">Neurotransparency Doctrine</a>
+      <a href="ari.html">ARI</a>
+      <a href="awo.html">AWO</a>
+      <a href="cri-core.html">CRI-CORE</a>
+      <a href="tools.html">Tools</a>
+      <a href="case-studies.html">Case Studies</a>
+    </nav>
+  </header>
+
+  <main>
+    <span class="pill">Layer 3 — Enforcement</span>
+    <h2>What is CRI-CORE?</h2>
+    <p>
+      <strong>CRI-CORE</strong> (Cognitive Research Infrastructure — CORE) is the
+      enforcement engine for Aurora Workflow Orchestration. Its role is to
+      make compliance with AWO and the Neurotransparency Specification
+      <em>mechanically checkable</em>.
+    </p>
+
+    <h2>Planned Capabilities</h2>
+    <div class="box">
+      <h3>1. Schema &amp; Metadata Validation</h3>
+      <p>
+        Validate manifests, metadata headers, and directory structure against
+        AWO and ARI rules.
+      </p>
+
+      <h3>2. Attestation &amp; Audit Trails</h3>
+      <p>
+        Generate cryptographically verifiable logs that show which workflows
+        ran, which models were used, and which approvals were granted.
+      </p>
+
+      <h3>3. Role-Aware Enforcement</h3>
+      <p>
+        Verify that builder and reviewer roles are kept separate, and that
+        override events are explicitly recorded.
+      </p>
+
+      <h3>4. Compliance Badges &amp; Reports</h3>
+      <p>
+        Emit machine-readable badges and human-readable reports summarizing
+        whether a repository or release meets governance requirements.
+      </p>
+    </div>
+
+    <h2>Status</h2>
+    <p>
+      CRI-CORE is currently in the architecture and prototype design phase.
+      Early functionality is being explored through standalone validators and
+      metadata tools that will later be folded into the runtime.
+    </p>
+
+    <h2>Roadmap</h2>
+    <ul>
+      <li>Define technical architecture and component boundaries.</li>
+      <li>Release an MVP validator focused on manifests and metadata.</li>
+      <li>Integrate with the metadata pipeline and PDF Forge.</li>
+      <li>Expand to full role-aware enforcement and provenance snapshots.</li>
+      <li>Publish a public whitepaper and reference implementation.</li>
+    </ul>
+
+    <p class="meta">
+      Repository: <code>Waveframe-Labs/CRI-CORE</code> (in active development).
+    </p>
+  </main>
+
+  <footer>
+    <div class="meta">
+      Text &amp; media: CC BY-NC-SA 4.0 · Code &amp; scripts: Apache 2.0 · © 2025 Waveframe Labs.
+    </div>
+  </footer>
+</body>
+</html>
