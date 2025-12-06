@@ -1,51 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Aurora Hierarchy · Waveframe Labs</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="The Aurora Hierarchy is the six-layer architecture that structures governance, methods, enforcement, case studies, and tools at Waveframe Labs."
-  />
+  <title>Aurora Hierarchy · Waveframe Labs</title>
+
+  <meta name="description" content="Aurora Hierarchy — six-layer architecture for epistemic governance, workflows, enforcement, case studies, and tooling.">
+
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
   <style>
-    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; padding:0; background:#050608; color:#f5f5f5; line-height:1.6; }
-    header { background:#050608; border-bottom:1px solid #252736; padding:1.5rem 1.5rem 1rem; }
-    .logo-row { display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem; }
-    .logo-row img { height:32px; width:auto; }
-    h1 { font-size:1.6rem; margin:0; }
-    .tagline { margin:0.2rem 0 0; color:#c3c6d8; font-size:0.9rem; }
-    nav { margin-top:0.75rem; }
-    nav a { color:#c3c6d8; text-decoration:none; margin-right:1rem; font-size:0.9rem; padding-bottom:0.2rem; border-bottom:2px solid transparent; }
-    nav a:hover { color:#ffffff; border-bottom-color:#ff6b3d; }
-    main { max-width:980px; margin:0 auto; padding:2rem 1.5rem 3rem; }
-    h2 { margin-top:1.5rem; font-size:1.4rem; border-bottom:1px solid #252736; padding-bottom:0.25rem; }
-    h3 { margin-top:1.25rem; font-size:1.1rem; }
-    code { background:#141725; padding:0.15rem 0.35rem; border-radius:4px; font-size:0.85rem; }
-    pre { background:#0c0f18; padding:0.8rem 1rem; border-radius:0.75rem; overflow-x:auto; border:1px solid #252736; font-size:0.85rem; }
-    .layer { margin-top:1.2rem; padding:0.9rem 1rem; border-radius:0.75rem; background:#0c0f18; border:1px solid #252736; }
-    .layer-title { font-weight:600; color:#ffb199; margin-bottom:0.2rem; }
-    .meta { font-size:0.8rem; color:#9fa3ba; }
-    @media (max-width:640px) {
-      header { padding:1rem; }
-      main { padding:1.5rem 1rem 2.5rem; }
-      nav a { display:inline-block; margin-bottom:0.25rem; }
+    :root{
+      --bg:#050609; --surface:#0c0f14; --card:#151821;
+      --ink:#f3f4f7; --muted:#9aa3b2; --edge:#22252f;
+      --accent:#ff7a18; --rad:18px; --maxw:980px;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+    a:hover{border-color:var(--ink)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 16px 64px}
+
+    .page-header{background:var(--surface);border-radius:16px;padding:18px 20px;border:1px solid var(--edge);margin-bottom:18px}
+    .page-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+    .title-block h1{margin:0;font-size:1.6rem}
+    .title-block p{margin:3px 0 0;font-size:.9rem;color:var(--muted)}
+    .page-nav{margin-top:10px;font-size:.95rem}
+    .page-nav a{margin-right:14px;padding-bottom:2px}
+    .page-nav a.active{border-color:var(--accent);color:var(--accent)}
+
+    main{margin-top:18px}
+    .kicker-pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
+    h2{margin:0 0 10px;font-size:1.3rem}
+    p{line-height:1.7;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .section{margin-bottom:24px}
+    .grid{display:grid;gap:14px;margin-top:10px}
+    @media(min-width:820px){.grid{grid-template-columns:repeat(2,1fr)}}
+    .card{background:var(--card);border-radius:var(--rad);border:1px solid var(--edge);padding:16px 18px}
+    .card h3{margin:0 0 8px;font-size:1.05rem}
+    ul{margin:6px 0 6px 20px;padding:0}
+    li{margin-bottom:4px}
+
+    footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--edge);font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+    .logo-mark{border-radius:6px}
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-row">
-      <img src="waveframe-logo-mark.png" alt="Waveframe Labs logo" />
-      <div>
+<div class="wrap">
+
+  <header class="page-header">
+    <div class="page-top">
+      <img src="waveframe-logo-mark.png" width="28" height="28" class="logo-mark" alt="Waveframe Labs">
+      <div class="title-block">
         <h1>Aurora Hierarchy</h1>
-        <p class="tagline">Layered architecture for AI–human research governance.</p>
+        <p>Layered architecture from epistemic foundations down to tools and case studies.</p>
       </div>
     </div>
-    <nav>
+
+    <nav class="page-nav">
       <a href="index.html">Home</a>
-      <a href="hierarchy.html">Aurora Hierarchy</a>
+      <a href="hierarchy.html" class="active">Aurora Hierarchy</a>
       <a href="doctrine.html">Neurotransparency Doctrine</a>
       <a href="ari.html">ARI</a>
       <a href="awo.html">AWO</a>
@@ -56,113 +71,104 @@
   </header>
 
   <main>
-    <h2>Overview</h2>
-    <p>
-      The <strong>Aurora Hierarchy</strong> is the institutional backbone of Waveframe Labs.
-      It separates <em>why</em> we govern AI–human research from <em>how</em> we do it,
-      <em>who</em> has authority, and <em>where</em> those rules are enforced.
-    </p>
 
-    <pre><code>Layer 0A   Neurotransparency Doctrine        (Why)
-Layer 0B   Neurotransparency Specification   (What is required)
-Layer 1    Aurora Research Initiative (ARI)  (Who governs)
-Layer 2    Aurora Workflow Orchestration     (How work is done)
-Layer 3    CRI-CORE Enforcement Engine       (Who enforces)
-Layer 4    Case Studies                      (Proof in practice)
-Layer 5    Tools & Infrastructure            (Operational capability)</code></pre>
-
-    <div class="layer">
-      <div class="layer-title">Layer 0A — Neurotransparency Doctrine</div>
+    <section class="section">
+      <span class="kicker-pill">Overview</span>
+      <h2>Why a hierarchy?</h2>
       <p>
-        Establishes the epistemic motivation for Waveframe Labs. It defines
-        cognitive failure modes (opacity, untraceable AI contribution,
-        unverifiable claims) and argues that <strong>neurotransparency</strong> —
-        traceable, reconstructible cognition — is a prerequisite for trustworthy AI-assisted research.
+        The Aurora Hierarchy prevents “method soup” by separating philosophy, governance, workflow logic,
+        enforcement, examples, and tooling into distinct layers. Each layer has a clear purpose and cannot
+        silently absorb responsibilities from another.
       </p>
-      <p class="meta">
-        Primary artefact: Doctrine PDF and repository.<br />
-        See: <a href="doctrine.html">Neurotransparency Doctrine →</a>
+      <p class="muted">
+        This page summarizes how the layers stack and where each document or repository fits.
       </p>
-    </div>
+    </section>
 
-    <div class="layer">
-      <div class="layer-title">Layer 0B — Neurotransparency Specification (NTS)</div>
-      <p>
-        Converts the doctrine into <strong>normative requirements</strong>.
-        Describes what must be logged, how attribution works, and which
-        properties a “neurotransparent” workflow must satisfy.
-      </p>
-      <p class="meta">
-        Primary artefact: NTS repository and specification PDF.
-      </p>
-    </div>
+    <section class="section">
+      <h2>Layers at a Glance</h2>
+      <div class="grid">
 
-    <div class="layer">
-      <div class="layer-title">Layer 1 — Aurora Research Initiative (ARI)</div>
-      <p>
-        ARI defines institutional authority: who is allowed to approve work,
-        what roles exist, and how governance decisions are documented.
-        It is the governance layer that owns the doctrine and delegates
-        responsibilities to workflows and tooling.
-      </p>
-      <p class="meta">
-        Primary artefact: ARI repository (charter, governance model, metadata policy).
-      </p>
-    </div>
+        <article class="card">
+          <h3>Layer 0A — Neurotransparency Doctrine</h3>
+          <p class="muted">
+            Philosophical and justificatory foundation. Explains why cognitive integrity is required and the
+            failure modes it is meant to prevent.
+          </p>
+        </article>
 
-    <div class="layer">
-      <div class="layer-title">Layer 2 — Aurora Workflow Orchestration (AWO)</div>
-      <p>
-        AWO is the method layer. It specifies manifests, attestation logs,
-        approval flows, and role separation between “builder” and “reviewer”
-        agents in AI–human collaborations.
-      </p>
-      <p class="meta">
-        Primary artefact: AWO normative specification and supporting docs.
-      </p>
-    </div>
+        <article class="card">
+          <h3>Layer 0B — Neurotransparency Specification (NTS)</h3>
+          <p class="muted">
+            Normative compliance standard. Defines concrete requirements for logs, metadata, role separation,
+            attestations, and override reporting.
+          </p>
+        </article>
 
-    <div class="layer">
-      <div class="layer-title">Layer 3 — CRI-CORE Enforcement Engine</div>
-      <p>
-        CRI-CORE is the enforcement layer that makes AWO non-optional.
-        It validates metadata, directory structure, manifests, and attestation
-        against the doctrine and specification, producing <strong>cryptographically
-        verifiable compliance artefacts</strong>.
-      </p>
-      <p class="meta">
-        Primary artefact: CRI-CORE runtime and validators (in development).
-      </p>
-    </div>
+        <article class="card">
+          <h3>Layer 1 — Aurora Research Initiative (ARI)</h3>
+          <p class="muted">
+            Institutional authority. Ratifies the doctrine, adopts NTS as binding, and governs how AWO and
+            CRI-CORE are allowed to operate.
+          </p>
+        </article>
 
-    <div class="layer">
-      <div class="layer-title">Layer 4 — Case Studies</div>
-      <p>
-        Case studies show the hierarchy working end-to-end. Each project
-        demonstrates an AI–human research pipeline running under AWO and
-        enforced (progressively) by CRI-CORE.
-      </p>
-      <p class="meta">
-        Examples: Waveframe v4.0, Societal Health Simulator, Tauwarp (archived).
-      </p>
-    </div>
+        <article class="card">
+          <h3>Layer 2 — Aurora Workflow Orchestration (AWO)</h3>
+          <p class="muted">
+            Method specification. Describes roles, manifests, artifacts, approval flows, and how runs must be
+            structured to satisfy ARI + NTS.
+          </p>
+        </article>
 
-    <div class="layer">
-      <div class="layer-title">Layer 5 — Tools & Infrastructure</div>
-      <p>
-        Operational tools that make governance practical:
-        PDF generation, metadata injection, validation, and release automation.
-      </p>
-      <p class="meta">
-        Examples: Waveframe PDF Forge, metadata pipeline, Stamp, validator suite.
-      </p>
-    </div>
+        <article class="card">
+          <h3>Layer 3 — CRI-CORE</h3>
+          <p class="muted">
+            Enforcement engine. Implements validators, provenance capture, and tamper-resistant logs that turn
+            AWO and NTS into executable rules.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Layer 4 — Case Studies</h3>
+          <p class="muted">
+            Applied research built under the hierarchy, such as Waveframe v4.0 and the Societal Health
+            Simulator. These demonstrate the full stack in practice.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Layer 5 — Tools & Infrastructure</h3>
+          <p class="muted">
+            Supporting tools including Waveframe PDF Forge, Stamp, metadata pipelines, validators, and
+            publishing integrations (GitHub, Zenodo, OSF).
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How Layers Depend on Each Other</h2>
+      <div class="card">
+        <ul class="muted">
+          <li><strong>Doctrine → Spec:</strong> Doctrine explains <em>why</em>; Spec codifies <em>what is required</em>.</li>
+          <li><strong>Spec → ARI:</strong> ARI adopts NTS as a governing standard and sets institutional scope.</li>
+          <li><strong>ARI → AWO:</strong> AWO turns ARI rules into step-by-step workflow logic.</li>
+          <li><strong>AWO → CRI-CORE:</strong> CRI-CORE enforces AWO manifests and metadata mechanically.</li>
+          <li><strong>All → Case Studies:</strong> Case studies must comply with the entire hierarchy.</li>
+        </ul>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <div class="meta">
-      Text &amp; media: CC BY-NC-SA 4.0 · Code &amp; scripts: Apache 2.0 · © 2025 Waveframe Labs.
-    </div>
+    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
+    <span>· Code &amp; scripts: Apache-2.0</span>
+    <span>· © 2025 Waveframe Labs.</span>
   </footer>
+
+</div>
 </body>
 </html>
