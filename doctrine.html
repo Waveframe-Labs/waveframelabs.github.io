@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Neurotransparency Doctrine · Waveframe Labs</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Summary of the Neurotransparency Doctrine, the epistemic foundation for AI–human research governance at Waveframe Labs."
-  />
+  <title>Neurotransparency Doctrine · Waveframe Labs</title>
+
+  <meta name="description" content="Neurotransparency Doctrine — epistemic foundation for AI–human research at Waveframe Labs.">
+
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
   <style>
-    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; padding:0; background:#050608; color:#f5f5f5; line-height:1.6; }
-    header { background:#050608; border-bottom:1px solid #252736; padding:1.5rem 1.5rem 1rem; }
-    .logo-row { display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem; }
-    .logo-row img { height:32px; width:auto; }
-    h1 { font-size:1.6rem; margin:0; }
-    .tagline { margin:0.2rem 0 0; color:#c3c6d8; font-size:0.9rem; }
-    nav { margin-top:0.75rem; }
-    nav a { color:#c3c6d8; text-decoration:none; margin-right:1rem; font-size:0.9rem; padding-bottom:0.2rem; border-bottom:2px solid transparent; }
-    nav a:hover { color:#ffffff; border-bottom-color:#ff6b3d; }
-    main { max-width:840px; margin:0 auto; padding:2rem 1.5rem 3rem; }
-    h2 { margin-top:1.5rem; font-size:1.4rem; border-bottom:1px solid #252736; padding-bottom:0.25rem; }
-    h3 { margin-top:1.2rem; font-size:1.1rem; }
-    .pill { display:inline-block; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; border:1px solid #ff6b3d; color:#ffb199; margin-bottom:0.75rem; }
-    .box { background:#0c0f18; border-radius:0.75rem; padding:0.9rem 1rem; border:1px solid #252736; margin-top:0.9rem; }
-    .meta { font-size:0.8rem; color:#9fa3ba; }
-    a { color:#ffb199; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    ul { padding-left:1.2rem; }
-    @media (max-width:640px) {
-      header { padding:1rem; }
-      main { padding:1.5rem 1rem 2.5rem; }
-      nav a { display:inline-block; margin-bottom:0.25rem; }
+    :root{
+      --bg:#050609; --surface:#0c0f14; --card:#151821;
+      --ink:#f3f4f7; --muted:#9aa3b2; --edge:#22252f;
+      --accent:#ff7a18; --rad:18px; --maxw:980px;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+    a:hover{border-color:var(--ink)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 16px 64px}
+
+    .page-header{background:var(--surface);border-radius:16px;padding:18px 20px;border:1px solid var(--edge);margin-bottom:18px}
+    .page-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+    .logo-mark{border-radius:6px}
+    .title-block h1{margin:0;font-size:1.6rem}
+    .title-block p{margin:3px 0 0;font-size:.9rem;color:var(--muted)}
+    .page-nav{margin-top:10px;font-size:.95rem}
+    .page-nav a{margin-right:14px;padding-bottom:2px}
+    .page-nav a.active{border-color:var(--accent);color:var(--accent)}
+
+    main{margin-top:18px}
+    .kicker-pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
+    h2{margin:0 0 10px;font-size:1.3rem}
+    p{line-height:1.7;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .section{margin-bottom:26px}
+    .card{background:var(--card);border-radius:var(--rad);border:1px solid var(--edge);padding:18px 20px;margin-top:10px}
+    .card h3{margin:0 0 8px;font-size:1.05rem}
+    ul{margin:6px 0 6px 20px;padding:0}
+    li{margin-bottom:4px}
+
+    footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--edge);font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-row">
-      <img src="waveframe-logo-mark.png" alt="Waveframe Labs logo" />
-      <div>
+<div class="wrap">
+
+  <header class="page-header">
+    <div class="page-top">
+      <img src="waveframe-logo-mark.png" width="28" height="28" class="logo-mark" alt="Waveframe Labs">
+      <div class="title-block">
         <h1>Neurotransparency Doctrine</h1>
-        <p class="tagline">Epistemic foundation for AI–human research.</p>
+        <p>Epistemic foundation for AI–human research.</p>
       </div>
     </div>
-    <nav>
+
+    <nav class="page-nav">
       <a href="index.html">Home</a>
       <a href="hierarchy.html">Aurora Hierarchy</a>
-      <a href="doctrine.html">Neurotransparency Doctrine</a>
+      <a href="doctrine.html" class="active">Neurotransparency Doctrine</a>
       <a href="ari.html">ARI</a>
       <a href="awo.html">AWO</a>
       <a href="cri-core.html">CRI-CORE</a>
@@ -57,98 +69,111 @@
   </header>
 
   <main>
-    <span class="pill">Layer 0A — Epistemic Foundation</span>
-    <h2>Why Neurotransparency?</h2>
-    <p>
-      The Neurotransparency Doctrine is the foundational statement of
-      Waveframe Labs. It argues that in AI–assisted research, it is no longer
-      sufficient to ask, “Is this result correct?” We must also ask,
-      “<em>How</em> did this result come into existence, and whose cognition
-      shaped it?”
-    </p>
-    <p>
-      Neurotransparency demands that the cognitive process behind research —
-      human and machine — be <strong>traceable, attributable, and
-      reconstructible</strong>. Without this, reproducibility becomes a matter
-      of trust in a black box rather than a property that can be audited.
-    </p>
 
-    <h2>Core Principles</h2>
-    <div class="box">
-      <h3>1. Cognition is an artefact</h3>
+    <section class="section">
+      <span class="kicker-pill">Layer 0A — Epistemic Foundation</span>
+      <h2>Why Neurotransparency?</h2>
       <p>
-        Human reasoning, AI model output, and the orchestration between them
-        are treated as first-class artefacts. They must be logged and
-        versioned, not left implicit.
+        The Neurotransparency Doctrine is the foundational statement of Waveframe Labs. In AI-assisted research,
+        it is no longer sufficient to ask, “Is this result correct?” We must also ask,
+        <em>“How did this result come into existence, and whose cognition shaped it?”</em>
       </p>
-
-      <h3>2. Attribution over mystique</h3>
       <p>
-        Claims must be attributable to specific workflows, prompts, models,
-        and human decisions. “The AI did it” is not an acceptable epistemic
-        explanation.
+        Neurotransparency demands that the cognitive processes behind research — human and machine —
+        be <strong>traceable, attributable, and reconstructible</strong>. Without this, reproducibility collapses
+        into trust in an opaque assistant rather than a property that can be audited.
       </p>
+    </section>
 
-      <h3>3. Reconstructibility over performance</h3>
+    <section class="section">
+      <h2>Core Principles</h2>
+      <div class="card">
+        <h3>1. Cognition is an artifact</h3>
+        <p class="muted">
+          Human reasoning, AI model output, and the orchestration between them are first-class research artifacts.
+          They must be logged, versioned, and preserved — not left implicit.
+        </p>
+
+        <h3>2. Attribution over mystique</h3>
+        <p class="muted">
+          Claims must be attributable to specific workflows, prompts, models, and human decisions.
+          “The AI did it” is not an acceptable epistemic explanation.
+        </p>
+
+        <h3>3. Reconstructibility over performance</h3>
+        <p class="muted">
+          A slightly weaker result that can be reconstructed is epistemically stronger than a high-performing
+          result whose provenance is unknown.
+        </p>
+
+        <h3>4. Governance as a first-class object</h3>
+        <p class="muted">
+          Governance is not paperwork after the fact. It is embedded from the start into methods, tools,
+          repositories, and publications.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Relation to the Specification (NTS)</h2>
       <p>
-        A result that cannot be reconstructed is epistemically weaker than a
-        slightly “worse” result whose provenance is fully known.
+        The doctrine is <em>philosophical and justificatory</em>. It explains why neurotransparency is necessary and
+        what epistemic gaps it is meant to close.
       </p>
-
-      <h3>4. Governance as a first-class object</h3>
-      <p>
-        Governance is not paperwork after the fact. It is embedded into
-        workflows, tools, and repositories from the start.
+      <p class="muted">
+        The <strong>Neurotransparency Specification (NTS)</strong> is the corresponding
+        <em>normative standard</em>. It turns the doctrine into operational requirements for:
       </p>
-    </div>
+      <ul class="muted">
+        <li>Run-level logs and manifests</li>
+        <li>Metadata schemas and file headers</li>
+        <li>Role separation and approvals</li>
+        <li>Attestations and override records</li>
+      </ul>
+    </section>
 
-    <h2>Relation to the Specification (NTS)</h2>
-    <p>
-      The doctrine is <em>philosophical and justificatory</em>. It explains
-      why neurotransparency is necessary. The
-      <strong>Neurotransparency Specification (NTS)</strong> is the
-      <em>normative standard</em> that follows from it: concrete requirements
-      for logs, metadata, role separation, and attestations.
-    </p>
+    <section class="section">
+      <h2>Where to Read the Full Text</h2>
+      <ul class="muted">
+        <li>
+          <strong>Neurotransparency Doctrine</strong> — repository and PDF  
+          GitHub: <a href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">
+          Waveframe-Labs/Neurotransparency-Doctrine</a>  
+          DOI: pending propagation.
+        </li>
+        <li>
+          <strong>Neurotransparency Specification (NTS)</strong> — normative standard  
+          GitHub: <a href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">
+          Waveframe-Labs/Neurotransparency-Specification</a>  
+          DOI: <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">10.5281/zenodo.17809676</a>
+        </li>
+      </ul>
+    </section>
 
-    <h2>Where to Read the Full Text</h2>
-    <p>
-      The complete doctrine and specification are maintained as open
-      repositories under the Waveframe Labs organization.
-    </p>
-    <ul>
-      <li>
-        <strong>Neurotransparency Doctrine</strong> — repository and PDF<br />
-        <span class="meta">See GitHub: <code>Waveframe-Labs/Neurotransparency-Doctrine</code></span>
-      </li>
-      <li>
-        <strong>Neurotransparency Specification (NTS)</strong> — normative standard<br />
-        <span class="meta">See GitHub: <code>Waveframe-Labs/Neurotransparency-Specification</code> (name as actually used in your org).</span>
-      </li>
-    </ul>
+    <section class="section">
+      <h2>Downstream Impact</h2>
+      <p class="muted">
+        Every other layer in the Aurora Hierarchy is accountable to the doctrine:
+      </p>
+      <ul class="muted">
+        <li><strong>ARI</strong> must govern in a way that preserves neurotransparency.</li>
+        <li><strong>AWO</strong> must encode neurotransparency into its workflows and artifacts.</li>
+        <li><strong>CRI-CORE</strong> must enforce neurotransparency mechanically.</li>
+        <li><strong>Case studies</strong> must demonstrate neurotransparency in practice.</li>
+      </ul>
+      <p class="muted" style="margin-top:10px;font-size:.86rem;">
+        For citations, refer to the official PDFs and DOIs listed in the respective repositories.
+      </p>
+    </section>
 
-    <h2>Downstream Impact</h2>
-    <p>
-      Every other layer in the Aurora Hierarchy is accountable to the
-      doctrine:
-    </p>
-    <ul>
-      <li><strong>ARI</strong> must govern in a way that preserves neurotransparency.</li>
-      <li><strong>AWO</strong> must encode neurotransparency in its workflows.</li>
-      <li><strong>CRI-CORE</strong> must enforce neurotransparency mechanically.</li>
-      <li><strong>Case studies</strong> must demonstrate neurotransparency in practice.</li>
-    </ul>
-
-    <p class="meta">
-      For citations, please refer to the official PDFs and DOIs listed in
-      the respective repositories.
-    </p>
   </main>
 
   <footer>
-    <div class="meta">
-      Text &amp; media: CC BY-NC-SA 4.0 · Code &amp; scripts: Apache 2.0 · © 2025 Waveframe Labs.
-    </div>
+    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
+    <span>· Code &amp; scripts: Apache-2.0</span>
+    <span>· © 2025 Waveframe Labs.</span>
   </footer>
+
+</div>
 </body>
 </html>
