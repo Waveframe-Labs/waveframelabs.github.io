@@ -1,122 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tools & Infrastructure · Waveframe Labs</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Tooling and infrastructure built by Waveframe Labs, including Waveframe PDF Forge, metadata pipeline, and validation utilities."
-  />
+  <title>Tools & Infrastructure · Waveframe Labs</title>
+
+  <meta name="description" content="Waveframe Labs tooling stack — PDF Forge, Stamp, metadata pipeline, validators, and publishing infrastructure.">
+
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
   <style>
-    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; padding:0; background:#050608; color:#f5f5f5; line-height:1.6; }
-    header { background:#050608; border-bottom:1px solid #252736; padding:1.5rem 1.5rem 1rem; }
-    .logo-row { display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem; }
-    .logo-row img { height:32px; width:auto; }
-    h1 { font-size:1.6rem; margin:0; }
-    .tagline { margin:0.2rem 0 0; color:#c3c6d8; font-size:0.9rem; }
-    nav { margin-top:0.75rem; }
-    nav a { color:#c3c6d8; text-decoration:none; margin-right:1rem; font-size:0.9rem; padding-bottom:0.2rem; border-bottom:2px solid transparent; }
-    nav a:hover { color:#ffffff; border-bottom-color:#ff6b3d; }
-    main { max-width:860px; margin:0 auto; padding:2rem 1.5rem 3rem; }
-    h2 { margin-top:1.5rem; font-size:1.4rem; border-bottom:1px solid #252736; padding-bottom:0.25rem; }
-    h3 { margin-top:1.2rem; font-size:1.1rem; }
-    .pill { display:inline-block; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; border:1px solid #ff6b3d; color:#ffb199; margin-bottom:0.75rem; }
-    .tool-card { background:#0c0f18; border-radius:0.75rem; padding:0.9rem 1rem; border:1px solid #252736; margin-top:0.9rem; }
-    .meta { font-size:0.8rem; color:#9fa3ba; }
-    a { color:#ffb199; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    @media (max-width:640px) {
-      header { padding:1rem; }
-      main { padding:1.5rem 1rem 2.5rem; }
-      nav a { display:inline-block; margin-bottom:0.25rem; }
+    :root{
+      --bg:#050609; --surface:#0c0f14; --card:#151821;
+      --ink:#f3f4f7; --muted:#9aa3b2; --edge:#22252f;
+      --accent:#ff7a18; --rad:18px; --maxw:980px;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+    a:hover{border-color:var(--ink)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 16px 64px}
+
+    .page-header{background:var(--surface);border-radius:16px;padding:18px 20px;border:1px solid var(--edge);margin-bottom:18px}
+    .page-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+    .logo-mark{border-radius:6px}
+    .title-block h1{margin:0;font-size:1.6rem}
+    .title-block p{margin:3px 0 0;font-size:.9rem;color:var(--muted)}
+    .page-nav{margin-top:10px;font-size:.95rem}
+    .page-nav a{margin-right:14px;padding-bottom:2px}
+    .page-nav a.active{border-color:var(--accent);color:var(--accent)}
+
+    main{margin-top:18px}
+    .kicker-pill{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
+    h2{margin:0 0 10px;font-size:1.3rem}
+    p{line-height:1.7;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .section{margin-bottom:24px}
+    .grid{display:grid;gap:14px;margin-top:10px}
+    @media(min-width:820px){.grid{grid-template-columns:repeat(2,1fr)}}
+    .card{background:var(--card);border-radius:var(--rad);border:1px solid var(--edge);padding:18px 20px}
+    .card h3{margin:0 0 8px;font-size:1.05rem}
+    ul{margin:6px 0 6px 20px;padding:0}
+    li{margin-bottom:4px}
+
+    footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--edge);font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-row">
-      <img src="waveframe-logo-mark.png" alt="Waveframe Labs logo" />
-      <div>
+<div class="wrap">
+
+  <header class="page-header">
+    <div class="page-top">
+      <img src="waveframe-logo-mark.png" width="28" height="28" class="logo-mark" alt="Waveframe Labs">
+      <div class="title-block">
         <h1>Tools &amp; Infrastructure</h1>
-        <p class="tagline">Operational capability for AI–human governance.</p>
+        <p>Supporting stack for publishing, provenance, and governance.</p>
       </div>
     </div>
-    <nav>
+
+    <nav class="page-nav">
       <a href="index.html">Home</a>
       <a href="hierarchy.html">Aurora Hierarchy</a>
       <a href="doctrine.html">Neurotransparency Doctrine</a>
       <a href="ari.html">ARI</a>
       <a href="awo.html">AWO</a>
       <a href="cri-core.html">CRI-CORE</a>
-      <a href="tools.html">Tools</a>
+      <a href="tools.html" class="active">Tools</a>
       <a href="case-studies.html">Case Studies</a>
     </nav>
   </header>
 
   <main>
-    <span class="pill">Layer 5 — Tools &amp; Infrastructure</span>
-    <h2>Purpose</h2>
-    <p>
-      The tools built under Waveframe Labs exist to make governance
-      <em>practical</em>. They encode doctrine, governance, and workflow rules
-      directly into PDFs, metadata, and validation pipelines.
-    </p>
 
-    <div class="tool-card">
-      <h3>Waveframe PDF Forge</h3>
+    <section class="section">
+      <span class="kicker-pill">Layer 5 — Tooling & Infrastructure</span>
+      <h2>Why tools are a separate layer</h2>
       <p>
-        Static PDF generator tailored for research artefacts. Inserts
-        metadata headers, provenance information, and consistent styling
-        for institutional documents.
+        Tooling is not the method itself. Waveframe Labs treats tools as downstream infrastructure that must
+        implement — not redefine — the doctrine, ARI decisions, and AWO/CRI-CORE contracts.
       </p>
-      <p class="meta">
-        Repository: <code>Waveframe-Labs/Waveframe-pdf-Forge</code> (currently private).
-      </p>
-    </div>
+    </section>
 
-    <div class="tool-card">
-      <h3>Stamp (Metadata Injector)</h3>
-      <p>
-        Planned command-line utility to inject and validate metadata headers
-        across repositories. It will ensure that every file carries the
-        required provenance, licensing, and governance information.
-      </p>
-      <p class="meta">
-        Status: design + MVP phase; will integrate with AWO and CRI-CORE validators.
-      </p>
-    </div>
+    <section class="section">
+      <h2>Current Tooling Stack</h2>
+      <div class="grid">
 
-    <div class="tool-card">
-      <h3>Metadata Pipeline</h3>
-      <p>
-        Conceptual pipeline that connects source repositories, Stamp,
-        validators, PDF Forge, and DOI / OSF submission steps into a single,
-        reproducible process.
-      </p>
-      <p class="meta">
-        Status: being specified alongside AWO v1.3.x and CRI-CORE architecture.
-      </p>
-    </div>
+        <article class="card">
+          <h3>Waveframe PDF Forge</h3>
+          <p class="muted">
+            Internal PDF generator for building release-grade documents from Markdown and HTML with metadata
+            headers and institutional branding.
+          </p>
+          <p class="muted"><em>Repository: private (Waveframe-Labs/Waveframe-pdf-Forge).</em></p>
+        </article>
 
-    <div class="tool-card">
-      <h3>Validator Suite</h3>
-      <p>
-        A growing collection of checks (metadata, directory structure,
-        checksums, doctrine compliance) that will eventually fold into the
-        CRI-CORE runtime.
-      </p>
-      <p class="meta">
-        Status: early prototypes; see AWO and CRI-CORE repositories for details.
-      </p>
-    </div>
+        <article class="card">
+          <h3>Stamp</h3>
+          <p class="muted">
+            Metadata injector for applying standardized headers to documents and code files across AWO and
+            governance repos.
+          </p>
+          <p class="muted"><em>Planned public release after v1.0 stabilization.</em></p>
+        </article>
+
+        <article class="card">
+          <h3>Metadata Pipeline</h3>
+          <p class="muted">
+            Composition of Stamp, Forge, and validators into a single publishing flow from raw repo to
+            archive-ready artifact (GitHub → Zenodo/OSF).
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Validator Suite</h3>
+          <p class="muted">
+            Early validators for metadata presence, directory structure, checksums, and doctrine compliance —
+            serving as precursors to full CRI-CORE.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <div class="meta">
-      Text &amp; media: CC BY-NC-SA 4.0 · Code &amp; scripts: Apache 2.0 · © 2025 Waveframe Labs.
-    </div>
+    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
+    <span>· Code &amp; scripts: Apache-2.0</span>
+    <span>· © 2025 Waveframe Labs.</span>
   </footer>
+
+</div>
 </body>
 </html>
