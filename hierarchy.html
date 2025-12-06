@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aurora Hierarchy · Waveframe Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="The Aurora Hierarchy is the six-layer architecture that structures governance, methods, enforcement, case studies, and tools at Waveframe Labs."
+  />
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <style>
+    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; padding:0; background:#050608; color:#f5f5f5; line-height:1.6; }
+    header { background:#050608; border-bottom:1px solid #252736; padding:1.5rem 1.5rem 1rem; }
+    .logo-row { display:flex; align-items:center; gap:1rem; margin-bottom:0.75rem; }
+    .logo-row img { height:32px; width:auto; }
+    h1 { font-size:1.6rem; margin:0; }
+    .tagline { margin:0.2rem 0 0; color:#c3c6d8; font-size:0.9rem; }
+    nav { margin-top:0.75rem; }
+    nav a { color:#c3c6d8; text-decoration:none; margin-right:1rem; font-size:0.9rem; padding-bottom:0.2rem; border-bottom:2px solid transparent; }
+    nav a:hover { color:#ffffff; border-bottom-color:#ff6b3d; }
+    main { max-width:980px; margin:0 auto; padding:2rem 1.5rem 3rem; }
+    h2 { margin-top:1.5rem; font-size:1.4rem; border-bottom:1px solid #252736; padding-bottom:0.25rem; }
+    h3 { margin-top:1.25rem; font-size:1.1rem; }
+    code { background:#141725; padding:0.15rem 0.35rem; border-radius:4px; font-size:0.85rem; }
+    pre { background:#0c0f18; padding:0.8rem 1rem; border-radius:0.75rem; overflow-x:auto; border:1px solid #252736; font-size:0.85rem; }
+    .layer { margin-top:1.2rem; padding:0.9rem 1rem; border-radius:0.75rem; background:#0c0f18; border:1px solid #252736; }
+    .layer-title { font-weight:600; color:#ffb199; margin-bottom:0.2rem; }
+    .meta { font-size:0.8rem; color:#9fa3ba; }
+    @media (max-width:640px) {
+      header { padding:1rem; }
+      main { padding:1.5rem 1rem 2.5rem; }
+      nav a { display:inline-block; margin-bottom:0.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-row">
+      <img src="waveframe-logo-mark.png" alt="Waveframe Labs logo" />
+      <div>
+        <h1>Aurora Hierarchy</h1>
+        <p class="tagline">Layered architecture for AI–human research governance.</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="hierarchy.html">Aurora Hierarchy</a>
+      <a href="doctrine.html">Neurotransparency Doctrine</a>
+      <a href="ari.html">ARI</a>
+      <a href="awo.html">AWO</a>
+      <a href="cri-core.html">CRI-CORE</a>
+      <a href="tools.html">Tools</a>
+      <a href="case-studies.html">Case Studies</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Overview</h2>
+    <p>
+      The <strong>Aurora Hierarchy</strong> is the institutional backbone of Waveframe Labs.
+      It separates <em>why</em> we govern AI–human research from <em>how</em> we do it,
+      <em>who</em> has authority, and <em>where</em> those rules are enforced.
+    </p>
+
+    <pre><code>Layer 0A   Neurotransparency Doctrine        (Why)
+Layer 0B   Neurotransparency Specification   (What is required)
+Layer 1    Aurora Research Initiative (ARI)  (Who governs)
+Layer 2    Aurora Workflow Orchestration     (How work is done)
+Layer 3    CRI-CORE Enforcement Engine       (Who enforces)
+Layer 4    Case Studies                      (Proof in practice)
+Layer 5    Tools & Infrastructure            (Operational capability)</code></pre>
+
+    <div class="layer">
+      <div class="layer-title">Layer 0A — Neurotransparency Doctrine</div>
+      <p>
+        Establishes the epistemic motivation for Waveframe Labs. It defines
+        cognitive failure modes (opacity, untraceable AI contribution,
+        unverifiable claims) and argues that <strong>neurotransparency</strong> —
+        traceable, reconstructible cognition — is a prerequisite for trustworthy AI-assisted research.
+      </p>
+      <p class="meta">
+        Primary artefact: Doctrine PDF and repository.<br />
+        See: <a href="doctrine.html">Neurotransparency Doctrine →</a>
+      </p>
+    </div>
+
+    <div class="layer">
+      <div class="layer-title">Layer 0B — Neurotransparency Specification (NTS)</div>
+      <p>
+        Converts the doctrine into <strong>normative requirements</strong>.
+        Describes what must be logged, how attribution works, and which
+        properties a “neurotransparent” workflow must satisfy.
+      </p>
+      <p class="meta">
+        Primary artefact: NTS repository and specification PDF.
+      </p>
+    </div>
+
+    <div class="layer">
+      <div class="layer-title">Layer 1 — Aurora Research Initiative (ARI)</div>
+      <p>
+        ARI defines institutional authority: who is allowed to approve work,
+        what roles exist, and how governance decisions are documented.
+        It is the governance layer that owns the doctrine and delegates
+        responsibilities to workflows and tooling.
+      </p>
+      <p class="meta">
+        Primary artefact: ARI repository (charter, governance model, metadata policy).
+      </p>
+    </div>
+
+    <div class="layer">
+      <div class="layer-title">Layer 2 — Aurora Workflow Orchestration (AWO)</div>
+      <p>
+        AWO is the method layer. It specifies manifests, attestation logs,
+        approval flows, and role separation between “builder” and “reviewer”
+        agents in AI–human collaborations.
+      </p>
+      <p class="meta">
+        Primary artefact: AWO normative specification and supporting docs.
+      </p>
+    </div>
+
+    <div class="layer">
+      <div class="layer-title">Layer 3 — CRI-CORE Enforcement Engine</div>
+      <p>
+        CRI-CORE is the enforcement layer that makes AWO non-optional.
+        It validates metadata, directory structure, manifests, and attestation
+        against the doctrine and specification, producing <strong>cryptographically
+        verifiable compliance artefacts</strong>.
+      </p>
+      <p class="meta">
+        Primary artefact: CRI-CORE runtime and validators (in development).
+      </p>
+    </div>
+
+    <div class="layer">
+      <div class="layer-title">Layer 4 — Case Studies</div>
+      <p>
+        Case studies show the hierarchy working end-to-end. Each project
+        demonstrates an AI–human research pipeline running under AWO and
+        enforced (progressively) by CRI-CORE.
+      </p>
+      <p class="meta">
+        Examples: Waveframe v4.0, Societal Health Simulator, Tauwarp (archived).
+      </p>
+    </div>
+
+    <div class="layer">
+      <div class="layer-title">Layer 5 — Tools & Infrastructure</div>
+      <p>
+        Operational tools that make governance practical:
+        PDF generation, metadata injection, validation, and release automation.
+      </p>
+      <p class="meta">
+        Examples: Waveframe PDF Forge, metadata pipeline, Stamp, validator suite.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="meta">
+      Text &amp; media: CC BY-NC-SA 4.0 · Code &amp; scripts: Apache 2.0 · © 2025 Waveframe Labs.
+    </div>
+  </footer>
+</body>
+</html>
