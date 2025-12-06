@@ -1,64 +1,100 @@
-# Waveframe Labs
+# Waveframe Labs — Website Repository
 
-**Waveframe Labs** is the independent research initiative behind the *Waveframe Project* — a series of open, audit-first studies exploring entropy, information, and observer-driven cosmology.  
-This site hosts public documentation and artifacts from the Waveframe research lineage.
+This repository hosts the static website for **Waveframe Labs**, the independent research institute operating under the **Aurora Research Initiative (ARI)**.  
+The site provides public documentation, institutional references, and project overviews for the Aurora ecosystem — including the **Aurora Hierarchy**, **Neurotransparency Doctrine & Specification**, **AWO**, **CRI-CORE**, and active case-study research.
 
-🔗 **Live site:** [https://waveframelabs.org](https://waveframelabs.org)  
-📄 **DOI:** Pending release (Waveframe Labs master archive)  
-
----
-
-## Overview
-
-This repository powers the [waveframelabs.org](https://waveframelabs.org) website using **GitHub Pages**.  
-It’s a fully static, no-build deployment — just HTML, CSS, and Markdown.  
-All files are served directly from the root branch.
+**🔗 Live Site:** https://waveframelabs.org  
+**🏛 ARI DOI:** https://doi.org/10.5281/zenodo.17743096
 
 ---
 
-## Editing Locally
+## Purpose of This Repository
 
-1. Open `index.html` in a text editor.  
-2. Make your edits or content updates.  
-3. Commit and push to `main`.  
-4. GitHub Pages will automatically redeploy.
+This repository contains the full source of the Waveframe Labs website.  
+It is intentionally designed to be:
 
-> No Node, Jekyll, or build pipeline required.
+- **fully static**  
+- **no-build / no-framework**  
+- **GitHub Pages–native**  
+
+The goal is deterministic transparency: every rendered page is directly visible in the repository and audit-ready.
+
+---
+
+## Site Structure
+
+The site is composed of hand-authored static files:
+
+### **Primary Pages**
+- `index.html` — homepage & institutional overview  
+- `ari.html` — Aurora Research Initiative  
+- `hierarchy.html` — the six-layer Aurora architecture  
+- `doctrine.html` — Neurotransparency Doctrine  
+- `awo.html` — Aurora Workflow Orchestration  
+- `cri-core.html` — enforcement layer (CRI-CORE)  
+- `case-studies.html` — active and archived case studies  
+- `tools.html` — organizational tooling
+
+### **Supporting Files**
+- `waveframe-logo-mark.png`  
+- `waveframe-logo-full.png`  
+- `meta/` — site logs and metadata  
+- `CNAME` — required for custom domain  
+- `.nojekyll` — ensures raw file delivery
+
+---
+
+## Editing & Deployment
+
+Deployment is automatic via GitHub Pages.
+
+1. Edit any `.html` file (e.g., `index.html`).  
+2. Commit changes to `main`.  
+3. GitHub Pages redeploys immediately.
+
+There is **no CI pipeline, bundler, or build step** — by design.  
+This maintains deterministic, transparent behavior aligned with **Neurotransparency** and **ARI** governance requirements.
 
 ---
 
 ## Custom Domain Configuration
 
-The site uses a custom domain managed via Porkbun DNS.
+Waveframe Labs uses a custom domain via Porkbun.
 
-- **A records (apex):**
-  ```
-  185.199.108.153
-  185.199.109.153
-  185.199.110.153
-  185.199.111.153
-  ```
-- **CNAME (www):** `waveframelabs.github.io`
+### **Apex A Records**
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
 
-Ensure the file `CNAME` contains exactly:
+### **CNAME (www)**
+```
+waveframelabs.github.io
+```
+
+### **CNAME file content**
 ```
 waveframelabs.org
 ```
 
-> `.nojekyll` disables Jekyll processing, allowing all directories to serve raw files.
+The `.nojekyll` file disables Jekyll processing, ensuring all files are served exactly as written.
 
 ---
 
 ## License
 
-- **Text & Media:** [CC BY-NC-SA 4.0](LICENSE-NC.md)  
-- **Code & Scripts:** [Apache 2.0](LICENSE)  
-© 2025 Waveframe Labs. All rights reserved.
+- **Text & Media:** CC BY-NC-SA 4.0  
+- **Code & Scripts:** Apache 2.0  
+
+© 2025 Waveframe Labs.
 
 ---
 
-### Maintainer
+## Governance & Contact
 
-**Shawn C. Wright**  
-Independent Researcher · [ORCID 0009-0006-6043-9295](https://orcid.org/0009-0006-6043-9295)  
-Contact: [swright@waveframelabs.org](mailto:swright@waveframelabs.org)
+Waveframe Labs operates under the Aurora Research Initiative.
+
+**Email:** swright@waveframelabs.org  
+**ORCID:** https://orcid.org/0009-0006-6043-9295
