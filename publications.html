@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Publications · Waveframe Labs</title>
 
-  <meta name="description" content="Canonical publications and archived research artifacts from Waveframe Labs. All works are DOI-backed and mirrored here for direct access.">
+  <meta name="description" content="Canonical publications and DOI-backed research artifacts from Waveframe Labs, mirrored for direct access.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/publications.html" />
 
@@ -29,7 +30,7 @@
     .hdr{
       padding:22px 18px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:var(--card);
       margin-bottom:22px;
     }
@@ -49,13 +50,15 @@
       margin:16px 0 22px;
       padding:22px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
     }
 
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h3{margin:.2rem 0 .45rem}
+    h2{margin-top:0}
+    h3{margin-bottom:.25rem}
     p{line-height:1.65}
+
     .kicker{
       color:var(--accent);
       font-size:.8rem;
@@ -64,27 +67,17 @@
       letter-spacing:.6px;
     }
 
-    .grid{display:grid;gap:14px;margin-top:16px}
-    @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
-
     .card{
       background:var(--card);
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       padding:18px;
-      min-height:170px;
+      margin-top:14px;
     }
+
+    .badge-row img{margin-top:8px}
 
     .muted{color:var(--muted)}
-
-    .cta{
-      display:inline-block;
-      margin-top:.6rem;
-      padding:.55rem .9rem;
-      border-radius:12px;
-      border:1px solid var(--ink)
-    }
-    .cta:hover{background:var(--ink);color:var(--bg)}
 
     footer{
       margin-top:40px;
@@ -104,7 +97,10 @@
       <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
       <div class="title">Waveframe Labs</div>
     </div>
-    <div class="hdr-sub">Canonical publications and archived research artifacts.</div>
+
+    <div class="hdr-sub">
+      Canonical publications and archived research artifacts.
+    </div>
 
     <nav class="topnav">
       <a href="index.html">Home</a>
@@ -121,83 +117,78 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="kicker">Research Library</div>
+    <span class="kicker">Canonical Archive</span>
     <h1>Publications</h1>
+
     <p class="muted">
-      This page hosts the canonical, human-readable versions of Waveframe Labs publications.
-      All artifacts are archived with DOIs and mirrored here for direct access.
+      This page aggregates DOI-backed publications and research artifacts
+      produced under the Aurora ecosystem. All works are mirrored here
+      for direct access and long-term stability.
     </p>
   </section>
 
-  <!-- ===== PUBLICATIONS GRID ===== -->
+  <!-- ===== CONCEPT DOIs ===== -->
   <section>
-    <div class="grid">
+    <h2>Concept Publications</h2>
 
-      <article class="card">
-        <h3>Aurora Research Initiative (ARI)</h3>
-        <p class="muted">Institutional governance and epistemic law.</p>
-        <a class="cta" href="ari.html">Overview</a>
-        <a class="cta" href="https://doi.org/10.5281/zenodo.17743096" target="_blank">DOI</a>
-        <div style="margin-top:10px;">
-          <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17743096.svg" alt="ARI DOI">
-        </div>
-      </article>
+    <div class="card">
+      <h3>Aurora Research Initiative (ARI)</h3>
+      <p class="muted">Institutional governance framework.</p>
+      <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">10.5281/zenodo.17743096</a>
+      <div class="badge-row">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17743096.svg" alt="ARI DOI">
+      </div>
+    </div>
 
-      <article class="card">
-        <h3>Aurora Workflow Orchestration (AWO)</h3>
-        <p class="muted">Audit-first AI–human research methodology.</p>
-        <a class="cta" href="awo.html">Overview</a>
-        <a class="cta" href="https://doi.org/10.5281/zenodo.17013612" target="_blank">DOI</a>
-        <div style="margin-top:10px;">
-          <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17013612.svg" alt="AWO DOI">
-        </div>
-      </article>
+    <div class="card">
+      <h3>Aurora Workflow Orchestration (AWO)</h3>
+      <p class="muted">Audit-first research methodology.</p>
+      <a href="https://doi.org/10.5281/zenodo.17013612" target="_blank">10.5281/zenodo.17013612</a>
+      <div class="badge-row">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17013612.svg" alt="AWO DOI">
+      </div>
+    </div>
 
-      <article class="card">
-        <h3>Neurotransparency Standard (NTS)</h3>
-        <p class="muted">Compliance standard for verifiable AI–human collaboration.</p>
-        <a class="cta" href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">Repository</a>
-        <a class="cta" href="https://doi.org/10.5281/zenodo.17809676" target="_blank">DOI</a>
-        <div style="margin-top:10px;">
-          <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17809676.svg" alt="NTS DOI">
-        </div>
-      </article>
+    <div class="card">
+      <h3>Neurotransparency Specification (NTS)</h3>
+      <p class="muted">Compliance and enforcement standard.</p>
+      <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">10.5281/zenodo.17809676</a>
+      <div class="badge-row">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17809676.svg" alt="NTS DOI">
+      </div>
+    </div>
+  </section>
 
-      <article class="card">
-        <h3>Waveframe v4.0</h3>
-        <p class="muted">Observer-driven cosmology with falsifiable predictions.</p>
-        <a class="cta" href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank">Repository</a>
-        <a class="cta" href="https://doi.org/10.5281/zenodo.16872199" target="_blank">DOI</a>
-        <div style="margin-top:10px;">
-          <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16872199.svg" alt="Waveframe DOI">
-        </div>
-      </article>
+  <!-- ===== CASE STUDY OUTPUTS ===== -->
+  <section>
+    <h2>Case Study Publications</h2>
 
-      <article class="card">
-        <h3>Societal Health Simulator</h3>
-        <p class="muted">Interactive sociotechnical modeling framework.</p>
-        <a class="cta" href="https://github.com/Waveframe-Labs/Societal-Health-Simulator" target="_blank">Repository</a>
-        <a class="cta" href="https://doi.org/10.5281/zenodo.17258419" target="_blank">DOI</a>
-        <div style="margin-top:10px;">
-          <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17258419.svg" alt="SHS DOI">
-        </div>
-      </article>
+    <div class="card">
+      <h3>Waveframe v4.0</h3>
+      <p class="muted">Observer-driven cosmology and entropy-first spacetime model.</p>
+      <a href="https://doi.org/10.5281/zenodo.16872199" target="_blank">10.5281/zenodo.16872199</a>
+      <div class="badge-row">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16872199.svg" alt="Waveframe DOI">
+      </div>
+    </div>
 
+    <div class="card">
+      <h3>Societal Health Simulator</h3>
+      <p class="muted">Sociotechnical modeling framework.</p>
+      <a href="https://doi.org/10.5281/zenodo.17258419" target="_blank">10.5281/zenodo.17258419</a>
+      <div class="badge-row">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17258419.svg" alt="SHS DOI">
+      </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <img src="waveframe-logo-mark.png" width="20" height="20" />
-    <span style="color:var(--accent);font-weight:600;">Waveframe Labs</span>
-    <span>· Publications Archive ·</span>
-    <span id="year"></span>
+    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
+    <span>· Code &amp; scripts: Apache-2.0</span>
+    <span>· © 2025 Waveframe Labs</span>
   </footer>
 
 </div>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
