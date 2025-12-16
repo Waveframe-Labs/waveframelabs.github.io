@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Publications · Waveframe Labs</title>
 
-  <meta name="description" content="Canonical publications and archived research artifacts from Waveframe Labs. All works are DOI-backed and mirrored here for direct access.">
+  <title>CRI-CORE · Waveframe Labs</title>
+
+  <meta name="description" content="CRI-CORE is the deterministic enforcement engine for the Aurora ecosystem, mechanically validating governance, methodology, and provenance compliance.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
-  <link rel="canonical" href="https://waveframelabs.org/publications.html" />
+  <link rel="canonical" href="https://waveframelabs.org/cri-core.html" />
 
   <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
   <style>
@@ -29,7 +30,7 @@
     .hdr{
       padding:22px 18px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:var(--card);
       margin-bottom:22px;
     }
@@ -49,13 +50,15 @@
       margin:16px 0 22px;
       padding:22px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
     }
 
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h3{margin:.2rem 0 .45rem}
+    h2{margin-top:0}
+    h3{margin-bottom:.25rem}
     p{line-height:1.65}
+
     .kicker{
       color:var(--accent);
       font-size:.8rem;
@@ -64,27 +67,15 @@
       letter-spacing:.6px;
     }
 
-    .grid{display:grid;gap:14px;margin-top:16px}
-    @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
-
     .card{
       background:var(--card);
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       padding:18px;
-      min-height:170px;
+      margin-top:14px;
     }
 
     .muted{color:var(--muted)}
-
-    .cta{
-      display:inline-block;
-      margin-top:.6rem;
-      padding:.55rem .9rem;
-      border-radius:12px;
-      border:1px solid var(--ink)
-    }
-    .cta:hover{background:var(--ink);color:var(--bg)}
 
     footer{
       margin-top:40px;
@@ -104,7 +95,10 @@
       <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
       <div class="title">Waveframe Labs</div>
     </div>
-    <div class="hdr-sub">Canonical publications and archived research artifacts.</div>
+
+    <div class="hdr-sub">
+      Deterministic enforcement and provenance validation.
+    </div>
 
     <nav class="topnav">
       <a href="index.html">Home</a>
@@ -112,77 +106,93 @@
       <a href="doctrine.html">Neurotransparency Doctrine</a>
       <a href="ari.html">ARI</a>
       <a href="awo.html">AWO</a>
-      <a href="cri-core.html">CRI-CORE</a>
+      <a class="active-link" href="cri-core.html">CRI-CORE</a>
       <a href="tools.html">Tools</a>
       <a href="case-studies.html">Case Studies</a>
-      <a class="active-link" href="publications.html">Publications</a>
+      <a href="publications.html">Publications</a>
     </nav>
   </header>
 
-  <main>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <span class="kicker">Layer 3 — Enforcement</span>
+    <h1>CRI-CORE</h1>
 
-    <section class="section">
-      <span class="kicker-pill">Layer 3 — Enforcement</span>
-      <h2>Why CRI-CORE exists</h2>
-      <p>
-        CRI-CORE turns the Aurora Workflow Orchestration method and the Neurotransparency Specification into
-        machine-enforceable rules. Instead of trusting that researchers “followed the method”, CRI-CORE validates
-        manifests, metadata, and logs, and produces cryptographically trustworthy evidence of what actually ran.
-      </p>
-    </section>
+    <p class="muted">
+      CRI-CORE is the enforcement engine of the Aurora ecosystem.
+      It transforms governance rules and workflow requirements into
+      machine-verifiable guarantees.
+    </p>
+  </section>
 
-    <section class="section">
-      <h2>Core Capabilities</h2>
-      <div class="card">
-        <h3>Validator responsibilities</h3>
-        <ul class="muted">
-          <li>Check that AWO manifests are complete and structurally valid.</li>
-          <li>Verify presence and correctness of metadata headers across files.</li>
-          <li>Compute checksums and provenance for critical artifacts.</li>
-          <li>Record attestation events and approvals as tamper-resistant logs.</li>
-          <li>Emit a machine-readable compliance report for each run.</li>
-        </ul>
-      </div>
-    </section>
+  <!-- ===== WHY CRI-CORE ===== -->
+  <section>
+    <h2>Why CRI-CORE Exists</h2>
+    <p>
+      Modern research workflows rely on trust that methods were followed correctly.
+      CRI-CORE replaces trust with verification by mechanically validating manifests,
+      metadata, and execution logs.
+    </p>
+    <p class="muted">
+      Instead of asserting compliance, CRI-CORE produces cryptographically
+      trustworthy evidence of what actually ran.
+    </p>
+  </section>
 
-    <section class="section">
-      <h2>MVP vs. Long-Term Engine</h2>
-      <div class="card">
-        <h3>MVP focus</h3>
-        <ul class="muted">
-          <li>CLI validator for manifests and metadata.</li>
-          <li>Checksum + provenance summary per run.</li>
-          <li>Failure codes that map directly to NTS requirements.</li>
-        </ul>
-
-        <h3>Roadmap</h3>
-        <ul class="muted">
-          <li>Multi-model orchestration support and audit logs.</li>
-          <li>Attestation independence checks between Builder and Reviewer roles.</li>
-          <li>Integration with DOI and archive pipelines (Zenodo, OSF, etc.).</li>
-          <li>CRI-CORE Enterprise for regulated environments.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Repository</h2>
+  <!-- ===== CORE CAPABILITIES ===== -->
+  <section>
+    <h2>Core Capabilities</h2>
+    <div class="card">
       <ul class="muted">
-        <li>
-          <strong>GitHub:</strong>
-          <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">
-            Waveframe-Labs/CRI-CORE
-          </a>
-        </li>
+        <li>Validate AWO manifests for completeness and structural correctness.</li>
+        <li>Verify required metadata headers across all artifacts.</li>
+        <li>Compute checksums and provenance fingerprints for critical files.</li>
+        <li>Record attestation events as tamper-resistant logs.</li>
+        <li>Emit machine-readable compliance reports per execution.</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- ===== MVP VS ROADMAP ===== -->
+  <section>
+    <h2>MVP vs. Long-Term Engine</h2>
 
+    <div class="card">
+      <h3>MVP Focus</h3>
+      <ul class="muted">
+        <li>CLI-based validator for manifests and metadata.</li>
+        <li>Checksum and provenance summary per run.</li>
+        <li>Deterministic failure codes mapped to NTS requirements.</li>
+      </ul>
+
+      <h3>Roadmap</h3>
+      <ul class="muted">
+        <li>Attestation independence checks (Builder vs Reviewer).</li>
+        <li>Multi-model orchestration audit logs.</li>
+        <li>Integration with archival pipelines (Zenodo, OSF).</li>
+        <li>CRI-CORE Enterprise for regulated environments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== REPOSITORY ===== -->
+  <section>
+    <h2>Repository</h2>
+    <ul class="muted">
+      <li>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">
+          Waveframe-Labs/CRI-CORE
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
   <footer>
     <span>Text &amp; media: CC BY-NC-SA 4.0</span>
     <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs.</span>
+    <span>· © 2025 Waveframe Labs</span>
   </footer>
 
 </div>
