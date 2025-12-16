@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Publications · Waveframe Labs</title>
 
-  <meta name="description" content="Canonical publications and archived research artifacts from Waveframe Labs. All works are DOI-backed and mirrored here for direct access.">
+  <title>Case Studies · Waveframe Labs</title>
+
+  <meta name="description" content="Applied research case studies demonstrating Aurora-aligned governance, methodology, and enforcement in practice.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
-  <link rel="canonical" href="https://waveframelabs.org/publications.html" />
+  <link rel="canonical" href="https://waveframelabs.org/case-studies.html" />
 
   <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
   <style>
@@ -29,7 +30,7 @@
     .hdr{
       padding:22px 18px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:var(--card);
       margin-bottom:22px;
     }
@@ -49,13 +50,15 @@
       margin:16px 0 22px;
       padding:22px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
     }
 
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h3{margin:.2rem 0 .45rem}
+    h2{margin-top:0}
+    h3{margin-bottom:.25rem}
     p{line-height:1.65}
+
     .kicker{
       color:var(--accent);
       font-size:.8rem;
@@ -64,27 +67,15 @@
       letter-spacing:.6px;
     }
 
-    .grid{display:grid;gap:14px;margin-top:16px}
-    @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
-
     .card{
       background:var(--card);
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       padding:18px;
-      min-height:170px;
+      margin-top:14px;
     }
 
     .muted{color:var(--muted)}
-
-    .cta{
-      display:inline-block;
-      margin-top:.6rem;
-      padding:.55rem .9rem;
-      border-radius:12px;
-      border:1px solid var(--ink)
-    }
-    .cta:hover{background:var(--ink);color:var(--bg)}
 
     footer{
       margin-top:40px;
@@ -104,7 +95,10 @@
       <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
       <div class="title">Waveframe Labs</div>
     </div>
-    <div class="hdr-sub">Canonical publications and archived research artifacts.</div>
+
+    <div class="hdr-sub">
+      Applied research and institutional demonstrations.
+    </div>
 
     <nav class="topnav">
       <a href="index.html">Home</a>
@@ -114,59 +108,81 @@
       <a href="awo.html">AWO</a>
       <a href="cri-core.html">CRI-CORE</a>
       <a href="tools.html">Tools</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a class="active-link" href="publications.html">Publications</a>
+      <a class="active-link" href="case-studies.html">Case Studies</a>
+      <a href="publications.html">Publications</a>
     </nav>
   </header>
 
-  <main>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <span class="kicker">Layer 4 — Demonstration</span>
+    <h1>Case Studies</h1>
 
-    <section class="section">
-      <span class="kicker-pill">Layer 4 — Case Studies</span>
-      <h2>Purpose of case studies</h2>
-      <p>
-        Case studies are not side projects; they are proofs that the Aurora stack can support serious research.
-        Each project is expected to conform to ARI, implement AWO, pass CRI-CORE validation, and document
-        neurotransparency in practice.
+    <p class="muted">
+      Case studies demonstrate how the Aurora hierarchy functions in practice,
+      applying governance, methodology, and enforcement to real research domains.
+    </p>
+  </section>
+
+  <!-- ===== OVERVIEW ===== -->
+  <section>
+    <h2>Purpose of Case Studies</h2>
+    <p>
+      Case studies serve as proofs of execution. They are not theoretical exercises,
+      but applied research programs conducted under full Aurora constraints.
+    </p>
+    <p class="muted">
+      Each case study demonstrates traceability, reproducibility, and governance
+      compliance end-to-end.
+    </p>
+  </section>
+
+  <!-- ===== CASE STUDIES ===== -->
+  <section>
+    <h2>Active Case Studies</h2>
+
+    <div class="card">
+      <h3>Waveframe v4.0 — Observer-Driven Cosmology</h3>
+      <p class="muted">
+        A cosmological research program exploring observer-dependent entropy,
+        information-first spacetime emergence, and falsifiable predictions
+        under Aurora-aligned governance.
       </p>
-    </section>
+      <p class="muted">
+        Demonstrates: long-horizon theory development, audit-first documentation,
+        and AI–human collaboration at scale.
+      </p>
+    </div>
 
-    <section class="section">
-      <h2>Current Flagship Projects</h2>
-      <div class="grid">
+    <div class="card">
+      <h3>Societal Health Simulator (SHS)</h3>
+      <p class="muted">
+        A sociotechnical modeling environment examining institutional entropy,
+        disinformation dynamics, and intervention strategies.
+      </p>
+      <p class="muted">
+        Demonstrates: reproducible simulation workflows, parameter traceability,
+        and governance-aligned exploratory modeling.
+      </p>
+    </div>
+  </section>
 
-        <article class="card">
-          <h3>Waveframe v4.0 (Cosmology)</h3>
-          <p class="muted">
-            Entropy–action, observer-aware cosmology built under the AWO + CRI-CORE stack. Demonstrates how
-            speculative theoretical work can still be reproducible and audit-ready.
-          </p>
-          <ul class="muted">
-            <li>Repository: <a href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank">Waveframe-v4.0</a></li>
-          </ul>
-        </article>
+  <!-- ===== RELATIONSHIP TO OTHER LAYERS ===== -->
+  <section>
+    <h2>Relationship to Other Layers</h2>
+    <ul class="muted">
+      <li><strong>Layer 0–1:</strong> Case studies must comply with epistemic and governance rules.</li>
+      <li><strong>Layer 2:</strong> Execution follows AWO workflows.</li>
+      <li><strong>Layer 3:</strong> Enforcement via CRI-CORE tooling.</li>
+      <li><strong>Layer 5:</strong> Tooling supports execution and validation.</li>
+    </ul>
+  </section>
 
-        <article class="card">
-          <h3>Societal Health Simulator</h3>
-          <p class="muted">
-            Streamlit-based simulator for sociotechnical dynamics and policy interventions. Serves as a
-            sociological case study for method-driven research outside traditional institutions.
-          </p>
-          <ul class="muted">
-            <li>Repo: <a href="https://github.com/Waveframe-Labs/Societal-Health-Simulator" target="_blank">Societal-Health-Simulator</a></li>
-            <li>Live demo: <a href="https://wrightsocietalmodel.com" target="_blank">wrightsocietalmodel.com</a></li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-  </main>
-
+  <!-- ===== FOOTER ===== -->
   <footer>
     <span>Text &amp; media: CC BY-NC-SA 4.0</span>
     <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs.</span>
+    <span>· © 2025 Waveframe Labs</span>
   </footer>
 
 </div>
