@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Waveframe Labs</title>
 
-  <meta name="description" content="Waveframe Labs — independent research institute under the Aurora Research Initiative. Focus: reproducible AI–human workflows, governance systems, CRI-CORE, AWO, and applied research.">
+  <meta name="description" content="Waveframe Labs — independent research institute under the Aurora Research Initiative. Focus: reproducible AI–human workflows, governance systems, and applied research.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
 
-  <!-- social -->
   <link rel="canonical" href="https://waveframelabs.org" />
   <meta property="og:title" content="Waveframe Labs" />
   <meta property="og:description" content="Independent institute for AI–human reproducibility and epistemic governance." />
@@ -30,7 +29,6 @@
 
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
 
-    /* === HEADER (MATCHES SUBPAGE STYLE) === */
     .hdr{
       padding:22px 18px;
       border:1px solid var(--edge);
@@ -38,40 +36,18 @@
       background:var(--card);
       margin-bottom:22px;
     }
-    .hdr-top{
-      display:flex;align-items:center;gap:12px;margin-bottom:4px;
-    }
-    .hdr-top .title{
-      font-size:clamp(1.45rem,2.8vw,2rem);
-      font-weight:700;
-    }
-    .hdr-sub{
-      color:var(--muted);
-      font-size:1rem;
-      margin-bottom:12px;
-    }
-    .topnav{
-      display:flex;flex-wrap:wrap;gap:18px;
-      font-size:1.05rem;
-    }
-    .topnav a{
-      border:none;
-      padding:0;
-    }
-    .active-link{
-      color:var(--accent);
-      font-weight:600;
-      border-bottom:1px solid var(--accent);
-    }
+    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
+    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
+    .active-link{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
 
-    /* === HERO BLOCKS === */
     .hero{
       margin:16px 0 22px;
       padding:22px;
       border:1px solid var(--edge);
       border-radius:var(--rad);
       background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-      animation: fadeIn 1.2s ease-out;
     }
     .ari-hero{
       border-color:var(--accent);
@@ -109,19 +85,11 @@
     }
     .cta:hover{background:var(--ink);color:var(--bg)}
 
-    .two{display:grid;gap:18px}
-    @media(min-width:820px){.two{grid-template-columns:1.3fr .7fr}}
-
     footer{
       margin-top:40px;
       color:var(--muted);
       font-size:.95rem;
       display:flex;flex-wrap:wrap;gap:6px;align-items:center
-    }
-
-    @keyframes fadeIn{
-      0%{opacity:0;transform:translateY(10px)}
-      100%{opacity:1;transform:translateY(0)}
     }
   </style>
 </head>
@@ -129,205 +97,76 @@
 <body>
 <div class="wrap">
 
-  <!-- ======= UNIFIED INSTITUTIONAL HEADER ======= -->
-  <header class="hdr">
-    <div class="hdr-top">
-      <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-      <div class="title">Waveframe Labs</div>
-    </div>
-    <div class="hdr-sub">Independent institute for AI–human reproducibility and epistemic governance.</div>
+<header class="hdr">
+  <div class="hdr-top">
+    <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
+    <div class="title">Waveframe Labs</div>
+  </div>
+  <div class="hdr-sub">Independent institute for AI–human reproducibility and epistemic governance.</div>
 
-    <nav class="topnav">
-      <a class="active-link" href="index.html">Home</a>
-      <a href="hierarchy.html">Aurora Hierarchy</a>
-      <a href="doctrine.html">Neurotransparency Doctrine</a>
-      <a href="ari.html">ARI</a>
-      <a href="awo.html">AWO</a>
-      <a href="cri-core.html">CRI-CORE</a>
-      <a href="tools.html">Tools</a>
-      <a href="case-studies.html">Case Studies</a>
-    </nav>
-  </header>
+  <nav class="topnav">
+    <a class="active-link" href="index.html">Home</a>
+    <a href="hierarchy.html">Aurora Hierarchy</a>
+    <a href="doctrine.html">Neurotransparency Doctrine</a>
+    <a href="ari.html">ARI</a>
+    <a href="awo.html">AWO</a>
+    <a href="cri-core.html">CRI-CORE</a>
+    <a href="tools.html">Tools</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="publications.html">Publications</a>
+  </nav>
+</header>
 
-  <!-- === ARI HERO === -->
-  <section class="hero ari-hero" id="ari">
-    <div class="kicker">Institutional Framework</div>
-    <h1>The Aurora Research Initiative (ARI)</h1>
+<section class="hero ari-hero">
+  <div class="kicker">Institutional Framework</div>
+  <h1>The Aurora Research Initiative (ARI)</h1>
+  <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17743096.svg" alt="ARI DOI">
+  </a>
+  <p class="muted">
+    ARI defines the governance, epistemic rules, and methodological law for all scientific AI conducted under the Aurora ecosystem.
+  </p>
+  <a class="cta" href="ari.html">Learn More</a>
+</section>
 
-    <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">
-      <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17743096.svg" alt="ARI DOI">
-    </a>
+<section class="hero">
+  <div class="kicker">Organization</div>
+  <h1>The operational hub for the Aurora ecosystem.</h1>
+  <p class="muted">
+    Waveframe Labs develops reproducible AI–human workflows, governance systems, and deterministic enforcement engines.
+  </p>
+  <a class="cta" href="publications.html">View Publications</a>
+</section>
 
-    <p class="muted">
-      ARI defines the governance, epistemic rules, and methodological law for all scientific AI conducted under the Aurora ecosystem.
-    </p>
+<section>
+  <div class="kicker">Core Pillars</div>
+  <div class="grid">
+    <article class="card">
+      <h3>Neurotransparency Doctrine</h3>
+      <p class="muted">Epistemic foundation for AI–human research.</p>
+      <a class="cta" href="doctrine.html">Read Doctrine</a>
+    </article>
 
-    <a class="cta" href="ari.html">Learn More</a>
-  </section>
+    <article class="card">
+      <h3>Aurora Workflow Orchestration</h3>
+      <p class="muted">Audit-first scientific methodology.</p>
+      <a class="cta" href="awo.html">Overview</a>
+    </article>
 
-  <!-- === MINI HIERARCHY === -->
-  <section class="hero">
-    <div class="kicker">Aurora Architecture</div>
-    <h1>The Aurora Hierarchy</h1>
-    <p class="muted">
-      The six-layer institutional structure: epistemic foundation → governance → methodology → enforcement → case studies → tooling.
-    </p>
-    <a class="cta" href="hierarchy.html">Hierarchy Overview</a>
-  </section>
+    <article class="card">
+      <h3>Active Research</h3>
+      <p class="muted">Waveframe v4.0 and the Societal Health Simulator.</p>
+      <a class="cta" href="case-studies.html">Explore Research</a>
+    </article>
+  </div>
+</section>
 
-  <!-- === ORG HERO === -->
-  <section class="hero">
-    <div class="kicker">Organization</div>
-    <h1>The operational hub for the Aurora ecosystem.</h1>
-
-    <p class="muted">
-      Waveframe Labs develops reproducible AI–human workflows, governance systems, and deterministic enforcement engines.
-    </p>
-
-    <img src="waveframe-logo-banner-mark.png" style="max-width:320px;margin:18px 0;border-radius:10px;display:block;" />
-
-    <div class="two">
-      <div>
-        <p>
-          We publish the <strong>Aurora Workflow Orchestration</strong> (AWO),
-          maintain the <strong>CRI-CORE</strong> enforcement layer,
-          and drive frontier research including <em>Waveframe v4.0</em> and the
-          <em>Societal Health Simulator</em>.
-        </p>
-
-        <ul class="muted" style="line-height:1.7">
-          <li><strong>Method-first:</strong> AWO defines roles, manifests & falsifiability.</li>
-          <li><strong>Deterministic tooling:</strong> CRI-CORE ensures verifiable provenance.</li>
-          <li><strong>Open artifacts:</strong> Text CC BY-NC-SA 4.0 · Code Apache-2.0.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Quick Links</h3>
-        <p class="muted">Primary institutional references.</p>
-        <a class="cta" href="ari.html">ARI</a>
-        <a class="cta" href="hierarchy.html">Hierarchy</a>
-        <a class="cta" href="#projects">Projects</a>
-        <a class="cta" href=".github">Org Profile</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- === CORE PILLARS === -->
-  <section id="projects">
-    <div class="kicker">Core Pillars</div>
-
-    <div class="grid">
-
-      <article class="card">
-        <h3>Neurotransparency Doctrine</h3>
-        <p class="muted">Epistemic foundations: why cognitive integrity is required and how failures propagate.</p>
-        <a class="cta" href="doctrine.html">Read Doctrine</a>
-        <span class="muted" style="font-size:.85rem;">DOI pending</span>
-      </article>
-
-      <article class="card">
-        <h3>Neurotransparency Specification</h3>
-        <p class="muted">The enforceable compliance standard for verifiable AI–human collaboration.</p>
-        <a class="cta" href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">Repository</a>
-        <div style="margin-top:8px;">
-          <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17809676.svg" alt="NTS DOI">
-        </div>
-      </article>
-
-      <article class="card">
-        <h3>Aurora Workflow Orchestration (AWO)</h3>
-        <p class="muted">Role-structured, audit-first scientific workflows.</p>
-        <a class="cta" href="awo.html">Overview</a>
-        <a class="cta" href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration" target="_blank">Repository</a>
-      </article>
-
-      <article class="card">
-        <h3>CRI-CORE</h3>
-        <p class="muted">Deterministic enforcement and run-level provenance.</p>
-        <a class="cta" href="cri-core.html">Overview</a>
-        <a class="cta" href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">Repository</a>
-      </article>
-
-      <article class="card">
-        <h3>CRI-CORE Enterprise</h3>
-        <p class="muted">Commercial governance tooling for regulated environments.</p>
-        <span class="cta" style="opacity:.55;cursor:not-allowed;">Roadmap</span>
-      </article>
-
-      <article class="card">
-        <h3>Aurora Hierarchy</h3>
-        <p class="muted">The complete six-layer institutional architecture.</p>
-        <a class="cta" href="hierarchy.html">Overview</a>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- === ACTIVE RESEARCH === -->
-  <section style="margin-top:22px">
-    <div class="kicker">Active Research</div>
-
-    <div class="grid">
-
-      <article class="card">
-        <h3>Waveframe v4.0</h3>
-        <p class="muted">Entropy–action, observer-dependent cosmology with falsifiable predictions.</p>
-        <a class="cta" href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank">Repository</a>
-      </article>
-
-      <article class="card">
-        <h3>Societal Health Simulator</h3>
-        <p class="muted">Interactive sociotechnical modeling environment.</p>
-        <a class="cta" href="https://github.com/Waveframe-Labs/Societal-Health-Simulator" target="_blank">Repository</a>
-        <a class="cta" href="https://wrightsocietalmodel.com" target="_blank">Live Demo</a>
-      </article>
-
-      <article class="card">
-        <h3>Org Resources</h3>
-        <p class="muted">Governance logs, templates, schemas, metadata policies.</p>
-        <a class="cta" href="https://github.com/Waveframe-Labs/.github" target="_blank">Org Profile</a>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- === UPDATES === -->
-  <section id="updates" style="margin-top:22px">
-    <div class="kicker">News & Updates</div>
-    <div class="card">
-      <p class="muted">Hand-edited snapshot. Full history in <code>meta/SITE_LOG.md</code>.</p>
-      <ul>
-        <li><strong>2025-11-28:</strong> Added hierarchy card + doctrine/spec integration.</li>
-        <li><strong>2025-11-27:</strong> ARI released with DOI.</li>
-        <li><strong>2025-10-18:</strong> Initial Waveframe Labs launch.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- === FOUNDER === -->
-  <section id="founder" style="margin-top:22px">
-    <div class="kicker">Founder</div>
-    <div class="card">
-      <p>
-        I’m Shawn C. Wright, an independent researcher developing deterministic AI–human workflows,
-        reproducible scientific tooling, and epistemic governance systems. My work spans cosmology,
-        systems science, and workflow design — all published openly and reproducibly.
-        Contact: <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a> ·
-        ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">0009-0006-6043-9295</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- === FOOTER === -->
-  <footer>
-    <img src="waveframe-logo-mark.png" width="20" height="20" />
-    <span style="color:var(--accent);font-weight:600;">Waveframe Labs</span>
-    <span style="color:var(--muted);margin:0 6px;">· Operating under the Aurora Research Initiative ·</span>
-    <span id="year"></span>
-    <span>· Text CC BY-NC-SA 4.0 · Code Apache-2.0 ·</span>
-    <a href="mailto:swright@waveframelabs.org">Contact</a>
-  </footer>
+<footer>
+  <img src="waveframe-logo-mark.png" width="20" height="20" />
+  <span style="color:var(--accent);font-weight:600;">Waveframe Labs</span>
+  <span>· Operating under the Aurora Research Initiative ·</span>
+  <span id="year"></span>
+</footer>
 
 </div>
 
