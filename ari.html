@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Publications · Waveframe Labs</title>
 
-  <meta name="description" content="Canonical publications and archived research artifacts from Waveframe Labs. All works are DOI-backed and mirrored here for direct access.">
+  <title>ARI · Waveframe Labs</title>
+
+  <meta name="description" content="The Aurora Research Initiative (ARI) defines the institutional governance, epistemic authority, and methodological law for all research conducted under the Aurora ecosystem.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
-  <link rel="canonical" href="https://waveframelabs.org/publications.html" />
+  <link rel="canonical" href="https://waveframelabs.org/ari.html" />
 
   <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
   <style>
@@ -29,7 +30,7 @@
     .hdr{
       padding:22px 18px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:var(--card);
       margin-bottom:22px;
     }
@@ -49,13 +50,14 @@
       margin:16px 0 22px;
       padding:22px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
     }
 
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h3{margin:.2rem 0 .45rem}
+    h2{margin-top:0}
     p{line-height:1.65}
+
     .kicker{
       color:var(--accent);
       font-size:.8rem;
@@ -64,27 +66,15 @@
       letter-spacing:.6px;
     }
 
-    .grid{display:grid;gap:14px;margin-top:16px}
-    @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
-
     .card{
       background:var(--card);
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       padding:18px;
-      min-height:170px;
+      margin-top:14px;
     }
 
     .muted{color:var(--muted)}
-
-    .cta{
-      display:inline-block;
-      margin-top:.6rem;
-      padding:.55rem .9rem;
-      border-radius:12px;
-      border:1px solid var(--ink)
-    }
-    .cta:hover{background:var(--ink);color:var(--bg)}
 
     footer{
       margin-top:40px;
@@ -104,7 +94,10 @@
       <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
       <div class="title">Waveframe Labs</div>
     </div>
-    <div class="hdr-sub">Canonical publications and archived research artifacts.</div>
+
+    <div class="hdr-sub">
+      Institutional governance and epistemic authority.
+    </div>
 
     <nav class="topnav">
       <a href="index.html">Home</a>
@@ -116,74 +109,82 @@
       <a href="tools.html">Tools</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="publications.html">Publications</a>
-   </nav>
+    </nav>
   </header>
 
-  <main>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <span class="kicker">Layer 1 — Governance</span>
+    <h1>The Aurora Research Initiative (ARI)</h1>
 
-    <section class="section">
-      <span class="kicker-pill">Layer 1 — Governance</span>
-      <h2>What is ARI?</h2>
-      <p>
-        The Aurora Research Initiative is the institutional layer that decides how scientific AI must be conducted
-        across the Aurora ecosystem. ARI defines the charter, scope, and authority under which Waveframe Labs and all
-        derivative projects operate.
-      </p>
-      <p class="muted">
-        In practice, ARI is the “who decides” layer: it establishes the rules that AWO must implement and that
-        CRI-CORE must enforce.
-      </p>
-    </section>
+    <p class="muted">
+      ARI is the institutional layer that determines how scientific AI must be conducted across the Aurora ecosystem.
+      It defines authority, scope, and binding governance for all derivative projects.
+    </p>
+  </section>
 
-    <section class="section">
-      <h2>Scope & Responsibilities</h2>
-      <div class="card">
-        <h3>Core responsibilities</h3>
-        <ul class="muted">
-          <li>Define institutional mission, values, and epistemic commitments.</li>
-          <li>Ratify the Neurotransparency Doctrine and Specification as binding standards.</li>
-          <li>Approve workflow methods (AWO) and enforcement engines (CRI-CORE).</li>
-          <li>Set requirements for metadata, logging, and attestation across all projects.</li>
-          <li>Oversee exceptions, overrides, and governance logs when policies are relaxed.</li>
-        </ul>
-      </div>
-    </section>
+  <!-- ===== WHAT IS ARI ===== -->
+  <section>
+    <h2>What is ARI?</h2>
+    <p>
+      The Aurora Research Initiative establishes the rules under which Waveframe Labs and all associated research
+      operate. It is responsible for defining epistemic commitments, institutional boundaries, and governance authority.
+    </p>
+    <p class="muted">
+      In practical terms, ARI is the “who decides” layer: it determines which standards apply, how exceptions are handled,
+      and what constitutes valid scientific conduct within the Aurora ecosystem.
+    </p>
+  </section>
 
-    <section class="section">
-      <h2>Relationship to Other Layers</h2>
-      <p class="muted">
-        ARI sits between the epistemic foundation (Neurotransparency) and the operational layers:
-      </p>
+  <!-- ===== RESPONSIBILITIES ===== -->
+  <section>
+    <h2>Scope & Responsibilities</h2>
+    <div class="card">
       <ul class="muted">
-        <li><strong>Doctrine & Spec (Layer 0):</strong> define why cognitive integrity is required and what must be enforced.</li>
-        <li><strong>AWO (Layer 2):</strong> implements ARI rules as concrete workflow procedures and artifacts.</li>
-        <li><strong>CRI-CORE (Layer 3):</strong> executes ARI policy mechanically as validators, logs, and provenance.</li>
-        <li><strong>Case Studies (Layer 4):</strong> demonstrate ARI-aligned research in practice.</li>
+        <li>Define institutional mission, scope, and epistemic commitments.</li>
+        <li>Ratify the Neurotransparency Doctrine and Specification as binding standards.</li>
+        <li>Approve workflow methodologies (AWO) and enforcement mechanisms (CRI-CORE).</li>
+        <li>Set requirements for metadata, provenance, logging, and attestation.</li>
+        <li>Oversee governance exceptions and institutional overrides.</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>Where to Read the ARI Charter</h2>
-      <ul class="muted">
-        <li>
-          <strong>Zenodo record:</strong>
-          <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">10.5281/zenodo.17743096</a>
-        </li>
-        <li>
-          <strong>GitHub repository:</strong>
-          <a href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">
-            Waveframe-Labs/Aurora-Research-Initiative
-          </a>
-        </li>
-      </ul>
-    </section>
+  <!-- ===== RELATIONSHIPS ===== -->
+  <section>
+    <h2>Relationship to Other Layers</h2>
+    <ul class="muted">
+      <li><strong>Layer 0 — Neurotransparency:</strong> Defines epistemic necessity and cognitive integrity.</li>
+      <li><strong>Layer 2 — AWO:</strong> Implements ARI policy as operational workflows.</li>
+      <li><strong>Layer 3 — CRI-CORE:</strong> Enforces ARI rules mechanically.</li>
+      <li><strong>Layer 4 — Case Studies:</strong> Demonstrate ARI-aligned research in practice.</li>
+    </ul>
+  </section>
 
-  </main>
+  <!-- ===== REFERENCES ===== -->
+  <section>
+    <h2>Where to Read the ARI Charter</h2>
+    <ul class="muted">
+      <li>
+        <strong>Zenodo (canonical archive):</strong>
+        <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">
+          10.5281/zenodo.17743096
+        </a>
+      </li>
+      <li>
+        <strong>GitHub repository:</strong>
+        <a href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">
+          Waveframe-Labs/Aurora-Research-Initiative
+        </a>
+      </li>
+    </ul>
+  </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <span>Text &amp; media: CC BY-NC-SA 4.0</span>
     <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs.</span>
+    <span>· © 2025 Waveframe Labs</span>
   </footer>
 
 </div>
