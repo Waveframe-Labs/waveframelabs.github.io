@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Publications · Waveframe Labs</title>
 
-  <meta name="description" content="Canonical publications and archived research artifacts from Waveframe Labs. All works are DOI-backed and mirrored here for direct access.">
+  <title>Aurora Hierarchy · Waveframe Labs</title>
+
+  <meta name="description" content="The Aurora Hierarchy defines the six-layer institutional architecture governing epistemics, governance, methodology, enforcement, case studies, and tooling within the Aurora ecosystem.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
-  <link rel="canonical" href="https://waveframelabs.org/publications.html" />
+  <link rel="canonical" href="https://waveframelabs.org/hierarchy.html" />
 
   <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
   <style>
@@ -29,7 +30,7 @@
     .hdr{
       padding:22px 18px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:var(--card);
       margin-bottom:22px;
     }
@@ -49,13 +50,15 @@
       margin:16px 0 22px;
       padding:22px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
     }
 
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h3{margin:.2rem 0 .45rem}
+    h2{margin-top:0}
+    h3{margin-bottom:.25rem}
     p{line-height:1.65}
+
     .kicker{
       color:var(--accent);
       font-size:.8rem;
@@ -64,27 +67,15 @@
       letter-spacing:.6px;
     }
 
-    .grid{display:grid;gap:14px;margin-top:16px}
-    @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
-
     .card{
       background:var(--card);
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       padding:18px;
-      min-height:170px;
+      margin-top:14px;
     }
 
     .muted{color:var(--muted)}
-
-    .cta{
-      display:inline-block;
-      margin-top:.6rem;
-      padding:.55rem .9rem;
-      border-radius:12px;
-      border:1px solid var(--ink)
-    }
-    .cta:hover{background:var(--ink);color:var(--bg)}
 
     footer{
       margin-top:40px;
@@ -104,118 +95,114 @@
       <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
       <div class="title">Waveframe Labs</div>
     </div>
-    <div class="hdr-sub">Canonical publications and archived research artifacts.</div>
+
+    <div class="hdr-sub">
+      The six-layer Aurora institutional architecture.
+    </div>
 
     <nav class="topnav">
       <a href="index.html">Home</a>
-      <a href="hierarchy.html">Aurora Hierarchy</a>
+      <a class="active-link" href="hierarchy.html">Aurora Hierarchy</a>
       <a href="doctrine.html">Neurotransparency Doctrine</a>
       <a href="ari.html">ARI</a>
       <a href="awo.html">AWO</a>
       <a href="cri-core.html">CRI-CORE</a>
       <a href="tools.html">Tools</a>
       <a href="case-studies.html">Case Studies</a>
-      <a class="active-link" href="publications.html">Publications</a>
+      <a href="publications.html">Publications</a>
     </nav>
   </header>
 
-  <main>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <span class="kicker">Institutional Architecture</span>
+    <h1>The Aurora Hierarchy</h1>
 
-    <section class="section">
-      <span class="kicker-pill">Overview</span>
-      <h2>Why a hierarchy?</h2>
-      <p>
-        The Aurora Hierarchy prevents “method soup” by separating philosophy, governance, workflow logic,
-        enforcement, examples, and tooling into distinct layers. Each layer has a clear purpose and cannot
-        silently absorb responsibilities from another.
-      </p>
+    <p class="muted">
+      The Aurora Hierarchy defines how epistemic principles, governance authority,
+      methodology, enforcement, and research artifacts are layered and constrained
+      within the Aurora ecosystem.
+    </p>
+  </section>
+
+  <!-- ===== OVERVIEW ===== -->
+  <section>
+    <h2>Overview</h2>
+    <p>
+      Each layer in the Aurora Hierarchy has a distinct responsibility and authority.
+      Higher layers constrain lower layers; lower layers may not override higher ones.
+    </p>
+    <p class="muted">
+      This separation prevents governance drift, epistemic ambiguity, and enforcement collapse.
+    </p>
+  </section>
+
+  <!-- ===== LAYERS ===== -->
+  <section>
+    <h2>The Six Layers</h2>
+
+    <div class="card">
+      <h3>Layer 0 — Epistemic Foundation</h3>
       <p class="muted">
-        This page summarizes how the layers stack and where each document or repository fits.
+        Neurotransparency Doctrine and Specification define why cognitive provenance is required
+        and what must be traceable in AI–human research.
       </p>
-    </section>
+    </div>
 
-    <section class="section">
-      <h2>Layers at a Glance</h2>
-      <div class="grid">
+    <div class="card">
+      <h3>Layer 1 — Institutional Governance</h3>
+      <p class="muted">
+        The Aurora Research Initiative (ARI) establishes authority, scope, and binding rules.
+      </p>
+    </div>
 
-        <article class="card">
-          <h3>Layer 0A — Neurotransparency Doctrine</h3>
-          <p class="muted">
-            Philosophical and justificatory foundation. Explains why cognitive integrity is required and the
-            failure modes it is meant to prevent.
-          </p>
-        </article>
+    <div class="card">
+      <h3>Layer 2 — Methodology</h3>
+      <p class="muted">
+        Aurora Workflow Orchestration (AWO) defines how compliant research is conducted.
+      </p>
+    </div>
 
-        <article class="card">
-          <h3>Layer 0B — Neurotransparency Specification (NTS)</h3>
-          <p class="muted">
-            Normative compliance standard. Defines concrete requirements for logs, metadata, role separation,
-            attestations, and override reporting.
-          </p>
-        </article>
+    <div class="card">
+      <h3>Layer 3 — Enforcement</h3>
+      <p class="muted">
+        CRI-CORE enforces governance and methodology mechanically.
+      </p>
+    </div>
 
-        <article class="card">
-          <h3>Layer 1 — Aurora Research Initiative (ARI)</h3>
-          <p class="muted">
-            Institutional authority. Ratifies the doctrine, adopts NTS as binding, and governs how AWO and
-            CRI-CORE are allowed to operate.
-          </p>
-        </article>
+    <div class="card">
+      <h3>Layer 4 — Case Studies</h3>
+      <p class="muted">
+        Applied research demonstrating the hierarchy in practice (e.g., Waveframe v4.0).
+      </p>
+    </div>
 
-        <article class="card">
-          <h3>Layer 2 — Aurora Workflow Orchestration (AWO)</h3>
-          <p class="muted">
-            Method specification. Describes roles, manifests, artifacts, approval flows, and how runs must be
-            structured to satisfy ARI + NTS.
-          </p>
-        </article>
+    <div class="card">
+      <h3>Layer 5 — Tooling & Infrastructure</h3>
+      <p class="muted">
+        Supporting tools, pipelines, and interfaces that enable reproducible execution.
+      </p>
+    </div>
+  </section>
 
-        <article class="card">
-          <h3>Layer 3 — CRI-CORE</h3>
-          <p class="muted">
-            Enforcement engine. Implements validators, provenance capture, and tamper-resistant logs that turn
-            AWO and NTS into executable rules.
-          </p>
-        </article>
+  <!-- ===== WHY THIS MATTERS ===== -->
+  <section>
+    <h2>Why the Hierarchy Matters</h2>
+    <p class="muted">
+      Without strict layering, research systems collapse into ad hoc practices where
+      enforcement, methodology, and epistemics blur together.
+    </p>
+    <p class="muted">
+      The Aurora Hierarchy ensures that every claim can be traced back to explicit
+      epistemic and institutional commitments.
+    </p>
+  </section>
 
-        <article class="card">
-          <h3>Layer 4 — Case Studies</h3>
-          <p class="muted">
-            Applied research built under the hierarchy, such as Waveframe v4.0 and the Societal Health
-            Simulator. These demonstrate the full stack in practice.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Layer 5 — Tools & Infrastructure</h3>
-          <p class="muted">
-            Supporting tools including Waveframe PDF Forge, Stamp, metadata pipelines, validators, and
-            publishing integrations (GitHub, Zenodo, OSF).
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>How Layers Depend on Each Other</h2>
-      <div class="card">
-        <ul class="muted">
-          <li><strong>Doctrine → Spec:</strong> Doctrine explains <em>why</em>; Spec codifies <em>what is required</em>.</li>
-          <li><strong>Spec → ARI:</strong> ARI adopts NTS as a governing standard and sets institutional scope.</li>
-          <li><strong>ARI → AWO:</strong> AWO turns ARI rules into step-by-step workflow logic.</li>
-          <li><strong>AWO → CRI-CORE:</strong> CRI-CORE enforces AWO manifests and metadata mechanically.</li>
-          <li><strong>All → Case Studies:</strong> Case studies must comply with the entire hierarchy.</li>
-        </ul>
-      </div>
-    </section>
-
-  </main>
-
+  <!-- ===== FOOTER ===== -->
   <footer>
     <span>Text &amp; media: CC BY-NC-SA 4.0</span>
     <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs.</span>
+    <span>· © 2025 Waveframe Labs</span>
   </footer>
 
 </div>
