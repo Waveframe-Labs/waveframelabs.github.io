@@ -5,13 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Waveframe Labs</title>
 
-  <meta name="description" content="Waveframe Labs — independent research institute under the Aurora Research Initiative. Focus: reproducible AI–human workflows, governance systems, and applied research.">
+  <meta name="description" content="Waveframe Labs — independent research institute under the Aurora Research Initiative. Focus: reproducible AI–human workflows, epistemic governance, and applied research.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
-
   <link rel="canonical" href="https://waveframelabs.org" />
-  <meta property="og:title" content="Waveframe Labs" />
-  <meta property="og:description" content="Independent institute for AI–human reproducibility and epistemic governance." />
-  <meta property="og:type" content="website" />
 
   <style>
     :root{
@@ -32,31 +28,34 @@
     .hdr{
       padding:22px 18px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:var(--card);
       margin-bottom:22px;
     }
     .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
     .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
     .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+
     .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .active-link{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
+    .topnav a{border:none}
+    .active-link{
+      color:var(--accent);
+      font-weight:600;
+      border-bottom:1px solid var(--accent);
+    }
 
     .hero{
       margin:16px 0 22px;
       padding:22px;
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-    }
-    .ari-hero{
-      border-color:var(--accent);
-      background:linear-gradient(180deg,rgba(255,122,24,.22),rgba(0,0,0,0));
     }
 
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h3{margin:.2rem 0 .45rem}
+    h2{margin-top:0}
     p{line-height:1.65}
+
     .kicker{
       color:var(--accent);
       font-size:.8rem;
@@ -71,19 +70,12 @@
     .card{
       background:var(--card);
       border:1px solid var(--edge);
-      border-radius:var(--rad);
+      border-radius:18px;
       padding:18px;
-      min-height:170px;
     }
+
     .muted{color:var(--muted)}
-    .cta{
-      display:inline-block;
-      margin-top:.6rem;
-      padding:.55rem .9rem;
-      border-radius:12px;
-      border:1px solid var(--ink)
-    }
-    .cta:hover{background:var(--ink);color:var(--bg)}
+    .badge-row img{margin-top:8px}
 
     footer{
       margin-top:40px;
@@ -102,7 +94,9 @@
     <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
     <div class="title">Waveframe Labs</div>
   </div>
-  <div class="hdr-sub">Independent institute for AI–human reproducibility and epistemic governance.</div>
+  <div class="hdr-sub">
+    Independent institute for AI–human reproducibility and epistemic governance.
+  </div>
 
   <nav class="topnav">
     <a class="active-link" href="index.html">Home</a>
@@ -118,61 +112,61 @@
   </nav>
 </header>
 
-<section class="hero ari-hero">
-  <div class="kicker">Institutional Framework</div>
-  <h1>The Aurora Research Initiative (ARI)</h1>
-  <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">
-    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17743096.svg" alt="ARI DOI">
-  </a>
-  <p class="muted">
-    ARI defines the governance, epistemic rules, and methodological law for all scientific AI conducted under the Aurora ecosystem.
-  </p>
-  <a class="cta" href="ari.html">Learn More</a>
-</section>
-
 <section class="hero">
-  <div class="kicker">Organization</div>
-  <h1>The operational hub for the Aurora ecosystem.</h1>
+  <span class="kicker">Institutional Framework</span>
+  <h1>The Aurora Research Initiative (ARI)</h1>
   <p class="muted">
-    Waveframe Labs develops reproducible AI–human workflows, governance systems, and deterministic enforcement engines.
+    ARI defines the governance, epistemic rules, and methodological law for all research conducted
+    under the Aurora ecosystem.
   </p>
-  <a class="cta" href="publications.html">View Publications</a>
-</section>
 
-<section>
-  <div class="kicker">Core Pillars</div>
-  <div class="grid">
-    <article class="card">
-      <h3>Neurotransparency Doctrine</h3>
-      <p class="muted">Epistemic foundation for AI–human research.</p>
-      <a class="cta" href="doctrine.html">Read Doctrine</a>
-    </article>
-
-    <article class="card">
-      <h3>Neurotransparency Specification</h3>
-      <p class="muted">Normative disclosure and compliance standard.</p>
-      <a class="cta" href="nts.html">View Specification</a>
-    </article>
-
-    <article class="card">
-      <h3>Aurora Workflow Orchestration</h3>
-      <p class="muted">Audit-first scientific methodology.</p>
-      <a class="cta" href="awo.html">Overview</a>
-    </article>
+  <div class="badge-row">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17743096.svg" alt="ARI DOI">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17809676.svg" alt="NTS DOI">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17957384.svg" alt="NTD DOI">
   </div>
 </section>
 
+<section>
+  <span class="kicker">Core Pillars</span>
+  <div class="grid">
+    <div class="card">
+      <h2>Neurotransparency Doctrine</h2>
+      <p class="muted">Epistemic foundation for AI–human research.</p>
+      <a href="doctrine.html">Read Doctrine</a>
+    </div>
+    <div class="card">
+      <h2>Neurotransparency Specification</h2>
+      <p class="muted">Normative disclosure standard for cognitive legitimacy.</p>
+      <a href="nts.html">Read Specification</a>
+    </div>
+    <div class="card">
+      <h2>Aurora Workflow Orchestration</h2>
+      <p class="muted">Audit-first scientific methodology.</p>
+      <a href="awo.html">View AWO</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="kicker">Updates</span>
+  <h2>Announcements & Updates</h2>
+  <p class="muted">
+    Major releases, governance updates, and research announcements are published here
+    as canonical references.
+  </p>
+  <p class="muted">
+    Community discussion and technical feedback take place via
+    <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub Discussions</a>.
+  </p>
+</section>
+
 <footer>
-  <img src="waveframe-logo-mark.png" width="20" height="20" />
-  <span style="color:var(--accent);font-weight:600;">Waveframe Labs</span>
-  <span>· Operating under the Aurora Research Initiative ·</span>
-  <span id="year"></span>
+  <span>Contact: <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a></span>
+  <span>· ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">0009-0006-6043-9295</a></span>
+  <span>· © 2025 Waveframe Labs</span>
 </footer>
 
 </div>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
