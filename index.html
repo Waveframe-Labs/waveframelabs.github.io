@@ -39,6 +39,7 @@
     .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
     .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
     .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+
     .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
     .topnav a{border:none}
     .active-link{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
@@ -123,10 +124,6 @@
       color:var(--ink);
       border-bottom:1px solid var(--ink);
     }
-    .badge{
-      display:inline-block;
-      line-height:0;
-    }
 
     /* --- updates layout --- */
     .updates-grid{
@@ -168,6 +165,7 @@
     <a href="tools.html">Tools</a>
     <a href="case-studies.html">Case Studies</a>
     <a href="publications.html">Publications</a>
+    <a href="updates.html">Updates</a>
   </nav>
 </header>
 
@@ -176,21 +174,15 @@
   <span class="kicker">Institutional Framework</span>
   <h1>The Aurora Research Initiative (ARI)</h1>
 
-  <!-- DOI + navigation strip -->
   <div class="doi-strip">
-
     <div class="doi-item">
       <div class="doi-links">
         <a class="mini-link" href="ari.html"><strong>ARI</strong> page</a>
         <span class="muted">·</span>
-        <a class="mini-link" href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank" rel="noopener">GitHub</a>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">GitHub</a>
       </div>
-      <a class="badge" href="https://doi.org/10.5281/zenodo.17743096" target="_blank" rel="noopener">
-        <img
-          src="https://img.shields.io/badge/ARI%20DOI-10.5281%2Fzenodo.17743096-0b0c10?style=flat&labelColor=14161b&color=ff7a18"
-          alt="ARI DOI: 10.5281/zenodo.17743096"
-          height="22"
-        />
+      <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">
+        <img src="https://img.shields.io/badge/ARI%20DOI-10.5281%2Fzenodo.17743096-0b0c10?labelColor=14161b&color=ff7a18" height="22" />
       </a>
     </div>
 
@@ -198,14 +190,10 @@
       <div class="doi-links">
         <a class="mini-link" href="nts.html"><strong>NTS</strong> page</a>
         <span class="muted">·</span>
-        <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank" rel="noopener">GitHub</a>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">GitHub</a>
       </div>
-      <a class="badge" href="https://doi.org/10.5281/zenodo.17809676" target="_blank" rel="noopener">
-        <img
-          src="https://img.shields.io/badge/NTS%20DOI-10.5281%2Fzenodo.17809676-0b0c10?style=flat&labelColor=14161b&color=ff7a18"
-          alt="NTS DOI: 10.5281/zenodo.17809676"
-          height="22"
-        />
+      <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">
+        <img src="https://img.shields.io/badge/NTS%20DOI-10.5281%2Fzenodo.17809676-0b0c10?labelColor=14161b&color=ff7a18" height="22" />
       </a>
     </div>
 
@@ -213,17 +201,12 @@
       <div class="doi-links">
         <a class="mini-link" href="doctrine.html"><strong>NTD</strong> page</a>
         <span class="muted">·</span>
-        <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank" rel="noopener">GitHub</a>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">GitHub</a>
       </div>
-      <a class="badge" href="https://doi.org/10.5281/zenodo.17957384" target="_blank" rel="noopener">
-        <img
-          src="https://img.shields.io/badge/NTD%20DOI-10.5281%2Fzenodo.17957384-0b0c10?style=flat&labelColor=14161b&color=ff7a18"
-          alt="NTD DOI: 10.5281/zenodo.17957384"
-          height="22"
-        />
+      <a href="https://doi.org/10.5281/zenodo.17957384" target="_blank">
+        <img src="https://img.shields.io/badge/NTD%20DOI-10.5281%2Fzenodo.17957384-0b0c10?labelColor=14161b&color=ff7a18" height="22" />
       </a>
     </div>
-
   </div>
 
   <p class="muted">
@@ -261,28 +244,14 @@
   </div>
 </section>
 
-<!-- ===== ANNOUNCEMENTS / UPDATES ===== -->
+<!-- ===== UPDATES ===== -->
 <section style="margin-top:32px;">
-  <span class="kicker">Updates</span>
-
-  <div class="updates-grid">
-    <div class="card" style="min-height:auto;">
-      <h3>Announcements & Updates</h3>
-      <p class="muted" style="margin-bottom:.6rem;">
-        Major releases, governance updates, and canonical research announcements will be published here as stable references.
-      </p>
-      <p class="muted" style="margin:0;">
-        (Suggestion: add a lightweight <code>updates.html</code> later and link it here when you’re ready.)
-      </p>
-    </div>
-
-    <div class="card" style="min-height:auto;">
-      <h3>Community</h3>
-      <p class="muted" style="margin-bottom:.6rem;">
-        Discussion and feedback happens through GitHub.
-      </p>
-      <a class="cta" href="https://github.com/orgs/Waveframe-Labs/discussions" target="_blank" rel="noopener">Open Discussions</a>
-    </div>
+  <span class="kicker">Institutional Log</span>
+  <div class="card" style="min-height:auto;">
+    <p class="muted">
+      Governance changes, specification releases, and canonical announcements are recorded in the
+      <a href="updates.html">Updates log</a>.
+    </p>
   </div>
 </section>
 
@@ -290,14 +259,8 @@
 <section style="margin-top:14px;">
   <div class="card" style="min-height:auto;">
     <h3>Contact</h3>
-    <p class="muted" style="margin:.35rem 0;">
-      Email:
-      <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a>
-    </p>
-    <p class="muted" style="margin:.35rem 0 0;">
-      ORCID:
-      <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" rel="noopener">0009-0006-6043-9295</a>
-    </p>
+    <p class="muted">Email: <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a></p>
+    <p class="muted">ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">0009-0006-6043-9295</a></p>
   </div>
 </section>
 
