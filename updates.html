@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Updates · Waveframe Labs</title>
+
+  <meta name="description" content="Institutional release log for governance, standards, and canonical research artifacts under the Aurora ecosystem.">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <link rel="canonical" href="https://waveframelabs.org/updates.html" />
+
+  <!-- === SHARED SITE STYLES (IDENTICAL TO index.html / ari.html) === -->
+  <style>
+    :root{
+      --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
+      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0; padding:0;
+      background:var(--bg); color:var(--ink);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+    a:hover{border-color:var(--ink)}
+
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+
+    .hdr{
+      padding:22px 18px;
+      border:1px solid var(--edge);
+      border-radius:18px;
+      background:var(--card);
+      margin-bottom:22px;
+    }
+    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
+    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+
+    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
+    .topnav a{border:none}
+    .active-link{
+      color:var(--accent);
+      font-weight:600;
+      border-bottom:1px solid var(--accent);
+    }
+
+    .hero{
+      margin:16px 0 22px;
+      padding:22px;
+      border:1px solid var(--edge);
+      border-radius:18px;
+      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
+    }
+
+    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
+    h2{margin-top:0}
+    h3{margin-bottom:.2rem}
+    p{line-height:1.65}
+
+    .kicker{
+      color:var(--accent);
+      font-size:.8rem;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--edge);
+      border-radius:18px;
+      padding:18px;
+      margin-top:18px;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:10px;
+    }
+
+    ul{margin-top:6px}
+    li{margin-bottom:6px}
+
+    footer{
+      margin-top:40px;
+      color:var(--muted);
+      font-size:.95rem;
+      display:flex;flex-wrap:wrap;gap:6px;align-items:center
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header class="hdr">
+    <div class="hdr-top">
+      <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
+      <div class="title">Waveframe Labs</div>
+    </div>
+
+    <div class="hdr-sub">
+      Institutional release log for the Aurora ecosystem.
+    </div>
+
+    <nav class="topnav">
+      <a href="index.html">Home</a>
+      <a href="hierarchy.html">Aurora Hierarchy</a>
+      <a href="doctrine.html">Neurotransparency Doctrine</a>
+      <a href="nts.html">Neurotransparency Specification</a>
+      <a href="ari.html">ARI</a>
+      <a href="awo.html">AWO</a>
+      <a href="cri-core.html">CRI-CORE</a>
+      <a href="tools.html">Tools</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="publications.html">Publications</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <span class="kicker">Institutional Updates</span>
+    <h1>Announcements</h1>
+
+    <p class="muted">
+      This page records formal releases and structural changes to governance,
+      standards, and canonical research artifacts under the Aurora ecosystem.
+      Entries are chronological, factual, and non-promotional.
+    </p>
+  </section>
+
+  <!-- ===== ANNOUNCEMENT ENTRY ===== -->
+  <section class="card">
+    <h3>Neurotransparency Specification (NTS) v2.0.0 Released</h3>
+
+    <div class="meta">
+      <strong>Date:</strong> 2025-12-18<br />
+      <strong>Scope:</strong> Layer 0 — Normative Specification (Neurotransparency)
+    </div>
+
+    <h4>What changed</h4>
+    <ul class="muted">
+      <li>Formalized the Neurotransparency Specification as a standalone normative standard.</li>
+      <li>Clarified separation between doctrine (epistemic rationale) and specification (disclosure requirements).</li>
+      <li>Defined explicit compliance targets for downstream workflow and enforcement systems.</li>
+    </ul>
+
+    <h4>Why it matters</h4>
+    <p class="muted">
+      This release establishes a machine-verifiable standard for cognitive traceability
+      in AI-assisted scientific work. Where the Neurotransparency Doctrine defines
+      <em>why</em> transparency is required, the Specification defines <em>what must be disclosed</em>
+      for work to be considered epistemically legitimate under Aurora governance.
+    </p>
+
+    <p class="muted">
+      The separation prevents category errors between philosophy, governance, methodology,
+      and enforcement, enabling auditability without exposing internal cognition or
+      delegating epistemic authority to machines.
+    </p>
+
+    <h4>Links</h4>
+    <ul class="muted">
+      <li>
+        <strong>Concept DOI:</strong>
+        <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">
+          10.5281/zenodo.17809676
+        </a>
+      </li>
+      <li>
+        <strong>Version DOI (v2.0.0):</strong>
+        <a href="https://doi.org/10.5281/zenodo.17982172" target="_blank">
+          10.5281/zenodo.17982172
+        </a>
+      </li>
+      <li>
+        <strong>Repository:</strong>
+        <a href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">
+          Waveframe-Labs/Neurotransparency-Specification
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <span>Text &amp; media: CC BY 4.0</span>
+    <span>· © 2025 Waveframe Labs</span>
+    <span>· Governed under the <a href="ari.html">Aurora Research Initiative (ARI)</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
