@@ -57,6 +57,7 @@
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
     h2{margin-top:0}
     h3{margin-bottom:.2rem}
+    h4{margin-top:14px}
     p{line-height:1.65}
 
     .kicker{
@@ -72,13 +73,31 @@
       border:1px solid var(--edge);
       border-radius:18px;
       padding:18px;
-      margin-top:18px;
+      margin-top:22px;
+    }
+
+    /* --- update entry header band --- */
+    .update-head{
+      margin:-18px -18px 16px;
+      padding:14px 18px 12px;
+      border-bottom:1px solid var(--edge);
+      border-radius:18px 18px 0 0;
+      background:linear-gradient(
+        180deg,
+        rgba(255,122,24,.16),
+        rgba(255,122,24,.05),
+        rgba(0,0,0,0)
+      );
+    }
+
+    .update-head h3{
+      margin:0 0 4px;
     }
 
     .meta{
       color:var(--muted);
       font-size:.9rem;
-      margin-bottom:10px;
+      margin:0;
     }
 
     ul{margin-top:6px}
@@ -118,7 +137,7 @@
       <a href="tools.html">Tools</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="publications.html">Publications</a>
-      <a class="active-link" href="updates.html">Updates</a>   
+      <a class="active-link" href="updates.html">Updates</a>
     </nav>
   </header>
 
@@ -134,13 +153,14 @@
     </p>
   </section>
 
-  <!-- ===== ANNOUNCEMENT ENTRY ===== -->
+  <!-- ===== NTS UPDATE ===== -->
   <section class="card">
-    <h3>Neurotransparency Specification (NTS) v2.0.0 Released</h3>
-
-    <div class="meta">
-      <strong>Date:</strong> 2025-12-18<br />
-      <strong>Scope:</strong> Layer 0 — Normative Specification (Neurotransparency)
+    <div class="update-head">
+      <h3>Neurotransparency Specification (NTS) v2.0.0 Released</h3>
+      <div class="meta">
+        <strong>Date:</strong> 2025-12-18 ·
+        <strong>Scope:</strong> Layer 0 — Normative Specification (Neurotransparency)
+      </div>
     </div>
 
     <h4>What changed</h4>
@@ -166,116 +186,82 @@
 
     <h4>Links</h4>
     <ul class="muted">
-      <li>
-        <strong>Concept DOI:</strong>
-        <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">
-          10.5281/zenodo.17809676
-        </a>
-      </li>
-      <li>
-        <strong>Version DOI (v2.0.0):</strong>
-        <a href="https://doi.org/10.5281/zenodo.17982172" target="_blank">
-          10.5281/zenodo.17982172
-        </a>
-      </li>
-      <li>
-        <strong>Repository:</strong>
-        <a href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">
-          Waveframe-Labs/Neurotransparency-Specification
-        </a>
-      </li>
+      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">10.5281/zenodo.17809676</a></li>
+      <li><strong>Version DOI (v2.0.0):</strong> <a href="https://doi.org/10.5281/zenodo.17982172" target="_blank">10.5281/zenodo.17982172</a></li>
+      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">Waveframe-Labs/Neurotransparency-Specification</a></li>
     </ul>
   </section>
 
+  <!-- ===== NTD UPDATE ===== -->
   <section class="card">
-  <h3>Neurotransparency Doctrine (NTD) Released</h3>
+    <div class="update-head">
+      <h3>Neurotransparency Doctrine (NTD) Released</h3>
+      <div class="meta">
+        <strong>Date:</strong> 2025-12-17 ·
+        <strong>Scope:</strong> Layer 0 — Epistemic Doctrine (Neurotransparency)
+      </div>
+    </div>
 
-  <div class="meta">
-    <strong>Date:</strong> 2025-12-17<br />
-    <strong>Scope:</strong> Layer 0 — Epistemic Doctrine (Neurotransparency)
-  </div>
+    <h4>What changed</h4>
+    <ul class="muted">
+      <li>Formalized the Neurotransparency Doctrine as the epistemic foundation for AI–human scientific work.</li>
+      <li>Defined cognitive traceability as a requirement for legitimacy, not correctness or outcome quality.</li>
+      <li>Established separation between epistemic rationale (doctrine) and normative disclosure (specification).</li>
+    </ul>
 
-  <h4>What changed</h4>
-  <ul class="muted">
-    <li>Formalized the Neurotransparency Doctrine as the epistemic foundation for AI–human scientific work.</li>
-    <li>Defined cognitive traceability as a requirement for legitimacy, not correctness or outcome quality.</li>
-    <li>Established the conceptual separation between epistemic rationale (doctrine) and normative disclosure (specification).</li>
-  </ul>
+    <h4>Why it matters</h4>
+    <p class="muted">
+      The Doctrine establishes <em>why</em> AI-assisted research requires traceability,
+      attribution, and bounded authority. It frames transparency as a prerequisite for
+      accountability rather than a proxy for truth.
+    </p>
 
-  <h4>Why it matters</h4>
-  <p class="muted">
-    The Neurotransparency Doctrine establishes <em>why</em> AI-assisted research requires
-    traceability, attribution, and bounded authority. It articulates the epistemic risks
-    introduced by opaque machine influence and frames transparency as a prerequisite
-    for accountability rather than a proxy for truth.
-  </p>
+    <p class="muted">
+      By anchoring transparency at the epistemic layer, the Doctrine prevents enforcement,
+      tooling, or automation from acquiring implicit scientific authority.
+    </p>
 
-  <p class="muted">
-    By locating transparency at the epistemic layer, the Doctrine prevents downstream
-    systems from conflating enforcement, tooling, or automation with scientific authority.
-    It serves as the philosophical and governance anchor for all subsequent Aurora layers.
-  </p>
+    <h4>Links</h4>
+    <ul class="muted">
+      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17957384" target="_blank">10.5281/zenodo.17957384</a></li>
+      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">Waveframe-Labs/Neurotransparency-Doctrine</a></li>
+    </ul>
+  </section>
 
-  <h4>Links</h4>
-  <ul class="muted">
-    <li>
-      <strong>Concept DOI:</strong>
-      <a href="https://doi.org/10.5281/zenodo.17957384" target="_blank">
-        10.5281/zenodo.17957384
-      </a>
-    </li>
-    <li>
-      <strong>Repository:</strong>
-      <a href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">
-        Waveframe-Labs/Neurotransparency-Doctrine
-      </a>
-    </li>
-  </ul>
-</section>
-<section class="card">
-  <h3>Aurora Research Initiative (ARI) Formalized</h3>
+  <!-- ===== ARI UPDATE ===== -->
+  <section class="card">
+    <div class="update-head">
+      <h3>Aurora Research Initiative (ARI) Formalized</h3>
+      <div class="meta">
+        <strong>Date:</strong> 2025-12-16 ·
+        <strong>Scope:</strong> Layer 1 — Institutional Governance
+      </div>
+    </div>
 
-  <div class="meta">
-    <strong>Date:</strong> 2025-12-16<br />
-    <strong>Scope:</strong> Layer 1 — Institutional Governance
-  </div>
+    <h4>What changed</h4>
+    <ul class="muted">
+      <li>Established ARI as the institutional authority governing the Aurora ecosystem.</li>
+      <li>Defined binding governance over standards, methodologies, enforcement systems, and case studies.</li>
+      <li>Clarified authority boundaries between doctrine, specification, workflows, and enforcement.</li>
+    </ul>
 
-  <h4>What changed</h4>
-  <ul class="muted">
-    <li>Established the Aurora Research Initiative as the institutional authority governing the Aurora ecosystem.</li>
-    <li>Defined binding governance over standards, methodologies, enforcement systems, and case studies.</li>
-    <li>Clarified role separation between epistemic doctrine, normative specification, workflows, and enforcement.</li>
-  </ul>
+    <h4>Why it matters</h4>
+    <p class="muted">
+      ARI defines <em>who decides</em> within the ecosystem. It prevents individual tools,
+      workflows, or automation from implicitly acquiring epistemic power.
+    </p>
 
-  <h4>Why it matters</h4>
-  <p class="muted">
-    ARI defines <em>who decides</em> within the Aurora ecosystem. It provides institutional
-    grounding for governance, resolves authority boundaries, and prevents individual tools
-    or workflows from implicitly acquiring epistemic power.
-  </p>
+    <p class="muted">
+      By separating governance from implementation, ARI enables reproducibility without
+      centralization or delegated authority.
+    </p>
 
-  <p class="muted">
-    By formalizing governance independently of implementation, ARI enables reproducibility
-    without centralization, allowing standards and enforcement to evolve without collapsing
-    authorship, accountability, or decision ownership into automated systems.
-  </p>
-
-  <h4>Links</h4>
-  <ul class="muted">
-    <li>
-      <strong>Concept DOI:</strong>
-      <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">
-        10.5281/zenodo.17743096
-      </a>
-    </li>
-    <li>
-      <strong>Repository:</strong>
-      <a href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">
-        Waveframe-Labs/Aurora-Research-Initiative
-      </a>
-    </li>
-  </ul>
-</section>
+    <h4>Links</h4>
+    <ul class="muted">
+      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">10.5281/zenodo.17743096</a></li>
+      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">Waveframe-Labs/Aurora-Research-Initiative</a></li>
+    </ul>
+  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
