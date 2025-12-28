@@ -10,7 +10,6 @@
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/tools.html" />
 
-  <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
   <style>
     :root{
       --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
@@ -76,12 +75,13 @@
     }
 
     .muted{color:var(--muted)}
+    .link-row{margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
 
     footer{
       margin-top:40px;
       color:var(--muted);
       font-size:.95rem;
-      display:flex;flex-wrap:wrap;gap:6px;align-items:center
+      display:flex;flex-wrap:wrap;gap:6px;align-items:center;
     }
   </style>
 </head>
@@ -89,103 +89,99 @@
 <body>
 <div class="wrap">
 
-  <!-- ===== HEADER ===== -->
-  <header class="hdr">
-    <div class="hdr-top">
-      <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-      <div class="title">Waveframe Labs</div>
-    </div>
+<header class="hdr">
+  <div class="hdr-top">
+    <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
+    <div class="title">Waveframe Labs</div>
+  </div>
 
-    <div class="hdr-sub">
-      Deterministic tooling and infrastructure.
-    </div>
+  <div class="hdr-sub">
+    Deterministic tooling and infrastructure.
+  </div>
 
-    <nav class="topnav">
-      <a href="index.html">Home</a>
-      <a href="hierarchy.html">Aurora Hierarchy</a>
-      <a href="doctrine.html">Neurotransparency Doctrine</a>
-      <a href="nts.html">Neurotransparency Specification</a>  
-      <a href="ari.html">ARI</a>
-      <a href="awo.html">AWO</a>
-      <a href="cri-core.html">CRI-CORE</a>
-      <a class="active-link" href="tools.html">Tools</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="publications.html">Publications</a>
-      <a href="updates.html">Updates</a>  
-    </nav>
-  </header>
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="hierarchy.html">Aurora Hierarchy</a>
+    <a href="doctrine.html">Neurotransparency Doctrine</a>
+    <a href="nts.html">Neurotransparency Specification</a>
+    <a href="ari.html">ARI</a>
+    <a href="awo.html">AWO</a>
+    <a href="cri-core.html">CRI-CORE</a>
+    <a class="active-link" href="tools.html">Tools</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="publications.html">Publications</a>
+    <a href="updates.html">Updates</a>
+  </nav>
+</header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <span class="kicker">Layer 5 — Infrastructure</span>
-    <h1>Tools & Infrastructure</h1>
+<section class="hero">
+  <span class="kicker">Layer 5 — Infrastructure</span>
+  <h1>Tools & Infrastructure</h1>
 
+  <p class="muted">
+    Deterministic tooling that supports, validates, and operationalizes Aurora-aligned workflows.
+  </p>
+</section>
+
+<section>
+  <h2>Purpose</h2>
+  <p>
+    Tools enable reproducibility and auditability within the ecosystem.
+    They do not define epistemic authority — they execute, validate, and enforce it.
+  </p>
+  <p class="muted">Infrastructure is subordinate to governance and methodology.</p>
+</section>
+
+<section>
+  <h2>Core Tooling</h2>
+
+  <!-- ========== GLYPHTRACE ========== -->
+  <div class="card">
+    <h3>Glyphtrace</h3>
     <p class="muted">
-      This layer contains the deterministic tooling that supports, validates, and
-      operationalizes Aurora-aligned research workflows.
+      Symbolic epistemic compression format for representing research as compact,
+      machine-expandable traces. Enables reconstruction, reference, and round-trip
+      validation using minimal tokens.
     </p>
-  </section>
-
-  <!-- ===== OVERVIEW ===== -->
-  <section>
-    <h2>Purpose</h2>
-    <p>
-      Tools in the Aurora ecosystem do not define epistemics, governance, or methodology.
-      Instead, they provide reliable infrastructure that enables those layers to function
-      consistently and at scale.
-    </p>
-    <p class="muted">
-      Tooling is explicitly subordinate to higher layers and may not override governance
-      or methodological constraints.
-    </p>
-  </section>
-
-  <!-- ===== CORE TOOLS ===== -->
-  <section>
-    <h2>Core Tooling</h2>
-
-    <div class="card">
-      <h3>Waveframe PDF Forge</h3>
-      <p class="muted">
-        Deterministic Markdown-to-PDF pipeline with metadata injection,
-        provenance stamping, and audit-friendly outputs.
-      </p>
+    <div class="link-row">
+      <a href="https://github.com/Waveframe-Labs/Glyphtrace" target="_blank">GitHub</a>
+      <a href="https://doi.org/10.5281/zenodo.18057686" target="_blank">
+        <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18057686-ff7a18?style=flat&labelColor=14161b" height="22">
+      </a>
     </div>
+  </div>
 
-    <div class="card">
-      <h3>Metadata Pipeline</h3>
-      <p class="muted">
-        Validation and normalization of metadata across all Aurora artifacts.
-      </p>
-    </div>
+  <div class="card">
+    <h3>Waveframe PDF Forge</h3>
+    <p class="muted">Deterministic Markdown→PDF pipeline with provenance stamping.</p>
+  </div>
 
-    <div class="card">
-      <h3>Stamp & Validators</h3>
-      <p class="muted">
-        Cryptographic and structural validation of artifacts, manifests,
-        and execution logs.
-      </p>
-    </div>
-  </section>
+  <div class="card">
+    <h3>Metadata Pipeline</h3>
+    <p class="muted">Metadata normalization and validation across artifacts.</p>
+  </div>
 
-  <!-- ===== RELATIONSHIP TO OTHER LAYERS ===== -->
-  <section>
-    <h2>Relationship to Other Layers</h2>
-    <ul class="muted">
-      <li><strong>Layer 0–1:</strong> Tooling must respect epistemic and governance constraints.</li>
-      <li><strong>Layer 2:</strong> Tools execute AWO-defined workflows.</li>
-      <li><strong>Layer 3:</strong> Tools support CRI-CORE enforcement mechanisms.</li>
-      <li><strong>Layer 4:</strong> Tools enable reproducible case studies.</li>
-    </ul>
-  </section>
+  <div class="card">
+    <h3>Stamp & Validators</h3>
+    <p class="muted">Cryptographic + structural validation of research artifacts.</p>
+  </div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
-    <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs</span>
-  </footer>
+<section>
+  <h2>Relationship to Other Layers</h2>
+  <ul class="muted">
+    <li><strong>Layer 0–1:</strong> Tools must follow epistemic & governance constraints.</li>
+    <li><strong>Layer 2:</strong> Tools execute workflows defined by AWO.</li>
+    <li><strong>Layer 3:</strong> Tools integrate into CRI-CORE enforcement.</li>
+    <li><strong>Layer 4:</strong> Support case studies with reproducibility.</li>
+  </ul>
+</section>
 
+<footer>
+  <span>Text &amp; media: CC BY-NC-SA 4.0</span>
+  <span>· Code &amp; scripts: Apache-2.0</span>
+  <span>· © 2025 Waveframe Labs</span>
+</footer>
 </div>
 </body>
 </html>
