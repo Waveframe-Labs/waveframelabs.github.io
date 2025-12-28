@@ -27,9 +27,9 @@ html,body{
 a{color:inherit;text-decoration:none;transition:color .2s;}
 a:hover{color:var(--accent);}
 
-.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 80px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 0;}
 
-/* Header */
+/* --- Header --- */
 .hdr{
   padding:18px 24px;
   border-bottom:1px solid var(--edge);
@@ -38,11 +38,12 @@ a:hover{color:var(--accent);}
   display:flex; justify-content:space-between; align-items:center;
   position:sticky; top:0; z-index:100; margin-bottom:28px;
   border-left:1px solid var(--edge); border-right:1px solid var(--edge);
+  border-radius: 0 0 12px 12px;
 }
 .brand{display:flex;align-items:center;gap:12px;}
-.brand-text{font-size:1.28rem;font-weight:700;letter-spacing:-.02em;}
+.brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
 
-.topnav{display:flex;gap:24px;font-size:.95rem;font-weight:500;}
+.topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
 .topnav a{opacity:.7;} 
 .topnav a:hover{opacity:1;color:var(--accent);}
 .active-link{opacity:1!important;color:var(--accent)!important;}
@@ -52,81 +53,92 @@ a:hover{color:var(--accent);}
   .topnav{flex-wrap:wrap;gap:18px;}
 }
 
-h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:.2rem 0 1rem;letter-spacing:-.03em;}
+/* --- Typography --- */
 h2{margin:0 0 10px;font-size:1.5rem;}
 h3{margin:0 0 .55rem;font-size:1.15rem;}
-p{line-height:1.65;color:var(--muted);}
+p{line-height:1.65;color:var(--muted); margin-bottom: 1rem;}
 p strong{color:var(--ink);}
+
+.lead-section{margin-bottom:32px; padding:0 8px;}
+.lead-text{font-size:1.15rem; color:var(--muted); line-height:1.6; max-width: 800px;}
 
 .kicker{
   color:var(--accent);font-size:.75rem;font-weight:700;text-transform:uppercase;
   letter-spacing:1px;margin-bottom:8px;display:block;
 }
 
-/* Hero Banner */
+/* --- Hero Banner --- */
 .hero-banner{
-  width:100%;display:block;margin-bottom:32px;border-radius:12px;
-  filter:drop-shadow(0 0 12px rgba(255,122,24,.18));
+  width:100%; display:block; margin-bottom:24px; border-radius:12px;
+  border:1px solid var(--edge);
+  filter:drop-shadow(0 0 12px rgba(255,122,24,.10));
   transition:filter .25s ease;
 }
 .hero-banner:hover{
-  filter:drop-shadow(0 0 18px rgba(255,122,24,.34)) brightness(1.04);
+  filter:drop-shadow(0 0 20px rgba(255,122,24,.25)) brightness(1.05);
 }
 
-/* Stack Visual — clickable layers */
+/* --- The Aurora Stack (Interactive) --- */
+.card{
+  background:var(--card); border:1px solid var(--edge); border-radius:var(--rad);
+  padding:24px; display:flex; flex-direction:column;
+}
+
 .stack-container{
-  margin-top:20px;border:1px solid var(--edge);border-radius:var(--rad);overflow:hidden;
+  margin-top:20px; border:1px solid var(--edge); border-radius:8px; overflow:hidden;
 }
 .stack-row{
-  display:flex;border-bottom:1px solid var(--edge);background:var(--card);
-  transition:background .2s, border-color .2s;
+  display:flex; border-bottom:1px solid var(--edge); background:var(--card);
+  transition:all .2s;
 }
 .stack-row:last-child{border-bottom:none;}
 .stack-row:hover{
-  background:rgba(255,122,24,.08);border-color:var(--accent);cursor:pointer;
+  background:rgba(255,122,24,.08); border-color:var(--accent); cursor:pointer;
 }
+.stack-row:hover .stack-layer{color:var(--ink);}
+
 .stack-layer{
-  background:#1e2126;padding:12px 16px;font-family:monospace;color:var(--accent);
-  font-size:.85rem;min-width:100px;display:flex;align-items:center;border-right:1px solid var(--edge);
+  background:#1e2126; padding:12px 16px; font-family:monospace; color:var(--accent);
+  font-size:.8rem; min-width:90px; display:flex; align-items:center; border-right:1px solid var(--edge);
 }
 .stack-content{
-  padding:12px 16px;font-size:.95rem;color:var(--muted);
+  padding:12px 16px; font-size:.9rem; color:var(--muted);
 }
-.stack-content strong{color:var(--ink);}
+.stack-content strong{color:var(--ink); font-weight:600;}
 
-/* Grid + Cards */
-.grid{display:grid;gap:20px;margin-top:18px}
-@media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
-
-.card{
-  background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);
-  padding:24px;display:flex;flex-direction:column;
-  transition:border-color .2s;
+/* --- Updates Log Section --- */
+.log-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 12px 0; border-bottom:1px solid var(--edge);
 }
-.card:hover{border-color:var(--muted);} 
-.card-body{flex-grow:1;}
+.log-row:last-child{border-bottom:none;}
+.log-date{font-family:monospace; color:var(--accent); font-size:0.85rem;}
 
-.cta{
-  padding:10px 18px;border-radius:8px;font-weight:600;font-size:.9rem;
-  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
-}
-.cta-ghost{border:1px solid var(--edge);color:var(--muted);}
-.cta-ghost:hover{border-color:var(--ink);color:var(--ink);background:rgba(255,255,255,.05);}
-.cta-solid{background:var(--accent);color:#000;border:1px solid var(--accent);}
-.cta-solid:hover{background:var(--accent-hover);transform:translateY(-1px);}
-
-/* Footer */
+/* --- Footer (New & Improved) --- */
 footer{
-  margin-top:60px;border-top:1px solid var(--edge);padding-top:24px;
-  color:var(--muted);font-size:.9rem;display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  margin-top:60px; border-top:1px solid var(--edge); background:var(--card);
+  padding: 40px 20px 20px;
 }
+.footer-grid{
+    display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap:32px; max-width:var(--maxw); margin:0 auto;
+}
+@media(max-width:700px){.footer-grid{grid-template-columns: 1fr; gap:40px;}}
+
+.ft-col h4{font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; color:var(--ink); margin:0 0 16px;}
+.ft-links a{display:block; color:var(--muted); margin-bottom:10px; font-size:0.9rem;}
+.ft-links a:hover{color:var(--accent); padding-left:4px;}
+
+.ft-bottom{
+    max-width:var(--maxw); margin:40px auto 0; padding-top:20px; border-top:1px solid var(--edge);
+    display:flex; justify-content:space-between; color:var(--muted); font-size:0.8rem;
+}
+
 </style>
 </head>
 
 <body>
 <div class="wrap">
 
-<!-- Header -->
 <header class="hdr">
   <div class="brand">
     <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
@@ -135,16 +147,14 @@ footer{
   <nav class="topnav">
     <a class="active-link" href="index.html">Home</a>
     <a href="hierarchy.html">Hierarchy</a>
-    <a href="publications.html">Research</a>
+    <a href="doctrine.html">Doctrine</a>
     <a href="tools.html">Tools</a>
     <a href="updates.html">Updates</a>
   </nav>
 </header>
 
-<!-- Banner -->
-<img src="master-banner-v2.PNG" alt="Waveframe Labs banner" class="hero-banner">
+<img src="master-banner-v2.png" alt="Waveframe Labs banner" class="hero-banner">
 
-<!-- Intro -->
 <section class="lead-section">
   <div class="lead-text">
     Independent research institute developing epistemic governance, AI–human workflows,
@@ -152,79 +162,93 @@ footer{
   </div>
 </section>
 
-<!-- Stack -->
-<section style="margin-bottom:32px;">
+<section style="margin-bottom:40px;">
   <div class="card">
-    <div class="card-body">
-      <h2 style="color:var(--accent);">The Aurora Stack</h2>
-      <p>The knowledge architecture that governs Waveframe research:</p>
+    <h2 style="color:var(--accent);">The Aurora Stack</h2>
+    <p>The knowledge architecture that governs all Waveframe research:</p>
 
-      <div class="stack-container">
+    <div class="stack-container">
+      <a href="tools.html"><div class="stack-row">
+        <div class="stack-layer">Layer 5</div><div class="stack-content"><strong>Tooling</strong> — Forge, Stamp, Metadata</div>
+      </div></a>
 
-        <a href="tools.html"><div class="stack-row">
-          <div class="stack-layer">Layer 5</div><div class="stack-content"><strong>Tooling & Infrastructure</strong> — Forge, Metadata, Stamp, Validators</div>
-        </div></a>
+      <a href="publications.html"><div class="stack-row">
+        <div class="stack-layer">Layer 4</div><div class="stack-content"><strong>Outputs</strong> — Publications & Case Studies</div>
+      </div></a>
 
-        <a href="research.html#case-studies"><div class="stack-row">
-          <div class="stack-layer">Layer 4</div><div class="stack-content"><strong>Research Outputs</strong> — Publications + Experiments</div>
-        </div></a>
+      <a href="cri-core.html"><div class="stack-row">
+        <div class="stack-layer">Layer 3</div><div class="stack-content"><strong>Enforcement</strong> — CRI-CORE Verification</div>
+      </div></a>
 
-        <a href="cri-core.html"><div class="stack-row">
-          <div class="stack-layer">Layer 3</div><div class="stack-content"><strong>Enforcement</strong> — CRI-CORE verification</div>
-        </div></a>
+      <a href="awo.html"><div class="stack-row">
+        <div class="stack-layer">Layer 2</div><div class="stack-content"><strong>Methodology</strong> — Aurora Workflow Orchestration</div>
+      </div></a>
 
-        <a href="awo.html"><div class="stack-row">
-          <div class="stack-layer">Layer 2</div><div class="stack-content"><strong>Methodology</strong> — Aurora Workflow Orchestration</div>
-        </div></a>
+      <a href="ari.html"><div class="stack-row">
+        <div class="stack-layer">Layer 1</div><div class="stack-content"><strong>Governance</strong> — The Aurora Research Initiative</div>
+      </div></a>
 
-        <a href="ari.html"><div class="stack-row">
-          <div class="stack-layer">Layer 1</div><div class="stack-content"><strong>Governance</strong> — ARI authority & structure</div>
-        </div></a>
+      <a href="doctrine.html"><div class="stack-row">
+        <div class="stack-layer">Layer 0</div><div class="stack-content"><strong>Doctrine</strong> — Neurotransparency (NTD / NTS)</div>
+      </div></a>
 
-        <a href="neurotransparency.html"><div class="stack-row">
-          <div class="stack-layer">Layer 0</div><div class="stack-content"><strong>Neurotransparency</strong> — NTD + NTS foundation</div>
-        </div></a>
-
-      </div>
     </div>
   </div>
 </section>
 
-<!-- Quick Access Research Section -->
-<section>
-  <span class="kicker">Research Hub</span>
-  <div class="grid">
-    <article class="card"><div class="card-body"><h3>Neurotransparency</h3><p>Doctrine + Specification</p></div><a class="cta cta-ghost" href="neurotransparency.html">Explore</a></article>
-    <article class="card"><div class="card-body"><h3>Publications & Case Studies</h3><p>Waveframe | AWO | SHS | More</p></div><a class="cta cta-ghost" href="research.html">Enter Hub</a></article>
-    <article class="card"><div class="card-body"><h3>Tooling Systems</h3><p>Forge, Stamp, Metadata Pipeline</p></div><a class="cta cta-ghost" href="tools.html">Tools</a></article>
-  </div>
+<section style="margin-bottom:32px;">
+    <span class="kicker">Institutional Log</span>
+    <div class="card" style="padding:16px 24px;">
+        <div class="log-row">
+            <span>Governance structure updated (ARI v1.0)</span>
+            <span class="log-date">2025.01</span>
+        </div>
+        <div class="log-row">
+            <span>New Case Study: Synthetic reasoning</span>
+            <span class="log-date">2024.12</span>
+        </div>
+        <div style="margin-top:16px;">
+            <a href="updates.html" style="font-size:0.9rem; font-weight:600; color:var(--accent);">View full log &rarr;</a>
+        </div>
+    </div>
 </section>
 
-<!-- Log -->
-<section style="margin-top:32px;">
-  <div class="card" style="flex-direction:row;align-items:center;justify-content:space-between;">
-    <div><span class="kicker">Institutional Log</span><div style="color:var(--muted);font-size:.95rem;">Recent governance and standards updates.</div></div>
-    <a class="cta cta-ghost" href="updates.html">View Updates</a>
-  </div>
-</section>
+</div> <footer>
+    <div class="footer-grid">
+        <div class="ft-col">
+            <img src="waveframe-logo-mark.png" width="24" height="24" style="margin-bottom:12px;">
+            <div style="font-weight:700; font-size:1.1rem; color:var(--ink); margin-bottom:8px;">Waveframe Labs</div>
+            <p style="font-size:0.9rem; max-width:280px;">
+                Constructing the epistemic foundation for AI-assisted science. 
+                Operating under the Aurora Research Initiative.
+            </p>
+        </div>
 
-<!-- Contact -->
-<section style="margin-top:20px;">
-  <div class="card">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:swright@waveframelabs.org" style="color:var(--ink);border-bottom:1px solid var(--muted);">swright@waveframelabs.org</a></p>
-    <p>ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank" style="color:var(--ink);border-bottom:1px solid var(--muted);">0009-0006-6043-9295</a></p>
-  </div>
-</section>
+        <div class="ft-col">
+            <h4>Protocol</h4>
+            <div class="ft-links">
+                <a href="doctrine.html">Doctrine (NTD)</a>
+                <a href="nts.html">Specification (NTS)</a>
+                <a href="awo.html">Methodology (AWO)</a>
+                <a href="tools.html">Tooling & Forge</a>
+            </div>
+        </div>
 
-<footer>
-  <img src="waveframe-logo-mark.png" width="18" height="18">
-  <span style="color:var(--accent);font-weight:600;">Waveframe Labs</span>
-  <span>· Operating under the Aurora Research Initiative ·</span>
-  <span id="year"></span>
+        <div class="ft-col">
+            <h4>Connect</h4>
+            <div class="ft-links">
+                <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a>
+                <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">ORCID: 0009-0006-6043-9295</a>
+                <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub / Source</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ft-bottom">
+        <span>&copy; <span id="year"></span> Waveframe Labs</span>
+        <span>Aurora Ecosystem</span>
+    </div>
 </footer>
-
-</div>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
