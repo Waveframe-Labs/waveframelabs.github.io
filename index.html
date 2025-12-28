@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Waveframe Labs</title>
 
-  <meta name="description" content="Waveframe Labs — independent research institute building epistemic governance, reproducible AI–human workflows, and deterministic tooling under the Aurora Research Initiative.">
+  <meta name="description" content="Waveframe Labs — independent research institute developing epistemic governance, reproducible AI–human workflows, and deterministic tooling under the Aurora Research Initiative.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
-
   <link rel="canonical" href="https://waveframelabs.org" />
-  <meta property="og:title" content="Waveframe Labs" />
-  <meta property="og:description" content="Independent institute for AI–human reproducibility and epistemic governance." />
-  <meta property="og:type" content="website" />
+
 <style>
 :root{
   --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
+  --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12; --maxw:1080px; --rad:12px;
 }
 *{box-sizing:border-box}
 html,body{
@@ -23,141 +20,117 @@ html,body{
   background:var(--bg); color:var(--ink);
   font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
-a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-a:hover{border-color:var(--ink)}
+a{color:inherit;text-decoration:none;transition:0.2s;}
+a:hover{color:var(--accent);}
 
-.wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+/* Layout */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:20px 20px 80px}
 
 /* Header */
 .hdr{
-  padding:22px 18px;
-  border:1px solid var(--edge);
-  border-radius:var(--rad);
-  background:var(--card);
-  margin-bottom:26px;
+  padding:18px 24px;
+  border-bottom:1px solid var(--edge);
+  background:rgba(20,22,27,.85);
+  backdrop-filter:blur(8px);
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;z-index:100;margin-bottom:32px;
+  border-left:1px solid var(--edge);border-right:1px solid var(--edge);
+  border-radius:0 0 var(--rad) var(--rad);
 }
-.hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-.hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-.hdr-sub{color:var(--muted);font-size:1.03rem;margin-bottom:14px;line-height:1.52;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-0.02em;}
 
-.topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-.topnav a{border:none}
-.active-link{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
+.topnav{display:flex;gap:20px;font-size:.95rem;font-weight:500;flex-wrap:wrap;}
+.topnav a{opacity:.7;}
+.topnav a:hover{opacity:1;color:var(--accent);}
+.active-link{opacity:1 !important;color:var(--accent) !important;}
 
-/* Hero */
-.hero{
-  margin:16px 0 26px;
-  padding:22px;
-  border:1px solid var(--edge);
-  border-radius:var(--rad);
-  background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-}
-.ari-hero{
-  border-color:var(--accent);
-  background:linear-gradient(180deg,rgba(255,122,24,.22),rgba(0,0,0,0));
+/* Mobile */
+@media(max-width:850px){
+  .hdr{flex-direction:column;align-items:flex-start;gap:12px;}
+  .topnav{gap:14px;}
 }
 
 /* Typography */
-h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-h2{margin-top:0;margin-bottom:10px;}
-h3{margin:.2rem 0 .55rem}
-p{line-height:1.70;}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:.2rem 0 1rem;letter-spacing:-.03em;}
+h2{margin:0 0 10px;font-size:1.5rem;}
+h3{margin:0 0 .55rem;font-size:1.15rem;}
+p{line-height:1.65;color:var(--muted);}
+p strong{color:var(--ink);}
+.kicker{color:var(--accent);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;display:block;}
 
-/* NEW: highlight section + layers */
-.section-title{
-  color: var(--accent);
-  font-weight: 700;
-}
-.layer-list strong{
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.kicker{
-  color:var(--accent);
-  font-size:.8rem;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.6px;
-}
-
-/* Cards & Grid */
-.grid{display:grid;gap:16px;margin-top:18px}
-@media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
-
+/* Cards & Sections */
 .card{
   background:var(--card);
   border:1px solid var(--edge);
   border-radius:var(--rad);
-  padding:18px;
-  min-height:170px;
+  padding:24px;display:flex;flex-direction:column;
+  transition:0.25s;border-color:var(--edge);
 }
+.card:hover{border-color:var(--muted);}
+.card-body{flex-grow:1;}
 
-.muted{color:var(--muted)}
+.grid{display:grid;gap:20px;margin-top:18px}
+@media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
 
+/* Buttons */
+.btn-group{margin-top:16px;}
 .cta{
-  display:inline-block;
-  margin-top:.6rem;
-  padding:.55rem .9rem;
-  border-radius:12px;
-  border:1px solid var(--ink)
+  padding:10px 18px;border-radius:8px;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;
 }
-.cta:hover{background:var(--ink);color:var(--bg)}
+.cta-ghost{background:transparent;border:1px solid var(--edge);color:var(--muted);}
+.cta-ghost:hover{border-color:var(--ink);color:var(--ink);background:rgba(255,255,255,.05);}
+.cta-solid{background:var(--accent);border:1px solid var(--accent);color:#000;}
+.cta-solid:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-1px);}
 
-/* DOI strip */
-.doi-strip{
-  margin:16px 0 18px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  align-items:center;
+/* Hero Section */
+.hero{
+  margin-bottom:32px;padding:32px;
+  border:1px solid var(--edge);border-radius:var(--rad);
+  background:linear-gradient(180deg,rgba(255,122,24,.08),rgba(0,0,0,0));
 }
-.doi-item{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
-  padding:10px 12px;
-  border:1px solid var(--edge);
-  border-radius:14px;
-  background:rgba(20,22,27,.40);
-}
-.mini-link{
-  color:var(--muted);
-  border-bottom:1px solid transparent;
-}
-.mini-link:hover{color:var(--ink);border-bottom:1px solid var(--ink)}
 
-footer{
-  margin-top:44px;
-  color:var(--muted);
-  font-size:.95rem;
-  display:flex;flex-wrap:wrap;gap:6px;align-items:center
+/* Layer Stack */
+.stack-container{margin-top:22px;border:1px solid var(--edge);border-radius:var(--rad);overflow:hidden;}
+.stack-row{display:flex;border-bottom:1px solid var(--edge);background:var(--card);}
+.stack-row:last-child{border-bottom:none;}
+.stack-layer{background:#1e2126;padding:12px 16px;font-family:monospace;color:var(--accent);font-size:.85rem;min-width:100px;border-right:1px solid var(--edge);}
+.stack-content{padding:12px 16px;font-size:.95rem;color:var(--muted);}
+.stack-content strong{color:var(--ink);}
+
+/* DOI Strip */
+.doi-strip{margin:24px 0;display:flex;flex-wrap:wrap;gap:10px;}
+.doi-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.04);
+  padding:6px 12px;border-radius:6px;border:1px solid var(--edge);
+  font-size:.85rem;color:var(--muted);transition:.2s;
 }
-</style>  
+.doi-badge:hover{border-color:var(--accent);}
+.doi-badge strong{color:var(--ink);}
+
+/* Footer */
+footer{margin-top:60px;border-top:1px solid var(--edge);padding-top:24px;color:var(--muted);
+  font-size:.9rem;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
 <header class="hdr">
-  <div class="hdr-top">
-    <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-    <div class="title">Waveframe Labs</div>
-  </div>
-  <div class="hdr-sub">
-    Independent research institute developing epistemic governance, AI–human workflows,
-    and reproducible tooling under the Aurora Research Initiative.
+  <div class="brand">
+    <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;" />
+    <div class="brand-text">Waveframe Labs</div>
   </div>
 
   <nav class="topnav">
     <a class="active-link" href="index.html">Home</a>
-    <a href="hierarchy.html">Aurora Hierarchy</a>
-    <a href="doctrine.html">Neurotransparency Doctrine</a>
-    <a href="nts.html">Neurotransparency Specification</a>
+    <a href="hierarchy.html">Hierarchy</a>
+    <a href="doctrine.html">NTD</a>
+    <a href="nts.html">NTS</a>
     <a href="ari.html">ARI</a>
     <a href="awo.html">AWO</a>
-    <a href="cri-core.html">CRI-CORE</a>
     <a href="tools.html">Tools</a>
     <a href="case-studies.html">Case Studies</a>
     <a href="publications.html">Publications</a>
@@ -165,136 +138,119 @@ footer{
   </nav>
 </header>
 
-<!-- ===== INTRO SECTION (NEW) ===== -->
-<section style="margin-bottom:32px;">
-  <div class="card" style="min-height:auto;">
-    <h2 class="section-title">What is Waveframe Labs?</h2>  
-    <p>
-      Waveframe Labs is a research institution built around the idea that AI–assisted science must be 
-      reproducible, auditable, and epistemically accountable. Instead of replacing researchers, we design 
-      governed systems where humans and models co-reason transparently.
-    </p>
-    <p class="muted" style="margin-top:6px;">
-      The Aurora stack formalizes this structure across layers:
-      <br><span class="layer-list"><strong>Layer 0:</strong></span> Doctrine & Specification (NTD / NTS)  
-      <br><span class="layer-list"><strong>Layer 1:</strong></span> Governance (ARI)  
-      <br><span class="layer-list"><strong>Layer 2:</strong></span> Methodology (AWO)  
-      <br><span class="layer-list"><strong>Layer 3:</strong></span> Enforcement (CRI-CORE)  
-      <br><span class="layer-list"><strong>Layer 4:</strong></span> Case Studies & Research Outputs  
-      <br><span class="layer-list"><strong>Layer 5:</strong></span> Tooling & Infrastructure  
-    </p>
-
+<section class="lead-section">
+  <div class="lead-text">
+    Independent research institute developing epistemic governance, AI–human workflows,
+    and reproducible tooling under the Aurora Research Initiative.
   </div>
 </section>
 
-<!-- ===== ARI HERO ===== -->
-<section class="hero ari-hero">
+<section style="margin-bottom:32px;">
+  <div class="card">
+    <div class="card-body">
+      <h2 style="color:var(--accent);">What is Waveframe Labs?</h2>
+      <p>
+        Waveframe Labs is a research institution built around the idea that AI–assisted science must
+        be reproducible, auditable, and epistemically accountable. Instead of replacing researchers,
+        we design governed systems where humans and models co-reason transparently.
+      </p>
+
+      <p style="margin-top:14px;margin-bottom:10px;">The Aurora stack formalizes this structure:</p>
+      <div class="stack-container">
+
+        <div class="stack-row"><div class="stack-layer">Layer 5</div><div class="stack-content"><strong>Tooling & Infrastructure</strong></div></div>
+        <div class="stack-row"><div class="stack-layer">Layer 4</div><div class="stack-content"><strong>Research Outputs</strong></div></div>
+        <div class="stack-row"><div class="stack-layer">Layer 3</div><div class="stack-content"><strong>Enforcement</strong> (CRI-CORE)</div></div>
+        <div class="stack-row"><div class="stack-layer">Layer 2</div><div class="stack-content"><strong>Methodology</strong> (AWO)</div></div>
+        <div class="stack-row"><div class="stack-layer">Layer 1</div><div class="stack-content"><strong>Governance</strong> (ARI)</div></div>
+        <div class="stack-row"><div class="stack-layer">Layer 0</div><div class="stack-content"><strong>Doctrine & Specification</strong> (NTD / NTS)</div></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
   <span class="kicker">Institutional Framework</span>
   <h1>The Aurora Research Initiative (ARI)</h1>
 
-  <!-- DOI strip -->
-  <div class="doi-strip">
-    <div class="doi-item">
-      <div class="doi-links">
-        <a class="mini-link" href="ari.html"><strong>ARI</strong> page</a>
-        <span class="muted">·</span>
-        <a class="mini-link" href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">GitHub</a>
-      </div>
-      <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">
-        <img src="https://img.shields.io/badge/ARI%20DOI-10.5281%2Fzenodo.17743096-0b0c10?labelColor=14161b&color=ff7a18" height="22"/>
-      </a>
-    </div>
-
-    <div class="doi-item">
-      <div class="doi-links">
-        <a class="mini-link" href="nts.html"><strong>NTS</strong> page</a>
-        <span class="muted">·</span>
-        <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">GitHub</a>
-      </div>
-      <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">
-        <img src="https://img.shields.io/badge/NTS%20DOI-10.5281%2Fzenodo.17809676-0b0c10?labelColor=14161b&color=ff7a18" height="22"/>
-      </a>
-    </div>
-
-    <div class="doi-item">
-      <div class="doi-links">
-        <a class="mini-link" href="doctrine.html"><strong>NTD</strong> page</a>
-        <span class="muted">·</span>
-        <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">GitHub</a>
-      </div>
-      <a href="https://doi.org/10.5281/zenodo.17957384" target="_blank">
-        <img src="https://img.shields.io/badge/NTD%20DOI-10.5281%2Fzenodo.17957384-0b0c10?labelColor=14161b&color=ff7a18" height="22"/>
-      </a>
-    </div>
-  </div>
-
-  <p class="muted">
-    ARI defines the governance, epistemic rules, and methodological law for all research
-    conducted under the Aurora ecosystem.
+  <p style="max-width:700px;">
+    ARI defines the governance, epistemic rules, and methodological law for all research conducted
+    under the Aurora ecosystem.
   </p>
 
-  <a class="cta" href="ari.html">Learn More</a>
+  <div class="doi-strip">
+    <a class="doi-badge" href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank"><strong>ARI</strong> · GitHub</a>
+    <a class="doi-badge" href="https://doi.org/10.5281/zenodo.17743096" target="_blank">DOI: 10.5281/zenodo.17743096</a>
+    <span style="opacity:.35;">•</span>
+    <a class="doi-badge" href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank"><strong>NTS</strong> · GitHub</a>
+    <a class="doi-badge" href="https://doi.org/10.5281/zenodo.17809676" target="_blank">DOI: 10.5281/zenodo.17809676</a>
+  </div>
+
+  <div class="btn-group"><a class="cta cta-solid" href="ari.html">Learn More</a></div>
 </section>
 
-<!-- ===== PILLARS ===== -->
 <section>
   <span class="kicker">Core Pillars</span>
   <div class="grid">
+
     <article class="card">
-      <span class="kicker">Layer 0 — Doctrine</span>
-      <h3>Neurotransparency Doctrine</h3>
-      <p class="muted">Epistemic foundation for AI–human research.</p>
-      <a class="cta" href="doctrine.html">Read Doctrine</a>
+      <div class="card-body">
+        <span class="kicker">Layer 0 — Doctrine</span>
+        <h3>Neurotransparency Doctrine</h3>
+        <p>Epistemic rationale for AI-human research accountability.</p>
+      </div>
+      <div class="btn-group"><a class="cta cta-ghost" href="doctrine.html">Read</a></div>
     </article>
 
     <article class="card">
-      <span class="kicker">Layer 0 — Specification</span>
-      <h3>Neurotransparency Specification</h3>
-      <p class="muted">Normative disclosure and compliance standard.</p>
-      <a class="cta" href="nts.html">Read Specification</a>
+      <div class="card-body">
+        <span class="kicker">Layer 0 — Specification</span>
+        <h3>Neurotransparency Specification</h3>
+        <p>Normative disclosure & compliance requirements.</p>
+      </div>
+      <div class="btn-group"><a class="cta cta-ghost" href="nts.html">View</a></div>
     </article>
 
     <article class="card">
-      <span class="kicker">Layer 2 — Methodology</span>
-      <h3>Aurora Workflow Orchestration</h3>
-      <p class="muted">Audit-first scientific methodology.</p>
-      <a class="cta" href="awo.html">View AWO</a>
+      <div class="card-body">
+        <span class="kicker">Layer 2 — Methodology</span>
+        <h3>Aurora Workflow Orchestration</h3>
+        <p>Audit-first reproducible research method.</p>
+      </div>
+      <div class="btn-group"><a class="cta cta-ghost" href="awo.html">Explore</a></div>
     </article>
+
   </div>
 </section>
 
-<!-- ===== LOG LINK ===== -->
 <section style="margin-top:32px;">
-  <span class="kicker">Institutional Log</span>
-  <div class="card" style="min-height:auto;">
-   <p class="muted">
-    Governance changes, standards releases, and canonical announcements are recorded in the
-    <a href="updates.html" style="color:var(--accent); font-weight:600;">Updates log</a>.
-  </p>
- 
+  <div class="card" style="flex-direction:row;align-items:center;justify-content:space-between;">
+    <div>
+      <span class="kicker">Institutional Log</span>
+      <div style="color:var(--muted);font-size:.95rem;">Governance changes & canonical releases.</div>
+    </div>
+    <a class="cta cta-ghost" href="updates.html">View Updates</a>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
-<section style="margin-top:14px;">
-  <div class="card" style="min-height:auto;">
+<section style="margin-top:20px;">
+  <div class="card">
     <h3>Contact</h3>
-    <p class="muted">Email: <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a></p>
-    <p class="muted">ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">0009-0006-6043-9295</a></p>
+    <p>Email: <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a></p>
+    <p>ORCID: <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">0009-0006-6043-9295</a></p>
   </div>
 </section>
 
 <footer>
-  <img src="waveframe-logo-mark.png" width="20" height="20" />
+  <img src="waveframe-logo-mark.png" width="18" height="18" />
   <span style="color:var(--accent);font-weight:600;">Waveframe Labs</span>
   <span>· Operating under the Aurora Research Initiative ·</span>
   <span id="year"></span>
 </footer>
 
 </div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
