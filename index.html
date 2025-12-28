@@ -12,116 +12,129 @@
   <meta property="og:title" content="Waveframe Labs" />
   <meta property="og:description" content="Independent institute for AI–human reproducibility and epistemic governance." />
   <meta property="og:type" content="website" />
+<style>
+:root{
+  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
+  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-color:var(--ink)}
 
-  <style>
-    :root{
-      --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0; padding:0;
-      background:var(--bg); color:var(--ink);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
-    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-    a:hover{border-color:var(--ink)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+/* Header */
+.hdr{
+  padding:22px 18px;
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  background:var(--card);
+  margin-bottom:26px;
+}
+.hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
+.hdr-sub{color:var(--muted);font-size:1.03rem;margin-bottom:14px;line-height:1.52;}
 
-    .hdr{
-      padding:22px 18px;
-      border:1px solid var(--edge);
-      border-radius:var(--rad);
-      background:var(--card);
-      margin-bottom:26px; /* slightly increased spacing */
-    }
-    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-    .hdr-sub{color:var(--muted);font-size:1.03rem;margin-bottom:14px;line-height:1.52;}
+.topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
+.topnav a{border:none}
+.active-link{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
 
-    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .topnav a{border:none}
-    .active-link{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
+/* Hero */
+.hero{
+  margin:16px 0 26px;
+  padding:22px;
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
+}
+.ari-hero{
+  border-color:var(--accent);
+  background:linear-gradient(180deg,rgba(255,122,24,.22),rgba(0,0,0,0));
+}
 
-    .hero{
-      margin:16px 0 26px;
-      padding:22px;
-      border:1px solid var(--edge);
-      border-radius:var(--rad);
-      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-    }
-    .ari-hero{
-      border-color:var(--accent);
-      background:linear-gradient(180deg,rgba(255,122,24,.22),rgba(0,0,0,0));
-    }
+/* Typography */
+h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
+h2{margin-top:0;margin-bottom:10px;}
+h3{margin:.2rem 0 .55rem}
+p{line-height:1.70;}
 
-    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h2{margin-top:0;margin-bottom:10px;}
-    h3{margin:.2rem 0 .55rem}
-    p{line-height:1.70;}
+/* NEW: highlight section + layers */
+.section-title{
+  color: var(--accent);
+  font-weight: 700;
+}
+.layer-list strong{
+  color: var(--accent);
+  font-weight: 600;
+}
 
-    .kicker{
-      color:var(--accent);
-      font-size:.8rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
+.kicker{
+  color:var(--accent);
+  font-size:.8rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+}
 
-    .grid{display:grid;gap:16px;margin-top:18px}
-    @media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
+/* Cards & Grid */
+.grid{display:grid;gap:16px;margin-top:18px}
+@media(min-width:820px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--edge);
-      border-radius:var(--rad);
-      padding:18px;
-      min-height:170px;
-    }
+.card{
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  padding:18px;
+  min-height:170px;
+}
 
-    .muted{color:var(--muted)}
+.muted{color:var(--muted)}
 
-    .cta{
-      display:inline-block;
-      margin-top:.6rem;
-      padding:.55rem .9rem;
-      border-radius:12px;
-      border:1px solid var(--ink)
-    }
-    .cta:hover{background:var(--ink);color:var(--bg)}
+.cta{
+  display:inline-block;
+  margin-top:.6rem;
+  padding:.55rem .9rem;
+  border-radius:12px;
+  border:1px solid var(--ink)
+}
+.cta:hover{background:var(--ink);color:var(--bg)}
 
-    /* --- DOI strip improvements --- */
-    .doi-strip{
-      margin:16px 0 18px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      align-items:center;
-    }
-    .doi-item{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      padding:10px 12px;
-      border:1px solid var(--edge);
-      border-radius:14px;
-      background:rgba(20,22,27,.40); /* slightly softer */
-    }
-    .mini-link{
-      color:var(--muted);
-      border-bottom:1px solid transparent;
-    }
-    .mini-link:hover{color:var(--ink);border-bottom:1px solid var(--ink)}
+/* DOI strip */
+.doi-strip{
+  margin:16px 0 18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  align-items:center;
+}
+.doi-item{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  padding:10px 12px;
+  border:1px solid var(--edge);
+  border-radius:14px;
+  background:rgba(20,22,27,.40);
+}
+.mini-link{
+  color:var(--muted);
+  border-bottom:1px solid transparent;
+}
+.mini-link:hover{color:var(--ink);border-bottom:1px solid var(--ink)}
 
-    footer{
-      margin-top:44px;
-      color:var(--muted);
-      font-size:.95rem;
-      display:flex;flex-wrap:wrap;gap:6px;align-items:center
-    }
-  </style>
+footer{
+  margin-top:44px;
+  color:var(--muted);
+  font-size:.95rem;
+  display:flex;flex-wrap:wrap;gap:6px;align-items:center
+}
+</style>  
 </head>
 
 <body>
@@ -155,7 +168,7 @@
 <!-- ===== INTRO SECTION (NEW) ===== -->
 <section style="margin-bottom:32px;">
   <div class="card" style="min-height:auto;">
-    <h2>What is Waveframe Labs?</h2>
+    <h2 class="section-title">What is Waveframe Labs?</h2>  
     <p>
       Waveframe Labs is a research institution built around the idea that AI–assisted science must be 
       reproducible, auditable, and epistemically accountable. Instead of replacing researchers, we design 
@@ -163,13 +176,14 @@
     </p>
     <p class="muted" style="margin-top:6px;">
       The Aurora stack formalizes this structure across layers:
-      <br><strong>Layer 0:</strong> Doctrine & Specification (NTD / NTS)  
-      <br><strong>Layer 1:</strong> Governance (ARI)  
-      <br><strong>Layer 2:</strong> Methodology (AWO)  
-      <br><strong>Layer 3:</strong> Enforcement (CRI-CORE)  
-      <br><strong>Layer 4:</strong> Case Studies & Research Outputs  
-      <br><strong>Layer 5:</strong> Tooling & Infrastructure  
+      <br><span class="layer-list"><strong>Layer 0:</strong></span> Doctrine & Specification (NTD / NTS)  
+      <br><span class="layer-list"><strong>Layer 1:</strong></span> Governance (ARI)  
+      <br><span class="layer-list"><strong>Layer 2:</strong></span> Methodology (AWO)  
+      <br><span class="layer-list"><strong>Layer 3:</strong></span> Enforcement (CRI-CORE)  
+      <br><span class="layer-list"><strong>Layer 4:</strong></span> Case Studies & Research Outputs  
+      <br><span class="layer-list"><strong>Layer 5:</strong></span> Tooling & Infrastructure  
     </p>
+
   </div>
 </section>
 
