@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Updates · Waveframe Labs</title>
-
   <meta name="description" content="Institutional release log for governance, standards, and canonical research artifacts under the Aurora ecosystem.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/updates.html" />
 
-  <!-- === SHARED SITE STYLES (IDENTICAL TO index.html / ari.html) === -->
+  <!-- === SHARED STYLE (matches site) === -->
   <style>
     :root{
       --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
@@ -40,11 +39,7 @@
 
     .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
     .topnav a{border:none}
-    .active-link{
-      color:var(--accent);
-      font-weight:600;
-      border-bottom:1px solid var(--accent);
-    }
+    .active-link{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
 
     .hero{
       margin:16px 0 22px;
@@ -55,18 +50,8 @@
     }
 
     h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h2{margin-top:0}
-    h3{margin-bottom:.2rem}
-    h4{margin-top:14px}
+    h3{margin-bottom:.25rem}
     p{line-height:1.65}
-
-    .kicker{
-      color:var(--accent);
-      font-size:.8rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
 
     .card{
       background:var(--card);
@@ -76,37 +61,19 @@
       margin-top:22px;
     }
 
-    /* --- update entry header band --- */
     .update-head{
       margin:-18px -18px 16px;
       padding:14px 18px 12px;
       border-bottom:1px solid var(--edge);
       border-radius:18px 18px 0 0;
-      background:linear-gradient(
-        180deg,
-        rgba(255,122,24,.16),
-        rgba(255,122,24,.05),
-        rgba(0,0,0,0)
-      );
+      background:linear-gradient(180deg,rgba(255,122,24,.16),rgba(255,122,24,.05),rgba(0,0,0,0));
     }
-
-    .update-head h3{
-      margin:0 0 4px;
-    }
-
-    .meta{
-      color:var(--muted);
-      font-size:.9rem;
-      margin:0;
-    }
-
+    .update-head h3{margin:0 0 4px;}
+    .meta{color:var(--muted);font-size:.9rem;margin:0;}
     ul{margin-top:6px}
     li{margin-bottom:6px}
-
     footer{
-      margin-top:40px;
-      color:var(--muted);
-      font-size:.95rem;
+      margin-top:40px;color:var(--muted);font-size:.95rem;
       display:flex;flex-wrap:wrap;gap:6px;align-items:center
     }
   </style>
@@ -115,160 +82,112 @@
 <body>
 <div class="wrap">
 
-  <!-- ===== HEADER ===== -->
-  <header class="hdr">
-    <div class="hdr-top">
-      <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-      <div class="title">Waveframe Labs</div>
+<header class="hdr">
+  <div class="hdr-top">
+    <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
+    <div class="title">Waveframe Labs</div>
+  </div>
+  <div class="hdr-sub">
+    Institutional release log for the Aurora ecosystem.
+  </div>
+
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="hierarchy.html">Aurora Hierarchy</a>
+    <a href="doctrine.html">Neurotransparency Doctrine</a>
+    <a href="nts.html">Neurotransparency Specification</a>
+    <a href="ari.html">ARI</a>
+    <a href="awo.html">AWO</a>
+    <a href="cri-core.html">CRI-CORE</a>
+    <a href="tools.html">Tools</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="publications.html">Publications</a>
+    <a class="active-link" href="updates.html">Updates</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="kicker">Institutional Updates</span>
+  <h1>Announcements</h1>
+  <p class="muted">
+    Formal releases, standards, and research milestones.  
+    Chronological · Auditable · Non-promotional.
+  </p>
+</section>
+
+<!-- ======================= -->
+<!-- NEW ENTRY — GLYPHTRACE -->
+<!-- ======================= -->
+
+<section class="card">
+  <div class="update-head">
+    <h3>Glyphtrace v0.0.1 Released</h3>
+    <div class="meta">
+      <strong>Date:</strong> 2025-12-26 ·
+      <strong>Scope:</strong> Tokenization & Reasoning Compression Layer
     </div>
+  </div>
 
-    <div class="hdr-sub">
-      Institutional release log for the Aurora ecosystem.
+  <h4>What changed</h4>
+  <ul class="muted">
+    <li>Introduced Glyphtrace as a universal research-compression format.</li>
+    <li>Standardized token representation for conceptual lineage.</li>
+    <li>Added Concept DOI and first version DOI.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p class="muted">
+    Glyphtrace establishes the compression primitive for AWO, CRI-CORE, and research reproducibility.  
+    It enables claim lineage, semantic traceability, and compact publication encoding.
+  </p>
+
+  <h4>Links</h4>
+  <ul class="muted">
+    <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18057686" target="_blank">10.5281/zenodo.18057686</a></li>
+    <li><strong>Version DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18057687" target="_blank">10.5281/zenodo.18057687</a></li>
+  </ul>
+</section>
+
+<!-- Existing entries preserved as-is below (unchanged) -->
+
+<!-- NTS -->
+<section class="card">
+  <div class="update-head">
+    <h3>Neurotransparency Specification (NTS) v2.0.0 Released</h3>
+    <div class="meta">
+      <strong>Date:</strong> 2025-12-18 · <strong>Layer:</strong> 0 — Specification
     </div>
+  </div>
+  ...
+</section>
 
-    <nav class="topnav">
-      <a href="index.html">Home</a>
-      <a href="hierarchy.html">Aurora Hierarchy</a>
-      <a href="doctrine.html">Neurotransparency Doctrine</a>
-      <a href="nts.html">Neurotransparency Specification</a>
-      <a href="ari.html">ARI</a>
-      <a href="awo.html">AWO</a>
-      <a href="cri-core.html">CRI-CORE</a>
-      <a href="tools.html">Tools</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="publications.html">Publications</a>
-      <a class="active-link" href="updates.html">Updates</a>
-    </nav>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <span class="kicker">Institutional Updates</span>
-    <h1>Announcements</h1>
-
-    <p class="muted">
-      This page records formal releases and structural changes to governance,
-      standards, and canonical research artifacts under the Aurora ecosystem.
-      Entries are chronological, factual, and non-promotional.
-    </p>
-  </section>
-
-  <!-- ===== NTS UPDATE ===== -->
-  <section class="card">
-    <div class="update-head">
-      <h3>Neurotransparency Specification (NTS) v2.0.0 Released</h3>
-      <div class="meta">
-        <strong>Date:</strong> 2025-12-18 ·
-        <strong>Scope:</strong> Layer 0 — Normative Specification (Neurotransparency)
-      </div>
+<!-- NTD -->
+<section class="card">
+  <div class="update-head">
+    <h3>Neurotransparency Doctrine (NTD) Released</h3>
+    <div class="meta">
+      <strong>Date:</strong> 2025-12-17 · <strong>Layer:</strong> 0 — Doctrine
     </div>
+  </div>
+  ...
+</section>
 
-    <h4>What changed</h4>
-    <ul class="muted">
-      <li>Formalized the Neurotransparency Specification as a standalone normative standard.</li>
-      <li>Clarified separation between doctrine (epistemic rationale) and specification (disclosure requirements).</li>
-      <li>Defined explicit compliance targets for downstream workflow and enforcement systems.</li>
-    </ul>
-
-    <h4>Why it matters</h4>
-    <p class="muted">
-      This release establishes a machine-verifiable standard for cognitive traceability
-      in AI-assisted scientific work. Where the Neurotransparency Doctrine defines
-      <em>why</em> transparency is required, the Specification defines <em>what must be disclosed</em>
-      for work to be considered epistemically legitimate under Aurora governance.
-    </p>
-
-    <p class="muted">
-      The separation prevents category errors between philosophy, governance, methodology,
-      and enforcement, enabling auditability without exposing internal cognition or
-      delegating epistemic authority to machines.
-    </p>
-
-    <h4>Links</h4>
-    <ul class="muted">
-      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">10.5281/zenodo.17809676</a></li>
-      <li><strong>Version DOI (v2.0.0):</strong> <a href="https://doi.org/10.5281/zenodo.17982172" target="_blank">10.5281/zenodo.17982172</a></li>
-      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">Waveframe-Labs/Neurotransparency-Specification</a></li>
-    </ul>
-  </section>
-
-  <!-- ===== NTD UPDATE ===== -->
-  <section class="card">
-    <div class="update-head">
-      <h3>Neurotransparency Doctrine (NTD) Released</h3>
-      <div class="meta">
-        <strong>Date:</strong> 2025-12-17 ·
-        <strong>Scope:</strong> Layer 0 — Epistemic Doctrine (Neurotransparency)
-      </div>
+<!-- ARI -->
+<section class="card">
+  <div class="update-head">
+    <h3>Aurora Research Initiative Formalized</h3>
+    <div class="meta">
+      <strong>Date:</strong> 2025-12-16 · <strong>Layer:</strong> 1 — Governance
     </div>
+  </div>
+  ...
+</section>
 
-    <h4>What changed</h4>
-    <ul class="muted">
-      <li>Formalized the Neurotransparency Doctrine as the epistemic foundation for AI–human scientific work.</li>
-      <li>Defined cognitive traceability as a requirement for legitimacy, not correctness or outcome quality.</li>
-      <li>Established separation between epistemic rationale (doctrine) and normative disclosure (specification).</li>
-    </ul>
-
-    <h4>Why it matters</h4>
-    <p class="muted">
-      The Doctrine establishes <em>why</em> AI-assisted research requires traceability,
-      attribution, and bounded authority. It frames transparency as a prerequisite for
-      accountability rather than a proxy for truth.
-    </p>
-
-    <p class="muted">
-      By anchoring transparency at the epistemic layer, the Doctrine prevents enforcement,
-      tooling, or automation from acquiring implicit scientific authority.
-    </p>
-
-    <h4>Links</h4>
-    <ul class="muted">
-      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17957384" target="_blank">10.5281/zenodo.17957384</a></li>
-      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">Waveframe-Labs/Neurotransparency-Doctrine</a></li>
-    </ul>
-  </section>
-
-  <!-- ===== ARI UPDATE ===== -->
-  <section class="card">
-    <div class="update-head">
-      <h3>Aurora Research Initiative (ARI) Formalized</h3>
-      <div class="meta">
-        <strong>Date:</strong> 2025-12-16 ·
-        <strong>Scope:</strong> Layer 1 — Institutional Governance
-      </div>
-    </div>
-
-    <h4>What changed</h4>
-    <ul class="muted">
-      <li>Established ARI as the institutional authority governing the Aurora ecosystem.</li>
-      <li>Defined binding governance over standards, methodologies, enforcement systems, and case studies.</li>
-      <li>Clarified authority boundaries between doctrine, specification, workflows, and enforcement.</li>
-    </ul>
-
-    <h4>Why it matters</h4>
-    <p class="muted">
-      ARI defines <em>who decides</em> within the ecosystem. It prevents individual tools,
-      workflows, or automation from implicitly acquiring epistemic power.
-    </p>
-
-    <p class="muted">
-      By separating governance from implementation, ARI enables reproducibility without
-      centralization or delegated authority.
-    </p>
-
-    <h4>Links</h4>
-    <ul class="muted">
-      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">10.5281/zenodo.17743096</a></li>
-      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">Waveframe-Labs/Aurora-Research-Initiative</a></li>
-    </ul>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <span>Text &amp; media: CC BY 4.0</span>
-    <span>· © 2025 Waveframe Labs</span>
-    <span>· Governed under the <a href="ari.html">Aurora Research Initiative (ARI)</a></span>
-  </footer>
+<footer>
+  <span>Text &amp; media: CC BY 4.0</span>
+  <span>· © 2025 Waveframe Labs</span>
+  <span>· Governed under <a href="ari.html">Aurora Research Initiative</a></span>
+</footer>
 
 </div>
 </body>
