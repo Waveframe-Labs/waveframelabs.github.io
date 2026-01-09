@@ -9,35 +9,103 @@
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/updates.html" />
 
-  <style>
-    :root{
-      --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-    a:hover{border-color:var(--ink)}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
-    .hdr{padding:22px 18px;border:1px solid var(--edge);border-radius:18px;background:var(--card);margin-bottom:22px;}
-    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
-    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .active-link{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
-    .hero{margin:16px 0 22px;padding:22px;border:1px solid var(--edge);border-radius:18px;
-      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));}
-    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h4{margin-top:14px}
-    p{line-height:1.65}
-    .card{background:var(--card);border:1px solid var(--edge);border-radius:18px;padding:18px;margin-top:22px}
-    .update-head{margin:-18px -18px 16px;padding:14px 18px 12px;border-bottom:1px solid var(--edge);
-      border-radius:18px 18px 0 0;background:linear-gradient(180deg,rgba(255,122,24,.16),rgba(255,122,24,.05),rgba(0,0,0,0));}
-    .update-head h3{margin:0 0 4px}
-    .meta{color:var(--muted);font-size:.9rem;margin:0;}
-    footer{margin-top:40px;color:var(--muted);font-size:.95rem;display:flex;gap:6px;flex-wrap:wrap}
-  </style>
+<style>
+:root{
+  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
+  --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12; --maxw:1080px; --rad:12px;
+}
+*{box-sizing:border-box;}
+html,body{
+  margin:0; padding:0; background:var(--bg); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none;transition:color .2s;}
+a:hover{color:var(--accent);}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 0;}
+
+/* HEADER */
+.hdr{
+  padding:18px 24px;
+  border-bottom:1px solid var(--edge);
+  background:rgba(20,22,27,.88);
+  backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  position:sticky; top:0; z-index:100; margin-bottom:28px;
+  border-left:1px solid var(--edge); border-right:1px solid var(--edge);
+  border-radius: 0 0 12px 12px;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
+
+.topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
+.topnav a{opacity:.7;} 
+.topnav a:hover{opacity:1;color:var(--accent);}
+.active-link{opacity:1!important;color:var(--accent)!important;}
+
+@media(max-width:850px){
+  .hdr{flex-direction:column;align-items:flex-start;gap:14px;}
+  .topnav{flex-wrap:wrap;gap:18px;}
+}
+
+/* Typography */
+.kicker{
+  color:var(--accent);
+  font-size:.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
+  display:block;
+}
+
+h2{margin:0 0 10px;font-size:1.5rem;}
+h3{margin:0 0 6px;font-size:1.15rem;}
+p{line-height:1.65;color:var(--muted); margin-bottom:1rem;}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  padding:0;
+  margin-bottom:24px;
+}
+
+.update-head{
+  padding:20px 24px;
+  border-bottom:1px solid var(--edge);
+  background:linear-gradient(180deg,rgba(255,122,24,.18),rgba(255,122,24,.05),rgba(0,0,0,0));
+  border-radius:12px 12px 0 0;
+}
+
+.update-body{
+  padding:20px 24px 28px;
+}
+
+.meta{
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* Footer */
+footer{
+  margin-top:60px; border-top:1px solid var(--edge); background:var(--card);
+  padding: 40px 20px 20px;
+}
+.footer-grid{
+  display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap:32px; max-width:var(--maxw); margin:0 auto;
+}
+@media(max-width:700px){.footer-grid{grid-template-columns:1fr; gap:40px;}}
+
+.ft-col h4{font-size:0.9rem;text-transform:uppercase;letter-spacing:1px;color:var(--ink);margin-bottom:16px;}
+.ft-links a{display:block;color:var(--muted);margin-bottom:10px;font-size:0.9rem;}
+.ft-links a:hover{color:var(--accent);padding-left:4px;}
+
+.ft-bottom{
+  max-width:var(--maxw);margin:40px auto 0;padding-top:20px;border-top:1px solid var(--edge);
+  display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem;
+}
+</style>
 </head>
 
 <body>
@@ -45,144 +113,205 @@
 
 <!-- HEADER -->
 <header class="hdr">
-  <div class="hdr-top">
-    <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-    <div class="title">Waveframe Labs</div>
+  <div class="brand">
+    <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
+    <div class="brand-text">Waveframe Labs</div>
   </div>
-  <div class="hdr-sub">Institutional release log for the Aurora ecosystem.</div>
   <nav class="topnav">
-    <a href="index.html">Home</a><a href="hierarchy.html">Aurora Hierarchy</a><a href="doctrine.html">Neurotransparency Doctrine</a>
-    <a href="nts.html">Neurotransparency Specification</a><a href="ari.html">ARI</a><a href="awo.html">AWO</a>
-    <a href="cri-core.html">CRI-CORE</a><a href="tools.html">Tools</a><a href="case-studies.html">Case Studies</a>
-    <a href="publications.html">Publications</a><a class="active-link" href="updates.html">Updates</a>
+    <a href="index.html">Home</a>
+    <a href="hierarchy.html">Hierarchy</a>
+    <a href="doctrine.html">Doctrine</a>
+    <a href="awo.html">Methodology</a>
+    <a href="tools.html">Tools</a>
+    <a class="active-link" href="updates.html">Updates</a>
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<!-- PAGE TITLE -->
+<section style="margin-bottom:28px;">
   <span class="kicker">Institutional Updates</span>
-  <h1>Announcements</h1>
-  <p class="muted">Canonical releases & governance changes. Chronological · factual · permanent.</p>
+  <h2 style="color:var(--accent);">Canonical Announcements</h2>
+  <p>Chronological · factual · permanent. This log records authoritative releases across the Aurora ecosystem.</p>
 </section>
 
-<!-- ====================================================== -->
-<!-- NEW ENTRY — GLYPHTRACE RESTORED + PRESERVED CONTEXT   -->
-<!-- ====================================================== -->
+<!-- ====================== -->
+<!-- AWO v2.0.0 — NEW ENTRY -->
+<!-- ====================== -->
 <section class="card">
   <div class="update-head">
-    <h3>Glyphtrace (v0.0.1) — Concept & Version DOI Registered</h3>
+    <h3>AWO v2.0.0 Released — Methodology Layer Finalized</h3>
     <div class="meta">
-      <strong>Date:</strong> 2025-12-26 · <strong>Layer:</strong> Research Compression & Traceability
+      <strong>Date:</strong> 2026-01-09 · <strong>Layer:</strong> 2 — Methodology
     </div>
   </div>
 
-  <h4>What changed</h4>
-  <ul class="muted">
-    <li>Introduced Glyphtrace — semantic compression for scientific reasoning chains.</li>
-    <li>Established token format for claim lineage & derivation mapping.</li>
-    <li>Minted Concept DOI + Version DOI for archival reference.</li>
-  </ul>
+  <div class="update-body">
+    <h4>What changed</h4>
+    <ul class="muted">
+      <li>Full rewrite of the Aurora Workflow Orchestration methodology</li>
+      <li>Defined five enforceable artifact classes + schemas</li>
+      <li>Established minimal phase topology + role separation rules</li>
+      <li>Completed contract index and schema map</li>
+      <li>Added onboarding guide + examples + normative specifications</li>
+    </ul>
 
-  <h4>Why it matters</h4>
-  <p class="muted">
-    Glyphtrace becomes the encoding substrate for AWO & CRI-CORE, enabling claim-compression,
-    falsification paths, and semantic lineage tracking inside research ecosystems.
-  </p>
+    <h4>Why this matters</h4>
+    <p class="muted">
+      AWO v2.0.0 is now the authoritative definition of how research must be conducted 
+      under the Aurora ecosystem. It provides deterministic structure for CRI-CORE to enforce,
+      eliminating ambiguity in workflow execution.
+    </p>
 
-  <h4>Links</h4>
-  <ul class="muted">
-    <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18057686">10.5281/zenodo.18057686</a></li>
-    <li><strong>Version DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18057687">10.5281/zenodo.18057687</a></li>
-  </ul>
+    <h4>Links</h4>
+    <ul class="muted">
+      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17013612">10.5281/zenodo.17013612</a></li>
+      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration">Aurora-Workflow-Orchestration</a></li>
+    </ul>
+  </div>
 </section>
 
-<!-- ===================== -->
-<!-- ORIGINAL CONTENT RESTORED BELOW   -->
-<!-- ===================== -->
+<!-- ==================================== -->
+<!-- GLYPHTRACE ENTRY REFORMATTED         -->
+<!-- ==================================== -->
+<section class="card">
+  <div class="update-head">
+    <h3>Glyphtrace (v0.0.1) — Concept & Version DOI Registered</h3>
+    <div class="meta">2025-12-26 · Layer: Research Compression & Traceability</div>
+  </div>
+  <div class="update-body">
+    <h4>What changed</h4>
+    <ul class="muted">
+      <li>Introduced symbolic compression system for reasoning chains.</li>
+      <li>Formalized token grammar for lineage + derivation mapping.</li>
+      <li>Published concept and version DOIs for long-term archival.</li>
+    </ul>
+    <h4>Why it matters</h4>
+    <p class="muted">
+      Glyphtrace forms the encoding substrate that future enforcement layers will use
+      to track claims, provenance, and semantic lineage.
+    </p>
+    <h4>Links</h4>
+    <ul class="muted">
+      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18057686">10.5281/zenodo.18057686</a></li>
+      <li><strong>Version DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18057687">10.5281/zenodo.18057687</a></li>
+    </ul>
+  </div>
+</section>
 
+<!-- ==================================== -->
+<!-- NTS ENTRY REWRITTEN                  -->
+<!-- ==================================== -->
 <section class="card">
   <div class="update-head">
     <h3>Neurotransparency Specification (NTS) v2.0.0 Released</h3>
-    <div class="meta"><strong>Date:</strong> 2025-12-18 · <strong>Layer:</strong> 0 — Specification</div>
+    <div class="meta">2025-12-18 · Layer 0 — Specification</div>
   </div>
+  <div class="update-body">
+    <h4>What changed</h4>
+    <ul class="muted">
+      <li>Defined machine-verifiable disclosure requirements.</li>
+      <li>Separated doctrinal rationale from enforceable specification.</li>
+      <li>Added compliance targets for CRI-CORE.</li>
+    </ul>
 
-  <h4>What changed</h4>
-  <ul class="muted">
-    <li>Formalized NTS as a standalone normative standard.</li>
-    <li>Separated doctrine (why) vs specification (what must be disclosed).</li>
-    <li>Defined verifiable compliance & downstream enforcement targets.</li>
-  </ul>
-
-  <h4>Why it matters</h4>
-  <p class="muted">
-    Creates machine-verifiable AI research traceability requirements,
-    ensuring transparency without exposing internal cognition.
-  </p>
-
-  <h4>Links</h4>
-  <ul class="muted">
-    <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17809676">10.5281/zenodo.17809676</a></li>
-    <li><strong>Version DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17982172">10.5281/zenodo.17982172</a></li>
-    <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Neurotransparency-Specification">Neurotransparency-Specification</a></li>
-  </ul>
+    <h4>Links</h4>
+    <ul class="muted">
+      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17809676">10.5281/zenodo.17809676</a></li>
+      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Neurotransparency-Specification">Neurotransparency-Specification</a></li>
+    </ul>
+  </div>
 </section>
 
+<!-- ==================================== -->
+<!-- NTD ENTRY REWRITTEN                  -->
+<!-- ==================================== -->
 <section class="card">
   <div class="update-head">
     <h3>Neurotransparency Doctrine (NTD) Released</h3>
-    <div class="meta"><strong>Date:</strong> 2025-12-17 · <strong>Layer:</strong> 0 — Doctrine</div>
+    <div class="meta">2025-12-17 · Layer 0 — Doctrine</div>
   </div>
+  <div class="update-body">
+    <h4>What changed</h4>
+    <ul class="muted">
+      <li>Defined epistemic rationale for AI–human traceability.</li>
+      <li>Established foundation for NTS + ARI governance rules.</li>
+      <li>Separated normative reasoning from enforceable spec.</li>
+    </ul>
 
-  <h4>What changed</h4>
-  <ul class="muted">
-    <li>Established epistemic foundation for AI-human research legitimacy.</li>
-    <li>Defined cognitive traceability requirements.</li>
-    <li>Separated rationale from technical specification.</li>
-  </ul>
-
-  <h4>Why it matters</h4>
-  <p class="muted">
-    NTD defines *why* AI-assisted science must be transparent before
-    specification defines *how* it must be disclosed.
-  </p>
-
-  <h4>Links</h4>
-  <ul class="muted">
-    <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17957384">10.5281/zenodo.17957384</a></li>
-    <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine">Neurotransparency-Doctrine</a></li>
-  </ul>
+    <h4>Links</h4>
+    <ul class="muted">
+      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17957384">10.5281/zenodo.17957384</a></li>
+    </ul>
+  </div>
 </section>
 
+<!-- ==================================== -->
+<!-- ARI ENTRY REWRITTEN                  -->
+<!-- ==================================== -->
 <section class="card">
   <div class="update-head">
     <h3>Aurora Research Initiative (ARI) Formalized</h3>
-    <div class="meta"><strong>Date:</strong> 2025-12-16 · <strong>Layer:</strong> 1 — Governance</div>
+    <div class="meta">2025-12-16 · Layer 1 — Governance</div>
   </div>
+  <div class="update-body">
+    <h4>What changed</h4>
+    <ul class="muted">
+      <li>Defined governance authority for entire Aurora ecosystem.</li>
+      <li>Set boundaries between doctrine → spec → workflow → enforcement.</li>
+      <li>Established independence + no self-attestation rules.</li>
+    </ul>
 
-  <h4>What changed</h4>
-  <ul class="muted">
-    <li>Defined governance authority over the entire Aurora ecosystem.</li>
-    <li>Established separation of doctrine → spec → workflow → enforcement.</li>
-    <li>Bound methods and tooling to governance rather than replacing it.</li>
-  </ul>
-
-  <h4>Why it matters</h4>
-  <p class="muted">
-    ARI defines *who decides* inside Aurora. Without it, tools could acquire authority by accident.
-  </p>
-
-  <h4>Links</h4>
-  <ul class="muted">
-    <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17743096">10.5281/zenodo.17743096</a></li>
-    <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative">Aurora-Research-Initiative</a></li>
-  </ul>
+    <h4>Links</h4>
+    <ul class="muted">
+      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17743096">10.5281/zenodo.17743096</a></li>
+      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative">Aurora-Research-Initiative</a></li>
+    </ul>
+  </div>
 </section>
 
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <span>Text & media: CC BY 4.0</span> · <span>© 2025 Waveframe Labs</span> ·
-  <span>Governed under <a href="ari.html">ARI</a></span>
+  <div class="footer-grid">
+      <div class="ft-col">
+          <img src="waveframe-logo-mark.png" width="24" height="24" style="margin-bottom:12px;">
+          <div style="font-weight:700; font-size:1.1rem; color:var(--ink); margin-bottom:8px;">Waveframe Labs</div>
+          <p style="font-size:0.9rem; max-width:280px;">
+              Constructing the epistemic foundation for AI-assisted science.
+              Operating under the Aurora Research Initiative.
+          </p>
+      </div>
+
+      <div class="ft-col">
+          <h4>Protocol</h4>
+          <div class="ft-links">
+              <a href="doctrine.html">Doctrine (NTD)</a>
+              <a href="nts.html">Specification (NTS)</a>
+              <a href="awo.html">Methodology (AWO)</a>
+              <a href="tools.html">Tooling & Forge</a>
+          </div>
+      </div>
+
+      <div class="ft-col">
+          <h4>Connect</h4>
+          <div class="ft-links">
+              <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a>
+              <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">ORCID: 0009-0006-6043-9295</a>
+              <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub / Source</a>
+          </div>
+      </div>
+  </div>
+
+  <div class="ft-bottom">
+      <span>&copy; <span id="year"></span> Waveframe Labs</span>
+      <span>Aurora Ecosystem</span>
+  </div>
 </footer>
 
-</div>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
