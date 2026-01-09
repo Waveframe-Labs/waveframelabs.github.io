@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="waveframe-logo-banner-mark.png" alt="Waveframe Labs Banner" width="650">
+  <img src="WF-WEB-README.PNG" alt="Waveframe Labs Banner" width="650">
 </p>  
 
 # Waveframe Labs — Website Repository
