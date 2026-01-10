@@ -10,119 +10,128 @@
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/publications.html" />
 
-  <style>
-    :root{
-      --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0; padding:0;
-      background:var(--bg); color:var(--ink);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
-    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-    a:hover{border-color:var(--ink)}
+<style>
+:root{
+  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
+  --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12; --maxw:1080px; --rad:12px;
+}
+*{box-sizing:border-box;}
+html,body{
+  margin:0; padding:0; background:var(--bg); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none;transition:color .2s;}
+a:hover{color:var(--accent);}
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 0;}
 
-    .hdr{
-      padding:22px 18px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:var(--card);
-      margin-bottom:22px;
-    }
-    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+/* HEADER — same as homepage */
+.hdr{
+  padding:18px 24px;
+  border-bottom:1px solid var(--edge);
+  background:rgba(20,22,27,.88);
+  backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  position:sticky; top:0; z-index:100; margin-bottom:28px;
+  border-left:1px solid var(--edge); border-right:1px solid var(--edge);
+  border-radius: 0 0 12px 12px;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
 
-    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .topnav a{border:none}
-    .active-link{
-      color:var(--accent);
-      font-weight:600;
-      border-bottom:1px solid var(--accent);
-    }
+.topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
+.topnav a{opacity:.7;} 
+.topnav a:hover{opacity:1;color:var(--accent);}
+.active-link{opacity:1!important;color:var(--accent)!important;}
 
-    .hero{
-      margin:16px 0 22px;
-      padding:22px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-    }
+@media(max-width:850px){
+  .hdr{flex-direction:column;align-items:flex-start;gap:14px;}
+  .topnav{flex-wrap:wrap;gap:18px;}
+}
 
-    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h2{margin-top:0}
-    h3{margin:.2rem 0 .35rem}
-    p{line-height:1.65}
+/* Typography */
+.kicker{
+  color:var(--accent);
+  font-size:.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
+  display:block;
+}
 
-    .kicker{
-      color:var(--accent);
-      font-size:.8rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
+h2{margin:0 0 12px;font-size:1.45rem;}
+h3{margin:0 0 6px;font-size:1.15rem;}
+p{line-height:1.65;color:var(--muted);margin-bottom:1rem;}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--edge);
-      border-radius:18px;
-      padding:18px;
-      margin-top:14px;
-    }
+.card{
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  padding:20px 24px;
+  margin-bottom:22px;
+}
 
-    .doi-strip{
-      display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;
-    }
-    .doi-item{
-      display:flex;flex-wrap:wrap;gap:10px;align-items:center;
-      padding:10px 12px;border:1px solid var(--edge);
-      border-radius:14px;background:rgba(20,22,27,.55);
-    }
-    .doi-links{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.95rem}
-    .mini-link{color:var(--muted);border-bottom:1px solid transparent}
-    .mini-link:hover{color:var(--ink);border-color:var(--ink)}
-    .muted{color:var(--muted)}
+.doi-strip{
+  display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;
+}
+.doi-item{
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  padding:10px 12px;border:1px solid var(--edge);
+  border-radius:10px;background:rgba(20,22,27,.55);
+}
+.mini-link{
+  color:var(--muted);
+  border-bottom:1px solid transparent;
+}
+.mini-link:hover{
+  color:var(--ink);border-color:var(--ink);
+}
 
-    footer{
-      margin-top:40px;color:var(--muted);font-size:.95rem;
-      display:flex;flex-wrap:wrap;gap:6px;align-items:center;
-    }
-  </style>
+/* Footer — identical to homepage */
+footer{
+  margin-top:60px; border-top:1px solid var(--edge); background:var(--card);
+  padding: 40px 20px 20px;
+}
+.footer-grid{
+  display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap:32px; max-width:var(--maxw); margin:0 auto;
+}
+@media(max-width:700px){.footer-grid{grid-template-columns:1fr; gap:40px;}}
+
+.ft-col h4{font-size:0.9rem;text-transform:uppercase;letter-spacing:1px;color:var(--ink);margin-bottom:16px;}
+.ft-links a{display:block;color:var(--muted);margin-bottom:10px;font-size:0.9rem;}
+.ft-links a:hover{color:var(--accent);padding-left:4px;}
+
+.ft-bottom{
+  max-width:var(--maxw);margin:40px auto 0;padding-top:20px;border-top:1px solid var(--edge);
+  display:flex;justify-content:space-between;color:var(--muted);font-size:0.8rem;
+}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
 <header class="hdr">
-  <div class="hdr-top">
-    <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-    <div class="title">Waveframe Labs</div>
+  <div class="brand">
+    <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
+    <div class="brand-text">Waveframe Labs</div>
   </div>
-  <div class="hdr-sub">Canonical publications and archived research artifacts.</div>
-
   <nav class="topnav">
     <a href="index.html">Home</a>
-    <a href="hierarchy.html">Aurora Hierarchy</a>
-    <a href="doctrine.html">Neurotransparency Doctrine</a>
-    <a href="nts.html">Neurotransparency Specification</a>
-    <a href="ari.html">ARI</a>
-    <a href="awo.html">AWO</a>
-    <a href="cri-core.html">CRI-CORE</a>
+    <a href="hierarchy.html">Hierarchy</a>
+    <a href="doctrine.html">Doctrine</a>
+    <a href="awo.html">Methodology</a>
     <a href="tools.html">Tools</a>
-    <a href="case-studies.html">Case Studies</a>
     <a class="active-link" href="publications.html">Publications</a>
     <a href="updates.html">Updates</a>
   </nav>
 </header>
 
-<section class="hero">
+<section style="margin-bottom:28px;">
   <span class="kicker">Canonical Archive</span>
-  <h1>Publications</h1>
-  <p class="muted">DOI-backed publications and research artifacts produced under the Aurora ecosystem. Each entry links to its canonical repository and archival record.</p>
+  <h2 style="color:var(--accent);">Publications</h2>
+  <p>DOI-backed governance documents, specifications, and case studies produced under the Aurora ecosystem.</p>
 </section>
 
 <!-- ================= CONCEPT PUBLICATIONS ================= -->
@@ -132,15 +141,14 @@
   <!-- ARI -->
   <div class="card">
     <h3>Aurora Research Initiative (ARI)</h3>
-    <p class="muted">Institutional governance framework.</p>
+    <p>Institutional governance framework for the Aurora ecosystem.</p>
+
     <div class="doi-strip">
       <div class="doi-item">
-        <div class="doi-links">
-          <a class="mini-link" href="ari.html"><strong>ARI</strong> page</a><span class="muted">·</span>
-          <a class="mini-link" href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">GitHub</a>
-        </div>
+        <a class="mini-link" href="ari.html"><strong>ARI page</strong></a>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Aurora-Research-Initiative" target="_blank">GitHub</a>
         <a href="https://doi.org/10.5281/zenodo.17743096" target="_blank">
-          <img src="https://img.shields.io/badge/ARI%20DOI-10.5281%2Fzenodo.17743096-0b0c10?style=flat&labelColor=14161b&color=ff7a18" height="22">
+          <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17743096-ff7a18?style=flat&labelColor=14161b" height="22">
         </a>
       </div>
     </div>
@@ -149,15 +157,14 @@
   <!-- NTD -->
   <div class="card">
     <h3>Neurotransparency Doctrine (NTD)</h3>
-    <p class="muted">Epistemic foundation for AI–human cognitive legitimacy.</p>
+    <p>Epistemic rationale for AI–human cognitive legitimacy.</p>
+
     <div class="doi-strip">
       <div class="doi-item">
-        <div class="doi-links">
-          <a class="mini-link" href="doctrine.html"><strong>NTD</strong> page</a><span class="muted">·</span>
-          <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">GitHub</a>
-        </div>
+        <a class="mini-link" href="doctrine.html"><strong>NTD page</strong></a>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">GitHub</a>
         <a href="https://doi.org/10.5281/zenodo.17957384" target="_blank">
-          <img src="https://img.shields.io/badge/NTD%20DOI-10.5281%2Fzenodo.17957384-0b0c10?style=flat&labelColor=14161b&color=ff7a18" height="22">
+          <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17957384-ff7a18?style=flat&labelColor=14161b" height="22">
         </a>
       </div>
     </div>
@@ -166,15 +173,14 @@
   <!-- NTS -->
   <div class="card">
     <h3>Neurotransparency Specification (NTS)</h3>
-    <p class="muted">Normative disclosure and compliance standard.</p>
+    <p>Normative disclosure + compliance rules for AI-assisted research.</p>
+
     <div class="doi-strip">
       <div class="doi-item">
-        <div class="doi-links">
-          <a class="mini-link" href="nts.html"><strong>NTS</strong> page</a><span class="muted">·</span>
-          <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">GitHub</a>
-        </div>
+        <a class="mini-link" href="nts.html"><strong>NTS page</strong></a>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Neurotransparency-Specification" target="_blank">GitHub</a>
         <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">
-          <img src="https://img.shields.io/badge/NTS%20DOI-10.5281%2Fzenodo.17809676-0b0c10?style=flat&labelColor=14161b&color=ff7a18" height="22">
+          <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17809676-ff7a18?style=flat&labelColor=14161b" height="22">
         </a>
       </div>
     </div>
@@ -183,33 +189,39 @@
   <!-- AWO -->
   <div class="card">
     <h3>Aurora Workflow Orchestration (AWO)</h3>
-    <p class="muted">Audit-first reproducible research methodology.</p>
+    <p>Audit-first reproducible research methodology.</p>
+
     <div class="doi-strip">
       <div class="doi-item">
-        <div class="doi-links">
-          <a class="mini-link" href="awo.html"><strong>AWO</strong> page</a><span class="muted">·</span>
-          <a class="mini-link" href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration" target="_blank">GitHub</a>
-        </div>
+        <a class="mini-link" href="awo.html"><strong>AWO page</strong></a>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration" target="_blank">GitHub</a>
+
+        <!-- Concept DOI -->
         <a href="https://doi.org/10.5281/zenodo.17013612" target="_blank">
-          <img src="https://img.shields.io/badge/AWO%20DOI-10.5281%2Fzenodo.17013612-0b0c10?style=flat&labelColor=14161b&color=ff7a18" height="22">
+          <img src="https://img.shields.io/badge/Concept%20DOI-10.5281%2Fzenodo.17013612-ff7a18?style=flat&labelColor=14161b" height="22">
+        </a>
+
+        <!-- Version DOI (NEW) -->
+        <a href="https://doi.org/10.5281/zenodo.18201829" target="_blank">
+          <img src="https://img.shields.io/badge/Version%20DOI-10.5281%2Fzenodo.18201829-ff7a18?style=flat&labelColor=14161b" height="22">
         </a>
       </div>
     </div>
   </div>
 
-  <!-- GLYPHTRACE — new entry -->
+  <!-- GLYPHTRACE -->
   <div class="card">
     <h3>Glyphtrace</h3>
-    <p class="muted">Symbolic epistemic compression format for research traceability.</p>
+    <p>Symbolic compression format for epistemic lineage tracking.</p>
+
     <div class="doi-strip">
       <div class="doi-item">
-        <div class="doi-links">
-          <span class="muted"><strong>Specification Prototype</strong></span>
-          <span class="muted">·</span>
-          <a class="mini-link" href="https://github.com/Waveframe-Labs/Glyphtrace" target="_blank">GitHub</a>
-        </div>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Glyphtrace" target="_blank">GitHub</a>
         <a href="https://doi.org/10.5281/zenodo.18057686" target="_blank">
-          <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18057686-0b0c10?style=flat&labelColor=14161b&color=ff7a18" height="22">
+          <img src="https://img.shields.io/badge/Concept%20DOI-10.5281%2Fzenodo.18057686-ff7a18?style=flat&labelColor=14161b" height="22">
+        </a>
+        <a href="https://doi.org/10.5281/zenodo.18057687" target="_blank">
+          <img src="https://img.shields.io/badge/Version%20DOI-10.5281%2Fzenodo.18057687-ff7a18?style=flat&labelColor=14161b" height="22">
         </a>
       </div>
     </div>
@@ -217,20 +229,19 @@
 
 </section>
 
-<!-- CASE STUDIES -->
+<!-- ================= CASE STUDIES ================= -->
 <section>
-  <h2>Case Study Publications</h2>
+  <h2>Case Studies</h2>
 
   <div class="card">
     <h3>Waveframe v4.0</h3>
-    <p class="muted">Observer-driven cosmology and entropy-first spacetime model.</p>
+    <p>Observer-driven cosmology and entropy-first spacetime model.</p>
+
     <div class="doi-strip">
       <div class="doi-item">
-        <div class="doi-links"><span class="muted"><strong>Case Study</strong></span><span class="muted">·</span>
-          <a class="mini-link" href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank">GitHub</a>
-        </div>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Waveframe-v4.0" target="_blank">GitHub</a>
         <a href="https://doi.org/10.5281/zenodo.16872199" target="_blank">
-          <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.16872199-0b0c10?style=flat&labelColor=14161b&color=ff7a18" height="22">
+          <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.16872199-ff7a18?style=flat&labelColor=14161b" height="22">
         </a>
       </div>
     </div>
@@ -238,14 +249,13 @@
 
   <div class="card">
     <h3>Societal Health Simulator</h3>
-    <p class="muted">Sociotechnical modeling framework.</p>
+    <p>Sociological dynamics and progress modeling framework.</p>
+
     <div class="doi-strip">
       <div class="doi-item">
-        <div class="doi-links"><span class="muted"><strong>Case Study</strong></span><span class="muted">·</span>
-          <a class="mini-link" href="https://github.com/Waveframe-Labs/Societal-Health-Simulator" target="_blank">GitHub</a>
-        </div>
+        <a class="mini-link" href="https://github.com/Waveframe-Labs/Societal-Health-Simulator" target="_blank">GitHub</a>
         <a href="https://doi.org/10.5281/zenodo.17258419" target="_blank">
-          <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17258419-0b0c10?style=flat&labelColor=14161b&color=ff7a18" height="22">
+          <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17258419-ff7a18?style=flat&labelColor=14161b" height="22">
         </a>
       </div>
     </div>
@@ -253,11 +263,48 @@
 
 </section>
 
-<footer>
-  <span>Text &amp; media: CC BY-NC-SA 4.0</span>
-  <span>· Code: Apache-2.0</span>
-  <span>· © 2025 Waveframe Labs</span>
-</footer>
 </div>
+
+<footer>
+  <div class="footer-grid">
+      <div class="ft-col">
+          <img src="waveframe-logo-mark.png" width="24" height="24" style="margin-bottom:12px;">
+          <div style="font-weight:700; font-size:1.1rem; color:var(--ink); margin-bottom:8px;">Waveframe Labs</div>
+          <p style="font-size:0.9rem; max-width:280px;">
+              Constructing the epistemic foundation for AI-assisted science.
+              Operating under the Aurora Research Initiative.
+          </p>
+      </div>
+
+      <div class="ft-col">
+          <h4>Protocol</h4>
+          <div class="ft-links">
+              <a href="doctrine.html">Doctrine (NTD)</a>
+              <a href="nts.html">Specification (NTS)</a>
+              <a href="awo.html">Methodology (AWO)</a>
+              <a href="tools.html">Tooling & Forge</a>
+          </div>
+      </div>
+
+      <div class="ft-col">
+          <h4>Connect</h4>
+          <div class="ft-links">
+              <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a>
+              <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">ORCID: 0009-0006-6043-9295</a>
+              <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub / Source</a>
+          </div>
+      </div>
+  </div>
+
+  <div class="ft-bottom">
+      <span>&copy; <span id="year"></span> Waveframe Labs</span>
+      <span>Aurora Ecosystem</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
