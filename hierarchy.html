@@ -1,20 +1,43 @@
+<!--
+---
+title: "Aurora Hierarchy · Waveframe Labs"
+short_title: "Hierarchy"
+version: "1.0.0"
+status: "Active"
+type: "website"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "CC-BY-4.0"
+policy_version: "ARI-Metadata-2.0.0"
+dependencies:
+  - "Aurora Ecosystem — Unified System Reference v2.0.0"
+ai_assisted: "partial"
+ai_assistance_details: "Hierarchy normalization and layer-model correction performed with AI assistance; final content reviewed and approved by Waveframe Labs."
+---
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Aurora Hierarchy · Waveframe Labs</title>
+  <title>Hierarchy · Waveframe Labs</title>
 
-  <meta name="description" content="The Aurora Hierarchy defines the six-layer institutional architecture governing epistemics, governance, methodology, enforcement, case studies, and tooling within the Aurora ecosystem.">
+  <meta name="description" content="The Aurora Hierarchy defines the Aurora Ecosystem layer model (L0–L6): authority, method, meaning, lineage, enforcement, publication, and research outputs.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/hierarchy.html" />
 
-  <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
+  <!-- OG (kept minimal, aligned with index conventions) -->
+  <meta property="og:title" content="Hierarchy · Waveframe Labs" />
+  <meta property="og:description" content="Canonical Aurora Ecosystem layer model (L0–L6) and authority boundaries." />
+  <meta property="og:type" content="website" />
+
+  <!-- === SHARED SITE STYLES (ALIGNED TO index.html NAV/PATTERN) === -->
   <style>
     :root{
       --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
+      --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12; --maxw:1080px; --rad:12px;
     }
     *{box-sizing:border-box}
     html,body{
@@ -22,66 +45,73 @@
       background:var(--bg); color:var(--ink);
       font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
-    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-    a:hover{border-color:var(--ink)}
+    a{color:inherit;text-decoration:none;transition:color .2s;}
+    a:hover{color:var(--accent);}
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
 
+    /* --- Header (normalized to index.html) --- */
     .hdr{
-      padding:22px 18px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:var(--card);
-      margin-bottom:22px;
+      padding:18px 24px;
+      border-bottom:1px solid var(--edge);
+      background:rgba(20,22,27,.88);
+      backdrop-filter:blur(12px);
+      display:flex; justify-content:space-between; align-items:center;
+      position:sticky; top:0; z-index:100; margin-bottom:28px;
+      border-left:1px solid var(--edge); border-right:1px solid var(--edge);
+      border-radius: 0 0 12px 12px;
     }
-    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+    .brand{display:flex;align-items:center;gap:12px;}
+    .brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
 
-    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .topnav a{border:none}
-    .active-link{
-      color:var(--accent);
-      font-weight:600;
-      border-bottom:1px solid var(--accent);
+    .topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
+    .topnav a{opacity:.7;}
+    .topnav a:hover{opacity:1;color:var(--accent);}
+    .active-link{opacity:1!important;color:var(--accent)!important;}
+
+    @media(max-width:850px){
+      .hdr{flex-direction:column;align-items:flex-start;gap:14px;}
+      .topnav{flex-wrap:wrap;gap:18px;}
     }
 
+    /* --- Page typography --- */
+    h1{font-size:clamp(1.6rem,3.6vw,2.2rem);margin:0 0 .6rem}
+    h2{margin:0 0 .6rem;font-size:1.35rem;}
+    h3{margin:0 0 .25rem;font-size:1.05rem;}
+    p{line-height:1.65;color:var(--muted); margin:0 0 1rem;}
+    p strong{color:var(--ink);}
+
+    .kicker{
+      color:var(--accent);font-size:.75rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:1px;margin-bottom:8px;display:block;
+    }
+
+    /* --- Hero --- */
     .hero{
-      margin:16px 0 22px;
+      margin:0 0 22px;
       padding:22px;
       border:1px solid var(--edge);
-      border-radius:18px;
+      border-radius:12px;
       background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
     }
 
-    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h2{margin-top:0}
-    h3{margin-bottom:.25rem}
-    p{line-height:1.65}
-
-    .kicker{
-      color:var(--accent);
-      font-size:.8rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
-
+    /* --- Cards --- */
     .card{
       background:var(--card);
       border:1px solid var(--edge);
-      border-radius:18px;
+      border-radius:12px;
       padding:18px;
       margin-top:14px;
     }
 
-    .muted{color:var(--muted)}
-
+    /* --- Footer (normalized) --- */
     footer{
-      margin-top:40px;
+      margin-top:48px;
+      border-top:1px solid var(--edge);
+      padding-top:18px;
       color:var(--muted);
-      font-size:.95rem;
-      display:flex;flex-wrap:wrap;gap:6px;align-items:center
+      font-size:.85rem;
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
     }
   </style>
 </head>
@@ -89,29 +119,19 @@
 <body>
 <div class="wrap">
 
-  <!-- ===== HEADER ===== -->
+  <!-- ===== HEADER (NORMALIZED TO HOMEPAGE NAV) ===== -->
   <header class="hdr">
-    <div class="hdr-top">
-      <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-      <div class="title">Waveframe Labs</div>
+    <div class="brand">
+      <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
+      <div class="brand-text">Waveframe Labs</div>
     </div>
-
-    <div class="hdr-sub">
-      The six-layer Aurora institutional architecture.
-    </div>
-
     <nav class="topnav">
       <a href="index.html">Home</a>
-      <a class="active-link" href="hierarchy.html">Aurora Hierarchy</a>
-      <a href="doctrine.html">Neurotransparency Doctrine</a>
-      <a href="nts.html">Neurotransparency Specification</a>  
-      <a href="ari.html">ARI</a>
-      <a href="awo.html">AWO</a>
-      <a href="cri-core.html">CRI-CORE</a>
+      <a class="active-link" href="hierarchy.html">Hierarchy</a>
+      <a href="doctrine.html">Doctrine</a>
+      <a href="awo.html">Methodology</a>
       <a href="tools.html">Tools</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="publications.html">Publications</a>
-      <a href="updates.html">Updates</a>  
+      <a href="updates.html">Updates</a>
     </nav>
   </header>
 
@@ -119,11 +139,12 @@
   <section class="hero">
     <span class="kicker">Institutional Architecture</span>
     <h1>The Aurora Hierarchy</h1>
-
-    <p class="muted">
-      The Aurora Hierarchy defines how epistemic principles, governance authority,
-      methodology, enforcement, and research artifacts are layered and constrained
-      within the Aurora ecosystem.
+    <p>
+      The Aurora Ecosystem is organized into strictly layered subsystems. Each layer has a distinct authority domain and may not subsume
+      or redefine the layer above it.
+    </p>
+    <p>
+      <strong>Authority flows downward. Enforcement flows upward.</strong>
     </p>
   </section>
 
@@ -131,82 +152,105 @@
   <section>
     <h2>Overview</h2>
     <p>
-      Each layer in the Aurora Hierarchy has a distinct responsibility and authority.
-      Higher layers constrain lower layers; lower layers may not override higher ones.
-    </p>
-    <p class="muted">
+      The hierarchy separates legitimacy (what rules and commitments exist) from implementation (how those commitments are executed).
       This separation prevents governance drift, epistemic ambiguity, and enforcement collapse.
+    </p>
+    <p>
+      This page is a canonical overview of the layer model only. Content authority remains with the referenced documents and repositories.
     </p>
   </section>
 
   <!-- ===== LAYERS ===== -->
-  <section>
-    <h2>The Six Layers</h2>
+  <section style="margin-top:22px;">
+    <h2>The Layers (L0–L6)</h2>
 
     <div class="card">
-      <h3>Layer 0 — Epistemic Foundation</h3>
-      <p class="muted">
-        Neurotransparency Doctrine and Specification define why cognitive provenance is required
-        and what must be traceable in AI–human research.
+      <h3>L0 — Governance &amp; Epistemics (Authority Layer)</h3>
+      <p>
+        Defines epistemic legitimacy, provenance requirements, and institutional authority. This layer is normative and constitutional:
+        nothing below it may redefine legitimacy, authority boundaries, or traceability requirements.
       </p>
+      <p><strong>Components:</strong> ARI, NTD, NTS</p>
     </div>
 
     <div class="card">
-      <h3>Layer 1 — Institutional Governance</h3>
-      <p class="muted">
-        The Aurora Research Initiative (ARI) establishes authority, scope, and binding rules.
+      <h3>L1 — Method (Operational Semantics)</h3>
+      <p>
+        Structures how governed reasoning is performed and recorded. Method operationalizes L0 requirements into workflows and artifact classes,
+        but does not define legitimacy and does not enforce compliance.
       </p>
+      <p><strong>Component:</strong> AWO</p>
     </div>
 
     <div class="card">
-      <h3>Layer 2 — Methodology</h3>
-      <p class="muted">
-        Aurora Workflow Orchestration (AWO) defines how compliant research is conducted.
+      <h3>L2 — Language &amp; Ontology (Meaning Layer)</h3>
+      <p>
+        Stabilizes meaning across artifacts using controlled vocabularies, symbols, and semantic compression. This layer affects interpretation,
+        not authority.
       </p>
+      <p><strong>Components:</strong> Lexon, Signum, Glyphtrace</p>
     </div>
 
     <div class="card">
-      <h3>Layer 3 — Enforcement</h3>
-      <p class="muted">
-        CRI-CORE enforces governance and methodology mechanically.
+      <h3>L3 — Lineage (Memory Layer)</h3>
+      <p>
+        Preserves historical continuity of claims and artifacts by maintaining dependency and provenance chains. This layer records history;
+        it does not judge correctness.
       </p>
+      <p><strong>Component:</strong> Tracelink</p>
     </div>
 
     <div class="card">
-      <h3>Layer 4 — Case Studies</h3>
-      <p class="muted">
-        Applied research demonstrating the hierarchy in practice (e.g., Waveframe v4.0).
+      <h3>L4 — Validation &amp; Enforcement (Execution Layer)</h3>
+      <p>
+        Mechanically enforces contracts and invariants defined upstream (L0–L1). CRI-CORE validates artifacts against schemas and constraints and
+        prevents non-compliant execution. It cannot define rules; it only enforces those defined above.
       </p>
+      <p><strong>Component:</strong> CRI-CORE</p>
     </div>
 
     <div class="card">
-      <h3>Layer 5 — Tooling & Infrastructure</h3>
-      <p class="muted">
-        Supporting tools, pipelines, and interfaces that enable reproducible execution.
+      <h3>L5 — Publication &amp; Distribution (Output Layer)</h3>
+      <p>
+        Produces public-facing, frozen artifacts (e.g., PDFs, releases, metadata-injected outputs). Publication does not imply legitimacy;
+        it reflects prior validation and governance constraints.
       </p>
+      <p><strong>Components:</strong> Forge, Stamp</p>
+    </div>
+
+    <div class="card">
+      <h3>L6 — Research Outputs (Application Layer)</h3>
+      <p>
+        Applied work produced under the ecosystem. Case studies demonstrate the stack in practice and generate scientific or applied claims.
+        Case studies may not modify upstream layers.
+      </p>
+      <p><strong>Examples:</strong> Waveframe v4.0, Societal Health Simulator</p>
     </div>
   </section>
 
   <!-- ===== WHY THIS MATTERS ===== -->
-  <section>
+  <section style="margin-top:22px;">
     <h2>Why the Hierarchy Matters</h2>
-    <p class="muted">
-      Without strict layering, research systems collapse into ad hoc practices where
-      enforcement, methodology, and epistemics blur together.
+    <p>
+      Without strict layering, research systems collapse into ad hoc practices where governance, method, enforcement, and meaning blur together.
+      The hierarchy keeps legitimacy (L0) distinct from process (L1), semantics (L2), history (L3), enforcement (L4), publication (L5), and applications (L6).
     </p>
-    <p class="muted">
-      The Aurora Hierarchy ensures that every claim can be traced back to explicit
-      epistemic and institutional commitments.
+    <p>
+      The result is a system where claims can be traced to explicit commitments, artifacts can be validated against explicit contracts,
+      and outputs can be cited without ambiguity.
     </p>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
-    <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs</span>
+    <span>© <span id="year"></span> Waveframe Labs</span>
+    <span>Governed under the Aurora Research Initiative (ARI)</span>
   </footer>
 
 </div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
