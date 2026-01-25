@@ -1,3 +1,21 @@
+<!--
+---
+title: "Tools · Waveframe Labs"
+short_title: "Tools"
+version: "1.0.0"
+status: "Active"
+type: "website"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "CC-BY-4.0"
+policy_version: "ARI-Metadata-2.0.0"
+dependencies:
+  - "Aurora Ecosystem — Unified System Reference v2.0.0"
+ai_assisted: "partial"
+ai_assistance_details: "Tools page normalized for canonical layering, tool scope, and site-wide navigation consistency."
+---
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,182 +24,201 @@
 
   <title>Tools · Waveframe Labs</title>
 
-  <meta name="description" content="Deterministic tooling and infrastructure supporting reproducible AI–human research under the Aurora ecosystem.">
+  <meta name="description" content="Deterministic tooling supporting governed, reproducible AI–human research under the Aurora Ecosystem." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/tools.html" />
 
-  <style>
-    :root{
-      --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0; padding:0;
-      background:var(--bg); color:var(--ink);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
-    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-    a:hover{border-color:var(--ink)}
+  <meta property="og:title" content="Tools · Waveframe Labs" />
+  <meta property="og:description" content="Deterministic tooling for governed research workflows." />
+  <meta property="og:type" content="website" />
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+<style>
+:root{
+  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
+  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:12px;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none;transition:color .2s;}
+a:hover{color:var(--accent);}
 
-    .hdr{
-      padding:22px 18px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:var(--card);
-      margin-bottom:22px;
-    }
-    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
 
-    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .topnav a{border:none}
-    .active-link{
-      color:var(--accent);
-      font-weight:600;
-      border-bottom:1px solid var(--accent);
-    }
+/* --- Header (normalized) --- */
+.hdr{
+  padding:18px 24px;
+  border-bottom:1px solid var(--edge);
+  background:rgba(20,22,27,.88);
+  backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  position:sticky; top:0; z-index:100; margin-bottom:28px;
+  border-left:1px solid var(--edge); border-right:1px solid var(--edge);
+  border-radius:0 0 12px 12px;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
 
-    .hero{
-      margin:16px 0 22px;
-      padding:22px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-    }
+.topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
+.topnav a{opacity:.7;}
+.topnav a:hover{opacity:1;color:var(--accent);}
+.active-link{opacity:1!important;color:var(--accent)!important;}
 
-    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h2{margin-top:0}
-    h3{margin-bottom:.25rem}
-    p{line-height:1.65}
+@media(max-width:850px){
+  .hdr{flex-direction:column;align-items:flex-start;gap:14px;}
+  .topnav{flex-wrap:wrap;gap:18px;}
+}
 
-    .kicker{
-      color:var(--accent);
-      font-size:.8rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
+h1{font-size:clamp(1.6rem,3.6vw,2.2rem);margin:0 0 .6rem}
+h2{margin:0 0 .6rem;font-size:1.35rem;}
+h3{margin-bottom:.25rem}
+p{line-height:1.65;color:var(--muted); margin-bottom:1rem;}
+p strong{color:var(--ink);}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--edge);
-      border-radius:18px;
-      padding:18px;
-      margin-top:14px;
-    }
+.kicker{
+  color:var(--accent);
+  font-size:.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
+  display:block;
+}
 
-    .muted{color:var(--muted)}
-    .link-row{margin-top:8px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.hero{
+  margin:0 0 22px;
+  padding:22px;
+  border:1px solid var(--edge);
+  border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
+}
 
-    footer{
-      margin-top:40px;
-      color:var(--muted);
-      font-size:.95rem;
-      display:flex;flex-wrap:wrap;gap:6px;align-items:center;
-    }
-  </style>
+.card{
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:12px;
+  padding:18px;
+  margin-top:14px;
+}
+
+footer{
+  margin-top:48px;
+  border-top:1px solid var(--edge);
+  padding-top:18px;
+  color:var(--muted);
+  font-size:.85rem;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
 <header class="hdr">
-  <div class="hdr-top">
-    <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-    <div class="title">Waveframe Labs</div>
+  <div class="brand">
+    <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
+    <div class="brand-text">Waveframe Labs</div>
   </div>
-
-  <div class="hdr-sub">
-    Deterministic tooling and infrastructure.
-  </div>
-
   <nav class="topnav">
     <a href="index.html">Home</a>
-    <a href="hierarchy.html">Aurora Hierarchy</a>
-    <a href="doctrine.html">Neurotransparency Doctrine</a>
-    <a href="nts.html">Neurotransparency Specification</a>
-    <a href="ari.html">ARI</a>
-    <a href="awo.html">AWO</a>
-    <a href="cri-core.html">CRI-CORE</a>
+    <a href="hierarchy.html">Hierarchy</a>
+    <a href="doctrine.html">Doctrine</a>
+    <a href="awo.html">Methodology</a>
     <a class="active-link" href="tools.html">Tools</a>
-    <a href="case-studies.html">Case Studies</a>
-    <a href="publications.html">Publications</a>
     <a href="updates.html">Updates</a>
   </nav>
 </header>
 
 <section class="hero">
-  <span class="kicker">Layer 5 — Infrastructure</span>
-  <h1>Tools & Infrastructure</h1>
-
-  <p class="muted">
-    Deterministic tooling that supports, validates, and operationalizes Aurora-aligned workflows.
+  <span class="kicker">Layer 5 — Publication & Distribution</span>
+  <h1>Tools</h1>
+  <p>
+    Deterministic tooling that prepares, validates, and publishes governed research artifacts.
+    Tools do not define epistemic authority or research method; they execute and reflect decisions made upstream.
   </p>
 </section>
 
 <section>
   <h2>Purpose</h2>
   <p>
-    Tools enable reproducibility and auditability within the ecosystem.
-    They do not define epistemic authority — they execute, validate, and enforce it.
+    Tools exist to make governed research reproducible, auditable, and mechanically checkable.
+    They are subordinate to governance (L0) and method (L1) and may not redefine either.
   </p>
-  <p class="muted">Infrastructure is subordinate to governance and methodology.</p>
 </section>
 
 <section>
   <h2>Core Tooling</h2>
 
-  <!-- ========== GLYPHTRACE ========== -->
   <div class="card">
-    <h3>Glyphtrace</h3>
-    <p class="muted">
-      Symbolic epistemic compression format for representing research as compact,
-      machine-expandable traces. Enables reconstruction, reference, and round-trip
-      validation using minimal tokens.
+    <h3>Stamp</h3>
+    <p>
+      Deterministic metadata diagnostics and remediation tooling.
+      Stamp extracts metadata, validates it against formal schemas, normalizes errors into structured diagnostics,
+      and separates machine-safe fixes from human judgment.
     </p>
-    <div class="link-row">
-      <a href="https://github.com/Waveframe-Labs/Glyphtrace" target="_blank">GitHub</a>
-      <a href="https://doi.org/10.5281/zenodo.18057686" target="_blank">
-        <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18057686-ff7a18?style=flat&labelColor=14161b" height="22">
-      </a>
-    </div>
+    <p class="muted">
+      Stamp explains what is wrong and what action is required; it does not enforce, approve, or judge content.
+    </p>
   </div>
 
   <div class="card">
     <h3>Waveframe PDF Forge</h3>
-    <p class="muted">Deterministic Markdown→PDF pipeline with provenance stamping.</p>
+    <p class="muted">
+      Deterministic Markdown → PDF publication pipeline with metadata injection and provenance preservation.
+      Forge freezes validated artifacts for citation and dissemination.
+    </p>
   </div>
 
   <div class="card">
     <h3>Metadata Pipeline</h3>
-    <p class="muted">Metadata normalization and validation across artifacts.</p>
-  </div>
-
-  <div class="card">
-    <h3>Stamp & Validators</h3>
-    <p class="muted">Cryptographic + structural validation of research artifacts.</p>
+    <p class="muted">
+      Conceptual pipeline spanning extraction, validation, normalization, and publication of artifact metadata.
+      Implemented through tools such as Stamp and Forge.
+    </p>
   </div>
 </section>
 
 <section>
-  <h2>Relationship to Other Layers</h2>
-  <ul class="muted">
-    <li><strong>Layer 0–1:</strong> Tools must follow epistemic & governance constraints.</li>
-    <li><strong>Layer 2:</strong> Tools execute workflows defined by AWO.</li>
-    <li><strong>Layer 3:</strong> Tools integrate into CRI-CORE enforcement.</li>
-    <li><strong>Layer 4:</strong> Support case studies with reproducibility.</li>
+  <h2>Related Upstream Components</h2>
+
+  <div class="card">
+    <h3>Glyphtrace (Layer 2 — Language & Ontology)</h3>
+    <p class="muted">
+      Symbolic semantic compression format used to represent claims and reasoning compactly.
+      Glyphtrace is not a tool; it is an upstream meaning layer consumed by tooling and enforcement.
+    </p>
+    <p>
+      <a href="https://github.com/Waveframe-Labs/Glyphtrace" target="_blank">GitHub</a> ·
+      <a href="https://doi.org/10.5281/zenodo.18057686" target="_blank">Concept DOI</a>
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Relationship to the Aurora Stack</h2>
+  <ul>
+    <li><strong>L0–L1:</strong> Tools operate under epistemic and methodological constraints.</li>
+    <li><strong>L4:</strong> Tools may integrate with CRI-CORE for enforcement.</li>
+    <li><strong>L6:</strong> Tools support the production of case studies and publications.</li>
   </ul>
 </section>
 
 <footer>
-  <span>Text &amp; media: CC BY-NC-SA 4.0</span>
-  <span>· Code &amp; scripts: Apache-2.0</span>
-  <span>· © 2025 Waveframe Labs</span>
+  <span>© <span id="year"></span> Waveframe Labs</span>
+  <span>Governed under the Aurora Research Initiative (ARI)</span>
 </footer>
+
 </div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
