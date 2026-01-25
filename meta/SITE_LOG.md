@@ -67,29 +67,6 @@ This log does **not** record:
 - Created `meta/` directory for site metadata and logs.
 - Added `.nojekyll` to ensure raw static file delivery.
 
----
-
-## 2026-01-25 — Canonical Site Normalization & Structural Alignment
-
-- Normalized global navigation to a single canonical menu across all pages.
-- Rewrote homepage to reflect finalized Aurora layer ordering and authority boundaries.
-- Corrected Aurora stack labeling and layer numbering for numerical and conceptual consistency.
-- Standardized page structure, typography, and section hierarchy across core pages.
-- Clarified separation between:
-  - doctrine
-  - specification
-  - governance
-  - methodology
-  - tooling
-  - case studies
-- Added and normalized dedicated pages for:
-  - Aurora Hierarchy
-  - Tools & Infrastructure
-  - Canonical Updates Log
-- Reframed tools descriptions to explicitly reflect subordinate, non-authoritative roles.
-- Established `updates.html` as the authoritative public-facing institutional log.
-- Revised repository README to define canonical scope, authority limits, and versioning philosophy.
-
 ---  
 
 ## 2025-10-18 — Homepage Expansion & Metadata Alignment
@@ -115,3 +92,31 @@ This log does **not** record:
 - Added Founder attribution section.
 
 ---
+
+## 2026-01-25 — Canonical Site Normalization & Structural Alignment
+
+- Normalized global navigation to a single canonical menu across all pages.
+- Rewrote homepage to reflect finalized Aurora layer ordering and authority boundaries.
+- Corrected Aurora stack labeling and layer numbering for numerical and conceptual consistency.
+- Standardized page structure, typography, and section hierarchy across core pages.
+- Clarified separation between:
+  - doctrine
+  - specification
+  - governance
+  - methodology
+  - tooling
+  - case studies
+- Added and normalized dedicated pages for:
+  - Aurora Hierarchy
+  - Tools & Infrastructure
+  - Canonical Updates Log
+- Reframed tools descriptions to explicitly reflect subordinate, non-authoritative roles.
+- Established `updates.html` as the authoritative public-facing institutional log.
+- Revised repository README to define canonical scope, authority limits, and versioning philosophy.
+
+---  
+
+<div align="center">
+  <sub>© 2025 Waveframe Labs — Independent Open-Science Research Entity • Governed under the Aurora Research Initiative (ARI)</sub>
+</div>  
+
