@@ -1,16 +1,34 @@
+<!--
+---
+title: "Aurora Workflow Orchestration · Waveframe Labs"
+short_title: "AWO"
+version: "1.0.0"
+status: "Active"
+type: "website"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "CC-BY-4.0"
+policy_version: "ARI-Metadata-2.0.0"
+dependencies:
+  - "Aurora Ecosystem — Unified System Reference v2.0.0"
+ai_assisted: "partial"
+ai_assistance_details: "AWO page normalized for canonical layer numbering, authority boundaries, and site-wide navigation consistency."
+---
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AWO · Waveframe Labs</title>
+  <title>Methodology · Waveframe Labs</title>
 
-  <meta name="description" content="Aurora Workflow Orchestration (AWO) — methodology layer of the Aurora Ecosystem, defining reproducible, audit-ready AI–human research workflows.">
+  <meta name="description" content="Aurora Workflow Orchestration (AWO) defines the methodology layer of the Aurora Ecosystem, structuring reproducible and traceable AI–human research workflows." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
-
   <link rel="canonical" href="https://waveframelabs.org/awo.html" />
+
   <meta property="og:title" content="Aurora Workflow Orchestration (AWO)" />
-  <meta property="og:description" content="Methodology layer of the Aurora Research Initiative." />
+  <meta property="og:description" content="Methodology layer of the Aurora Ecosystem." />
   <meta property="og:type" content="website" />
 
 <style>
@@ -29,7 +47,7 @@ a:hover{color:var(--accent);}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 0;}
 
-/* --- Header --- */
+/* --- Header (normalized) --- */
 .hdr{
   padding:18px 24px;
   border-bottom:1px solid var(--edge);
@@ -38,13 +56,13 @@ a:hover{color:var(--accent);}
   display:flex; justify-content:space-between; align-items:center;
   position:sticky; top:0; z-index:100; margin-bottom:28px;
   border-left:1px solid var(--edge); border-right:1px solid var(--edge);
-  border-radius: 0 0 12px 12px;
+  border-radius:0 0 12px 12px;
 }
 .brand{display:flex;align-items:center;gap:12px;}
 .brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
 
 .topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
-.topnav a{opacity:.7;} 
+.topnav a{opacity:.7;}
 .topnav a:hover{opacity:1;color:var(--accent);}
 .active-link{opacity:1!important;color:var(--accent)!important;}
 
@@ -56,35 +74,37 @@ a:hover{color:var(--accent);}
 /* --- Typography --- */
 h2{margin:0 0 10px;font-size:1.5rem;}
 h3{margin:0 0 .55rem;font-size:1.15rem;}
-p{line-height:1.65;color:var(--muted); margin-bottom: 1rem;}
+p{line-height:1.65;color:var(--muted); margin-bottom:1rem;}
 p strong{color:var(--ink);}
 
 .kicker{
-  color:var(--accent);font-size:.75rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:1px;margin-bottom:8px;display:block;
+  color:var(--accent);
+  font-size:.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
+  display:block;
 }
 
 .card{
-  background:var(--card); border:1px solid var(--edge); border-radius:var(--rad);
-  padding:24px; display:flex; flex-direction:column;
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  padding:24px;
 }
 
+/* --- Footer --- */
 footer{
-  margin-top:60px; border-top:1px solid var(--edge); background:var(--card);
-  padding: 40px 20px 20px;
-}
-.footer-grid{
-    display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap:32px; max-width:var(--maxw); margin:0 auto;
-}
-@media(max-width:700px){.footer-grid{grid-template-columns: 1fr; gap:40px;}}
-
-.ft-col h4{font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; color:var(--ink); margin:0 0 16px;}
-.ft-links a{display:block; color:var(--muted); margin-bottom:10px; font-size:0.9rem;}
-.ft-links a:hover{color:var(--accent); padding-left:4px;}
-
-.ft-bottom{
-  max-width:var(--maxw); margin:40px auto 0; padding-top:20px; border-top:1px solid var(--edge);
-  display:flex; justify-content:space-between; color:var(--muted); font-size:0.8rem;
+  margin-top:60px;
+  border-top:1px solid var(--edge);
+  padding-top:18px;
+  color:var(--muted);
+  font-size:.85rem;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
 }
 </style>
 </head>
@@ -101,30 +121,34 @@ footer{
   <nav class="topnav">
     <a href="index.html">Home</a>
     <a href="hierarchy.html">Hierarchy</a>
-    <a class="active-link" href="awo.html">Methodology</a>
     <a href="doctrine.html">Doctrine</a>
+    <a class="active-link" href="awo.html">Methodology</a>
     <a href="tools.html">Tools</a>
     <a href="updates.html">Updates</a>
   </nav>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="card" style="margin-bottom:28px;">
-  <span class="kicker">Layer 2 — Methodology</span>
+  <span class="kicker">Layer 1 — Method</span>
   <h2>Aurora Workflow Orchestration (AWO)</h2>
   <p>
-    AWO defines how compliant research under the Aurora ecosystem must be structured:
-    workflow phases, artifact requirements, role separation, and reproducibility guarantees.
+    Aurora Workflow Orchestration defines how research conducted under the Aurora Ecosystem
+    is <strong>structured and recorded</strong> so that it remains traceable, reconstructible,
+    and reviewable over time.
   </p>
 </section>
 
 <!-- WHAT IS AWO -->
 <section style="margin-bottom:32px;">
-  <h2 style="color:var(--accent);">What is AWO?</h2>
+  <h2 style="color:var(--accent);">What AWO Defines</h2>
   <p>
-    Aurora Workflow Orchestration converts governance rules (ARI) and disclosure obligations (NTS)
-    into a concrete, repeatable research methodology. It ensures that scientific work remains
-    reconstructible, falsifiable, and independently auditable even years later.
+    AWO translates epistemic and governance requirements into a repeatable methodology.
+    It specifies workflow phases, artifact classes, and role boundaries without enforcing
+    correctness or legitimacy.
+  </p>
+  <p>
+    AWO is procedural, not normative. It does not define truth, authority, or compliance outcomes.
   </p>
 </section>
 
@@ -134,47 +158,44 @@ footer{
   <div class="card">
     <ul style="color:var(--muted); line-height:1.65;">
       <li>Define workflow phases and valid transitions</li>
-      <li>Specify required artifacts and minimum content requirements</li>
-      <li>Establish role separation boundaries (no self-attestation)</li>
-      <li>Integrate Neurotransparency (NTS) at required workflow points</li>
-      <li>Provide deterministic schema inputs to CRI-CORE enforcement</li>
+      <li>Specify required artifact classes and minimum structure</li>
+      <li>Encode role separation boundaries (e.g., no self-approval)</li>
+      <li>Integrate Neurotransparency requirements at defined workflow points</li>
+      <li>Produce deterministic inputs for downstream validation and enforcement</li>
     </ul>
   </div>
 </section>
 
-<!-- RELATION TO OTHER LAYERS -->
+<!-- POSITION IN STACK -->
 <section style="margin-bottom:32px;">
   <h2 style="color:var(--accent);">Position in the Aurora Stack</h2>
   <p>
-    AWO sits between governance (ARI) and enforcement (CRI-CORE), ensuring research is structured
-    before enforcement occurs.
+    AWO sits between governance and enforcement. It structures research <em>before</em>
+    any validation or execution occurs.
   </p>
   <div class="card">
     <ul style="color:var(--muted); line-height:1.6;">
-      <li><strong>Layer 1 — ARI:</strong> Governance & metadata law</li>
-      <li><strong>Layer 0 — NTD/NTS:</strong> Cognitive provenance requirements</li>
-      <li><strong>Layer 3 — CRI-CORE:</strong> Enforcement of workflow + artifacts</li>
-      <li><strong>Layer 4 — Case Studies:</strong> Real-world implementation of AWO</li>
+      <li><strong>L0 — Governance & Epistemics:</strong> ARI, NTD, NTS define authority and necessity</li>
+      <li><strong>L1 — Method:</strong> AWO structures workflows and artifacts</li>
+      <li><strong>L4 — Enforcement:</strong> CRI-CORE validates artifacts against upstream contracts</li>
+      <li><strong>L6 — Research Outputs:</strong> Case studies demonstrate AWO in practice</li>
     </ul>
   </div>
 </section>
 
-<!-- SPEC LINKS -->
+<!-- REFERENCES -->
 <section style="margin-bottom:32px;">
   <h2 style="color:var(--accent);">Specification & Archive</h2>
-  <p>
-    The full AWO specification is available publicly and archived under a persistent DOI.
-  </p>
   <div class="card">
     <ul style="color:var(--muted); line-height:1.6;">
       <li>
-        <strong>Zenodo (concept DOI):</strong>
+        <strong>Concept DOI (Zenodo):</strong>
         <a href="https://doi.org/10.5281/zenodo.17013612" target="_blank">
           10.5281/zenodo.17013612
         </a>
       </li>
       <li>
-        <strong>GitHub Repository:</strong>
+        <strong>Repository:</strong>
         <a href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration" target="_blank">
           Waveframe-Labs/Aurora-Workflow-Orchestration
         </a>
@@ -183,45 +204,12 @@ footer{
   </div>
 </section>
 
-
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-      <div class="ft-col">
-          <img src="waveframe-logo-mark.png" width="24" height="24" style="margin-bottom:12px;">
-          <div style="font-weight:700; font-size:1.1rem; color:var(--ink); margin-bottom:8px;">Waveframe Labs</div>
-          <p style="font-size:0.9rem; max-width:280px;">
-              Constructing the epistemic foundation for AI-assisted science.
-              Operating under the Aurora Research Initiative.
-          </p>
-      </div>
-
-      <div class="ft-col">
-          <h4>Protocol</h4>
-          <div class="ft-links">
-              <a href="doctrine.html">Doctrine (NTD)</a>
-              <a href="nts.html">Specification (NTS)</a>
-              <a href="awo.html">Methodology (AWO)</a>
-              <a href="tools.html">Tooling & Forge</a>
-          </div>
-      </div>
-
-      <div class="ft-col">
-          <h4>Connect</h4>
-          <div class="ft-links">
-              <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a>
-              <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">ORCID: 0009-0006-6043-9295</a>
-              <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub / Source</a>
-          </div>
-      </div>
-  </div>
-
-  <div class="ft-bottom">
-      <span>&copy; <span id="year"></span> Waveframe Labs</span>
-      <span>Aurora Ecosystem</span>
-  </div>
+  <span>© <span id="year"></span> Waveframe Labs</span>
+  <span>Governed under the Aurora Research Initiative (ARI)</span>
 </footer>
 
 <script>
