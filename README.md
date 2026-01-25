@@ -4,6 +4,11 @@
 
 # Waveframe Labs — Website Repository
 
+[![Waveframe Labs](https://img.shields.io/badge/WAVEFRAME%20LABS-Institutional%20Repository-FF6A00?style=flat)](https://waveframelabs.org)  
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0006--6043--9295-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0006-6043-9295)  
+![License: Apache-2.0](https://img.shields.io/badge/Code-Apache--2.0-blue)  
+![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-lightgrey)  
+
 This repository hosts the **canonical public website** for **Waveframe Labs**, an independent research institute operating under the **Aurora Research Initiative (ARI)**.
 
 The website functions as the **public interface and reference surface** for the Aurora Ecosystem. It provides institutional documentation, architectural orientation, and authoritative links to governance, methodology, tooling, and case-study research.
@@ -156,6 +161,8 @@ The `.nojekyll` file ensures files are served exactly as committed.
 
 - **Text and media:** CC BY-NC-SA 4.0  
 - **Code and scripts:** Apache 2.0  
+
+*Where ambiguity exists, executable code is governed by Apache-2.0 and written or visual content is governed by CC BY-NC-SA 4.0.*
 
 © 2026 Waveframe Labs.
 
