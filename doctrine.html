@@ -1,3 +1,21 @@
+<!--
+---
+title: "Neurotransparency Doctrine · Waveframe Labs"
+short_title: "Neurotransparency Doctrine"
+version: "1.0.0"
+status: "Active"
+type: "website"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "CC-BY-4.0"
+policy_version: "ARI-Metadata-2.0.0"
+dependencies:
+  - "Aurora Ecosystem — Unified System Reference v2.0.0"
+ai_assisted: "partial"
+ai_assistance_details: "Doctrine page normalized for canonical layering, authority boundaries, and site-wide navigation consistency."
+---
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +24,18 @@
 
   <title>Neurotransparency Doctrine · Waveframe Labs</title>
 
-  <meta name="description" content="The Neurotransparency Doctrine defines the epistemic foundation for AI–human research, establishing why cognitive provenance, traceability, and accountability are required.">
+  <meta name="description" content="The Neurotransparency Doctrine defines why cognitive provenance, traceability, and accountability are epistemically required in AI–human research." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/doctrine.html" />
 
-  <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
+  <meta property="og:title" content="Neurotransparency Doctrine · Waveframe Labs" />
+  <meta property="og:description" content="The epistemic foundation for traceable AI–human cognition." />
+  <meta property="og:type" content="website" />
+
   <style>
     :root{
       --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
+      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:12px;
     }
     *{box-sizing:border-box}
     html,body{
@@ -22,65 +43,73 @@
       background:var(--bg); color:var(--ink);
       font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
-    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-    a:hover{border-color:var(--ink)}
+    a{color:inherit;text-decoration:none;transition:color .2s;}
+    a:hover{color:var(--accent);}
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
 
+    /* --- Header (normalized to homepage) --- */
     .hdr{
-      padding:22px 18px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:var(--card);
-      margin-bottom:22px;
+      padding:18px 24px;
+      border-bottom:1px solid var(--edge);
+      background:rgba(20,22,27,.88);
+      backdrop-filter:blur(12px);
+      display:flex; justify-content:space-between; align-items:center;
+      position:sticky; top:0; z-index:100; margin-bottom:28px;
+      border-left:1px solid var(--edge); border-right:1px solid var(--edge);
+      border-radius:0 0 12px 12px;
     }
-    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+    .brand{display:flex;align-items:center;gap:12px;}
+    .brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
 
-    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .topnav a{border:none}
-    .active-link{
-      color:var(--accent);
-      font-weight:600;
-      border-bottom:1px solid var(--accent);
-    }
+    .topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
+    .topnav a{opacity:.7;}
+    .topnav a:hover{opacity:1;color:var(--accent);}
+    .active-link{opacity:1!important;color:var(--accent)!important;}
 
-    .hero{
-      margin:16px 0 22px;
-      padding:22px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
+    @media(max-width:850px){
+      .hdr{flex-direction:column;align-items:flex-start;gap:14px;}
+      .topnav{flex-wrap:wrap;gap:18px;}
     }
 
-    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h2{margin-top:0}
-    p{line-height:1.65}
+    h1{font-size:clamp(1.6rem,3.6vw,2.2rem);margin:0 0 .6rem}
+    h2{margin:0 0 .6rem;font-size:1.35rem;}
+    p{line-height:1.65;color:var(--muted); margin:0 0 1rem;}
+    p strong{color:var(--ink);}
 
     .kicker{
       color:var(--accent);
-      font-size:.8rem;
+      font-size:.75rem;
       font-weight:700;
       text-transform:uppercase;
-      letter-spacing:.6px;
+      letter-spacing:1px;
+      margin-bottom:8px;
+      display:block;
+    }
+
+    .hero{
+      margin:0 0 22px;
+      padding:22px;
+      border:1px solid var(--edge);
+      border-radius:12px;
+      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
     }
 
     .card{
       background:var(--card);
       border:1px solid var(--edge);
-      border-radius:18px;
+      border-radius:12px;
       padding:18px;
       margin-top:14px;
     }
 
-    .muted{color:var(--muted)}
-
     footer{
-      margin-top:40px;
+      margin-top:48px;
+      border-top:1px solid var(--edge);
+      padding-top:18px;
       color:var(--muted);
-      font-size:.95rem;
-      display:flex;flex-wrap:wrap;gap:6px;align-items:center
+      font-size:.85rem;
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
     }
   </style>
 </head>
@@ -90,52 +119,40 @@
 
   <!-- ===== HEADER ===== -->
   <header class="hdr">
-    <div class="hdr-top">
-      <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-      <div class="title">Waveframe Labs</div>
+    <div class="brand">
+      <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
+      <div class="brand-text">Waveframe Labs</div>
     </div>
-
-    <div class="hdr-sub">
-      Epistemic foundation for AI–human research.
-    </div>
-
     <nav class="topnav">
       <a href="index.html">Home</a>
-      <a href="hierarchy.html">Aurora Hierarchy</a>
-      <a class="active-link" href="doctrine.html">Neurotransparency Doctrine</a>
-      <a href="nts.html">Neurotransparency Specification</a>  
-      <a href="ari.html">ARI</a>
-      <a href="awo.html">AWO</a>
-      <a href="cri-core.html">CRI-CORE</a>
+      <a href="hierarchy.html">Hierarchy</a>
+      <a class="active-link" href="doctrine.html">Doctrine</a>
+      <a href="awo.html">Methodology</a>
       <a href="tools.html">Tools</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="publications.html">Publications</a>
-      <a href="updates.html">Updates</a>  
+      <a href="updates.html">Updates</a>
     </nav>
   </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <span class="kicker">Layer 0 — Epistemic Foundation</span>
+    <span class="kicker">Layer 0 — Epistemics</span>
     <h1>Neurotransparency Doctrine</h1>
-
-    <p class="muted">
-      The Neurotransparency Doctrine establishes the epistemic necessity for traceable,
-      attributable, and reconstructible cognition in AI–human research.
+    <p>
+      The Neurotransparency Doctrine defines <strong>why</strong> cognitive provenance,
+      traceability, and accountability are epistemically required in AI–human research.
     </p>
   </section>
 
-  <!-- ===== WHAT IS THE DOCTRINE ===== -->
+  <!-- ===== WHAT IT IS ===== -->
   <section>
-    <h2>What is the Neurotransparency Doctrine?</h2>
+    <h2>What the Doctrine Defines</h2>
     <p>
-      The Neurotransparency Doctrine defines <em>why</em> modern research requires explicit
-      visibility into how conclusions are produced. As AI systems increasingly participate
-      in reasoning, the provenance of cognition itself becomes a scientific variable.
+      As AI systems increasingly participate in reasoning, cognition itself becomes a scientific variable.
+      The Neurotransparency Doctrine asserts that research claims cannot be meaningfully evaluated
+      unless the cognitive processes—human and artificial—that produced them are explicitly traceable.
     </p>
-    <p class="muted">
-      The doctrine asserts that results cannot be meaningfully evaluated without understanding
-      the cognitive processes — human and artificial — that generated them.
+    <p>
+      This doctrine is normative. It establishes epistemic necessity, not implementation details.
     </p>
   </section>
 
@@ -143,24 +160,28 @@
   <section>
     <h2>Core Epistemic Principles</h2>
     <div class="card">
-      <ul class="muted">
-        <li><strong>Traceability:</strong> Every reasoning step must be attributable to a source.</li>
+      <ul>
+        <li><strong>Traceability:</strong> Cognitive influence must be attributable to identifiable sources.</li>
         <li><strong>Attribution:</strong> Human and AI contributions must be distinguishable.</li>
-        <li><strong>Reconstructibility:</strong> Claims must be reproducible from recorded inputs.</li>
+        <li><strong>Reconstructibility:</strong> Claims must be reproducible from recorded inputs and transformations.</li>
         <li><strong>Epistemic continuity:</strong> Breaks in provenance invalidate downstream claims.</li>
         <li><strong>Accountability:</strong> Responsibility follows cognitive influence.</li>
       </ul>
     </div>
   </section>
 
-  <!-- ===== RELATIONSHIP TO OTHER LAYERS ===== -->
+  <!-- ===== RELATIONSHIP TO THE STACK ===== -->
   <section>
-    <h2>Relationship to Other Aurora Layers</h2>
-    <ul class="muted">
-      <li><strong>Layer 1 — ARI:</strong> Converts doctrine into binding institutional law.</li>
-      <li><strong>Layer 2 — AWO:</strong> Implements doctrine as operational workflows.</li>
-      <li><strong>Layer 3 — CRI-CORE:</strong> Enforces doctrine mechanically.</li>
-      <li><strong>Layer 4 — Case Studies:</strong> Demonstrate doctrine-aligned research.</li>
+    <h2>Relationship to the Aurora Stack</h2>
+    <p>
+      The Neurotransparency Doctrine occupies <strong>Layer 0 (Epistemics)</strong> in the Aurora Hierarchy.
+      It does not enforce rules, define workflows, or validate artifacts.
+    </p>
+    <ul>
+      <li><strong>ARI (L0):</strong> Converts doctrine into binding institutional authority.</li>
+      <li><strong>AWO (L1):</strong> Structures doctrine-aligned reasoning workflows.</li>
+      <li><strong>CRI-CORE (L4):</strong> Enforces upstream contracts mechanically.</li>
+      <li><strong>Case Studies (L6):</strong> Demonstrate doctrine-aligned research in practice.</li>
     </ul>
   </section>
 
@@ -169,40 +190,44 @@
     <h2>Doctrine vs. Specification</h2>
     <p>
       The Neurotransparency Doctrine defines epistemic necessity.
-      The Neurotransparency Specification defines enforceable requirements.
+      The Neurotransparency Specification (NTS) defines enforceable requirements derived from that necessity.
     </p>
-    <p class="muted">
-      In short: the doctrine answers <em>why</em> transparency is required;
-      the specification answers <em>how</em> it is enforced.
+    <p>
+      In short: the doctrine answers <em>why</em> traceability is required; the specification defines <em>what</em> must be satisfied.
     </p>
   </section>
 
   <!-- ===== REFERENCES ===== -->
   <section>
-    <h2>Where to Read the Doctrine</h2>
-    <ul class="muted">
+    <h2>Canonical References</h2>
+    <ul>
       <li>
-        <strong>Zenodo (canonical archive):</strong>
-        <a href="https://doi.org/10.5281/zenodo.17809676" target="_blank">
-          Neurotransparency Specification DOI
-        </a>
+        <strong>Doctrine (Zenodo DOI):</strong>
+        <a href="https://doi.org/10.5281/zenodo.17957384" target="_blank">10.5281/zenodo.17957384</a>
       </li>
       <li>
-        <strong>GitHub repository:</strong>
+        <strong>Doctrine Repository:</strong>
         <a href="https://github.com/Waveframe-Labs/Neurotransparency-Doctrine" target="_blank">
           Waveframe-Labs/Neurotransparency-Doctrine
         </a>
+      </li>
+      <li>
+        <strong>Specification (NTS):</strong>
+        <a href="nts.html">View specification overview</a>
       </li>
     </ul>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
-    <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs</span>
+    <span>© <span id="year"></span> Waveframe Labs</span>
+    <span>Governed under the Aurora Research Initiative (ARI)</span>
   </footer>
 
 </div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
