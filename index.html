@@ -12,7 +12,7 @@ policy_version: "ARI-Metadata-2.0.0"
 dependencies:
   - "Aurora Ecosystem — Unified System Reference v2.0.0"
 ai_assisted: "partial"
-ai_assistance_details: "Structural normalization and authority alignment performed with AI assistance; final content reviewed and approved by Waveframe Labs."
+ai_assistance_details: "Homepage normalization and authority alignment performed with AI assistance; final content reviewed and approved by Waveframe Labs."
 ---
 -->
 
@@ -47,6 +47,7 @@ a:hover{color:var(--accent);}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 0;}
 
+/* --- Header --- */
 .hdr{
   padding:18px 24px;
   border-bottom:1px solid var(--edge);
@@ -70,6 +71,7 @@ a:hover{color:var(--accent);}
   .topnav{flex-wrap:wrap;gap:18px;}
 }
 
+/* --- Typography --- */
 h2{margin:0 0 10px;font-size:1.5rem;}
 h3{margin:0 0 .55rem;font-size:1.15rem;}
 p{line-height:1.65;color:var(--muted); margin-bottom: 1rem;}
@@ -83,12 +85,18 @@ p strong{color:var(--ink);}
   letter-spacing:1px;margin-bottom:8px;display:block;
 }
 
+/* --- Hero Banner --- */
 .hero-banner{
   width:100%; display:block; margin-bottom:24px; border-radius:12px;
   border:1px solid var(--edge);
   filter:drop-shadow(0 0 12px rgba(255,122,24,.10));
+  transition:filter .25s ease;
+}
+.hero-banner:hover{
+  filter:drop-shadow(0 0 20px rgba(255,122,24,.25)) brightness(1.05);
 }
 
+/* --- The Aurora Stack (Interactive) --- */
 .card{
   background:var(--card); border:1px solid var(--edge); border-radius:var(--rad);
   padding:24px; display:flex; flex-direction:column;
@@ -99,17 +107,33 @@ p strong{color:var(--ink);}
 }
 .stack-row{
   display:flex; border-bottom:1px solid var(--edge); background:var(--card);
+  transition:all .2s;
 }
 .stack-row:last-child{border-bottom:none;}
+.stack-row:hover{
+  background:rgba(255,122,24,.08); border-color:var(--accent); cursor:pointer;
+}
+.stack-row:hover .stack-layer{color:var(--ink);}
+
 .stack-layer{
   background:#1e2126; padding:12px 16px; font-family:monospace; color:var(--accent);
-  font-size:.8rem; min-width:110px; display:flex; align-items:center; border-right:1px solid var(--edge);
+  font-size:.8rem; min-width:90px; display:flex; align-items:center; border-right:1px solid var(--edge);
 }
 .stack-content{
   padding:12px 16px; font-size:.9rem; color:var(--muted);
 }
 .stack-content strong{color:var(--ink); font-weight:600;}
 
+.stack-gap{
+  display:flex; border-bottom:1px solid var(--edge);
+  background:rgba(154,163,178,.05);
+}
+.stack-gap:last-child{border-bottom:none;}
+.stack-gap .stack-layer{color:rgba(255,122,24,.85);}
+.stack-gap .stack-content{color:rgba(154,163,178,.85); font-size:.88rem;}
+.stack-gap .stack-content em{font-style:normal; color:rgba(231,234,239,.85); font-weight:600;}
+
+/* --- Updates Log Section --- */
 .log-row{
   display:flex; align-items:center; justify-content:space-between;
   padding: 12px 0; border-bottom:1px solid var(--edge);
@@ -117,6 +141,7 @@ p strong{color:var(--ink);}
 .log-row:last-child{border-bottom:none;}
 .log-date{font-family:monospace; color:var(--accent); font-size:0.85rem;}
 
+/* --- Footer --- */
 footer{
   margin-top:60px; border-top:1px solid var(--edge); background:var(--card);
   padding: 40px 20px 20px;
@@ -168,23 +193,13 @@ footer{
 <section style="margin-bottom:40px;">
   <div class="card">
     <h2 style="color:var(--accent);">The Aurora Stack</h2>
-    <p>The layered system that governs authority, method, enforcement, and research outputs at Waveframe Labs.</p>
+    <p>Authority flows downward. Enforcement flows upward. This stack defines how Waveframe Labs governs research and produces traceable outputs.</p>
 
     <div class="stack-container">
 
-      <a href="case-studies.html"><div class="stack-row">
-        <div class="stack-layer">L6</div>
-        <div class="stack-content"><strong>Research Outputs</strong> — Case studies and applied research</div>
-      </div></a>
-
-      <a href="publications.html"><div class="stack-row">
-        <div class="stack-layer">L5</div>
-        <div class="stack-content"><strong>Publication & Distribution</strong> — Frozen, citable artifacts</div>
-      </div></a>
-
-      <a href="cri-core.html"><div class="stack-row">
-        <div class="stack-layer">L4</div>
-        <div class="stack-content"><strong>Validation & Enforcement</strong> — CRI-CORE contract enforcement</div>
+      <a href="doctrine.html"><div class="stack-row">
+        <div class="stack-layer">L0</div>
+        <div class="stack-content"><strong>Governance &amp; Epistemics</strong> — ARI, Neurotransparency Doctrine &amp; Specification</div>
       </div></a>
 
       <a href="awo.html"><div class="stack-row">
@@ -192,15 +207,30 @@ footer{
         <div class="stack-content"><strong>Method</strong> — Aurora Workflow Orchestration</div>
       </div></a>
 
-      <a href="doctrine.html"><div class="stack-row">
-        <div class="stack-layer">L0</div>
-        <div class="stack-content"><strong>Governance & Epistemics</strong> — ARI, Neurotransparency Doctrine & Specification</div>
+      <a href="hierarchy.html"><div class="stack-gap">
+        <div class="stack-layer">L2–L3</div>
+        <div class="stack-content"><em>Collapsed on this page</em> — Language &amp; Ontology, and Lineage (see system hierarchy)</div>
+      </div></a>
+
+      <a href="cri-core.html"><div class="stack-row">
+        <div class="stack-layer">L4</div>
+        <div class="stack-content"><strong>Validation &amp; Enforcement</strong> — CRI-CORE contract enforcement</div>
+      </div></a>
+
+      <a href="publications.html"><div class="stack-row">
+        <div class="stack-layer">L5</div>
+        <div class="stack-content"><strong>Publication &amp; Distribution</strong> — Frozen, citable artifacts</div>
+      </div></a>
+
+      <a href="case-studies.html"><div class="stack-row">
+        <div class="stack-layer">L6</div>
+        <div class="stack-content"><strong>Research Outputs</strong> — Case studies and applied research</div>
       </div></a>
 
     </div>
 
     <p style="margin-top:14px; font-size:0.85rem;">
-      Additional internal layers (Language & Ontology, Lineage) are defined in the
+      The complete L0–L6 architecture (including L2 and L3) is defined in the
       <a href="hierarchy.html" style="color:var(--accent); font-weight:600;">system hierarchy</a>.
     </p>
   </div>
@@ -210,16 +240,43 @@ footer{
   <span class="kicker">Institutional Log</span>
   <div class="card" style="padding:16px 24px;">
 
-    <div class="log-row"><span>ARI v3.0.1 released (Governance Patch)</span><span class="log-date">2026.01.10</span></div>
-    <div class="log-row"><span>ARI v3.0.0 released (Governance)</span><span class="log-date">2026.01.10</span></div>
-    <div class="log-row"><span>AWO v2.0.0 released (Method)</span><span class="log-date">2026.01.09</span></div>
-    <div class="log-row"><span>Glyphtrace v0.0.1 registered</span><span class="log-date">2025.12.26</span></div>
-    <div class="log-row"><span>NTS v2.0.0 released (Specification)</span><span class="log-date">2025.12.18</span></div>
-    <div class="log-row"><span>NTD released (Doctrine)</span><span class="log-date">2025.12.17</span></div>
-    <div class="log-row"><span>ARI Governance formalized</span><span class="log-date">2025.12.16</span></div>
+    <div class="log-row">
+      <span>ARI v3.0.1 released (Governance Patch)</span>
+      <span class="log-date">2026.01.10</span>
+    </div>
+
+    <div class="log-row">
+      <span>ARI v3.0.0 released (Governance)</span>
+      <span class="log-date">2026.01.10</span>
+    </div>
+
+    <div class="log-row">
+      <span>AWO v2.0.0 released (Method)</span>
+      <span class="log-date">2026.01.09</span>
+    </div>
+
+    <div class="log-row">
+      <span>Glyphtrace (v0.0.1) registered</span>
+      <span class="log-date">2025.12.26</span>
+    </div>
+
+    <div class="log-row">
+      <span>NTS v2.0.0 released (Specification)</span>
+      <span class="log-date">2025.12.18</span>
+    </div>
+
+    <div class="log-row">
+      <span>NTD released (Doctrine)</span>
+      <span class="log-date">2025.12.17</span>
+    </div>
+
+    <div class="log-row">
+      <span>ARI Governance formalized</span>
+      <span class="log-date">2025.12.16</span>
+    </div>
 
     <div style="margin-top:16px;">
-      <a href="updates.html" style="font-size:0.9rem; font-weight:600; color:var(--accent);">View full log →</a>
+      <a href="updates.html" style="font-size:0.9rem; font-weight:600; color:var(--accent);">View full log &rarr;</a>
     </div>
   </div>
 </section>
@@ -242,7 +299,7 @@ footer{
         <a href="doctrine.html">Doctrine (NTD)</a>
         <a href="nts.html">Specification (NTS)</a>
         <a href="awo.html">Methodology (AWO)</a>
-        <a href="tools.html">Tooling & Forge</a>
+        <a href="tools.html">Tooling &amp; Forge</a>
       </div>
     </div>
 
@@ -250,14 +307,14 @@ footer{
       <h4>Connect</h4>
       <div class="ft-links">
         <a href="mailto:swright@waveframelabs.org">swright@waveframelabs.org</a>
-        <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">ORCID</a>
-        <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub</a>
+        <a href="https://orcid.org/0009-0006-6043-9295" target="_blank">ORCID: 0009-0006-6043-9295</a>
+        <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub / Source</a>
       </div>
     </div>
   </div>
 
   <div class="ft-bottom">
-    <span>© <span id="year"></span> Waveframe Labs</span>
+    <span>&copy; <span id="year"></span> Waveframe Labs</span>
     <span>Aurora Ecosystem</span>
   </div>
 </footer>
