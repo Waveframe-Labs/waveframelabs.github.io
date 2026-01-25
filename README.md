@@ -1,71 +1,134 @@
 <p align="center">
   <img src="WF-WEB-README.PNG" alt="Waveframe Labs Banner" width="650">
-</p>  
+</p>
 
 # Waveframe Labs — Website Repository
 
-This repository hosts the static website for **Waveframe Labs**, the independent research institute operating under the **Aurora Research Initiative (ARI)**.  
-The site provides public documentation, institutional references, and project overviews for the Aurora ecosystem — including the **Aurora Hierarchy**, **Neurotransparency Doctrine & Specification**, **AWO**, **CRI-CORE**, and active case-study research.
+This repository hosts the **canonical public website** for **Waveframe Labs**, an independent research institute operating under the **Aurora Research Initiative (ARI)**.
 
-**🔗 Live Site:** https://waveframelabs.org  
-**🏛 ARI DOI:** https://doi.org/10.5281/zenodo.17743096
+The website functions as the **public interface and reference surface** for the Aurora Ecosystem. It provides institutional documentation, architectural orientation, and authoritative links to governance, methodology, tooling, and case-study research.
+
+**Live site:** https://waveframelabs.org  
+**ARI Concept DOI:** https://doi.org/10.5281/zenodo.17743096
 
 ---
 
-## Purpose of This Repository
+## Purpose and Scope
 
-This repository contains the full source of the Waveframe Labs website.  
-It is intentionally designed to be:
+This repository exists to serve a single, well-defined role:
 
-- **fully static**  
-- **no-build / no-framework**  
-- **GitHub Pages–native**  
+> **To present the canonical, human-readable public representation of the Aurora Ecosystem.**
 
-The goal is deterministic transparency: every rendered page is directly visible in the repository and audit-ready.
+It is **not** a research repository, a tooling repository, or a governance authority itself. Instead, it points *to* authoritative artifacts and documents that live elsewhere, while maintaining a stable, auditable institutional presence.
+
+This site is designed to be:
+
+- Fully static
+- Framework-free
+- Buildless and deterministic
+- Directly auditable from source
+
+Every rendered page corresponds directly to a committed file in this repository.
+
+---
+
+## Canonical Authority Boundaries
+
+This website:
+
+- **Does not define doctrine**
+- **Does not define governance**
+- **Does not enforce methodology**
+- **Does not execute validation or tooling**
+
+Instead, it **references** the following authoritative layers:
+
+- **Neurotransparency Doctrine (NTD)** — epistemic rationale  
+- **Neurotransparency Specification (NTS)** — enforceable disclosure requirements  
+- **Aurora Research Initiative (ARI)** — governance authority  
+- **Aurora Workflow Orchestration (AWO)** — methodology  
+- **CRI-CORE** — enforcement (referenced, not implemented here)  
+- **Case Studies** — applied research conducted under the stack  
+
+In the event of any conflict, authority flows outward to the referenced documents, not inward to this site.
 
 ---
 
 ## Site Structure
 
-The site is composed of hand-authored static files:
+The site consists of hand-authored static HTML files.
 
-### **Primary Pages**
-- `index.html` — homepage & institutional overview  
-- `ari.html` — Aurora Research Initiative  
-- `hierarchy.html` — the six-layer Aurora architecture  
-- `doctrine.html` — Neurotransparency Doctrine  
-- `awo.html` — Aurora Workflow Orchestration  
-- `cri-core.html` — enforcement layer (CRI-CORE)  
-- `case-studies.html` — active and archived case studies  
-- `tools.html` — organizational tooling
+### Primary Pages
 
-### **Supporting Files**
-- `waveframe-logo-mark.png`  
-- `waveframe-logo-full.png`  
-- `meta/` — site logs and metadata  
-- `CNAME` — required for custom domain  
-- `.nojekyll` — ensures raw file delivery
+- `index.html` — institutional overview and Aurora stack entry point  
+- `hierarchy.html` — Aurora layer architecture and authority boundaries  
+- `doctrine.html` — Neurotransparency Doctrine (Layer 0)  
+- `nts.html` — Neurotransparency Specification  
+- `ari.html` — Aurora Research Initiative governance  
+- `awo.html` — Aurora Workflow Orchestration methodology  
+- `cri-core.html` — enforcement layer overview  
+- `tools.html` — deterministic tooling and infrastructure  
+- `case-studies.html` — applied research and demonstrations  
+- `updates.html` — canonical institutional release log  
+
+### Supporting Files
+
+- `waveframe-logo-mark.png`
+- `waveframe-logo-full.png`
+- `CNAME` — custom domain configuration
+- `.nojekyll` — disables Jekyll processing
 
 ---
 
-## Editing & Deployment
+## Updates and Change History
 
-Deployment is automatic via GitHub Pages.
+All authoritative announcements, releases, and institutional milestones are recorded in:
 
-1. Edit any `.html` file (e.g., `index.html`).  
-2. Commit changes to `main`.  
-3. GitHub Pages redeploys immediately.
+**`updates.html` — Canonical Institutional Log**
 
-There is **no CI pipeline, bundler, or build step** — by design.  
-This maintains deterministic, transparent behavior aligned with **Neurotransparency** and **ARI** governance requirements.
+This log is:
+
+- Chronological
+- Factual
+- Append-only
+- Publicly auditable
+
+Git commit history supports implementation tracking, but **updates.html** is the authoritative public record of ecosystem-level changes.
+
+---
+
+## Versioning Philosophy
+
+This repository uses **semantic versioning to indicate institutional stability**, not feature velocity.
+
+A version tag signals:
+
+- Structural coherence of the site
+- Stable interpretation of pages and references
+- Alignment with current Aurora governance state
+
+Minor visual or copy changes do not necessarily imply a version change.
+
+---
+
+## Editing and Deployment
+
+Deployment is handled automatically via **GitHub Pages**.
+
+1. Edit a static file (e.g., `index.html`)
+2. Commit to the `main` branch
+3. GitHub Pages redeploys automatically
+
+There is no build step, CI pipeline, or preprocessing layer. This is intentional and aligned with Aurora transparency principles.
 
 ---
 
 ## Custom Domain Configuration
 
-Waveframe Labs uses a custom domain via Porkbun.
+Waveframe Labs uses a custom domain managed via Porkbun.
 
-### **Apex A Records**
+### Apex A Records
+
 ```
 185.199.108.153
 185.199.109.153
@@ -73,32 +136,34 @@ Waveframe Labs uses a custom domain via Porkbun.
 185.199.111.153
 ```
 
-### **CNAME (www)**
+### CNAME (www)
+
 ```
 waveframelabs.github.io
 ```
 
-### **CNAME file content**
+### Repository CNAME File
+
 ```
 waveframelabs.org
 ```
 
-The `.nojekyll` file disables Jekyll processing, ensuring all files are served exactly as written.
+The `.nojekyll` file ensures files are served exactly as committed.
 
 ---
 
 ## License
 
-- **Text & Media:** CC BY-NC-SA 4.0  
-- **Code & Scripts:** Apache 2.0  
+- **Text and media:** CC BY-NC-SA 4.0  
+- **Code and scripts:** Apache 2.0  
 
-© 2025 Waveframe Labs.
+© 2026 Waveframe Labs.
 
 ---
 
-## Governance & Contact
+## Governance and Contact
 
-Waveframe Labs operates under the Aurora Research Initiative.
+Waveframe Labs operates under the **Aurora Research Initiative (ARI)**.
 
-**Email:** swright@waveframelabs.org  
+**Contact:** swright@waveframelabs.org  
 **ORCID:** https://orcid.org/0009-0006-6043-9295
