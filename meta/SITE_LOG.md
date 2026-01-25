@@ -1,7 +1,7 @@
 ---
-title: "Site Deployment Log — WaveframeLabs.org"
+title: "Waveframe Labs Website — Version Contract"
 filetype: "documentation"
-type: "log"
+type: "version"
 domain: "infrastructure"
 version: "1.0.0"
 status: "Active"
@@ -20,103 +20,59 @@ license: "CC-BY-NC-SA-4.0"
 
 ai_assisted: "none"
 
-dependencies: []
-
-scope:
-  - "website deployment"
-  - "public interface changes"
-
-authority_notes:
-  - "This log records website-only deployments and structural changes."
-  - "It does not constitute governance, doctrine, specification, or research releases."
-  - "Institutional releases are recorded separately in updates.html."
-
 anchors:
-  - "SITE-DEPLOYMENT-LOG-v1.0.0"
+  - "WF-WEBSITE-VERSION-v1.0.0"
 ---
 
-# Site Deployment Log — WaveframeLabs.org
+# Version — WaveframeLabs.org
 
-Canonical, append-only log recording **public website deployments and structural changes**
-for Waveframe Labs.
+**Current Version:** `1.0.0`
 
-This log tracks:
-- Website launches and redeployments
-- Structural or navigational changes
-- Public-facing content alignment
+## Version Semantics
 
-This log does **not** record:
-- Governance releases (see updates.html)
-- Research outputs
-- Tooling versions
-- Internal drafts
+Version `1.0.0` designates the first **canonical, stable public interface** of the Waveframe Labs website.
 
----
+This version signals that:
 
-## 2025-10-18 — Initial Public Deployment
+- Page structure and navigation are normalized and consistent
+- Aurora layer ordering and authority boundaries are correct
+- Canonical references to doctrine, governance, methodology, tooling, and case studies are stable
+- The site may be cited as the authoritative public reference surface for the Aurora Ecosystem
 
-- First production deployment of the Waveframe Labs website via GitHub Pages.
-- Custom domain `waveframelabs.org` configured (Porkbun DNS).
-- HTTPS enabled via GitHub Pages (Let’s Encrypt).
-- Dual licensing declared:
-  - Code & scripts: Apache-2.0
-  - Text & media: CC BY-NC-SA 4.0
-- Initial landing page published with:
-  - Institutional mission overview
-  - Project cards and navigation scaffolding
-- Created `meta/` directory for site metadata and logs.
-- Added `.nojekyll` to ensure raw static file delivery.
-
----  
-
-## 2025-10-18 — Homepage Expansion & Metadata Alignment
-
-- Expanded homepage content:
-  - About section
-  - Research vs institutional pillars
-  - Repository and demo links
-  - Contact and citation references
-- Surfaced ORCID and institutional contact email.
-- Removed external email dependency.
-- Corrected case-sensitive asset paths.
-- Added OpenGraph and social preview metadata.
-- Added site favicon.
+This version does **not** imply feature completeness, visual finality, or research maturity.
 
 ---
 
-## 2025-10-19 — Content Refinement
+## Scope of v1.0.0
 
-- Updated homepage tagline for clarity.
-- Refined CRI-CORE descriptive language.
-- Added simulator-related keywords.
-- Added Founder attribution section.
+Included in this version:
+
+- Institutional homepage and overview
+- Aurora Hierarchy and layer definitions
+- Doctrine, specification, governance, and methodology reference pages
+- Tooling and infrastructure overview
+- Canonical institutional updates log
+- Deterministic, no-build static deployment
+
+Out of scope for this version:
+
+- Per-project deep-dive pages
+- Analytics or telemetry
+- Accessibility optimization passes
+- Interactive or dynamic features
 
 ---
 
-## 2026-01-25 — Canonical Site Normalization & Structural Alignment
+## Versioning Policy
 
-- Normalized global navigation to a single canonical menu across all pages.
-- Rewrote homepage to reflect finalized Aurora layer ordering and authority boundaries.
-- Corrected Aurora stack labeling and layer numbering for numerical and conceptual consistency.
-- Standardized page structure, typography, and section hierarchy across core pages.
-- Clarified separation between:
-  - doctrine
-  - specification
-  - governance
-  - methodology
-  - tooling
-  - case studies
-- Added and normalized dedicated pages for:
-  - Aurora Hierarchy
-  - Tools & Infrastructure
-  - Canonical Updates Log
-- Reframed tools descriptions to explicitly reflect subordinate, non-authoritative roles.
-- Established `updates.html` as the authoritative public-facing institutional log.
-- Revised repository README to define canonical scope, authority limits, and versioning philosophy.
+Subsequent versions will be incremented only when:
 
----  
+- The public interpretation of the site materially changes
+- Canonical structure or authority relationships are altered
+- New permanent reference surfaces are added
 
-<div align="center">
-  <sub>© 2025 Waveframe Labs — Independent Open-Science Research Entity • Governed under the Aurora Research Initiative (ARI)</sub>
-</div>  
+Minor copy edits or visual adjustments may not trigger a version change.
 
+---
+
+© 2026 Waveframe Labs — Governed under the Aurora Research Initiative (ARI)
