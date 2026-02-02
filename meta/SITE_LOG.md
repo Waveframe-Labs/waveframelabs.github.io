@@ -6,7 +6,7 @@ domain: "infrastructure"
 version: "1.0.0"
 status: "Active"
 created: "2025-10-18"
-updated: "2026-01-25"
+updated: "2026-02-01"
 
 author:
   name: "Waveframe Labs"
@@ -51,7 +51,17 @@ This log does **not** record:
 - Tooling versions
 - Internal drafts
 
----
+---  
+
+## 2026-02-01
+
+- Normalized institutional log and updates page to include:
+  - Waveframe Labs Website v1.0.0 release
+  - Waveframe Stamp v0.1.0 release
+  - Waveframe Stamp v0.1.1 (Zenodo DOI)
+- No layout or navigation changes.
+
+---  
 
 ## 2025-10-18 — Initial Public Deployment
 
