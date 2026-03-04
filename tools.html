@@ -2,17 +2,16 @@
 ---
 title: "Tools · Waveframe Labs"
 short_title: "Tools"
-version: "1.0.0"
+version: "1.1.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
 maintainer: "Waveframe Labs"
 license: "CC-BY-4.0"
-policy_version: "ARI-Metadata-2.0.0"
+policy_version: "ARI-Metadata-3.0.2"
 dependencies:
   - "Aurora Ecosystem — Unified System Reference v2.0.0"
 ai_assisted: "partial"
-ai_assistance_details: "Tools page normalized for canonical layering, tool scope, and site-wide navigation consistency."
 ---
 -->
 
@@ -24,12 +23,12 @@ ai_assistance_details: "Tools page normalized for canonical layering, tool scope
 
   <title>Tools · Waveframe Labs</title>
 
-  <meta name="description" content="Deterministic tooling supporting governed, reproducible AI–human research under the Aurora Ecosystem." />
+  <meta name="description" content="Deterministic tooling supporting governed AI-assisted workflows and reproducible research systems under the Aurora Ecosystem." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/tools.html" />
 
   <meta property="og:title" content="Tools · Waveframe Labs" />
-  <meta property="og:description" content="Deterministic tooling for governed research workflows." />
+  <meta property="og:description" content="Deterministic tooling for governed workflows and reproducible outputs." />
   <meta property="og:type" content="website" />
 
 <style>
@@ -137,19 +136,19 @@ footer{
 </header>
 
 <section class="hero">
-  <span class="kicker">Layer 5 — Publication & Distribution</span>
+  <span class="kicker">Tooling</span>
   <h1>Tools</h1>
   <p>
-    Deterministic tooling that prepares, validates, and publishes governed research artifacts.
-    Tools do not define epistemic authority or research method; they execute and reflect decisions made upstream.
+    Deterministic tooling that validates artifacts, preserves provenance, and produces citable outputs for governed workflows.
+    Tools do not define authority or workflow method; they implement and reflect decisions made upstream.
   </p>
 </section>
 
 <section>
   <h2>Purpose</h2>
   <p>
-    Tools exist to make governed research reproducible, auditable, and mechanically checkable.
-    They are subordinate to governance (L0) and method (L1) and may not redefine either.
+    Tools exist to make governed workflows reproducible, auditable, and mechanically checkable.
+    They operate under governance (L0) and method (L1) constraints and may not redefine either.
   </p>
 </section>
 
@@ -159,28 +158,36 @@ footer{
   <div class="card">
     <h3>Stamp</h3>
     <p>
-      Deterministic metadata diagnostics and remediation tooling.
-      Stamp extracts metadata, validates it against formal schemas, normalizes errors into structured diagnostics,
-      and separates machine-safe fixes from human judgment.
+      Deterministic artifact and metadata validation tooling. Stamp extracts metadata, validates it against declared schemas,
+      normalizes failures into structured diagnostics, and separates machine-safe fixes from human judgment.
     </p>
     <p class="muted">
-      Stamp explains what is wrong and what action is required; it does not enforce, approve, or judge content.
+      Stamp explains what is wrong and what action is required; it does not enforce state mutation or judge content meaning.
+    </p>
+    <p>
+      <strong>PyPI:</strong> <a href="https://pypi.org/project/waveframe-stamp/" target="_blank">waveframe-stamp</a>
+      &nbsp;·&nbsp;
+      <strong>Install:</strong> <code>pip install waveframe-stamp</code>
+      &nbsp;·&nbsp;
+      <strong>GitHub:</strong> <a href="https://github.com/Waveframe-Labs/Waveframe-Stamp" target="_blank">Waveframe-Stamp</a>
     </p>
   </div>
 
   <div class="card">
     <h3>Waveframe PDF Forge</h3>
     <p class="muted">
-      Deterministic Markdown → PDF publication pipeline with metadata injection and provenance preservation.
-      Forge freezes validated artifacts for citation and dissemination.
+      Deterministic Markdown → PDF publication pipeline used to generate Scholar-ready artifacts.
+      Forge freezes validated sources for citation and distribution while preserving provenance.
     </p>
   </div>
 
   <div class="card">
-    <h3>Metadata Pipeline</h3>
+    <h3>Waveframe Publications Repository</h3>
     <p class="muted">
-      Conceptual pipeline spanning extraction, validation, normalization, and publication of artifact metadata.
-      Implemented through tools such as Stamp and Forge.
+      Canonical Markdown source files used by Forge to generate publication artifacts.
+    </p>
+    <p>
+      <a href="https://github.com/Waveframe-Labs/Waveframe-Publications" target="_blank">GitHub</a>
     </p>
   </div>
 </section>
@@ -189,10 +196,10 @@ footer{
   <h2>Related Upstream Components</h2>
 
   <div class="card">
-    <h3>Glyphtrace (Layer 2 — Language & Ontology)</h3>
+    <h3>Glyphtrace (Layer 2 — Language &amp; Ontology)</h3>
     <p class="muted">
-      Symbolic semantic compression format used to represent claims and reasoning compactly.
-      Glyphtrace is not a tool; it is an upstream meaning layer consumed by tooling and enforcement.
+      Symbolic compression format for representing claims and reasoning compactly.
+      Glyphtrace is not a tool; it is a representation layer consumed by validation, enforcement, and publication systems.
     </p>
     <p>
       <a href="https://github.com/Waveframe-Labs/Glyphtrace" target="_blank">GitHub</a> ·
@@ -204,9 +211,10 @@ footer{
 <section>
   <h2>Relationship to the Aurora Stack</h2>
   <ul>
-    <li><strong>L0–L1:</strong> Tools operate under epistemic and methodological constraints.</li>
-    <li><strong>L4:</strong> Tools may integrate with CRI-CORE for enforcement.</li>
-    <li><strong>L6:</strong> Tools support the production of case studies and publications.</li>
+    <li><strong>L0–L1:</strong> Tools operate under governance and method constraints.</li>
+    <li><strong>L4:</strong> Tools integrate with enforcement surfaces where state mutation must be gated (CRI-CORE).</li>
+    <li><strong>L5:</strong> Tools produce frozen outputs and publishable artifacts (Forge, publications sources).</li>
+    <li><strong>L6:</strong> Tools support demonstrations that exercise the validation and enforcement pipeline.</li>
   </ul>
 </section>
 
