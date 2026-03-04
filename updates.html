@@ -2,16 +2,15 @@
 ---
 title: "Updates · Waveframe Labs"
 short_title: "Updates"
-version: "1.0.1"
+version: "1.1.0"
 status: "Active"
 type: "canonical-log"
 author: "Waveframe Labs"
 maintainer: "Waveframe Labs"
 license: "CC-BY-4.0"
-policy_version: "ARI-Metadata-2.0.0"
-description: "Canonical release log for governance documents, specifications, methodologies, and foundational research artifacts under the Aurora Ecosystem."
+policy_version: "ARI-Metadata-3.0.2"
+description: "Canonical release log for governance documents, specifications, methodology, tooling, and demonstrations under the Aurora Ecosystem."
 ai_assisted: "partial"
-ai_assistance_details: "Normalization and canon alignment of update records and page structure."
 ---
 -->
 
@@ -22,7 +21,7 @@ ai_assistance_details: "Normalization and canon alignment of update records and 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Updates · Waveframe Labs</title>
-  <meta name="description" content="Canonical release log for governance documents, specifications, and foundational research artifacts under the Aurora Ecosystem." />
+  <meta name="description" content="Canonical release log for governance documents, specifications, methodology, tooling, and demonstrations under the Aurora Ecosystem." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/updates.html" />
 
@@ -141,60 +140,123 @@ footer{
 </section>
 
 <!-- =============================== -->
-<!-- Waveframe Labs Website v1.0.0  -->
+<!-- Claim Lifecycle Demo v0.3.3     -->
+<!-- =============================== -->
+<section class="card">
+  <div class="update-head">
+    <h3>Claim Lifecycle Demo v0.3.3 — PyPI Installation Support</h3>
+    <div class="meta">2026-03-03 · Demonstration — Governed Claim Lifecycle</div>
+  </div>
+  <div class="update-body">
+    <ul class="muted">
+      <li>Updated the demo to depend on the public PyPI distribution of CRI-CORE.</li>
+      <li>Removed the requirement to clone the CRI-CORE repository or configure PYTHONPATH.</li>
+      <li>Introduced a pyproject.toml to declare the CRI-CORE dependency and standard project metadata.</li>
+      <li>No changes to lifecycle scenarios, enforcement behavior, or demo runner logic.</li>
+    </ul>
+    <p class="muted">
+      This release reduces setup friction while preserving the same governed lifecycle behavior and enforcement outcomes.
+    </p>
+  </div>
+</section>
+
+<!-- =============================== -->
+<!-- Finance Demo v0.3.4             -->
+<!-- =============================== -->
+<section class="card">
+  <div class="update-head">
+    <h3>CRI-CORE RACI Finance Demo v0.3.4 — Documentation and Citation Metadata</h3>
+    <div class="meta">2026-03-03 · Demonstration — Deterministic Commit Gating (Finance)</div>
+  </div>
+  <div class="update-body">
+    <ul class="muted">
+      <li>Added CHANGELOG.md to track release history and clarify demo scope across versions.</li>
+      <li>Added CITATION.cff for GitHub citation support and research referencing.</li>
+      <li>No changes to scenarios, runner logic, or enforcement behavior.</li>
+    </ul>
+    <p class="muted">
+      This release improves reproducibility and referencing while preserving the same deterministic commit gating behavior.
+    </p>
+  </div>
+</section>
+
+<!-- =============================== -->
+<!-- CRI-CORE v0.6.0                 -->
+<!-- =============================== -->
+<section class="card">
+  <div class="update-head">
+    <h3>CRI-CORE v0.6.0 — First Public PyPI Distribution</h3>
+    <div class="meta">2026-03-02 · Enforcement — Deterministic Transition-Boundary Kernel</div>
+  </div>
+  <div class="update-body">
+    <ul class="muted">
+      <li>Established public installation via <code>pip install cricore</code>.</li>
+      <li>Stabilized the enforcement entrypoint: <code>cricore.enforcement.execution.run_enforcement_pipeline</code>.</li>
+      <li>Exposed explicit runtime version via <code>cricore.__version__</code>.</li>
+      <li>Hardened packaging metadata (classifiers, project URLs, keywords).</li>
+      <li>Maintained backwards compatibility with prior enforcement behavior and pipeline interface.</li>
+    </ul>
+    <p class="muted">
+      CRI-CORE remains deterministic, domain-agnostic, and non-semantic: it authorizes mutation attempts and emits a single
+      authoritative commit decision (<code>commit_allowed</code>) without mutating state.
+    </p>
+  </div>
+</section>
+
+<!-- =============================== -->
+<!-- Waveframe Labs Website v1.0.0   -->
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
     <h3>Waveframe Labs Website v1.0.0 — Canonical Public Interface Released</h3>
-    <div class="meta">2026-01-25 · Layer 5 — Publication & Distribution</div>
+    <div class="meta">2026-01-25 · Website — Canonical Public Reference</div>
   </div>
   <div class="update-body">
     <ul class="muted">
       <li>Published the first canonical public interface for the Aurora ecosystem.</li>
-      <li>Normalized governance, specification, methodology, tooling, and research pages.</li>
-      <li>Established a permanent institutional log and authority-aligned navigation structure.</li>
+      <li>Established an institutional navigation surface aligned to governance and tooling.</li>
+      <li>Introduced a permanent update log for releases and formal changes.</li>
     </ul>
     <p class="muted">
-      This release formalizes the Waveframe Labs website as the authoritative public reference
-      surface for the Aurora ecosystem and its governed research outputs.
+      This release formalized the Waveframe Labs website as the public reference surface for the Aurora ecosystem.
     </p>
   </div>
 </section>
 
 <!-- =============================== -->
-<!-- Stamp v0.1.1                   -->
+<!-- Stamp v0.1.1                    -->
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
     <h3>Stamp v0.1.1 — Stable Diagnostics & Archival DOI Published</h3>
-    <div class="meta">2026-01-30 · Layer 5 — Infrastructure (Tooling)</div>
+    <div class="meta">2026-02-01 · Validation — Artifact & Metadata Diagnostics</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Released a stable, schema-agnostic diagnostics engine for governed research artifacts.</li>
-      <li>Normalized all validation output into Canonical Diagnostic Objects (CDOs).</li>
-      <li>Introduced structured, machine-readable remediation outputs and immutable execution traces.</li>
-      <li>Formally separated validation, fix proposals, and human judgment into auditable stages.</li>
+      <li>Released a stable, schema-agnostic diagnostics engine for governed artifacts.</li>
+      <li>Normalized validation output into Canonical Diagnostic Objects (CDOs).</li>
+      <li>Introduced structured remediation outputs and immutable execution traces.</li>
+      <li>Separated validation, fix proposals, and human judgment into auditable stages.</li>
     </ul>
 
     <p class="muted">
-      Stamp v0.1.1 establishes a reproducible, policy-neutral front door for governed research
-      workflows and serves as an upstream dependency for enforcement layers such as CRI-CORE.
+      Stamp provides a reproducible, policy-neutral front door for governed workflows and supports downstream enforcement.
     </p>
 
     <ul class="muted">
       <li><strong>Version DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18453155">10.5281/zenodo.18453155</a></li>
+      <li><strong>PyPI:</strong> <a href="https://pypi.org/project/waveframe-stamp/" target="_blank">waveframe-stamp</a></li>
     </ul>
   </div>
 </section>
 
 <!-- =============================== -->
-<!-- Stamp v0.1.0                   -->
+<!-- Stamp v0.1.0                    -->
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
     <h3>Stamp v0.1.0 — Initial Public Tooling Release</h3>
-    <div class="meta">2026-01-30 · Layer 5 — Infrastructure (Tooling)</div>
+    <div class="meta">2026-01-30 · Validation — Artifact & Metadata Diagnostics</div>
   </div>
   <div class="update-body">
     <ul class="muted">
@@ -204,30 +266,28 @@ footer{
     </ul>
 
     <p class="muted">
-      This release establishes the public technical surface for metadata validation and diagnostics
-      in governed research systems without embedding institutional authority or policy logic.
+      This release established the public technical surface for deterministic validation without embedding institutional policy logic.
     </p>
   </div>
 </section>
 
 <!-- =============================== -->
-<!-- AWO v2.0.0                     -->
+<!-- AWO v2.0.0                      -->
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
     <h3>AWO v2.0.0 Released — Methodology Layer Finalized</h3>
-    <div class="meta">2026-01-09 · Layer 1 — Methodology</div>
+    <div class="meta">2026-01-09 · Method — Workflow Topology</div>
   </div>
   <div class="update-body">
     <ul class="muted">
       <li>Completed rewrite of Aurora Workflow Orchestration.</li>
-      <li>Defined enforceable artifact classes and schemas.</li>
-      <li>Established phase topology and role separation.</li>
+      <li>Defined enforceable artifact classes and workflow topology.</li>
+      <li>Established phase structure and role separation.</li>
       <li>Published normative specifications and onboarding guides.</li>
     </ul>
     <p class="muted">
-      AWO v2.0.0 is now the authoritative definition of research workflow under Aurora,
-      enabling deterministic enforcement by CRI-CORE.
+      AWO v2.0.0 is the authoritative workflow definition under Aurora.
     </p>
     <ul class="muted">
       <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17013612">10.5281/zenodo.17013612</a></li>
@@ -240,7 +300,7 @@ footer{
 <section class="card">
   <div class="update-head">
     <h3>Glyphtrace v0.0.1 — Concept & Version DOIs Registered</h3>
-    <div class="meta">2025-12-26 · Layer 2 — Language & Ontology</div>
+    <div class="meta">2025-12-26 · Language — Symbolic Compression</div>
   </div>
   <div class="update-body">
     <ul class="muted">
@@ -259,13 +319,13 @@ footer{
 <section class="card">
   <div class="update-head">
     <h3>Neurotransparency Specification (NTS) v2.0.0 Released</h3>
-    <div class="meta">2025-12-18 · Layer 0 — Specification</div>
+    <div class="meta">2025-12-18 · Governance — Specification</div>
   </div>
   <div class="update-body">
     <ul class="muted">
       <li>Defined machine-verifiable AI disclosure requirements.</li>
       <li>Separated doctrinal rationale from enforceable rules.</li>
-      <li>Published compliance targets for CRI-CORE.</li>
+      <li>Published compliance targets for downstream enforcement.</li>
     </ul>
     <ul class="muted">
       <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17809676">10.5281/zenodo.17809676</a></li>
@@ -277,7 +337,7 @@ footer{
 <section class="card">
   <div class="update-head">
     <h3>Neurotransparency Doctrine (NTD) Released</h3>
-    <div class="meta">2025-12-17 · Layer 0 — Doctrine</div>
+    <div class="meta">2025-12-17 · Governance — Doctrine</div>
   </div>
   <div class="update-body">
     <ul class="muted">
@@ -294,13 +354,13 @@ footer{
 <section class="card">
   <div class="update-head">
     <h3>Aurora Research Initiative (ARI) Formalized</h3>
-    <div class="meta">2025-12-16 · Layer 1 — Governance</div>
+    <div class="meta">2025-12-16 · Governance — Authority</div>
   </div>
   <div class="update-body">
     <ul class="muted">
       <li>Defined governance authority for the Aurora Ecosystem.</li>
-      <li>Established separation between doctrine, specification, workflow, and enforcement.</li>
-      <li>Codified independence and no-self-attestation rules.</li>
+      <li>Established separation between doctrine, specification, workflow, enforcement, and publication.</li>
+      <li>Codified independence and no-self-attestation constraints.</li>
     </ul>
     <ul class="muted">
       <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17743096">10.5281/zenodo.17743096</a></li>
