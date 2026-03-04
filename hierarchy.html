@@ -2,17 +2,16 @@
 ---
 title: "Aurora Hierarchy · Waveframe Labs"
 short_title: "Hierarchy"
-version: "1.0.0"
+version: "1.1.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
 maintainer: "Waveframe Labs"
 license: "CC-BY-4.0"
-policy_version: "ARI-Metadata-2.0.0"
+policy_version: "ARI-Metadata-3.0.2"
 dependencies:
   - "Aurora Ecosystem — Unified System Reference v2.0.0"
 ai_assisted: "partial"
-ai_assistance_details: "Hierarchy normalization and layer-model correction performed with AI assistance; final content reviewed and approved by Waveframe Labs."
 ---
 -->
 
@@ -24,7 +23,7 @@ ai_assistance_details: "Hierarchy normalization and layer-model correction perfo
 
   <title>Hierarchy · Waveframe Labs</title>
 
-  <meta name="description" content="The Aurora Hierarchy defines the Aurora Ecosystem layer model (L0–L6): authority, method, meaning, lineage, enforcement, publication, and research outputs.">
+  <meta name="description" content="The Aurora Hierarchy defines the Aurora Ecosystem layer model (L0–L6): governance, method, meaning, lineage, validation/enforcement, publication, and demonstrations.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/hierarchy.html" />
 
@@ -140,8 +139,8 @@ ai_assistance_details: "Hierarchy normalization and layer-model correction perfo
     <span class="kicker">Institutional Architecture</span>
     <h1>The Aurora Hierarchy</h1>
     <p>
-      The Aurora Ecosystem is organized into strictly layered subsystems. Each layer has a distinct authority domain and may not subsume
-      or redefine the layer above it.
+      The Aurora Ecosystem is organized into layered subsystems. Each layer has a distinct authority domain
+      and may not subsume or redefine the layer above it.
     </p>
     <p>
       <strong>Authority flows downward. Enforcement flows upward.</strong>
@@ -153,7 +152,7 @@ ai_assistance_details: "Hierarchy normalization and layer-model correction perfo
     <h2>Overview</h2>
     <p>
       The hierarchy separates legitimacy (what rules and commitments exist) from implementation (how those commitments are executed).
-      This separation prevents governance drift, epistemic ambiguity, and enforcement collapse.
+      This separation prevents governance drift, ambiguity at the execution boundary, and enforcement collapse.
     </p>
     <p>
       This page is a canonical overview of the layer model only. Content authority remains with the referenced documents and repositories.
@@ -165,66 +164,68 @@ ai_assistance_details: "Hierarchy normalization and layer-model correction perfo
     <h2>The Layers (L0–L6)</h2>
 
     <div class="card">
-      <h3>L0 — Governance &amp; Epistemics (Authority Layer)</h3>
+      <h3>L0 — Governance (Authority Layer)</h3>
       <p>
-        Defines epistemic legitimacy, provenance requirements, and institutional authority. This layer is normative and constitutional:
-        nothing below it may redefine legitimacy, authority boundaries, or traceability requirements.
+        Defines authority boundaries, disclosure requirements, and traceability constraints.
+        This layer is normative and constitutional: nothing below it may redefine legitimacy, authority boundaries,
+        or provenance requirements.
       </p>
-      <p><strong>Components:</strong> ARI, NTD, NTS</p>
+      <p><strong>Components:</strong> Neurotransparency Doctrine (NTD), Neurotransparency Specification (NTS), Aurora Research Initiative (ARI)</p>
     </div>
 
     <div class="card">
-      <h3>L1 — Method (Operational Semantics)</h3>
+      <h3>L1 — Method (Workflow Topology)</h3>
       <p>
         Structures how governed reasoning is performed and recorded. Method operationalizes L0 requirements into workflows and artifact classes,
-        but does not define legitimacy and does not enforce compliance.
+        but does not define legitimacy and does not perform enforcement.
       </p>
-      <p><strong>Component:</strong> AWO</p>
+      <p><strong>Component:</strong> Aurora Workflow Orchestration (AWO)</p>
     </div>
 
     <div class="card">
       <h3>L2 — Language &amp; Ontology (Meaning Layer)</h3>
       <p>
-        Stabilizes meaning across artifacts using controlled vocabularies, symbols, and semantic compression. This layer affects interpretation,
-        not authority.
+        Stabilizes meaning across artifacts using controlled vocabularies, symbols, and semantic compression.
+        This layer affects interpretation and representation, not authority.
       </p>
-      <p><strong>Components:</strong> Lexon, Signum, Glyphtrace</p>
+      <p><strong>Components:</strong> Lexon, Glyphtrace</p>
     </div>
 
     <div class="card">
-      <h3>L3 — Lineage (Memory Layer)</h3>
+      <h3>L3 — Lineage (Continuity Layer)</h3>
       <p>
-        Preserves historical continuity of claims and artifacts by maintaining dependency and provenance chains. This layer records history;
-        it does not judge correctness.
+        Preserves historical continuity by maintaining dependency and provenance chains across artifacts and decisions.
+        This layer records history; it does not judge correctness.
       </p>
-      <p><strong>Component:</strong> Tracelink</p>
+      <p><strong>Component:</strong> Tracelink (planned)</p>
     </div>
 
     <div class="card">
       <h3>L4 — Validation &amp; Enforcement (Execution Layer)</h3>
       <p>
-        Mechanically enforces contracts and invariants defined upstream (L0–L1). CRI-CORE validates artifacts against schemas and constraints and
-        prevents non-compliant execution. It cannot define rules; it only enforces those defined above.
+        Mechanically validates artifacts and enforces declared constraints defined upstream (L0–L1).
+        Validation prepares artifacts for enforcement. Enforcement gates state mutation at the execution boundary.
+        Nothing in this layer may define governance rules; it only applies declared contracts and verifiable run evidence.
       </p>
-      <p><strong>Component:</strong> CRI-CORE</p>
+      <p><strong>Components:</strong> Stamp (validation), CRI-CORE (enforcement)</p>
     </div>
 
     <div class="card">
       <h3>L5 — Publication &amp; Distribution (Output Layer)</h3>
       <p>
-        Produces public-facing, frozen artifacts (e.g., PDFs, releases, metadata-injected outputs). Publication does not imply legitimacy;
-        it reflects prior validation and governance constraints.
+        Produces frozen, citable outputs (e.g., PDFs, releases, metadata-injected artifacts).
+        Publication does not imply legitimacy; it reflects that upstream governance, method, validation, and enforcement requirements have been satisfied for the artifact set.
       </p>
-      <p><strong>Components:</strong> Forge, Stamp</p>
+      <p><strong>Component:</strong> Forge (publication engine) · <strong>Repository:</strong> Waveframe-Publications (canonical sources)</p>
     </div>
 
     <div class="card">
-      <h3>L6 — Research Outputs (Application Layer)</h3>
+      <h3>L6 — Demonstrations (Application Layer)</h3>
       <p>
-        Applied work produced under the ecosystem. Case studies demonstrate the stack in practice and generate scientific or applied claims.
-        Case studies may not modify upstream layers.
+        Practical examples that demonstrate how the ecosystem behaves under real workflow conditions.
+        Demonstrations exercise validation and enforcement surfaces without redefining upstream layers.
       </p>
-      <p><strong>Examples:</strong> Waveframe v4.0, Societal Health Simulator</p>
+      <p><strong>Examples:</strong> Claim lifecycle demo, finance governance (RACI) demo, Stamp demo</p>
     </div>
   </section>
 
@@ -232,11 +233,12 @@ ai_assistance_details: "Hierarchy normalization and layer-model correction perfo
   <section style="margin-top:22px;">
     <h2>Why the Hierarchy Matters</h2>
     <p>
-      Without strict layering, research systems collapse into ad hoc practices where governance, method, enforcement, and meaning blur together.
-      The hierarchy keeps legitimacy (L0) distinct from process (L1), semantics (L2), history (L3), enforcement (L4), publication (L5), and applications (L6).
+      Without strict layering, governance, method, semantics, history, enforcement, and publication blur together.
+      The hierarchy keeps legitimacy (L0) distinct from workflow topology (L1), representation (L2), continuity (L3),
+      execution-boundary enforcement (L4), publication outputs (L5), and demonstrations (L6).
     </p>
     <p>
-      The result is a system where claims can be traced to explicit commitments, artifacts can be validated against explicit contracts,
+      The result is a system where decisions can be traced to explicit commitments, artifacts can be validated against declared contracts,
       and outputs can be cited without ambiguity.
     </p>
   </section>
