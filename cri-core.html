@@ -6,7 +6,7 @@
 
   <title>CRI-CORE · Waveframe Labs</title>
 
-  <meta name="description" content="CRI-CORE is the deterministic enforcement engine for the Aurora ecosystem, mechanically validating governance, methodology, and provenance compliance.">
+  <meta name="description" content="CRI-CORE is the deterministic structural enforcement kernel for the Aurora ecosystem, authorizing governed state transitions at the mutation boundary.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/cri-core.html" />
 
@@ -121,9 +121,9 @@
     <h1>CRI-CORE</h1>
 
     <p class="muted">
-      CRI-CORE is the enforcement engine of the Aurora ecosystem.
-      It transforms governance rules and workflow requirements into
-      machine-verifiable guarantees.
+      CRI-CORE is a deterministic structural enforcement kernel for governed state transitions.
+      It evaluates structural, authority, integrity, binding, sealing, and publication constraints,
+      then returns a single authoritative commit decision.
     </p>
   </section>
 
@@ -131,13 +131,13 @@
   <section>
     <h2>Why CRI-CORE Exists</h2>
     <p>
-      Modern research workflows rely on trust that methods were followed correctly.
-      CRI-CORE replaces trust with verification by mechanically validating manifests,
-      metadata, and execution logs.
+      AI-assisted systems increasingly generate recommendations that influence real operational decisions.
+      The highest-risk moment is the execution boundary — the point where a recommendation becomes a state mutation.
+      CRI-CORE exists to ensure that state changes only occur when declared responsibility and integrity constraints pass deterministic validation.
     </p>
     <p class="muted">
-      Instead of asserting compliance, CRI-CORE produces cryptographically
-      trustworthy evidence of what actually ran.
+      CRI-CORE does not interpret domain policy or mutate state.
+      It authorizes (or rejects) a proposed mutation attempt based on declared contracts and verifiable run evidence.
     </p>
   </section>
 
@@ -146,33 +146,32 @@
     <h2>Core Capabilities</h2>
     <div class="card">
       <ul class="muted">
-        <li>Validate AWO manifests for completeness and structural correctness.</li>
-        <li>Verify required metadata headers across all artifacts.</li>
-        <li>Compute checksums and provenance fingerprints for critical files.</li>
-        <li>Record attestation events as tamper-resistant logs.</li>
-        <li>Emit machine-readable compliance reports per execution.</li>
+        <li>Deterministic pipeline enforcement for governed transition attempts.</li>
+        <li>Structural contract evaluation and version gating.</li>
+        <li>Authority and responsibility checks (role satisfaction and structural admissibility).</li>
+        <li>Cryptographic integrity verification for declared artifacts and run inputs.</li>
+        <li>Publication-stage commit gating via a single authoritative <code>commit_allowed</code> signal.</li>
+        <li>Machine-readable enforcement outputs for downstream logging, audit, and replay.</li>
       </ul>
     </div>
   </section>
 
-  <!-- ===== MVP VS ROADMAP ===== -->
+  <!-- ===== CURRENT STATE ===== -->
   <section>
-    <h2>MVP vs. Long-Term Engine</h2>
-
+    <h2>Current State</h2>
     <div class="card">
-      <h3>MVP Focus</h3>
-      <ul class="muted">
-        <li>CLI-based validator for manifests and metadata.</li>
-        <li>Checksum and provenance summary per run.</li>
-        <li>Deterministic failure codes mapped to NTS requirements.</li>
-      </ul>
+      <h3>Public Distribution</h3>
+      <p class="muted">
+        CRI-CORE is distributed as an installable Python package:
+        <br><br>
+        <code>pip install cricore</code>
+      </p>
 
-      <h3>Roadmap</h3>
+      <h3>Scope</h3>
       <ul class="muted">
-        <li>Attestation independence checks (Builder vs Reviewer).</li>
-        <li>Multi-model orchestration audit logs.</li>
-        <li>Integration with archival pipelines (Zenodo, OSF).</li>
-        <li>CRI-CORE Enterprise for regulated environments.</li>
+        <li>Deterministic and domain-agnostic.</li>
+        <li>Invocation-bound: CRI-CORE evaluates a proposed transition attempt and returns a decision.</li>
+        <li>Non-semantic: it does not decide whether a claim is “true” or “good,” only whether a mutation is authorized under declared constraints.</li>
       </ul>
     </div>
   </section>
@@ -182,10 +181,15 @@
     <h2>Repository</h2>
     <ul class="muted">
       <li>
+        <strong>Package:</strong>
+        <a href="https://pypi.org/project/cricore/" target="_blank">pypi.org/project/cricore</a>
+      </li>
+      <li>
         <strong>GitHub:</strong>
         <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">
           Waveframe-Labs/CRI-CORE
         </a>
+        <span class="muted"> (repository may be private; demos reference the public package)</span>
       </li>
     </ul>
   </section>
@@ -194,7 +198,7 @@
   <footer>
     <span>Text &amp; media: CC BY-NC-SA 4.0</span>
     <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs</span>
+    <span>· © 2026 Waveframe Labs</span>
   </footer>
 
 </div>
