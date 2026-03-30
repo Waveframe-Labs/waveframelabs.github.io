@@ -2,7 +2,7 @@
 ---
 title: "Waveframe Labs — Canonical Entry"
 short_title: "Waveframe Labs"
-version: "1.1.0"
+version: "1.2.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -22,12 +22,12 @@ ai_assisted: "partial"
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Waveframe Labs</title>
 
-  <meta name="description" content="Waveframe Labs develops governance infrastructure and enforcement tooling for AI-assisted workflows and reproducible research systems.">
+  <meta name="description" content="Waveframe Labs builds systems that stop unsafe AI actions before they execute.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
 
   <link rel="canonical" href="https://waveframelabs.org" />
   <meta property="og:title" content="Waveframe Labs" />
-  <meta property="og:description" content="Governance infrastructure and enforcement tooling for AI-assisted workflows and reproducible research systems." />
+  <meta property="og:description" content="Systems that decide whether AI-driven actions are allowed to execute." />
   <meta property="og:type" content="website" />
 
 <style>
@@ -183,13 +183,24 @@ footer{
 
 <section class="lead-section">
   <div class="lead-text">
-    Waveframe Labs develops governance infrastructure and enforcement tooling for
-    <strong>AI-assisted workflows</strong> and reproducible research systems.
+    AI systems can now take real-world actions — moving money, deploying code, approving decisions.
     <br><br>
-    The <strong>Aurora Ecosystem</strong> defines how policy, workflow structure, validation,
-    and execution enforcement interact to produce traceable, governed outputs.
+    Most systems can detect problems or audit them after the fact.
+    <br><br>
+    But they do not control the moment that actually matters:
+    <strong>execution.</strong>
+    <br><br>
+    Waveframe builds systems that sit at that boundary and decide:
+    <br><br>
+    <strong>Should this action be allowed to execute?</strong>
+    <br><br>
+    Every action is evaluated and either:
+    <br>
+    ✓ allowed to execute  
+    <br>
+    ✗ blocked before it happens
     <div style="margin-top:10px;">
-      Explore the full ecosystem on
+      Explore the system on
       <a href="https://github.com/Waveframe-Labs" target="_blank" style="color:var(--accent); font-weight:600;">GitHub</a>.
     </div>
   </div>
@@ -202,7 +213,7 @@ footer{
       Authority flows downward. Enforcement flows upward.
       <br>
       The Aurora stack separates governance, workflow structure, validation, and execution enforcement
-      to ensure that AI-assisted decisions and state transitions remain auditable and accountable.
+      so that actions are not only described or audited, but controlled at the point where they become real.
     </p>
 
     <div class="stack-container">
@@ -251,18 +262,28 @@ footer{
   <div class="card" style="padding:16px 24px;">
 
     <div class="log-row">
+      <span>CRI-CORE v0.10.0 released — deterministic execution control layer</span>
+      <span class="log-date">2026.03.19</span>
+    </div>
+
+    <div class="log-row">
+      <span>cricore-proposal-normalizer v0.1.0 released — canonical proposal input layer</span>
+      <span class="log-date">2026.03.16</span>
+    </div>
+
+    <div class="log-row">
+      <span>cricore-contract-compiler v0.1.0 released — governance contract compilation</span>
+      <span class="log-date">2026.03.11</span>
+    </div>
+
+    <div class="log-row">
       <span>Claim Lifecycle Demo v0.3.3 released — PyPI dependency support (CRI-CORE)</span>
       <span class="log-date">2026.03.03</span>
     </div>
 
     <div class="log-row">
-      <span>Finance Governance Demo v0.3.4 released — citation metadata &amp; changelog</span>
+      <span>Finance Governance Demo v0.3.4 released — enforced execution example</span>
       <span class="log-date">2026.03.03</span>
-    </div>
-
-    <div class="log-row">
-      <span>CRI-CORE v0.6.0 released — first public PyPI distribution</span>
-      <span class="log-date">2026.03.02</span>
     </div>
 
     <div class="log-row">
@@ -330,7 +351,7 @@ footer{
       <img src="waveframe-logo-mark.png" width="24" height="24" style="margin-bottom:12px;">
       <div style="font-weight:700; font-size:1.1rem; color:var(--ink); margin-bottom:8px;">Waveframe Labs</div>
       <p style="font-size:0.9rem; max-width:280px;">
-        Building governance infrastructure for AI-assisted workflows and reproducible research systems.
+        Systems that control whether AI-driven actions are allowed to execute.
       </p>
     </div>
 
