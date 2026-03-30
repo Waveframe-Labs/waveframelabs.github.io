@@ -6,11 +6,10 @@
 
   <title>CRI-CORE · Waveframe Labs</title>
 
-  <meta name="description" content="CRI-CORE is the deterministic structural enforcement kernel for the Aurora ecosystem, authorizing governed state transitions at the mutation boundary.">
+  <meta name="description" content="CRI-CORE decides whether AI-generated actions are allowed to execute — before they touch real systems.">
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/cri-core.html" />
 
-  <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
   <style>
     :root{
       --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
@@ -97,7 +96,7 @@
     </div>
 
     <div class="hdr-sub">
-      Deterministic enforcement and provenance validation.
+      Systems that control whether AI actions are allowed to execute.
     </div>
 
     <nav class="topnav">
@@ -112,45 +111,52 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <span class="kicker">Enforcement Infrastructure</span>
+    <span class="kicker">Execution Control</span>
     <h1>CRI-CORE</h1>
 
     <p class="muted">
-      CRI-CORE is a deterministic structural enforcement kernel for governed
-      state transitions. It evaluates structural, authority, integrity,
-      binding, sealing, and publication constraints before a proposed state
-      mutation is allowed to commit.
+      CRI-CORE sits directly before execution and decides:
+      <br><br>
+      ✓ allow this action to run  
+      ✗ block it before it happens
+      <br><br>
+      It does not monitor or explain decisions.
+      It controls whether they are allowed to execute.
     </p>
   </section>
 
   <!-- ===== WHY CRI-CORE ===== -->
   <section>
-    <h2>Why CRI-CORE Exists</h2>
+    <h2>Why This Exists</h2>
     <p>
-      AI-assisted systems increasingly produce recommendations that influence
-      real operational decisions. The highest-risk moment occurs at the
-      execution boundary — when a recommendation becomes an actual change
-      to system state.
+      AI systems can now take real actions — moving money, deploying code,
+      changing infrastructure.
+    </p>
+
+    <p>
+      Most systems detect problems or audit after the fact.
+    </p>
+
+    <p>
+      But by the time something is logged, the action has already happened.
     </p>
 
     <p class="muted">
-      CRI-CORE ensures that these transitions occur only when declared
-      responsibility, authority, and integrity constraints pass deterministic
-      validation.
+      CRI-CORE enforces a decision at the only point that matters:
+      before execution.
     </p>
   </section>
 
   <!-- ===== CORE CAPABILITIES ===== -->
   <section>
-    <h2>Core Capabilities</h2>
+    <h2>What It Does</h2>
     <div class="card">
       <ul class="muted">
-        <li>Deterministic validation of transition attempts.</li>
-        <li>Structural contract and version enforcement.</li>
-        <li>Authority and responsibility constraint validation.</li>
-        <li>Cryptographic artifact integrity verification.</li>
-        <li>Publication-stage commit gating.</li>
-        <li>Machine-readable enforcement outputs for audit and replay.</li>
+        <li>Evaluates every proposed action before it executes.</li>
+        <li>Enforces required roles and approvals (e.g. proposer, approver).</li>
+        <li>Validates that inputs and artifacts have not been tampered with.</li>
+        <li>Ensures the action matches a defined contract.</li>
+        <li>Returns a single decision: <code>commit_allowed = true | false</code>.</li>
       </ul>
     </div>
   </section>
@@ -162,20 +168,20 @@
     <div class="card">
       <h3>Public Distribution</h3>
       <p class="muted">
-        CRI-CORE is distributed as an installable Python package.
+        CRI-CORE is available as an installable Python package.
       </p>
 
       <p>
         <code>pip install cricore</code>
       </p>
 
-      <h3>Design Principles</h3>
+      <h3>Design Constraints</h3>
 
       <ul class="muted">
-        <li>Deterministic and domain-agnostic.</li>
-        <li>Non-semantic: the kernel does not evaluate the meaning or correctness of a decision.</li>
-        <li>Invocation-bound: each execution evaluates a proposed transition attempt.</li>
-        <li>Single authoritative output: <code>commit_allowed</code>.</li>
+        <li>Deterministic — same input, same result.</li>
+        <li>Domain-agnostic — works across finance, infrastructure, operations.</li>
+        <li>Non-judgmental — does not decide if something is “good.”</li>
+        <li>Binary output — the action either executes or it does not.</li>
       </ul>
     </div>
   </section>
