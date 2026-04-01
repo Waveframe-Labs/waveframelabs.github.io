@@ -2,7 +2,7 @@
 ---
 title: "How It Works · Waveframe Labs"
 short_title: "How It Works"
-version: "2.0.0"
+version: "2.1.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -23,13 +23,9 @@ ai_assisted: "partial"
 
   <title>How It Works · Waveframe Labs</title>
 
-  <meta name="description" content="What happens when an AI system attempts to execute an action — from proposal to enforcement." />
+  <meta name="description" content="How actions are evaluated before execution in AI-driven systems." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/hierarchy.html" />
-
-  <meta property="og:title" content="How It Works · Waveframe Labs" />
-  <meta property="og:description" content="Execution control pipeline for AI-driven actions." />
-  <meta property="og:type" content="website" />
 
 <style>
 :root{
@@ -47,7 +43,6 @@ a:hover{color:var(--accent);}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
 
-/* Header */
 .hdr{
   padding:18px 24px;
   border-bottom:1px solid var(--edge);
@@ -55,8 +50,6 @@ a:hover{color:var(--accent);}
   backdrop-filter:blur(12px);
   display:flex; justify-content:space-between; align-items:center;
   position:sticky; top:0; z-index:100; margin-bottom:28px;
-  border-left:1px solid var(--edge); border-right:1px solid var(--edge);
-  border-radius: 0 0 12px 12px;
 }
 .brand{display:flex;align-items:center;gap:12px;}
 .brand-text{font-size:1.2rem;font-weight:700;}
@@ -65,7 +58,6 @@ a:hover{color:var(--accent);}
 .topnav a{opacity:.7;}
 .active-link{opacity:1!important;color:var(--accent)!important;}
 
-/* Hero */
 .hero{
   margin-bottom:22px;
   padding:22px;
@@ -74,7 +66,6 @@ a:hover{color:var(--accent);}
   background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
 }
 
-/* Cards */
 .card{
   background:var(--card);
   border:1px solid var(--edge);
@@ -84,7 +75,7 @@ a:hover{color:var(--accent);}
 }
 
 h1{margin:0 0 .6rem;}
-h2{margin:0 0 .6rem;}
+h2{margin-top:24px;}
 p{color:var(--muted); line-height:1.6;}
 
 .kicker{
@@ -95,7 +86,9 @@ p{color:var(--muted); line-height:1.6;}
   display:block;
 }
 
-/* Footer */
+.result-allow{color:#4cd964;}
+.result-block{color:#ff3b30;}
+
 footer{
   margin-top:48px;
   border-top:1px solid var(--edge);
@@ -128,13 +121,19 @@ footer{
 <section class="hero">
   <span class="kicker">Execution Pipeline</span>
   <h1>What happens when an AI tries to take an action?</h1>
+
   <p>
-    When an AI system proposes something — move money, deploy code, approve a decision —
-    that action does not execute immediately.
+    When an AI proposes something — move money, deploy code, approve a decision —
+    that action should not execute immediately.
   </p>
+
   <p>
-    It passes through a control layer that determines:
-    <strong>should this action be allowed to execute?</strong>
+    It must pass through a control layer that decides:
+  </p>
+
+  <p>
+    <span class="result-allow">✓ allow the action</span><br>
+    <span class="result-block">✗ block it before execution</span>
   </p>
 </section>
 
@@ -145,19 +144,19 @@ footer{
   <div class="card">
     <h3>1. Define constraints</h3>
     <p>
-      Organizational rules are defined as enforceable contracts:
+      Rules are defined as enforceable contracts:
       required roles, approvals, and constraints.
     </p>
     <p>
-      These are compiled into a structured format that can be evaluated deterministically.
+      These rules determine what must be true before an action is allowed.
     </p>
   </div>
 
   <div class="card">
     <h3>2. Normalize the action</h3>
     <p>
-      The proposed action is converted into a canonical structure:
-      who initiated it, what it changes, and what artifacts support it.
+      The proposed action is converted into a structured format:
+      who initiated it, what it changes, and what evidence supports it.
     </p>
   </div>
 
@@ -167,8 +166,8 @@ footer{
       The action is passed into CRI-CORE.
     </p>
     <p>
-      The system checks:
-      roles, approvals, integrity, and required evidence.
+      It checks:
+      roles, approvals, integrity, and required artifacts.
     </p>
   </div>
 
@@ -178,32 +177,38 @@ footer{
       The system returns a single result:
     </p>
     <p>
-      ✓ allowed to execute  
-      ✗ blocked before execution
+      <span class="result-allow">✓ allowed</span><br>
+      <span class="result-block">✗ blocked</span>
+    </p>
+    <p>
+      If blocked, the action never executes.
     </p>
   </div>
 </section>
 
-<!-- CONNECTION -->
-<section style="margin-top:24px;">
-  <h2>Where this fits</h2>
+<!-- POSITIONING -->
+<section>
+  <h2>Where this sits</h2>
   <p>
-    This pipeline sits directly at the execution boundary — the moment where a decision becomes a real action.
+    This pipeline sits directly at the execution boundary —
+    the moment a decision becomes a real-world action.
   </p>
   <p>
-    Everything upstream defines what should happen.  
-    This layer decides whether it actually can happen.
+    Everything upstream can recommend, generate, or suggest.
+  </p>
+  <p>
+    This layer decides whether anything actually happens.
   </p>
 </section>
 
-<!-- OPTIONAL DEEP LINK -->
-<section style="margin-top:24px;">
+<!-- COMPONENTS -->
+<section>
   <h2>Components</h2>
 
   <div class="card">
-    <p><strong>Contract Compiler</strong> — defines enforceable rules</p>
-    <p><strong>Proposal Normalizer</strong> — structures incoming actions</p>
-    <p><strong>CRI-CORE</strong> — evaluates and decides</p>
+    <p><strong>Contract Compiler</strong> → defines enforceable rules</p>
+    <p><strong>Proposal Normalizer</strong> → structures actions</p>
+    <p><strong>CRI-CORE</strong> → evaluates and decides</p>
   </div>
 </section>
 
