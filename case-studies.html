@@ -4,189 +4,187 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Case Studies · Waveframe Labs</title>
+  <title>Examples · Waveframe Labs</title>
 
-  <meta name="description" content="Applied research case studies demonstrating Aurora-aligned governance, methodology, and enforcement in practice.">
+  <meta name="description" content="Real examples of how AI-generated actions are evaluated and either allowed or blocked before execution." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/case-studies.html" />
 
-  <!-- === SHARED SITE STYLES (IDENTICAL TO index.html) === -->
-  <style>
-    :root{
-      --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0; padding:0;
-      background:var(--bg); color:var(--ink);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
-    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-    a:hover{border-color:var(--ink)}
+<style>
+:root{
+  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
+  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--accent);}
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:20px 20px 72px}
 
-    .hdr{
-      padding:22px 18px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:var(--card);
-      margin-bottom:22px;
-    }
-    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+/* Header (aligned with index) */
+.hdr{
+  padding:18px 24px;
+  border-bottom:1px solid var(--edge);
+  background:rgba(20,22,27,.88);
+  backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  position:sticky; top:0; z-index:100; margin-bottom:28px;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-text{font-weight:700;}
 
-    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .topnav a{border:none}
-    .active-link{
-      color:var(--accent);
-      font-weight:600;
-      border-bottom:1px solid var(--accent);
-    }
+.topnav{display:flex;gap:24px;font-size:.9rem;}
+.topnav a{opacity:.7;}
+.active-link{opacity:1!important;color:var(--accent)!important;}
 
-    .hero{
-      margin:16px 0 22px;
-      padding:22px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-    }
+.hero{
+  margin-bottom:22px;
+  padding:22px;
+  border:1px solid var(--edge);
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
+}
 
-    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h2{margin-top:0}
-    h3{margin-bottom:.25rem}
-    p{line-height:1.65}
+.card{
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:18px;
+  padding:18px;
+  margin-top:16px;
+}
 
-    .kicker{
-      color:var(--accent);
-      font-size:.8rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
+h1{margin:0 0 .6rem;}
+h2{margin-top:24px;}
+p{color:var(--muted); line-height:1.6;}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--edge);
-      border-radius:18px;
-      padding:18px;
-      margin-top:14px;
-    }
+.kicker{
+  color:var(--accent);
+  font-size:.75rem;
+  text-transform:uppercase;
+}
 
-    .muted{color:var(--muted)}
+.result-allow{color:#4cd964;}
+.result-block{color:#ff3b30;}
 
-    footer{
-      margin-top:40px;
-      color:var(--muted);
-      font-size:.95rem;
-      display:flex;flex-wrap:wrap;gap:6px;align-items:center
-    }
-  </style>
+footer{
+  margin-top:40px;
+  color:var(--muted);
+  font-size:.9rem;
+}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <!-- ===== HEADER ===== -->
-  <header class="hdr">
-    <div class="hdr-top">
-      <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-      <div class="title">Waveframe Labs</div>
-    </div>
+<header class="hdr">
+  <div class="brand">
+    <img src="waveframe-logo-mark.png" width="28">
+    <div class="brand-text">Waveframe Labs</div>
+  </div>
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="hierarchy.html">How It Works</a>
+    <a href="tools.html">Tools</a>
+    <a class="active-link" href="case-studies.html">Examples</a>
+    <a href="updates.html">Updates</a>
+  </nav>
+</header>
 
-    <div class="hdr-sub">
-      Applied research and institutional demonstrations.
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <span class="kicker">Real Behavior</span>
+  <h1>Examples</h1>
+  <p>
+    These examples show what happens when AI-generated actions reach the execution boundary.
+  </p>
+  <p>
+    Each action is evaluated and either allowed to execute or blocked before it happens.
+  </p>
+</section>
 
-    <nav class="topnav">
-      <a href="index.html">Home</a>
-      <a href="hierarchy.html">Aurora Hierarchy</a>
-      <a href="doctrine.html">Neurotransparency Doctrine</a>
-      <a href="nts.html">Neurotransparency Specification</a>  
-      <a href="ari.html">ARI</a>
-      <a href="awo.html">AWO</a>
-      <a href="cri-core.html">CRI-CORE</a>
-      <a href="tools.html">Tools</a>
-      <a class="active-link" href="case-studies.html">Case Studies</a>
-      <a href="publications.html">Publications</a>
-      <a href="updates.html">Updates</a>  
-    </nav>
-  </header>
+<!-- EXAMPLE 1 -->
+<section>
+  <h2>Example: Budget Reallocation</h2>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <span class="kicker">Layer 4 — Demonstration</span>
-    <h1>Case Studies</h1>
-
-    <p class="muted">
-      Case studies demonstrate how the Aurora hierarchy functions in practice,
-      applying governance, methodology, and enforcement to real research domains.
-    </p>
-  </section>
-
-  <!-- ===== OVERVIEW ===== -->
-  <section>
-    <h2>Purpose of Case Studies</h2>
+  <div class="card">
+    <p><strong>Proposed action:</strong></p>
     <p>
-      Case studies serve as proofs of execution. They are not theoretical exercises,
-      but applied research programs conducted under full Aurora constraints.
+      AI suggests reallocating $2M from Marketing to Operations.
     </p>
+
+    <p><strong>Declared roles:</strong></p>
     <p class="muted">
-      Each case study demonstrates traceability, reproducibility, and governance
-      compliance end-to-end.
+      Proposer (AI) · Responsible (Finance Manager) · Accountable (CFO)
     </p>
-  </section>
 
-  <!-- ===== CASE STUDIES ===== -->
-  <section>
-    <h2>Active Case Studies</h2>
+    <p><strong>Evaluation:</strong></p>
+    <p class="muted">
+      Required approval missing. Separation of duties violated.
+    </p>
 
-    <div class="card">
-      <h3>Waveframe v4.0 — Observer-Driven Cosmology</h3>
-      <p class="muted">
-        A cosmological research program exploring observer-dependent entropy,
-        information-first spacetime emergence, and falsifiable predictions
-        under Aurora-aligned governance.
-      </p>
-      <p class="muted">
-        Demonstrates: long-horizon theory development, audit-first documentation,
-        and AI–human collaboration at scale.
-      </p>
-    </div>
+    <p><strong>Result:</strong></p>
+    <p class="result-block">✗ Blocked before execution</p>
+  </div>
 
-    <div class="card">
-      <h3>Societal Health Simulator (SHS)</h3>
-      <p class="muted">
-        A sociotechnical modeling environment examining institutional entropy,
-        disinformation dynamics, and intervention strategies.
-      </p>
-      <p class="muted">
-        Demonstrates: reproducible simulation workflows, parameter traceability,
-        and governance-aligned exploratory modeling.
-      </p>
-    </div>
-  </section>
+  <div class="card">
+    <p><strong>Same action (corrected):</strong></p>
+    <p>
+      CFO approval added. All required roles satisfied.
+    </p>
 
-  <!-- ===== RELATIONSHIP TO OTHER LAYERS ===== -->
-  <section>
-    <h2>Relationship to Other Layers</h2>
-    <ul class="muted">
-      <li><strong>Layer 0–1:</strong> Case studies must comply with epistemic and governance rules.</li>
-      <li><strong>Layer 2:</strong> Execution follows AWO workflows.</li>
-      <li><strong>Layer 3:</strong> Enforcement via CRI-CORE tooling.</li>
-      <li><strong>Layer 5:</strong> Tooling supports execution and validation.</li>
-    </ul>
-  </section>
+    <p><strong>Result:</strong></p>
+    <p class="result-allow">✓ Allowed to execute</p>
+  </div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
-    <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2025 Waveframe Labs</span>
-  </footer>
+<!-- EXAMPLE 2 -->
+<section>
+  <h2>Example: Code Deployment</h2>
+
+  <div class="card">
+    <p><strong>Proposed action:</strong></p>
+    <p>
+      AI attempts to deploy production code.
+    </p>
+
+    <p><strong>Evaluation:</strong></p>
+    <p class="muted">
+      Missing validation artifacts and approval.
+    </p>
+
+    <p><strong>Result:</strong></p>
+    <p class="result-block">✗ Blocked before execution</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="margin-top:28px;">
+  <h2>Try it</h2>
+  <p>
+    These examples are implemented using CRI-CORE.
+  </p>
+  <p>
+    <a href="tools.html" style="color:var(--accent); font-weight:600;">
+      View tools →
+    </a>
+  </p>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> Waveframe Labs</span>
+</footer>
 
 </div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
