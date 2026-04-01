@@ -6,212 +6,212 @@
 
   <title>CRI-CORE · Waveframe Labs</title>
 
-  <meta name="description" content="CRI-CORE decides whether AI-generated actions are allowed to execute — before they touch real systems.">
+  <meta name="description" content="CRI-CORE decides whether AI-generated actions are allowed to execute — before they happen." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/cri-core.html" />
 
-  <style>
-    :root{
-      --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0; padding:0;
-      background:var(--bg); color:var(--ink);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
-    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
-    a:hover{border-color:var(--ink)}
+<style>
+:root{
+  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
+  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:12px;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--accent);}
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px 72px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
 
-    .hdr{
-      padding:22px 18px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:var(--card);
-      margin-bottom:22px;
-    }
-    .hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-    .hdr-top .title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700}
-    .hdr-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
+.hdr{
+  padding:18px 24px;
+  border-bottom:1px solid var(--edge);
+  background:rgba(20,22,27,.88);
+  backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  position:sticky; top:0; z-index:100; margin-bottom:28px;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-text{font-size:1.2rem;font-weight:700;}
 
-    .topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:1.05rem}
-    .topnav a{border:none}
-    .active-link{
-      color:var(--accent);
-      font-weight:600;
-      border-bottom:1px solid var(--accent);
-    }
+.topnav{display:flex;gap:24px;font-size:.9rem;}
+.topnav a{opacity:.7;}
+.active-link{opacity:1!important;color:var(--accent)!important;}
 
-    .hero{
-      margin:16px 0 22px;
-      padding:22px;
-      border:1px solid var(--edge);
-      border-radius:18px;
-      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-    }
+.hero{
+  margin-bottom:22px;
+  padding:22px;
+  border:1px solid var(--edge);
+  border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
+}
 
-    h1{font-size:clamp(1.6rem,3.6vw,2.45rem);margin:.2rem 0 .6rem}
-    h2{margin-top:0}
-    h3{margin-bottom:.25rem}
-    p{line-height:1.65}
+.card{
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:12px;
+  padding:18px;
+  margin-top:16px;
+}
 
-    .kicker{
-      color:var(--accent);
-      font-size:.8rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
+h1{margin:0 0 .6rem;}
+h2{margin-top:28px;}
+p{color:var(--muted); line-height:1.6;}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--edge);
-      border-radius:18px;
-      padding:18px;
-      margin-top:14px;
-    }
+.kicker{
+  color:var(--accent);
+  font-size:.75rem;
+  text-transform:uppercase;
+  margin-bottom:8px;
+  display:block;
+}
 
-    .muted{color:var(--muted)}
+.result-allow{color:#4cd964;}
+.result-block{color:#ff3b30;}
 
-    footer{
-      margin-top:40px;
-      color:var(--muted);
-      font-size:.95rem;
-      display:flex;flex-wrap:wrap;gap:6px;align-items:center
-    }
-  </style>
+footer{
+  margin-top:48px;
+  border-top:1px solid var(--edge);
+  padding-top:18px;
+  color:var(--muted);
+  font-size:.85rem;
+  display:flex;
+  justify-content:space-between;
+}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <!-- ===== HEADER ===== -->
-  <header class="hdr">
-    <div class="hdr-top">
-      <img src="waveframe-logo-mark.png" width="32" height="32" style="border-radius:6px;" />
-      <div class="title">Waveframe Labs</div>
-    </div>
+<header class="hdr">
+  <div class="brand">
+    <img src="waveframe-logo-mark.png" width="28">
+    <div class="brand-text">Waveframe Labs</div>
+  </div>
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="hierarchy.html">How It Works</a>
+    <a href="tools.html">Tools</a>
+    <a href="case-studies.html">Examples</a>
+    <a href="updates.html">Updates</a>
+  </nav>
+</header>
 
-    <div class="hdr-sub">
-      Systems that control whether AI actions are allowed to execute.
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <span class="kicker">Execution Control</span>
+  <h1>CRI-CORE</h1>
 
-    <nav class="topnav">
-      <a href="index.html">Home</a>
-      <a href="hierarchy.html">Hierarchy</a>
-      <a href="doctrine.html">Doctrine</a>
-      <a href="awo.html">Methodology</a>
-      <a href="tools.html">Tools</a>
-      <a href="updates.html">Updates</a>
-    </nav>
-  </header>
+  <p>
+    What actually stops an AI system from executing a bad decision?
+  </p>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <span class="kicker">Execution Control</span>
-    <h1>CRI-CORE</h1>
+  <p>
+    CRI-CORE sits at the execution boundary and decides:
+  </p>
 
-    <p class="muted">
-      CRI-CORE sits directly before execution and decides:
-      <br><br>
-      ✓ allow this action to run  
-      ✗ block it before it happens
-      <br><br>
-      It does not monitor or explain decisions.
-      It controls whether they are allowed to execute.
-    </p>
-  </section>
+  <p>
+    <span class="result-allow">✓ allow this action</span><br>
+    <span class="result-block">✗ block it before it happens</span>
+  </p>
+</section>
 
-  <!-- ===== WHY CRI-CORE ===== -->
-  <section>
-    <h2>Why This Exists</h2>
-    <p>
-      AI systems can now take real actions — moving money, deploying code,
-      changing infrastructure.
-    </p>
+<!-- INSTALL -->
+<section>
+  <h2>Install</h2>
+
+  <div class="card">
+    <p><code>pip install cricore</code></p>
 
     <p>
-      Most systems detect problems or audit after the fact.
+      <strong>PyPI:</strong>
+      <a href="https://pypi.org/project/cricore/" target="_blank">cricore</a><br>
+      <strong>GitHub:</strong>
+      <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">CRI-CORE</a>
     </p>
+  </div>
+</section>
 
-    <p>
-      But by the time something is logged, the action has already happened.
-    </p>
+<!-- WHAT IT DOES -->
+<section>
+  <h2>What it does</h2>
 
-    <p class="muted">
-      CRI-CORE enforces a decision at the only point that matters:
-      before execution.
-    </p>
-  </section>
-
-  <!-- ===== CORE CAPABILITIES ===== -->
-  <section>
-    <h2>What It Does</h2>
-    <div class="card">
-      <ul class="muted">
-        <li>Evaluates every proposed action before it executes.</li>
-        <li>Enforces required roles and approvals (e.g. proposer, approver).</li>
-        <li>Validates that inputs and artifacts have not been tampered with.</li>
-        <li>Ensures the action matches a defined contract.</li>
-        <li>Returns a single decision: <code>commit_allowed = true | false</code>.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== CURRENT STATE ===== -->
-  <section>
-    <h2>Current State</h2>
-
-    <div class="card">
-      <h3>Public Distribution</h3>
-      <p class="muted">
-        CRI-CORE is available as an installable Python package.
-      </p>
-
-      <p>
-        <code>pip install cricore</code>
-      </p>
-
-      <h3>Design Constraints</h3>
-
-      <ul class="muted">
-        <li>Deterministic — same input, same result.</li>
-        <li>Domain-agnostic — works across finance, infrastructure, operations.</li>
-        <li>Non-judgmental — does not decide if something is “good.”</li>
-        <li>Binary output — the action either executes or it does not.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== REPOSITORY ===== -->
-  <section>
-    <h2>Repository</h2>
+  <div class="card">
     <ul class="muted">
-      <li>
-        <strong>PyPI:</strong>
-        <a href="https://pypi.org/project/cricore/" target="_blank">
-          pypi.org/project/cricore
-        </a>
-      </li>
-      <li>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">
-          Waveframe-Labs/CRI-CORE
-        </a>
-      </li>
+      <li>Evaluates every proposed action before execution</li>
+      <li>Enforces roles, approvals, and constraints</li>
+      <li>Validates integrity and required artifacts</li>
+      <li>Applies deterministic contract checks</li>
+      <li>Returns a single decision: <code>true | false</code></li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <span>Text &amp; media: CC BY-NC-SA 4.0</span>
-    <span>· Code &amp; scripts: Apache-2.0</span>
-    <span>· © 2026 Waveframe Labs</span>
-  </footer>
+<!-- WHY -->
+<section>
+  <h2>Why it exists</h2>
+
+  <p>
+    AI systems can now:
+  </p>
+  <p>
+    move money · deploy code · approve decisions
+  </p>
+
+  <p>
+    Most systems:
+    detect problems or log them after the fact
+  </p>
+
+  <p>
+    CRI-CORE:
+    <strong>prevents the action from happening in the first place</strong>
+  </p>
+</section>
+
+<!-- HOW IT FITS -->
+<section>
+  <h2>Where it fits</h2>
+
+  <div class="card">
+    <p>
+      CRI-CORE is the final step before execution.
+    </p>
+    <p>
+      It does not generate actions.  
+      It does not interpret meaning.  
+      It does not make policy decisions.
+    </p>
+    <p>
+      It only decides:
+      <strong>does this action execute or not?</strong>
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="margin-top:28px;">
+  <h2>See it in action</h2>
+  <p>
+    <a href="case-studies.html" style="color:var(--accent); font-weight:600;">
+      View examples →
+    </a>
+  </p>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> Waveframe Labs</span>
+  <span>Execution control for AI systems</span>
+</footer>
 
 </div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
