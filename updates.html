@@ -2,14 +2,14 @@
 ---
 title: "Updates · Waveframe Labs"
 short_title: "Updates"
-version: "1.2.0"
+version: "1.3.0"
 status: "Active"
 type: "canonical-log"
 author: "Waveframe Labs"
 maintainer: "Waveframe Labs"
 license: "CC-BY-4.0"
 policy_version: "ARI-Metadata-3.0.2"
-description: "Canonical release log for execution control tooling and supporting systems."
+description: "Release log for execution control tooling and supporting systems."
 ai_assisted: "partial"
 ---
 -->
@@ -21,7 +21,7 @@ ai_assisted: "partial"
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Updates · Waveframe Labs</title>
-  <meta name="description" content="Release log for execution control tooling and supporting systems." />
+  <meta name="description" content="Recent releases and progress across execution control tooling." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/updates.html" />
 
@@ -48,15 +48,12 @@ a:hover{color:var(--accent);}
   backdrop-filter:blur(12px);
   display:flex; justify-content:space-between; align-items:center;
   position:sticky; top:0; z-index:100; margin-bottom:28px;
-  border-left:1px solid var(--edge); border-right:1px solid var(--edge);
-  border-radius:0 0 12px 12px;
 }
 .brand{display:flex;align-items:center;gap:12px;}
 .brand-text{font-size:1.2rem;font-weight:700;}
 
-.topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
+.topnav{display:flex;gap:24px;font-size:.9rem;}
 .topnav a{opacity:.7;}
-.topnav a:hover{opacity:1;color:var(--accent);}
 .active-link{opacity:1!important;color:var(--accent)!important;}
 
 .kicker{
@@ -70,7 +67,7 @@ a:hover{color:var(--accent);}
 }
 h2{margin:0 0 10px;font-size:1.5rem;}
 h3{margin:0 0 6px;font-size:1.15rem;}
-p{line-height:1.65;color:var(--muted); margin-bottom:1rem;}
+p{line-height:1.65;color:var(--muted);}
 
 .card{
   background:var(--card);
@@ -83,7 +80,6 @@ p{line-height:1.65;color:var(--muted); margin-bottom:1rem;}
   padding:20px 24px;
   border-bottom:1px solid var(--edge);
   background:linear-gradient(180deg,rgba(255,122,24,.18),rgba(255,122,24,.05),rgba(0,0,0,0));
-  border-radius:12px 12px 0 0;
 }
 
 .update-body{padding:20px 24px 28px;}
@@ -101,8 +97,6 @@ footer{
   font-size:.85rem;
   display:flex;
   justify-content:space-between;
-  flex-wrap:wrap;
-  gap:10px;
 }
 </style>
 </head>
@@ -112,79 +106,72 @@ footer{
 
 <header class="hdr">
   <div class="brand">
-    <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
+    <img src="waveframe-logo-mark.png" width="28">
     <div class="brand-text">Waveframe Labs</div>
   </div>
   <nav class="topnav">
     <a href="index.html">Home</a>
-    <a href="hierarchy.html">Hierarchy</a>
-    <a href="doctrine.html">Doctrine</a>
-    <a href="awo.html">Methodology</a>
+    <a href="hierarchy.html">How It Works</a>
     <a href="tools.html">Tools</a>
+    <a href="case-studies.html">Examples</a>
     <a class="active-link" href="updates.html">Updates</a>
   </nav>
 </header>
 
 <section style="margin-bottom:28px;">
-  <span class="kicker">Release Log</span>
+  <span class="kicker">Recent Work</span>
   <h2>Updates</h2>
   <p>
-    What has been built and shipped.
-    This log records concrete releases across execution control tooling and supporting systems.
+    This log tracks what has been built and shipped.
+  </p>
+  <p>
+    Each update moves toward a single goal:
+    <strong>controlling whether AI-driven actions are allowed to execute.</strong>
   </p>
 </section>
 
-<!-- =============================== -->
-<!-- CRI-CORE v0.10.0                -->
-<!-- =============================== -->
+<!-- CRI-CORE -->
 <section class="card">
   <div class="update-head">
-    <h3>CRI-CORE v0.10.0 — Execution Control Stabilization</h3>
+    <h3>CRI-CORE v0.10.0 — Execution Decision Stabilization</h3>
     <div class="meta">2026-03-31 · Enforcement Kernel</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Stabilized enforcement pipeline and evaluation entrypoint.</li>
-      <li>Reinforced deterministic commit decision behavior.</li>
-      <li>Aligned kernel interface with external proposal and contract inputs.</li>
+      <li>Stabilized evaluation pipeline and entrypoint.</li>
+      <li>Reinforced deterministic allow / block behavior.</li>
+      <li>Aligned kernel with structured proposal and contract inputs.</li>
     </ul>
     <p class="muted">
-      CRI-CORE evaluates a proposed action and returns a single decision:
-      <code>commit_allowed = true | false</code>.
+      Output: <code>commit_allowed = true | false</code>
     </p>
   </div>
 </section>
 
-<!-- =============================== -->
-<!-- Governed Mutation Envelope      -->
-<!-- =============================== -->
+<!-- Envelope -->
 <section class="card">
   <div class="update-head">
-    <h3>Governed Mutation Envelope — Standardized Execution Input</h3>
+    <h3>Governed Action Envelope — Standardized Input</h3>
     <div class="meta">2026-03-20 · Execution Interface</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Defined canonical structure for proposed state mutations.</li>
-      <li>Unified proposal, contract, and execution context into a single object.</li>
-      <li>Established stable input boundary for CRI-CORE evaluation.</li>
+      <li>Unified proposal, contract, and context into a single structure.</li>
+      <li>Established stable input boundary for evaluation.</li>
     </ul>
   </div>
 </section>
 
-<!-- =============================== -->
-<!-- Proposal Normalizer             -->
-<!-- =============================== -->
+<!-- Normalizer -->
 <section class="card">
   <div class="update-head">
-    <h3>Proposal Normalizer v0.1.0 — Canonical Action Input Layer</h3>
-    <div class="meta">2026-03-16 · Input Pipeline</div>
+    <h3>Proposal Normalizer v0.1.0 — Action Structuring</h3>
+    <div class="meta">2026-03-16 · Input Layer</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Converts arbitrary actions into a structured, canonical proposal format.</li>
-      <li>Standardizes inputs for deterministic evaluation.</li>
-      <li>Bridges external systems and CRI-CORE enforcement.</li>
+      <li>Converts arbitrary actions into canonical proposals.</li>
+      <li>Ensures consistent evaluation inputs.</li>
     </ul>
     <p class="muted">
       Install: <code>pip install cricore-proposal-normalizer</code>
@@ -192,19 +179,16 @@ footer{
   </div>
 </section>
 
-<!-- =============================== -->
-<!-- Contract Compiler              -->
-<!-- =============================== -->
+<!-- Compiler -->
 <section class="card">
   <div class="update-head">
-    <h3>Contract Compiler v0.1.0 — Policy → Enforcement Translation</h3>
-    <div class="meta">2026-03-11 · Input Pipeline</div>
+    <h3>Contract Compiler v0.1.0 — Rules → Enforcement</h3>
+    <div class="meta">2026-03-11 · Input Layer</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Converts real-world rules (roles, approvals, constraints) into enforceable contracts.</li>
-      <li>Produces deterministic contract artifacts consumed by CRI-CORE.</li>
-      <li>Introduces versioned contract identity for enforcement validation.</li>
+      <li>Converts real-world constraints into enforceable contracts.</li>
+      <li>Introduces versioned contract identity.</li>
     </ul>
     <p class="muted">
       Install: <code>pip install cricore-contract-compiler</code>
@@ -212,36 +196,33 @@ footer{
   </div>
 </section>
 
-<!-- =============================== -->
-<!-- CRI-CORE v0.6.0                 -->
-<!-- =============================== -->
+<!-- CRI-CORE initial -->
 <section class="card">
   <div class="update-head">
-    <h3>CRI-CORE v0.6.0 — First Public PyPI Release</h3>
+    <h3>CRI-CORE v0.6.0 — First Public Release</h3>
     <div class="meta">2026-03-02 · Enforcement Kernel</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Established public installation via <code>pip install cricore</code>.</li>
-      <li>Introduced stable enforcement entrypoint.</li>
-      <li>Enabled external systems to invoke deterministic commit gating.</li>
+      <li>Introduced installable enforcement kernel.</li>
+      <li>Enabled external systems to gate execution deterministically.</li>
     </ul>
+    <p class="muted">
+      Install: <code>pip install cricore</code>
+    </p>
   </div>
 </section>
 
-<!-- =============================== -->
-<!-- Stamp v0.1.1                    -->
-<!-- =============================== -->
+<!-- Stamp -->
 <section class="card">
   <div class="update-head">
-    <h3>Stamp v0.1.1 — Artifact Validation Engine</h3>
+    <h3>Stamp v0.1.1 — Validation Layer</h3>
     <div class="meta">2026-02-01 · Validation</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Released schema-agnostic validation and diagnostics engine.</li>
-      <li>Normalized validation outputs into structured diagnostics.</li>
-      <li>Separated validation, remediation, and human judgment stages.</li>
+      <li>Introduced structured validation and diagnostics.</li>
+      <li>Separated validation from enforcement.</li>
     </ul>
     <p class="muted">
       Install: <code>pip install waveframe-stamp</code>
@@ -249,25 +230,9 @@ footer{
   </div>
 </section>
 
-<!-- =============================== -->
-<!-- Website                         -->
-<!-- =============================== -->
-<section class="card">
-  <div class="update-head">
-    <h3>Waveframe Labs Website v1.0.0</h3>
-    <div class="meta">2026-01-25 · Public Interface</div>
-  </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Published canonical public interface for tooling and documentation.</li>
-      <li>Introduced structured navigation and release log.</li>
-    </ul>
-  </div>
-</section>
-
 <footer>
   <span>© <span id="year"></span> Waveframe Labs</span>
-  <span>Execution control for AI-driven systems</span>
+  <span>Execution control for AI systems</span>
 </footer>
 
 </div>
