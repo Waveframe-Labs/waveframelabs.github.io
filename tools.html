@@ -2,7 +2,7 @@
 ---
 title: "Tools · Waveframe Labs"
 short_title: "Tools"
-version: "1.1.0"
+version: "1.2.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -23,12 +23,12 @@ ai_assisted: "partial"
 
   <title>Tools · Waveframe Labs</title>
 
-  <meta name="description" content="Deterministic tooling supporting governed AI-assisted workflows and reproducible research systems under the Aurora Ecosystem." />
+  <meta name="description" content="Installable tools that control whether AI-generated actions are allowed to execute." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/tools.html" />
 
   <meta property="og:title" content="Tools · Waveframe Labs" />
-  <meta property="og:description" content="Deterministic tooling for governed workflows and reproducible outputs." />
+  <meta property="og:description" content="Execution control tooling for AI-driven systems." />
   <meta property="og:type" content="website" />
 
 <style>
@@ -47,7 +47,6 @@ a:hover{color:var(--accent);}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
 
-/* --- Header (normalized) --- */
 .hdr{
   padding:18px 24px;
   border-bottom:1px solid var(--edge);
@@ -65,11 +64,6 @@ a:hover{color:var(--accent);}
 .topnav a{opacity:.7;}
 .topnav a:hover{opacity:1;color:var(--accent);}
 .active-link{opacity:1!important;color:var(--accent)!important;}
-
-@media(max-width:850px){
-  .hdr{flex-direction:column;align-items:flex-start;gap:14px;}
-  .topnav{flex-wrap:wrap;gap:18px;}
-}
 
 h1{font-size:clamp(1.6rem,3.6vw,2.2rem);margin:0 0 .6rem}
 h2{margin:0 0 .6rem;font-size:1.35rem;}
@@ -136,91 +130,95 @@ footer{
 </header>
 
 <section class="hero">
-  <span class="kicker">Tooling</span>
+  <span class="kicker">Execution Tooling</span>
   <h1>Tools</h1>
   <p>
-    Deterministic tooling that validates artifacts, preserves provenance, and produces citable outputs for governed workflows.
-    Tools do not define authority or workflow method; they implement and reflect decisions made upstream.
+    These tools form a simple pipeline:
+    <br><br>
+    define what is allowed → normalize the action → decide if it executes
   </p>
 </section>
 
 <section>
-  <h2>Purpose</h2>
-  <p>
-    Tools exist to make governed workflows reproducible, auditable, and mechanically checkable.
-    They operate under governance (L0) and method (L1) constraints and may not redefine either.
-  </p>
+  <h2>Execution Control</h2>
+
+  <div class="card">
+    <h3>CRI-CORE</h3>
+    <p>
+      The enforcement layer.
+      It decides whether a proposed action is allowed to execute.
+    </p>
+
+    <p class="muted">
+      Input: a proposed action  
+      Output: <code>commit_allowed = true | false</code>
+    </p>
+
+    <p>
+      <strong>Install:</strong> <code>pip install cricore</code><br>
+      <strong>PyPI:</strong> <a href="https://pypi.org/project/cricore/" target="_blank">cricore</a><br>
+      <strong>GitHub:</strong> <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">CRI-CORE</a>
+    </p>
+  </div>
+
 </section>
 
 <section>
-  <h2>Core Tooling</h2>
+  <h2>Input Pipeline</h2>
+
+  <div class="card">
+    <h3>Contract Compiler</h3>
+    <p>
+      Converts real policies (roles, approvals, constraints) into a format
+      CRI-CORE can enforce.
+    </p>
+
+    <p>
+      <strong>Install:</strong> <code>pip install cricore-contract-compiler</code>
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Proposal Normalizer</h3>
+    <p>
+      Converts an action (from AI or a system) into a standardized structure
+      that CRI-CORE can evaluate.
+    </p>
+
+    <p>
+      <strong>Install:</strong> <code>pip install cricore-proposal-normalizer</code>
+    </p>
+  </div>
+
+</section>
+
+<section>
+  <h2>Validation &amp; Output</h2>
 
   <div class="card">
     <h3>Stamp</h3>
     <p>
-      Deterministic artifact and metadata validation tooling. Stamp extracts metadata, validates it against declared schemas,
-      normalizes failures into structured diagnostics, and separates machine-safe fixes from human judgment.
+      Validates metadata and artifacts before execution or publication.
     </p>
-    <p class="muted">
-      Stamp explains what is wrong and what action is required; it does not enforce state mutation or judge content meaning.
-    </p>
+
     <p>
+      <strong>Install:</strong> <code>pip install waveframe-stamp</code><br>
       <strong>PyPI:</strong> <a href="https://pypi.org/project/waveframe-stamp/" target="_blank">waveframe-stamp</a>
-      &nbsp;·&nbsp;
-      <strong>Install:</strong> <code>pip install waveframe-stamp</code>
-      &nbsp;·&nbsp;
-      <strong>GitHub:</strong> <a href="https://github.com/Waveframe-Labs/Waveframe-Stamp" target="_blank">Waveframe-Stamp</a>
     </p>
   </div>
 
   <div class="card">
-    <h3>Waveframe PDF Forge</h3>
+    <h3>Forge</h3>
     <p class="muted">
-      Deterministic Markdown → PDF publication pipeline used to generate Scholar-ready artifacts.
-      Forge freezes validated sources for citation and distribution while preserving provenance.
+      Generates finalized outputs and publication artifacts.
     </p>
   </div>
 
-  <div class="card">
-    <h3>Waveframe Publications Repository</h3>
-    <p class="muted">
-      Canonical Markdown source files used by Forge to generate publication artifacts.
-    </p>
-    <p>
-      <a href="https://github.com/Waveframe-Labs/Waveframe-Publications" target="_blank">GitHub</a>
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Related Upstream Components</h2>
-
-  <div class="card">
-    <h3>Glyphtrace (Layer 2 — Language &amp; Ontology)</h3>
-    <p class="muted">
-      Symbolic compression format for representing claims and reasoning compactly.
-      Glyphtrace is not a tool; it is a representation layer consumed by validation, enforcement, and publication systems.
-    </p>
-    <p>
-      <a href="https://github.com/Waveframe-Labs/Glyphtrace" target="_blank">GitHub</a> ·
-      <a href="https://doi.org/10.5281/zenodo.18057686" target="_blank">Concept DOI</a>
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Relationship to the Aurora Stack</h2>
-  <ul>
-    <li><strong>L0–L1:</strong> Tools operate under governance and method constraints.</li>
-    <li><strong>L4:</strong> Tools integrate with enforcement surfaces where state mutation must be gated (CRI-CORE).</li>
-    <li><strong>L5:</strong> Tools produce frozen outputs and publishable artifacts (Forge, publications sources).</li>
-    <li><strong>L6:</strong> Tools support demonstrations that exercise the validation and enforcement pipeline.</li>
-  </ul>
 </section>
 
 <footer>
   <span>© <span id="year"></span> Waveframe Labs</span>
-  <span>Governed under the Aurora Research Initiative (ARI)</span>
+  <span>Execution control for AI-driven systems</span>
 </footer>
 
 </div>
