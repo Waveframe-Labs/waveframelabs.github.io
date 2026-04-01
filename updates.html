@@ -2,14 +2,14 @@
 ---
 title: "Updates · Waveframe Labs"
 short_title: "Updates"
-version: "1.1.0"
+version: "1.2.0"
 status: "Active"
 type: "canonical-log"
 author: "Waveframe Labs"
 maintainer: "Waveframe Labs"
 license: "CC-BY-4.0"
 policy_version: "ARI-Metadata-3.0.2"
-description: "Canonical release log for governance documents, specifications, methodology, tooling, and demonstrations under the Aurora Ecosystem."
+description: "Canonical release log for execution control tooling and supporting systems."
 ai_assisted: "partial"
 ---
 -->
@@ -21,7 +21,7 @@ ai_assisted: "partial"
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Updates · Waveframe Labs</title>
-  <meta name="description" content="Canonical release log for governance documents, specifications, methodology, tooling, and demonstrations under the Aurora Ecosystem." />
+  <meta name="description" content="Release log for execution control tooling and supporting systems." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/updates.html" />
 
@@ -58,11 +58,6 @@ a:hover{color:var(--accent);}
 .topnav a{opacity:.7;}
 .topnav a:hover{opacity:1;color:var(--accent);}
 .active-link{opacity:1!important;color:var(--accent)!important;}
-
-@media(max-width:850px){
-  .hdr{flex-direction:column;align-items:flex-start;gap:14px;}
-  .topnav{flex-wrap:wrap;gap:18px;}
-}
 
 .kicker{
   color:var(--accent);
@@ -131,51 +126,88 @@ footer{
 </header>
 
 <section style="margin-bottom:28px;">
-  <span class="kicker">Canonical Record</span>
-  <h2>Updates & Releases</h2>
+  <span class="kicker">Release Log</span>
+  <h2>Updates</h2>
   <p>
-    Chronological, factual, and permanent.
-    This log records authoritative releases and formal changes across the Aurora Ecosystem.
+    What has been built and shipped.
+    This log records concrete releases across execution control tooling and supporting systems.
   </p>
 </section>
 
 <!-- =============================== -->
-<!-- Claim Lifecycle Demo v0.3.3     -->
+<!-- CRI-CORE v0.10.0                -->
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
-    <h3>Claim Lifecycle Demo v0.3.3 — PyPI Installation Support</h3>
-    <div class="meta">2026-03-03 · Demonstration — Governed Claim Lifecycle</div>
+    <h3>CRI-CORE v0.10.0 — Execution Control Stabilization</h3>
+    <div class="meta">2026-03-31 · Enforcement Kernel</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Updated the demo to depend on the public PyPI distribution of CRI-CORE.</li>
-      <li>Removed the requirement to clone the CRI-CORE repository or configure PYTHONPATH.</li>
-      <li>Introduced a pyproject.toml to declare the CRI-CORE dependency and standard project metadata.</li>
-      <li>No changes to lifecycle scenarios, enforcement behavior, or demo runner logic.</li>
+      <li>Stabilized enforcement pipeline and evaluation entrypoint.</li>
+      <li>Reinforced deterministic commit decision behavior.</li>
+      <li>Aligned kernel interface with external proposal and contract inputs.</li>
     </ul>
     <p class="muted">
-      This release reduces setup friction while preserving the same governed lifecycle behavior and enforcement outcomes.
+      CRI-CORE evaluates a proposed action and returns a single decision:
+      <code>commit_allowed = true | false</code>.
     </p>
   </div>
 </section>
 
 <!-- =============================== -->
-<!-- Finance Demo v0.3.4             -->
+<!-- Governed Mutation Envelope      -->
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
-    <h3>CRI-CORE RACI Finance Demo v0.3.4 — Documentation and Citation Metadata</h3>
-    <div class="meta">2026-03-03 · Demonstration — Deterministic Commit Gating (Finance)</div>
+    <h3>Governed Mutation Envelope — Standardized Execution Input</h3>
+    <div class="meta">2026-03-20 · Execution Interface</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Added CHANGELOG.md to track release history and clarify demo scope across versions.</li>
-      <li>Added CITATION.cff for GitHub citation support and research referencing.</li>
-      <li>No changes to scenarios, runner logic, or enforcement behavior.</li>
+      <li>Defined canonical structure for proposed state mutations.</li>
+      <li>Unified proposal, contract, and execution context into a single object.</li>
+      <li>Established stable input boundary for CRI-CORE evaluation.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- =============================== -->
+<!-- Proposal Normalizer             -->
+<!-- =============================== -->
+<section class="card">
+  <div class="update-head">
+    <h3>Proposal Normalizer v0.1.0 — Canonical Action Input Layer</h3>
+    <div class="meta">2026-03-16 · Input Pipeline</div>
+  </div>
+  <div class="update-body">
+    <ul class="muted">
+      <li>Converts arbitrary actions into a structured, canonical proposal format.</li>
+      <li>Standardizes inputs for deterministic evaluation.</li>
+      <li>Bridges external systems and CRI-CORE enforcement.</li>
     </ul>
     <p class="muted">
-      This release improves reproducibility and referencing while preserving the same deterministic commit gating behavior.
+      Install: <code>pip install cricore-proposal-normalizer</code>
+    </p>
+  </div>
+</section>
+
+<!-- =============================== -->
+<!-- Contract Compiler              -->
+<!-- =============================== -->
+<section class="card">
+  <div class="update-head">
+    <h3>Contract Compiler v0.1.0 — Policy → Enforcement Translation</h3>
+    <div class="meta">2026-03-11 · Input Pipeline</div>
+  </div>
+  <div class="update-body">
+    <ul class="muted">
+      <li>Converts real-world rules (roles, approvals, constraints) into enforceable contracts.</li>
+      <li>Produces deterministic contract artifacts consumed by CRI-CORE.</li>
+      <li>Introduces versioned contract identity for enforcement validation.</li>
+    </ul>
+    <p class="muted">
+      Install: <code>pip install cricore-contract-compiler</code>
     </p>
   </div>
 </section>
@@ -185,41 +217,15 @@ footer{
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
-    <h3>CRI-CORE v0.6.0 — First Public PyPI Distribution</h3>
-    <div class="meta">2026-03-02 · Enforcement — Deterministic Transition-Boundary Kernel</div>
+    <h3>CRI-CORE v0.6.0 — First Public PyPI Release</h3>
+    <div class="meta">2026-03-02 · Enforcement Kernel</div>
   </div>
   <div class="update-body">
     <ul class="muted">
       <li>Established public installation via <code>pip install cricore</code>.</li>
-      <li>Stabilized the enforcement entrypoint: <code>cricore.enforcement.execution.run_enforcement_pipeline</code>.</li>
-      <li>Exposed explicit runtime version via <code>cricore.__version__</code>.</li>
-      <li>Hardened packaging metadata (classifiers, project URLs, keywords).</li>
-      <li>Maintained backwards compatibility with prior enforcement behavior and pipeline interface.</li>
+      <li>Introduced stable enforcement entrypoint.</li>
+      <li>Enabled external systems to invoke deterministic commit gating.</li>
     </ul>
-    <p class="muted">
-      CRI-CORE remains deterministic, domain-agnostic, and non-semantic: it authorizes mutation attempts and emits a single
-      authoritative commit decision (<code>commit_allowed</code>) without mutating state.
-    </p>
-  </div>
-</section>
-
-<!-- =============================== -->
-<!-- Waveframe Labs Website v1.0.0   -->
-<!-- =============================== -->
-<section class="card">
-  <div class="update-head">
-    <h3>Waveframe Labs Website v1.0.0 — Canonical Public Interface Released</h3>
-    <div class="meta">2026-01-25 · Website — Canonical Public Reference</div>
-  </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Published the first canonical public interface for the Aurora ecosystem.</li>
-      <li>Established an institutional navigation surface aligned to governance and tooling.</li>
-      <li>Introduced a permanent update log for releases and formal changes.</li>
-    </ul>
-    <p class="muted">
-      This release formalized the Waveframe Labs website as the public reference surface for the Aurora ecosystem.
-    </p>
   </div>
 </section>
 
@@ -228,149 +234,40 @@ footer{
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
-    <h3>Stamp v0.1.1 — Stable Diagnostics & Archival DOI Published</h3>
-    <div class="meta">2026-02-01 · Validation — Artifact & Metadata Diagnostics</div>
+    <h3>Stamp v0.1.1 — Artifact Validation Engine</h3>
+    <div class="meta">2026-02-01 · Validation</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Released a stable, schema-agnostic diagnostics engine for governed artifacts.</li>
-      <li>Normalized validation output into Canonical Diagnostic Objects (CDOs).</li>
-      <li>Introduced structured remediation outputs and immutable execution traces.</li>
-      <li>Separated validation, fix proposals, and human judgment into auditable stages.</li>
+      <li>Released schema-agnostic validation and diagnostics engine.</li>
+      <li>Normalized validation outputs into structured diagnostics.</li>
+      <li>Separated validation, remediation, and human judgment stages.</li>
     </ul>
-
     <p class="muted">
-      Stamp provides a reproducible, policy-neutral front door for governed workflows and supports downstream enforcement.
-    </p>
-
-    <ul class="muted">
-      <li><strong>Version DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18453155">10.5281/zenodo.18453155</a></li>
-      <li><strong>PyPI:</strong> <a href="https://pypi.org/project/waveframe-stamp/" target="_blank">waveframe-stamp</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- =============================== -->
-<!-- Stamp v0.1.0                    -->
-<!-- =============================== -->
-<section class="card">
-  <div class="update-head">
-    <h3>Stamp v0.1.0 — Initial Public Tooling Release</h3>
-    <div class="meta">2026-01-30 · Validation — Artifact & Metadata Diagnostics</div>
-  </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>First public release of a deterministic, schema-agnostic validation and diagnostics engine.</li>
-      <li>Established the public CLI, diagnostics structure, execution trace format, and repository layout.</li>
-      <li>Released as policy-neutral and enforcement-free by design.</li>
-    </ul>
-
-    <p class="muted">
-      This release established the public technical surface for deterministic validation without embedding institutional policy logic.
+      Install: <code>pip install waveframe-stamp</code>
     </p>
   </div>
 </section>
 
 <!-- =============================== -->
-<!-- AWO v2.0.0                      -->
+<!-- Website                         -->
 <!-- =============================== -->
 <section class="card">
   <div class="update-head">
-    <h3>AWO v2.0.0 Released — Methodology Layer Finalized</h3>
-    <div class="meta">2026-01-09 · Method — Workflow Topology</div>
+    <h3>Waveframe Labs Website v1.0.0</h3>
+    <div class="meta">2026-01-25 · Public Interface</div>
   </div>
   <div class="update-body">
     <ul class="muted">
-      <li>Completed rewrite of Aurora Workflow Orchestration.</li>
-      <li>Defined enforceable artifact classes and workflow topology.</li>
-      <li>Established phase structure and role separation.</li>
-      <li>Published normative specifications and onboarding guides.</li>
-    </ul>
-    <p class="muted">
-      AWO v2.0.0 is the authoritative workflow definition under Aurora.
-    </p>
-    <ul class="muted">
-      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17013612">10.5281/zenodo.17013612</a></li>
-      <li><strong>Repository:</strong> <a href="https://github.com/Waveframe-Labs/Aurora-Workflow-Orchestration">Aurora-Workflow-Orchestration</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- Glyphtrace -->
-<section class="card">
-  <div class="update-head">
-    <h3>Glyphtrace v0.0.1 — Concept & Version DOIs Registered</h3>
-    <div class="meta">2025-12-26 · Language — Symbolic Compression</div>
-  </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Introduced symbolic semantic compression for reasoning traces.</li>
-      <li>Formalized grammar for lineage and derivation mapping.</li>
-      <li>Archived concept and version identifiers.</li>
-    </ul>
-    <ul class="muted">
-      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18057686">10.5281/zenodo.18057686</a></li>
-      <li><strong>Version DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18057687">10.5281/zenodo.18057687</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- NTS -->
-<section class="card">
-  <div class="update-head">
-    <h3>Neurotransparency Specification (NTS) v2.0.0 Released</h3>
-    <div class="meta">2025-12-18 · Governance — Specification</div>
-  </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Defined machine-verifiable AI disclosure requirements.</li>
-      <li>Separated doctrinal rationale from enforceable rules.</li>
-      <li>Published compliance targets for downstream enforcement.</li>
-    </ul>
-    <ul class="muted">
-      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17809676">10.5281/zenodo.17809676</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- NTD -->
-<section class="card">
-  <div class="update-head">
-    <h3>Neurotransparency Doctrine (NTD) Released</h3>
-    <div class="meta">2025-12-17 · Governance — Doctrine</div>
-  </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Established epistemic rationale for AI-human traceability.</li>
-      <li>Formed foundation for NTS and ARI governance.</li>
-    </ul>
-    <ul class="muted">
-      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17957384">10.5281/zenodo.17957384</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ARI -->
-<section class="card">
-  <div class="update-head">
-    <h3>Aurora Research Initiative (ARI) Formalized</h3>
-    <div class="meta">2025-12-16 · Governance — Authority</div>
-  </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Defined governance authority for the Aurora Ecosystem.</li>
-      <li>Established separation between doctrine, specification, workflow, enforcement, and publication.</li>
-      <li>Codified independence and no-self-attestation constraints.</li>
-    </ul>
-    <ul class="muted">
-      <li><strong>Concept DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17743096">10.5281/zenodo.17743096</a></li>
+      <li>Published canonical public interface for tooling and documentation.</li>
+      <li>Introduced structured navigation and release log.</li>
     </ul>
   </div>
 </section>
 
 <footer>
   <span>© <span id="year"></span> Waveframe Labs</span>
-  <span>Governed under the Aurora Research Initiative (ARI)</span>
+  <span>Execution control for AI-driven systems</span>
 </footer>
 
 </div>
