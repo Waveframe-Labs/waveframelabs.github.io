@@ -1,8 +1,8 @@
 <!--
 ---
-title: "Aurora Hierarchy · Waveframe Labs"
-short_title: "Hierarchy"
-version: "1.1.0"
+title: "How It Works · Waveframe Labs"
+short_title: "How It Works"
+version: "2.0.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -21,238 +21,202 @@ ai_assisted: "partial"
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Hierarchy · Waveframe Labs</title>
+  <title>How It Works · Waveframe Labs</title>
 
-  <meta name="description" content="The Aurora Hierarchy defines the Aurora Ecosystem layer model (L0–L6): governance, method, meaning, lineage, validation/enforcement, publication, and demonstrations.">
+  <meta name="description" content="What happens when an AI system attempts to execute an action — from proposal to enforcement." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/hierarchy.html" />
 
-  <!-- OG (kept minimal, aligned with index conventions) -->
-  <meta property="og:title" content="Hierarchy · Waveframe Labs" />
-  <meta property="og:description" content="Canonical Aurora Ecosystem layer model (L0–L6) and authority boundaries." />
+  <meta property="og:title" content="How It Works · Waveframe Labs" />
+  <meta property="og:description" content="Execution control pipeline for AI-driven actions." />
   <meta property="og:type" content="website" />
 
-  <!-- === SHARED SITE STYLES (ALIGNED TO index.html NAV/PATTERN) === -->
-  <style>
-    :root{
-      --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-      --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12; --maxw:1080px; --rad:12px;
-    }
-    *{box-sizing:border-box}
-    html,body{
-      margin:0; padding:0;
-      background:var(--bg); color:var(--ink);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
-    a{color:inherit;text-decoration:none;transition:color .2s;}
-    a:hover{color:var(--accent);}
+<style>
+:root{
+  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
+  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:12px;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--accent);}
 
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
 
-    /* --- Header (normalized to index.html) --- */
-    .hdr{
-      padding:18px 24px;
-      border-bottom:1px solid var(--edge);
-      background:rgba(20,22,27,.88);
-      backdrop-filter:blur(12px);
-      display:flex; justify-content:space-between; align-items:center;
-      position:sticky; top:0; z-index:100; margin-bottom:28px;
-      border-left:1px solid var(--edge); border-right:1px solid var(--edge);
-      border-radius: 0 0 12px 12px;
-    }
-    .brand{display:flex;align-items:center;gap:12px;}
-    .brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
+/* Header */
+.hdr{
+  padding:18px 24px;
+  border-bottom:1px solid var(--edge);
+  background:rgba(20,22,27,.88);
+  backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between; align-items:center;
+  position:sticky; top:0; z-index:100; margin-bottom:28px;
+  border-left:1px solid var(--edge); border-right:1px solid var(--edge);
+  border-radius: 0 0 12px 12px;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-text{font-size:1.2rem;font-weight:700;}
 
-    .topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
-    .topnav a{opacity:.7;}
-    .topnav a:hover{opacity:1;color:var(--accent);}
-    .active-link{opacity:1!important;color:var(--accent)!important;}
+.topnav{display:flex;gap:24px;font-size:.9rem;}
+.topnav a{opacity:.7;}
+.active-link{opacity:1!important;color:var(--accent)!important;}
 
-    @media(max-width:850px){
-      .hdr{flex-direction:column;align-items:flex-start;gap:14px;}
-      .topnav{flex-wrap:wrap;gap:18px;}
-    }
+/* Hero */
+.hero{
+  margin-bottom:22px;
+  padding:22px;
+  border:1px solid var(--edge);
+  border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
+}
 
-    /* --- Page typography --- */
-    h1{font-size:clamp(1.6rem,3.6vw,2.2rem);margin:0 0 .6rem}
-    h2{margin:0 0 .6rem;font-size:1.35rem;}
-    h3{margin:0 0 .25rem;font-size:1.05rem;}
-    p{line-height:1.65;color:var(--muted); margin:0 0 1rem;}
-    p strong{color:var(--ink);}
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:12px;
+  padding:18px;
+  margin-top:14px;
+}
 
-    .kicker{
-      color:var(--accent);font-size:.75rem;font-weight:700;text-transform:uppercase;
-      letter-spacing:1px;margin-bottom:8px;display:block;
-    }
+h1{margin:0 0 .6rem;}
+h2{margin:0 0 .6rem;}
+p{color:var(--muted); line-height:1.6;}
 
-    /* --- Hero --- */
-    .hero{
-      margin:0 0 22px;
-      padding:22px;
-      border:1px solid var(--edge);
-      border-radius:12px;
-      background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-    }
+.kicker{
+  color:var(--accent);
+  font-size:.75rem;
+  text-transform:uppercase;
+  margin-bottom:8px;
+  display:block;
+}
 
-    /* --- Cards --- */
-    .card{
-      background:var(--card);
-      border:1px solid var(--edge);
-      border-radius:12px;
-      padding:18px;
-      margin-top:14px;
-    }
-
-    /* --- Footer (normalized) --- */
-    footer{
-      margin-top:48px;
-      border-top:1px solid var(--edge);
-      padding-top:18px;
-      color:var(--muted);
-      font-size:.85rem;
-      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-    }
-  </style>
+/* Footer */
+footer{
+  margin-top:48px;
+  border-top:1px solid var(--edge);
+  padding-top:18px;
+  color:var(--muted);
+  font-size:.85rem;
+  display:flex; justify-content:space-between;
+}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <!-- ===== HEADER (NORMALIZED TO HOMEPAGE NAV) ===== -->
-  <header class="hdr">
-    <div class="brand">
-      <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
-      <div class="brand-text">Waveframe Labs</div>
-    </div>
-    <nav class="topnav">
-      <a href="index.html">Home</a>
-      <a class="active-link" href="hierarchy.html">Hierarchy</a>
-      <a href="doctrine.html">Doctrine</a>
-      <a href="awo.html">Methodology</a>
-      <a href="tools.html">Tools</a>
-      <a href="updates.html">Updates</a>
-    </nav>
-  </header>
+<header class="hdr">
+  <div class="brand">
+    <img src="waveframe-logo-mark.png" width="28">
+    <div class="brand-text">Waveframe Labs</div>
+  </div>
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a class="active-link" href="hierarchy.html">How It Works</a>
+    <a href="tools.html">Tools</a>
+    <a href="case-studies.html">Examples</a>
+    <a href="updates.html">Updates</a>
+  </nav>
+</header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <span class="kicker">Institutional Architecture</span>
-    <h1>The Aurora Hierarchy</h1>
+<!-- HERO -->
+<section class="hero">
+  <span class="kicker">Execution Pipeline</span>
+  <h1>What happens when an AI tries to take an action?</h1>
+  <p>
+    When an AI system proposes something — move money, deploy code, approve a decision —
+    that action does not execute immediately.
+  </p>
+  <p>
+    It passes through a control layer that determines:
+    <strong>should this action be allowed to execute?</strong>
+  </p>
+</section>
+
+<!-- PIPELINE -->
+<section>
+  <h2>The Execution Pipeline</h2>
+
+  <div class="card">
+    <h3>1. Define constraints</h3>
     <p>
-      The Aurora Ecosystem is organized into layered subsystems. Each layer has a distinct authority domain
-      and may not subsume or redefine the layer above it.
+      Organizational rules are defined as enforceable contracts:
+      required roles, approvals, and constraints.
     </p>
     <p>
-      <strong>Authority flows downward. Enforcement flows upward.</strong>
+      These are compiled into a structured format that can be evaluated deterministically.
     </p>
-  </section>
+  </div>
 
-  <!-- ===== OVERVIEW ===== -->
-  <section>
-    <h2>Overview</h2>
+  <div class="card">
+    <h3>2. Normalize the action</h3>
     <p>
-      The hierarchy separates legitimacy (what rules and commitments exist) from implementation (how those commitments are executed).
-      This separation prevents governance drift, ambiguity at the execution boundary, and enforcement collapse.
+      The proposed action is converted into a canonical structure:
+      who initiated it, what it changes, and what artifacts support it.
     </p>
+  </div>
+
+  <div class="card">
+    <h3>3. Evaluate</h3>
     <p>
-      This page is a canonical overview of the layer model only. Content authority remains with the referenced documents and repositories.
-    </p>
-  </section>
-
-  <!-- ===== LAYERS ===== -->
-  <section style="margin-top:22px;">
-    <h2>The Layers (L0–L6)</h2>
-
-    <div class="card">
-      <h3>L0 — Governance (Authority Layer)</h3>
-      <p>
-        Defines authority boundaries, disclosure requirements, and traceability constraints.
-        This layer is normative and constitutional: nothing below it may redefine legitimacy, authority boundaries,
-        or provenance requirements.
-      </p>
-      <p><strong>Components:</strong> Neurotransparency Doctrine (NTD), Neurotransparency Specification (NTS), Aurora Research Initiative (ARI)</p>
-    </div>
-
-    <div class="card">
-      <h3>L1 — Method (Workflow Topology)</h3>
-      <p>
-        Structures how governed reasoning is performed and recorded. Method operationalizes L0 requirements into workflows and artifact classes,
-        but does not define legitimacy and does not perform enforcement.
-      </p>
-      <p><strong>Component:</strong> Aurora Workflow Orchestration (AWO)</p>
-    </div>
-
-    <div class="card">
-      <h3>L2 — Language &amp; Ontology (Meaning Layer)</h3>
-      <p>
-        Stabilizes meaning across artifacts using controlled vocabularies, symbols, and semantic compression.
-        This layer affects interpretation and representation, not authority.
-      </p>
-      <p><strong>Components:</strong> Lexon, Glyphtrace</p>
-    </div>
-
-    <div class="card">
-      <h3>L3 — Lineage (Continuity Layer)</h3>
-      <p>
-        Preserves historical continuity by maintaining dependency and provenance chains across artifacts and decisions.
-        This layer records history; it does not judge correctness.
-      </p>
-      <p><strong>Component:</strong> Tracelink (planned)</p>
-    </div>
-
-    <div class="card">
-      <h3>L4 — Validation &amp; Enforcement (Execution Layer)</h3>
-      <p>
-        Mechanically validates artifacts and enforces declared constraints defined upstream (L0–L1).
-        Validation prepares artifacts for enforcement. Enforcement gates state mutation at the execution boundary.
-        Nothing in this layer may define governance rules; it only applies declared contracts and verifiable run evidence.
-      </p>
-      <p><strong>Components:</strong> Stamp (validation), CRI-CORE (enforcement)</p>
-    </div>
-
-    <div class="card">
-      <h3>L5 — Publication &amp; Distribution (Output Layer)</h3>
-      <p>
-        Produces frozen, citable outputs (e.g., PDFs, releases, metadata-injected artifacts).
-        Publication does not imply legitimacy; it reflects that upstream governance, method, validation, and enforcement requirements have been satisfied for the artifact set.
-      </p>
-      <p><strong>Component:</strong> Forge (publication engine) · <strong>Repository:</strong> Waveframe-Publications (canonical sources)</p>
-    </div>
-
-    <div class="card">
-      <h3>L6 — Demonstrations (Application Layer)</h3>
-      <p>
-        Practical examples that demonstrate how the ecosystem behaves under real workflow conditions.
-        Demonstrations exercise validation and enforcement surfaces without redefining upstream layers.
-      </p>
-      <p><strong>Examples:</strong> Claim lifecycle demo, finance governance (RACI) demo, Stamp demo</p>
-    </div>
-  </section>
-
-  <!-- ===== WHY THIS MATTERS ===== -->
-  <section style="margin-top:22px;">
-    <h2>Why the Hierarchy Matters</h2>
-    <p>
-      Without strict layering, governance, method, semantics, history, enforcement, and publication blur together.
-      The hierarchy keeps legitimacy (L0) distinct from workflow topology (L1), representation (L2), continuity (L3),
-      execution-boundary enforcement (L4), publication outputs (L5), and demonstrations (L6).
+      The action is passed into CRI-CORE.
     </p>
     <p>
-      The result is a system where decisions can be traced to explicit commitments, artifacts can be validated against declared contracts,
-      and outputs can be cited without ambiguity.
+      The system checks:
+      roles, approvals, integrity, and required evidence.
     </p>
-  </section>
+  </div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <span>© <span id="year"></span> Waveframe Labs</span>
-    <span>Governed under the Aurora Research Initiative (ARI)</span>
-  </footer>
+  <div class="card">
+    <h3>4. Decide</h3>
+    <p>
+      The system returns a single result:
+    </p>
+    <p>
+      ✓ allowed to execute  
+      ✗ blocked before execution
+    </p>
+  </div>
+</section>
+
+<!-- CONNECTION -->
+<section style="margin-top:24px;">
+  <h2>Where this fits</h2>
+  <p>
+    This pipeline sits directly at the execution boundary — the moment where a decision becomes a real action.
+  </p>
+  <p>
+    Everything upstream defines what should happen.  
+    This layer decides whether it actually can happen.
+  </p>
+</section>
+
+<!-- OPTIONAL DEEP LINK -->
+<section style="margin-top:24px;">
+  <h2>Components</h2>
+
+  <div class="card">
+    <p><strong>Contract Compiler</strong> — defines enforceable rules</p>
+    <p><strong>Proposal Normalizer</strong> — structures incoming actions</p>
+    <p><strong>CRI-CORE</strong> — evaluates and decides</p>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> Waveframe Labs</span>
+  <span>Execution control for AI systems</span>
+</footer>
 
 </div>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
