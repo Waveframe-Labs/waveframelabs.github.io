@@ -2,7 +2,7 @@
 ---
 title: "Tools · Waveframe Labs"
 short_title: "Tools"
-version: "1.2.0"
+version: "1.3.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -23,13 +23,9 @@ ai_assisted: "partial"
 
   <title>Tools · Waveframe Labs</title>
 
-  <meta name="description" content="Installable tools that control whether AI-generated actions are allowed to execute." />
+  <meta name="description" content="Installable tools that decide whether AI-generated actions are allowed to execute." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/tools.html" />
-
-  <meta property="og:title" content="Tools · Waveframe Labs" />
-  <meta property="og:description" content="Execution control tooling for AI-driven systems." />
-  <meta property="og:type" content="website" />
 
 <style>
 :root{
@@ -42,7 +38,7 @@ html,body{
   background:var(--bg); color:var(--ink);
   font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
-a{color:inherit;text-decoration:none;transition:color .2s;}
+a{color:inherit;text-decoration:none;}
 a:hover{color:var(--accent);}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
@@ -54,35 +50,28 @@ a:hover{color:var(--accent);}
   backdrop-filter:blur(12px);
   display:flex; justify-content:space-between; align-items:center;
   position:sticky; top:0; z-index:100; margin-bottom:28px;
-  border-left:1px solid var(--edge); border-right:1px solid var(--edge);
-  border-radius:0 0 12px 12px;
 }
 .brand{display:flex;align-items:center;gap:12px;}
-.brand-text{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;}
+.brand-text{font-size:1.2rem;font-weight:700;}
 
-.topnav{display:flex;gap:24px;font-size:.9rem;font-weight:500;}
+.topnav{display:flex;gap:24px;font-size:.9rem;}
 .topnav a{opacity:.7;}
-.topnav a:hover{opacity:1;color:var(--accent);}
 .active-link{opacity:1!important;color:var(--accent)!important;}
 
-h1{font-size:clamp(1.6rem,3.6vw,2.2rem);margin:0 0 .6rem}
-h2{margin:0 0 .6rem;font-size:1.35rem;}
-h3{margin-bottom:.25rem}
-p{line-height:1.65;color:var(--muted); margin-bottom:1rem;}
-p strong{color:var(--ink);}
+h1{margin:0 0 .6rem}
+h2{margin-top:28px;}
+p{line-height:1.6;color:var(--muted);}
 
 .kicker{
   color:var(--accent);
   font-size:.75rem;
-  font-weight:700;
   text-transform:uppercase;
-  letter-spacing:1px;
   margin-bottom:8px;
   display:block;
 }
 
 .hero{
-  margin:0 0 22px;
+  margin-bottom:22px;
   padding:22px;
   border:1px solid var(--edge);
   border-radius:12px;
@@ -94,7 +83,7 @@ p strong{color:var(--ink);}
   border:1px solid var(--edge);
   border-radius:12px;
   padding:18px;
-  margin-top:14px;
+  margin-top:16px;
 }
 
 footer{
@@ -105,8 +94,6 @@ footer{
   font-size:.85rem;
   display:flex;
   justify-content:space-between;
-  flex-wrap:wrap;
-  gap:10px;
 }
 </style>
 </head>
@@ -116,63 +103,65 @@ footer{
 
 <header class="hdr">
   <div class="brand">
-    <img src="waveframe-logo-mark.png" width="28" height="28" style="border-radius:4px;">
+    <img src="waveframe-logo-mark.png" width="28">
     <div class="brand-text">Waveframe Labs</div>
   </div>
   <nav class="topnav">
     <a href="index.html">Home</a>
-    <a href="hierarchy.html">Hierarchy</a>
-    <a href="doctrine.html">Doctrine</a>
-    <a href="awo.html">Methodology</a>
+    <a href="hierarchy.html">How It Works</a>
     <a class="active-link" href="tools.html">Tools</a>
+    <a href="case-studies.html">Examples</a>
     <a href="updates.html">Updates</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <span class="kicker">Execution Tooling</span>
+  <span class="kicker">Installable Tools</span>
   <h1>Tools</h1>
   <p>
-    These tools form a simple pipeline:
-    <br><br>
-    define what is allowed → normalize the action → decide if it executes
+    This is a simple pipeline:
+  </p>
+  <p>
+    define rules → structure the action → decide if it executes
   </p>
 </section>
 
+<!-- CRI-CORE (PRIMARY) -->
 <section>
-  <h2>Execution Control</h2>
+  <h2>Start here</h2>
 
   <div class="card">
     <h3>CRI-CORE</h3>
     <p>
-      The enforcement layer.
-      It decides whether a proposed action is allowed to execute.
+      The execution decision layer.
     </p>
-
-    <p class="muted">
-      Input: a proposed action  
-      Output: <code>commit_allowed = true | false</code>
+    <p>
+      It evaluates a proposed action and returns:
+      <strong>allow or block.</strong>
     </p>
 
     <p>
-      <strong>Install:</strong> <code>pip install cricore</code><br>
+      <strong>Install:</strong> <code>pip install cricore</code>
+    </p>
+
+    <p>
       <strong>PyPI:</strong> <a href="https://pypi.org/project/cricore/" target="_blank">cricore</a><br>
       <strong>GitHub:</strong> <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">CRI-CORE</a>
     </p>
   </div>
-
 </section>
 
+<!-- PIPELINE -->
 <section>
-  <h2>Input Pipeline</h2>
+  <h2>Build the pipeline</h2>
 
   <div class="card">
     <h3>Contract Compiler</h3>
     <p>
-      Converts real policies (roles, approvals, constraints) into a format
-      CRI-CORE can enforce.
+      Converts real-world rules (roles, approvals, constraints)
+      into enforceable contracts.
     </p>
-
     <p>
       <strong>Install:</strong> <code>pip install cricore-contract-compiler</code>
     </p>
@@ -181,44 +170,50 @@ footer{
   <div class="card">
     <h3>Proposal Normalizer</h3>
     <p>
-      Converts an action (from AI or a system) into a standardized structure
-      that CRI-CORE can evaluate.
+      Converts an action into a structured format
+      that can be evaluated.
     </p>
-
     <p>
       <strong>Install:</strong> <code>pip install cricore-proposal-normalizer</code>
     </p>
   </div>
-
 </section>
 
+<!-- SUPPORT -->
 <section>
-  <h2>Validation &amp; Output</h2>
+  <h2>Support</h2>
 
   <div class="card">
     <h3>Stamp</h3>
     <p>
-      Validates metadata and artifacts before execution or publication.
+      Validates artifacts and metadata before execution.
     </p>
-
     <p>
-      <strong>Install:</strong> <code>pip install waveframe-stamp</code><br>
-      <strong>PyPI:</strong> <a href="https://pypi.org/project/waveframe-stamp/" target="_blank">waveframe-stamp</a>
+      <strong>Install:</strong> <code>pip install waveframe-stamp</code>
     </p>
   </div>
 
   <div class="card">
     <h3>Forge</h3>
     <p class="muted">
-      Generates finalized outputs and publication artifacts.
+      Generates final outputs and publication artifacts.
     </p>
   </div>
+</section>
 
+<!-- CTA -->
+<section style="margin-top:28px;">
+  <h2>See it in action</h2>
+  <p>
+    <a href="case-studies.html" style="color:var(--accent); font-weight:600;">
+      View examples →
+    </a>
+  </p>
 </section>
 
 <footer>
   <span>© <span id="year"></span> Waveframe Labs</span>
-  <span>Execution control for AI-driven systems</span>
+  <span>Execution control for AI systems</span>
 </footer>
 
 </div>
