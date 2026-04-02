@@ -25,38 +25,104 @@ ai_assisted: "partial"
 <meta name="description" content="Stop AI actions before they execute." />
 <link rel="icon" type="image/png" href="favicon-32x32.png" />
 
+<link rel="canonical" href="https://waveframelabs.org" />
+
 <style>
 :root{
   --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
   --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12; --maxw:1080px; --rad:12px;
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui;}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px;}
+html,body{
+  margin:0;padding:0;background:var(--bg);color:var(--ink);
+  font-family:ui-sans-serif,system-ui;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 0;}
 
-.hdr{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;
-border-bottom:1px solid var(--edge);background:rgba(20,22,27,.9);position:sticky;top:0;}
-.topnav{display:flex;gap:20px;}
-.topnav a{opacity:.7;} .topnav a:hover{opacity:1;color:var(--accent);}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--accent);}
 
-.hero-banner{width:100%;border-radius:12px;margin:20px 0;border:1px solid var(--edge);}
+/* HEADER */
+.hdr{
+  padding:18px 24px;
+  border-bottom:1px solid var(--edge);
+  background:rgba(20,22,27,.9);
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;z-index:100;
+}
+.topnav{display:flex;gap:24px;font-size:.9rem;}
+.topnav a{opacity:.7;}
+.topnav a:hover{opacity:1;color:var(--accent);}
 
-h1{font-size:2.2rem;margin-bottom:12px;}
-h2{margin-top:0;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;}
+
+.hero-banner{
+  width:100%;
+  margin:24px 0;
+  border-radius:12px;
+  border:1px solid var(--edge);
+}
+
+/* CARDS */
+.card{
+  background:var(--card);
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  padding:24px;
+  margin-bottom:28px;
+}
+
+/* TYPO */
+h1{font-size:2rem;margin-bottom:12px;}
+h2{margin-bottom:10px;}
 p{color:var(--muted);line-height:1.6;}
 
-.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:22px;margin-bottom:28px;}
+/* DECISION GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.result-good{color:#3ddc84;}
-.result-bad{color:#ff4d4d;}
+.decision{
+  background:#0f1116;
+  border:1px solid var(--edge);
+  padding:16px;
+  border-radius:10px;
+}
 
-.input-box{background:#0e1015;border:1px solid var(--edge);padding:12px;border-radius:8px;margin-bottom:10px;}
-.button{background:var(--accent);border:none;padding:10px 16px;border-radius:6px;color:white;cursor:pointer;}
-.button:hover{background:var(--accent-hover);}
+.bad{color:#ff4d4d;}
+.good{color:#3ddc84;}
 
 @media(max-width:800px){
-.split{grid-template-columns:1fr;}
+  .grid{grid-template-columns:1fr;}
+}
+
+/* FOOTER */
+footer{
+  margin-top:60px;
+  border-top:1px solid var(--edge);
+  background:var(--card);
+  padding:40px 20px 20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:32px;
+  max-width:var(--maxw);
+  margin:0 auto;
+}
+.ft-links a{display:block;color:var(--muted);margin-bottom:10px;}
+.ft-links a:hover{color:var(--accent);}
+.ft-bottom{
+  max-width:var(--maxw);
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid var(--edge);
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:0.8rem;
 }
 </style>
 </head>
@@ -65,9 +131,9 @@ p{color:var(--muted);line-height:1.6;}
 <div class="wrap">
 
 <header class="hdr">
-  <div style="display:flex;align-items:center;gap:10px;">
+  <div class="brand">
     <img src="waveframe-logo-mark.png" width="28">
-    <strong>Waveframe Labs</strong>
+    Waveframe Labs
   </div>
   <nav class="topnav">
     <a href="index.html">Home</a>
@@ -90,67 +156,90 @@ p{color:var(--muted);line-height:1.6;}
   </p>
 
   <p>
-    ✓ allowed to execute<br>
+    ✓ allowed<br>
     ✗ blocked before execution
   </p>
 </section>
 
-<!-- SCENARIO -->
+<!-- PRIMARY SCENARIO -->
 <section class="card">
-  <h2>What happens when an AI tries to act?</h2>
+  <h2>Example: Financial action</h2>
 
-  <div class="split">
+  <div class="grid">
 
-    <div>
-      <h3>Without control</h3>
-      <p>
-        AI attempts:<br>
-        Reallocate $2M from Marketing → Operations
-      </p>
-      <p class="result-bad">⚠️ EXECUTED</p>
-      <p>Funds moved without approval</p>
+    <div class="decision">
+      <p><strong>Action</strong><br>
+      Reallocate $2M from Marketing → Operations</p>
+
+      <p class="bad"><strong>Result:</strong> ❌ BLOCKED</p>
+
+      <p>Reason:<br>
+      Role separation violation</p>
+
+      <p>Status:<br>
+      Never executed</p>
     </div>
 
-    <div>
-      <h3>With enforcement</h3>
-      <p>
-        Same action
-      </p>
-      <p class="result-bad">❌ BLOCKED</p>
-      <p>
-        Reason:<br>
-        Independent approval required
-      </p>
+    <div class="decision">
+      <p><strong>Same action (with valid approval)</strong></p>
+
+      <p class="good"><strong>Result:</strong> ✔ ALLOWED</p>
+
+      <p>Reason:<br>
+      All requirements satisfied</p>
+
+      <p>Status:<br>
+      Executed</p>
     </div>
 
   </div>
 </section>
 
-<!-- INTERACTIVE -->
+<!-- MULTI SCENARIOS -->
 <section class="card">
-  <h2>Try it</h2>
+  <h2>Other outcomes</h2>
 
-  <div class="input-box">
-    Reallocate $2M from Marketing → Operations
+  <div class="grid">
+
+    <div class="decision">
+      <p><strong>Deploy production build</strong></p>
+      <p class="bad">❌ BLOCKED</p>
+      <p>Missing approval artifact</p>
+    </div>
+
+    <div class="decision">
+      <p><strong>Modify access permissions</strong></p>
+      <p class="bad">❌ BLOCKED</p>
+      <p>Insufficient authority</p>
+    </div>
+
+    <div class="decision">
+      <p><strong>Update billing plan</strong></p>
+      <p class="good">✔ ALLOWED</p>
+      <p>Valid authorization</p>
+    </div>
+
+    <div class="decision">
+      <p><strong>Replay previous approval</strong></p>
+      <p class="bad">❌ BLOCKED</p>
+      <p>Integrity mismatch</p>
+    </div>
+
   </div>
-
-  <button class="button" onclick="evaluateAction()">Evaluate action</button>
-
-  <div id="result" style="margin-top:16px;"></div>
 </section>
 
 <!-- WHERE IT RUNS -->
 <section class="card">
-  <h2>Where this plugs in</h2>
+  <h2>Where this runs</h2>
   <p>CI/CD pipelines → block unsafe deploys</p>
   <p>Finance systems → block unauthorized transactions</p>
   <p>Agent frameworks → block invalid actions</p>
 </section>
 
-<!-- SIMPLE FLOW -->
+<!-- FLOW -->
 <section class="card">
   <h2>How it works</h2>
-  <p>1. Define rules</p>
+  <p>1. Define requirements</p>
   <p>2. Submit action</p>
   <p>3. Evaluate</p>
   <p>4. Allow or block</p>
@@ -158,21 +247,42 @@ p{color:var(--muted);line-height:1.6;}
 
 </div>
 
-<footer style="margin-top:40px;padding:20px;border-top:1px solid var(--edge);text-align:center;color:var(--muted);">
-  © <span id="year"></span> Waveframe Labs
+<footer>
+  <div class="footer-grid">
+    <div>
+      <img src="waveframe-logo-mark.png" width="24">
+      <div style="font-weight:700;margin:8px 0;">Waveframe Labs</div>
+      <p style="font-size:0.9rem;">
+        Systems that control whether AI-driven actions are allowed to execute.
+      </p>
+    </div>
+
+    <div>
+      <h4>Product</h4>
+      <div class="ft-links">
+        <a href="hierarchy.html">How It Works</a>
+        <a href="tools.html">Tools</a>
+        <a href="case-studies.html">Examples</a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Connect</h4>
+      <div class="ft-links">
+        <a href="mailto:swright@waveframelabs.org">Email</a>
+        <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ft-bottom">
+    <span>© <span id="year"></span> Waveframe Labs</span>
+    <span>Execution control for AI systems</span>
+  </div>
 </footer>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-
-function evaluateAction(){
-  document.getElementById('result').innerHTML = `
-    <div style="margin-top:12px;">
-      <div style="color:#ff4d4d;font-weight:bold;">❌ BLOCKED</div>
-      <div style="color:#9aa3b2;">Reason: Role separation violation</div>
-    </div>
-  `;
-}
 </script>
 
 </body>
