@@ -2,15 +2,13 @@
 ---
 title: "Waveframe Labs — Canonical Entry"
 short_title: "Waveframe Labs"
-version: "2.0.0"
+version: "2.1.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
 maintainer: "Waveframe Labs"
 license: "CC-BY-4.0"
 policy_version: "ARI-Metadata-3.0.2"
-dependencies:
-  - "Aurora Ecosystem — Unified System Reference v2.0.0"
 ai_assisted: "partial"
 ---
 -->
@@ -25,21 +23,21 @@ ai_assisted: "partial"
 <meta name="description" content="Stop AI actions before they execute." />
 <link rel="icon" type="image/png" href="favicon-32x32.png" />
 
-<link rel="canonical" href="https://waveframelabs.org" />
-
 <style>
 :root{
   --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-  --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12; --maxw:1080px; --rad:12px;
+  --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12;
+  --maxw:1080px; --rad:12px;
 }
 *{box-sizing:border-box}
 html,body{
-  margin:0;padding:0;background:var(--bg);color:var(--ink);
+  margin:0;padding:0;
+  background:var(--bg);color:var(--ink);
   font-family:ui-sans-serif,system-ui;
 }
-.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 0;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px;}
 
-a{color:inherit;text-decoration:none;}
+a{text-decoration:none;color:inherit;}
 a:hover{color:var(--accent);}
 
 /* HEADER */
@@ -50,12 +48,12 @@ a:hover{color:var(--accent);}
   display:flex;justify-content:space-between;align-items:center;
   position:sticky;top:0;z-index:100;
 }
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;}
 .topnav{display:flex;gap:24px;font-size:.9rem;}
 .topnav a{opacity:.7;}
 .topnav a:hover{opacity:1;color:var(--accent);}
 
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;}
-
+/* HERO */
 .hero-banner{
   width:100%;
   margin:24px 0;
@@ -63,7 +61,7 @@ a:hover{color:var(--accent);}
   border:1px solid var(--edge);
 }
 
-/* CARDS */
+/* CARD */
 .card{
   background:var(--card);
   border:1px solid var(--edge);
@@ -77,20 +75,44 @@ h1{font-size:2rem;margin-bottom:12px;}
 h2{margin-bottom:10px;}
 p{color:var(--muted);line-height:1.6;}
 
-/* DECISION GRID */
+/* INSTALL BLOCK */
+.install{
+  background:#0f1116;
+  border:1px solid var(--edge);
+  padding:16px;
+  border-radius:10px;
+  margin-top:16px;
+  font-family:monospace;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  margin-right:10px;
+  padding:10px 16px;
+  border-radius:6px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:600;
+}
+.btn.secondary{
+  background:transparent;
+  border:1px solid var(--edge);
+}
+
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:18px;
 }
-
 .decision{
   background:#0f1116;
   border:1px solid var(--edge);
   padding:16px;
   border-radius:10px;
 }
-
 .bad{color:#ff4d4d;}
 .good{color:#3ddc84;}
 
@@ -149,16 +171,34 @@ footer{
 <!-- HERO -->
 <section class="card">
   <h1>Stop AI actions before they execute</h1>
+
   <p>
-    AI systems can now move money, deploy code, and approve decisions.
-    <br><br>
-    This system decides whether those actions are allowed to happen.
+    Execution control for AI systems.
   </p>
 
   <p>
-    ✓ allowed<br>
-    ✗ blocked before execution
+    AI systems can:
+    <br>• move money
+    <br>• deploy code
+    <br>• approve decisions
+    <br><br>
+    If those actions are wrong — they execute anyway.
   </p>
+
+  <p>
+    This system decides:
+    <br>✓ allowed
+    <br>✗ blocked before execution
+  </p>
+
+  <div class="install">
+    pip install cricore
+    <br><span style="color:#9aa3b2;">Latest version: 0.12.0</span>
+  </div>
+
+  <a class="btn" href="https://github.com/Waveframe-Labs/governed-finance-mutation-demo" target="_blank">View demo</a>
+  <a class="btn secondary" href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">View kernel</a>
+
 </section>
 
 <!-- PRIMARY SCENARIO -->
@@ -181,7 +221,7 @@ footer{
     </div>
 
     <div class="decision">
-      <p><strong>Same action (with valid approval)</strong></p>
+      <p><strong>Same action (valid approval)</strong></p>
 
       <p class="good"><strong>Result:</strong> ✔ ALLOWED</p>
 
@@ -204,11 +244,11 @@ footer{
     <div class="decision">
       <p><strong>Deploy production build</strong></p>
       <p class="bad">❌ BLOCKED</p>
-      <p>Missing approval artifact</p>
+      <p>Missing approval</p>
     </div>
 
     <div class="decision">
-      <p><strong>Modify access permissions</strong></p>
+      <p><strong>Modify permissions</strong></p>
       <p class="bad">❌ BLOCKED</p>
       <p>Insufficient authority</p>
     </div>
@@ -220,9 +260,9 @@ footer{
     </div>
 
     <div class="decision">
-      <p><strong>Replay previous approval</strong></p>
+      <p><strong>Replay approval</strong></p>
       <p class="bad">❌ BLOCKED</p>
-      <p>Integrity mismatch</p>
+      <p>Integrity violation</p>
     </div>
 
   </div>
@@ -236,15 +276,6 @@ footer{
   <p>Agent frameworks → block invalid actions</p>
 </section>
 
-<!-- FLOW -->
-<section class="card">
-  <h2>How it works</h2>
-  <p>1. Define requirements</p>
-  <p>2. Submit action</p>
-  <p>3. Evaluate</p>
-  <p>4. Allow or block</p>
-</section>
-
 </div>
 
 <footer>
@@ -253,7 +284,7 @@ footer{
       <img src="waveframe-logo-mark.png" width="24">
       <div style="font-weight:700;margin:8px 0;">Waveframe Labs</div>
       <p style="font-size:0.9rem;">
-        Systems that control whether AI-driven actions are allowed to execute.
+        Execution control for AI systems.
       </p>
     </div>
 
