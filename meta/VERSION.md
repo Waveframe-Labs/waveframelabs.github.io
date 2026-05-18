@@ -1,12 +1,12 @@
 ---
-title: "Waveframe Labs Website — Version Contract"
+title: "Waveframe Labs Website - Version Contract"
 filetype: "documentation"
 type: "version"
 domain: "infrastructure"
-version: "1.0.1"
+version: "2.0.0"
 status: "Active"
 created: "2025-10-18"
-updated: "2026-02-01"
+updated: "2026-05-18"
 
 author:
   name: "Waveframe Labs"
@@ -18,94 +18,121 @@ maintainer:
 
 license: "CC-BY-NC-SA-4.0"
 
-ai_assisted: "none"
+ai_assisted: "partial"
 
 anchors:
-  - "WF-WEBSITE-VERSION-v1.0.1"
+  - "WF-WEBSITE-VERSION-v2.0.0"
 ---
 
-# Version — WaveframeLabs.org
+# Version - WaveframeLabs.org
 
-**Current Version:** `1.0.1`
+**Current Version:** `2.0.0`
 
 ## Version Semantics
 
-Version `1.0.0` designates the first **canonical, stable public interface** of the Waveframe Labs website.
+Version `2.0.0` designates the second canonical public interface of the Waveframe Labs website.
 
-Version `1.0.1` is a **patch-level canonical alignment update**.  
-It does not change the public interface, navigation, or authority boundaries of the site.
+This release materially changes the public interpretation of the site from an Aurora-first institutional overview into a product and protocol-facing execution-governance reference surface.
 
-This patch exists to synchronize the institutional record with already-published releases.
+The v2.0.0 website centers:
 
-Specifically, it reflects the normalization of the canonical Updates log to include:
-
-- Waveframe Labs Website — v1.0.0 public release entry
-- Waveframe Stamp v0.1.0 public release
-- Waveframe Stamp v0.1.1 public release (Zenodo DOI registered)
-
-This ensures the public log is complete and internally consistent with the Aurora ecosystem’s publication history.
-
----
-
-## Meaning of a 1.x Website Version
-
-A 1.x website version signals that:
-
-- Page structure and navigation are normalized and consistent
-- Aurora layer ordering and authority boundaries are correct
-- Canonical references to doctrine, governance, methodology, tooling, and case studies are stable
-- The site may be cited as the authoritative public reference surface for the Aurora Ecosystem
-
-A 1.x version does **not** imply feature completeness, visual finality, or research maturity.
+- deterministic enforcement at the execution boundary
+- the canonical governance-to-production architecture diagram
+- installable runtime and developer infrastructure
+- local Guard vs Cloud authority/audit responsibilities
+- component boundary responsibilities
+- compatibility and dependency specification
+- concrete governed execution scenarios
+- protocol evolution and release engineering notes
 
 ---
 
-## Scope of v1.0.0 (Baseline Interface)
+## v2.0.0 Canonical Architecture
 
-Included in the baseline canonical interface:
+The v2.0.0 architecture is:
 
-- Institutional homepage and overview
-- Aurora hierarchy and layer definitions
-- Doctrine, specification, governance, and methodology reference pages
-- Tooling and infrastructure overview
-- Canonical institutional updates log
-- Deterministic, no-build static deployment
+```text
+Human Governance
+  -> Governance-Ledger
+  -> Contract Compiler
+  -> Compiled Authority Contract
+  -> Proposal Normalizer
+  -> Canonical Proposal
+  -> CRI-CORE
+  -> Execution Decision
+  -> Waveframe Guard
+  -> Production System
+```
 
-Out of scope for v1.0.0:
+Waveframe Cloud provides:
 
-- Per-project deep-dive pages
+- authority distribution
+- audit durability
+- registry
+- receipts
+
+Cloud does not decide admissibility.
+
+---
+
+## Scope of v2.0.0
+
+Included in the v2.0.0 canonical interface:
+
+- Product landing homepage aligned around execution-boundary enforcement
+- Single reusable canonical architecture diagram asset
+- Execution architecture map page
+- Compatibility matrix and dependency specification page
+- CRI-CORE kernel page focused on deterministic admissibility
+- Tools page organized by governance, compilation, proposal, enforcement, and authority/audit layers
+- Governed execution scenarios page
+- Protocol evolution release log
+- README aligned to v2.0.0 public architecture
+- Site metadata and deployment logs aligned to this release
+
+Out of scope for v2.0.0:
+
+- Runtime implementation code
+- Cloud service deployment
+- Package publication
+- Governance authority publication
+- Dynamic documentation generation
 - Analytics or telemetry
-- Accessibility optimization passes
-- Interactive or dynamic features
 
 ---
 
-## Scope of v1.0.1 (Patch Alignment)
+## Compatibility Profile
 
-v1.0.1 includes:
+The v2.0.0 site documents compatibility profile:
 
-- Canonical synchronization of the institutional Updates log
-- Inclusion of missing public release records for tooling and site publication
+`waveframe-execution-governance-2026-05`
 
-v1.0.1 does **not** introduce:
+The public compatibility surface includes:
 
-- new pages
-- new navigation surfaces
-- new authority relationships
-- new ecosystem layers
+- Governance-Ledger
+- CRI-CORE Contract Compiler
+- Proposal Normalizer
+- CRI-CORE
+- Waveframe Guard
+- Waveframe Cloud v1 API semantics
+
+The authoritative compatibility page is:
+
+`compatibility.html`
 
 ---
 
 ## Versioning Policy
 
-Subsequent versions will be incremented only when:
+Website versions are incremented when:
 
 - the public interpretation of the site materially changes
 - canonical structure or authority relationships are altered
 - new permanent reference surfaces are added
+- the documented architecture changes compatibility expectations
 
-Minor copy edits, visual adjustments, and routine content refreshes may not trigger a version change.
+Minor copy edits, visual adjustments, and routine content refreshes may not trigger a website version change.
 
 ---
 
-© 2026 Waveframe Labs — Governed under the Aurora Research Initiative (ARI)
+Copyright 2026 Waveframe Labs.

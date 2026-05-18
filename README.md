@@ -2,39 +2,52 @@
   <img src="canonical-architecture.svg" alt="Waveframe canonical architecture diagram" width="760">
 </p>
 
-# Waveframe Labs — Website Repository
+# Waveframe Labs - Website Repository
 
 [![Waveframe Labs](https://img.shields.io/badge/WAVEFRAME%20LABS-Institutional%20Repository-FF6A00?style=flat)](https://waveframelabs.org)  
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--6043--9295-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0006-6043-9295)  
 ![License: Apache-2.0](https://img.shields.io/badge/Code-Apache--2.0-blue)  
-![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-lightgrey)  
+![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-lightgrey)
 
-This repository hosts the **canonical public website** for **Waveframe Labs**, an independent research institute operating under the **Aurora Research Initiative (ARI)**.
+This repository hosts the canonical public website for **Waveframe Labs**.
 
-The website functions as the **public interface and reference surface** for the Aurora Ecosystem. It provides institutional documentation, architectural orientation, and authoritative links to governance, methodology, tooling, and case-study research.
+The v2.0.0 website is the public interface for the Waveframe execution-governance architecture: deterministic authority publication, contract identity, canonical proposal assembly, CRI-CORE admissibility, Waveframe Guard runtime enforcement, and Waveframe Cloud authority/audit durability.
 
 **Live site:** https://waveframelabs.org  
-**ARI Concept DOI:** https://doi.org/10.5281/zenodo.17743096
+**Current website version:** `2.0.0`
+
+---
+
+## Canonical Architecture
+
+The diagram above is the shared website and README asset for the v2.0.0 architecture:
+
+```text
+Human Governance
+  -> Governance-Ledger
+  -> Contract Compiler
+  -> Compiled Authority Contract
+  -> Proposal Normalizer
+  -> Canonical Proposal
+  -> CRI-CORE
+  -> Execution Decision
+  -> Waveframe Guard
+  -> Production System
+```
+
+Waveframe Cloud provides authority distribution, audit durability, registry, and receipts. It does not decide admissibility.
 
 ---
 
 ## Purpose and Scope
 
-## Canonical Architecture Diagram
-
-The diagram above is the shared website and README asset for the Waveframe execution-governance architecture:
-
-Human Governance -> Governance-Ledger -> Contract Compiler -> Compiled Authority Contract -> Proposal Normalizer -> Canonical Proposal -> CRI-CORE -> Execution Decision -> Waveframe Guard -> Production System.
-
-Waveframe Cloud provides authority distribution, audit durability, registry, and receipts.
-
 This repository exists to serve a single, well-defined role:
 
-> **To present the canonical, human-readable public representation of the Aurora Ecosystem.**
+> To present the canonical, human-readable public representation of the Waveframe execution-governance architecture.
 
-It is **not** a research repository, a tooling repository, or a governance authority itself. Instead, it points *to* authoritative artifacts and documents that live elsewhere, while maintaining a stable, auditable institutional presence.
+It is not a tooling repository, runtime implementation, governance authority, registry, or audit store. It points to authoritative artifacts and implementation repositories while maintaining a stable, auditable public reference surface.
 
-This site is designed to be:
+This site is:
 
 - Fully static
 - Framework-free
@@ -45,25 +58,32 @@ Every rendered page corresponds directly to a committed file in this repository.
 
 ---
 
-## Canonical Authority Boundaries
+## Authority Boundaries
 
 This website:
 
-- **Does not define doctrine**
-- **Does not define governance**
-- **Does not enforce methodology**
-- **Does not execute validation or tooling**
+- Does not define doctrine
+- Does not author governance
+- Does not compile contracts
+- Does not normalize proposals
+- Does not decide admissibility
+- Does not enforce runtime execution
+- Does not distribute authority or store receipts
 
-Instead, it **references** the following authoritative layers:
+Referenced implementation and authority layers:
 
-- **Neurotransparency Doctrine (NTD)** — epistemic rationale  
-- **Neurotransparency Specification (NTS)** — enforceable disclosure requirements  
-- **Aurora Research Initiative (ARI)** — governance authority  
-- **Aurora Workflow Orchestration (AWO)** — methodology  
-- **CRI-CORE** — enforcement (referenced, not implemented here)  
-- **Case Studies** — applied research conducted under the stack  
+- **Neurotransparency Doctrine (NTD):** epistemic rationale
+- **Neurotransparency Specification (NTS):** enforceable disclosure requirements
+- **Aurora Research Initiative (ARI):** governance authority
+- **Aurora Workflow Orchestration (AWO):** methodology
+- **Governance-Ledger:** authority publication and lineage
+- **Contract Compiler:** compiled authority contract generation
+- **Proposal Normalizer:** canonical proposal assembly
+- **CRI-CORE:** deterministic admissibility kernel
+- **Waveframe Guard:** runtime execution boundary
+- **Waveframe Cloud:** authority distribution, registry, audit durability, and receipts
 
-In the event of any conflict, authority flows outward to the referenced documents, not inward to this site.
+In the event of conflict, authority flows outward to the referenced specifications, releases, and implementation repositories, not inward to this website.
 
 ---
 
@@ -73,68 +93,56 @@ The site consists of hand-authored static HTML files.
 
 ### Primary Pages
 
+- `index.html` - product landing page and canonical architecture entry point
+- `hierarchy.html` - governance execution architecture map
 - `compatibility.html` - compatibility matrix and dependency specification
+- `cri-core.html` - deterministic admissibility kernel
+- `tools.html` - layered ecosystem and developer entrypoint
+- `case-studies.html` - governed execution scenarios
+- `updates.html` - protocol evolution and release engineering log
 
-- `index.html` — institutional overview and Aurora stack entry point  
-- `hierarchy.html` — Aurora layer architecture and authority boundaries  
-- `doctrine.html` — Neurotransparency Doctrine (Layer 0)  
-- `nts.html` — Neurotransparency Specification  
-- `ari.html` — Aurora Research Initiative governance  
-- `awo.html` — Aurora Workflow Orchestration methodology  
-- `cri-core.html` — enforcement layer overview  
-- `tools.html` — deterministic tooling and infrastructure  
-- `case-studies.html` — applied research and demonstrations  
-- `updates.html` — canonical institutional release log  
+### Supporting Institutional Pages
+
+- `doctrine.html` - Neurotransparency Doctrine
+- `nts.html` - Neurotransparency Specification
+- `ari.html` - Aurora Research Initiative governance
+- `awo.html` - Aurora Workflow Orchestration methodology
+- `publications.html` - canonical publications and DOI-backed artifacts
 
 ### Supporting Files
 
+- `canonical-architecture.svg` - shared architecture diagram used by the website and README
 - `waveframe-logo-mark.png`
 - `waveframe-logo-full.png`
-- `CNAME` — custom domain configuration
-- `.nojekyll` — disables Jekyll processing
+- `CNAME` - custom domain configuration
+- `.nojekyll` - disables Jekyll processing
+- `meta/VERSION.md` - website version contract
+- `meta/SITE_LOG.md` - website deployment and structural change log
 
 ---
 
-## Updates and Change History
+## Release Readiness
 
-All authoritative announcements, releases, and institutional milestones are recorded in:
+The v2.0.0 release is ready when:
 
-**`updates.html` — Canonical Institutional Log**
-
-This log is:
-
-- Chronological
-- Factual
-- Append-only
-- Publicly auditable
-
-Git commit history supports implementation tracking, but **updates.html** is the authoritative public record of ecosystem-level changes.
-
----
-
-## Versioning Philosophy
-
-This repository uses **semantic versioning to indicate institutional stability**, not feature velocity.
-
-A version tag signals:
-
-- Structural coherence of the site
-- Stable interpretation of pages and references
-- Alignment with current Aurora governance state
-
-Minor visual or copy changes do not necessarily imply a version change.
+- `meta/VERSION.md` declares current version `2.0.0`
+- `meta/SITE_LOG.md` records the v2.0.0 structural release
+- `index.html`, `hierarchy.html`, and `README.md` use `canonical-architecture.svg`
+- `compatibility.html` is reachable from the primary navigation
+- Core pages have no stale mojibake or pre-v2 architecture language
+- Static preview verifies page load and responsive layout
 
 ---
 
 ## Editing and Deployment
 
-Deployment is handled automatically via **GitHub Pages**.
+Deployment is handled automatically via GitHub Pages.
 
-1. Edit a static file (e.g., `index.html`)
-2. Commit to the `main` branch
-3. GitHub Pages redeploys automatically
+1. Edit static files.
+2. Commit to the deployment branch.
+3. GitHub Pages redeploys automatically.
 
-There is no build step, CI pipeline, or preprocessing layer. This is intentional and aligned with Aurora transparency principles.
+There is no build step, CI pipeline, or preprocessing layer. This is intentional and keeps the public reference surface directly auditable.
 
 ---
 
@@ -144,22 +152,22 @@ Waveframe Labs uses a custom domain managed via Porkbun.
 
 ### Apex A Records
 
-```
+```text
 185.199.108.153
 185.199.109.153
 185.199.110.153
 185.199.111.153
 ```
 
-### CNAME (www)
+### CNAME
 
-```
+```text
 waveframelabs.github.io
 ```
 
 ### Repository CNAME File
 
-```
+```text
 waveframelabs.org
 ```
 
@@ -169,18 +177,18 @@ The `.nojekyll` file ensures files are served exactly as committed.
 
 ## License
 
-- **Text and media:** CC BY-NC-SA 4.0  
-- **Code and scripts:** Apache 2.0  
+- **Text and media:** CC BY-NC-SA 4.0
+- **Code and scripts:** Apache 2.0
 
-*Where ambiguity exists, executable code is governed by Apache-2.0 and written or visual content is governed by CC BY-NC-SA 4.0.*
+Where ambiguity exists, executable code is governed by Apache-2.0 and written or visual content is governed by CC BY-NC-SA 4.0.
 
-© 2026 Waveframe Labs.
+Copyright 2026 Waveframe Labs.
 
 ---
 
 ## Governance and Contact
 
-Waveframe Labs operates under the **Aurora Research Initiative (ARI)**.
+Waveframe Labs operates under the Aurora Research Initiative.
 
 **Contact:** swright@waveframelabs.org  
 **ORCID:** https://orcid.org/0009-0006-6043-9295
