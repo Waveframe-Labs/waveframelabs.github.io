@@ -1,8 +1,8 @@
 <!--
 ---
-title: "Waveframe Labs — Canonical Entry"
+title: "Waveframe Labs - Canonical Entry"
 short_title: "Waveframe Labs"
-version: "2.1.0"
+version: "2.2.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -20,112 +20,272 @@ ai_assisted: "partial"
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Waveframe Labs</title>
 
-<meta name="description" content="Stop AI actions before they execute." />
+<meta name="description" content="Deterministic enforcement at the execution boundary." />
 <link rel="icon" type="image/png" href="favicon-32x32.png" />
 
 <style>
 :root{
-  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-  --edge:#22242b; --accent:#ff7a18; --accent-hover:#e56b12;
-  --maxw:1080px; --rad:12px;
+  --bg:#0b0c10;
+  --surface:#111319;
+  --card:#14161b;
+  --panel:#0f1116;
+  --ink:#e7eaef;
+  --muted:#9aa3b2;
+  --soft:#c5cad3;
+  --edge:#252832;
+  --accent:#ff7a18;
+  --accent-hover:#e56b12;
+  --green:#3ddc84;
+  --red:#ff5b5b;
+  --maxw:1120px;
+  --rad:8px;
 }
 *{box-sizing:border-box}
 html,body{
-  margin:0;padding:0;
-  background:var(--bg);color:var(--ink);
-  font-family:ui-sans-serif,system-ui;
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
-.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px;}
-
-a{text-decoration:none;color:inherit;}
-a:hover{color:var(--accent);}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,122,24,.09),transparent 340px);
+}
+a{text-decoration:none;color:inherit}
+a:hover{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative}
 
 /* HEADER */
 .hdr{
-  padding:18px 24px;
   border-bottom:1px solid var(--edge);
-  background:rgba(20,22,27,.9);
-  display:flex;justify-content:space-between;align-items:center;
-  position:sticky;top:0;z-index:100;
+  background:rgba(17,19,25,.9);
+  backdrop-filter:blur(14px);
+  position:sticky;
+  top:0;
+  z-index:100;
 }
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;}
-.topnav{display:flex;gap:24px;font-size:.9rem;}
-.topnav a{opacity:.7;}
-.topnav a:hover{opacity:1;color:var(--accent);}
+.hdr-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:16px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:.01em}
+.brand img{width:28px;height:28px}
+.topnav{display:flex;gap:22px;font-size:.9rem;flex-wrap:wrap;justify-content:flex-end}
+.topnav a{color:var(--muted)}
+.topnav a:hover{color:var(--accent)}
 
-/* HERO */
+/* TYPOGRAPHY */
+h1,h2,h3,p{margin-top:0}
+h1{
+  max-width:860px;
+  font-size:clamp(2.4rem,5vw,5rem);
+  line-height:.98;
+  letter-spacing:0;
+  margin-bottom:20px;
+}
+h2{font-size:clamp(1.7rem,3vw,2.65rem);line-height:1.1;margin-bottom:14px}
+h3{font-size:1rem;margin-bottom:10px;color:var(--ink)}
+p{color:var(--muted);line-height:1.65}
+.eyebrow{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.78rem;
+  font-weight:800;
+  margin-bottom:14px;
+}
+.lede{font-size:1.2rem;max-width:760px;color:var(--soft)}
+.section-intro{max-width:760px;margin-bottom:28px}
+
+/* LAYOUT */
 .hero-banner{
+  display:block;
   width:100%;
-  margin:24px 0;
-  border-radius:12px;
+  max-height:340px;
+  margin:26px auto 0;
   border:1px solid var(--edge);
+  border-radius:var(--rad);
+  object-fit:cover;
 }
-
-/* CARD */
-.card{
+.hero{
+  padding:56px 0 34px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.section{
+  padding:56px 0;
+  border-top:1px solid var(--edge);
+}
+.band{
+  margin:0 -22px;
+  padding:56px 22px;
+  background:linear-gradient(180deg,rgba(20,22,27,.72),rgba(12,13,17,.72));
+  border-top:1px solid var(--edge);
+  border-bottom:1px solid var(--edge);
+}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.panel{
   background:var(--card);
   border:1px solid var(--edge);
   border-radius:var(--rad);
-  padding:24px;
-  margin-bottom:28px;
+  padding:22px;
 }
-
-/* TYPO */
-h1{font-size:2rem;margin-bottom:12px;}
-h2{margin-bottom:10px;}
-p{color:var(--muted);line-height:1.6;}
-
-/* INSTALL BLOCK */
-.install{
-  background:#0f1116;
-  border:1px solid var(--edge);
-  padding:16px;
-  border-radius:10px;
-  margin-top:16px;
-  font-family:monospace;
-}
-
-/* BUTTONS */
+.panel p:last-child{margin-bottom:0}
 .btn{
-  display:inline-block;
-  margin-top:12px;
-  margin-right:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
   padding:10px 16px;
   border-radius:6px;
   background:var(--accent);
-  color:#fff;
-  font-weight:600;
+  color:#101010;
+  font-weight:800;
 }
+.btn:hover{background:var(--accent-hover);color:#101010}
 .btn.secondary{
   background:transparent;
   border:1px solid var(--edge);
+  color:var(--ink);
 }
+.btn.secondary:hover{border-color:var(--accent);color:var(--accent);background:transparent}
 
-/* GRID */
-.grid{
+/* CORE FLOW */
+.flow{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
+  grid-template-columns:1fr;
+  gap:12px;
+  max-width:760px;
 }
-.decision{
-  background:#0f1116;
+.flow-step{
+  display:grid;
+  grid-template-columns:64px 1fr auto;
+  gap:16px;
+  align-items:center;
+  background:var(--panel);
   border:1px solid var(--edge);
+  border-radius:var(--rad);
   padding:16px;
-  border-radius:10px;
 }
-.bad{color:#ff4d4d;}
-.good{color:#3ddc84;}
+.flow-index{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:6px;
+  background:rgba(255,122,24,.12);
+  color:var(--accent);
+  font-weight:850;
+}
+.flow-step strong{display:block;margin-bottom:3px}
+.flow-step span{color:var(--muted)}
+.flow-arrow{color:var(--accent);font-size:1.4rem;font-weight:900}
+.decision-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.decision-pill{
+  border:1px solid var(--edge);
+  background:var(--panel);
+  border-radius:999px;
+  padding:9px 14px;
+  font-weight:800;
+}
+.allowed{color:var(--green)}
+.blocked{color:var(--red)}
 
-@media(max-width:800px){
-  .grid{grid-template-columns:1fr;}
+/* COPY BLOCKS */
+.fail-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:12px;
+}
+.fail-list li{
+  border-left:3px solid var(--red);
+  background:var(--panel);
+  padding:13px 15px;
+  color:var(--soft);
+}
+.contrast{
+  border-left:3px solid var(--accent);
+  background:var(--panel);
+  padding:18px;
+  margin-top:20px;
+  color:var(--ink);
+  font-weight:750;
+}
+.code{
+  background:#090a0d;
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  padding:18px;
+  overflow:auto;
+  color:#dfe4ed;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:.92rem;
+  line-height:1.55;
+}
+.code .muted{color:#7f8897}
+.code .accent{color:var(--accent)}
+.terminal{
+  margin-top:12px;
+  background:#090a0d;
+  border:1px solid rgba(255,91,91,.35);
+  border-radius:var(--rad);
+  padding:14px 16px;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  color:var(--red);
+}
+.mode-title{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:center;
+  margin-bottom:16px;
+}
+.badge{
+  color:var(--accent);
+  border:1px solid rgba(255,122,24,.42);
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:.76rem;
+  font-weight:800;
+}
+.mode-list{margin:0;padding-left:18px;color:var(--muted);line-height:1.8}
+.ecosystem{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:10px;
+}
+.eco-node{
+  min-height:116px;
+  background:var(--panel);
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  padding:15px;
+}
+.eco-node strong{display:block;margin-bottom:8px}
+.eco-node span{color:var(--muted);font-size:.9rem;line-height:1.45}
+.install-line{
+  margin-top:16px;
+  color:var(--muted);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
 }
 
 /* FOOTER */
 footer{
-  margin-top:60px;
+  margin-top:30px;
   border-top:1px solid var(--edge);
-  background:var(--card);
-  padding:40px 20px 20px;
+  background:var(--surface);
+  padding:40px 20px 22px;
 }
 .footer-grid{
   display:grid;
@@ -134,157 +294,255 @@ footer{
   max-width:var(--maxw);
   margin:0 auto;
 }
-.ft-links a{display:block;color:var(--muted);margin-bottom:10px;}
-.ft-links a:hover{color:var(--accent);}
+.ft-links a{display:block;color:var(--muted);margin-bottom:10px}
+.ft-links a:hover{color:var(--accent)}
 .ft-bottom{
   max-width:var(--maxw);
-  margin:40px auto 0;
+  margin:34px auto 0;
   padding-top:20px;
   border-top:1px solid var(--edge);
   display:flex;
   justify-content:space-between;
+  gap:16px;
   color:var(--muted);
-  font-size:0.8rem;
+  font-size:.82rem;
+}
+
+@media(max-width:900px){
+  .hdr-inner{align-items:flex-start;flex-direction:column}
+  .topnav{justify-content:flex-start;gap:14px}
+  .grid,.grid-3{grid-template-columns:1fr}
+  .ecosystem{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .wrap{padding:0 16px}
+  .band{margin:0 -16px;padding:44px 16px}
+  .hero{padding-top:40px}
+  .flow-step{grid-template-columns:48px 1fr}
+  .flow-arrow{display:none}
+  .ecosystem{grid-template-columns:1fr}
+  .footer-grid,.ft-bottom{grid-template-columns:1fr;display:grid}
 }
 </style>
 </head>
 
 <body>
-<div class="wrap">
-
 <header class="hdr">
-  <div class="brand">
-    <img src="waveframe-logo-mark.png" width="28">
-    Waveframe Labs
+  <div class="hdr-inner">
+    <a class="brand" href="index.html">
+      <img src="waveframe-logo-mark.png" alt="Waveframe Labs mark">
+      <span>Waveframe Labs</span>
+    </a>
+    <nav class="topnav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="hierarchy.html">How It Works</a>
+      <a href="tools.html">Tools</a>
+      <a href="case-studies.html">Examples</a>
+      <a href="updates.html">Updates</a>
+    </nav>
   </div>
-  <nav class="topnav">
-    <a href="index.html">Home</a>
-    <a href="hierarchy.html">How It Works</a>
-    <a href="tools.html">Tools</a>
-    <a href="case-studies.html">Examples</a>
-    <a href="updates.html">Updates</a>
-  </nav>
 </header>
 
-<img src="master-banner-v2.PNG" class="hero-banner">
+<main class="wrap">
+  <img src="master-banner-v2.PNG" class="hero-banner" alt="Waveframe Labs banner">
 
-<!-- HERO -->
-<section class="card">
-  <h1>Stop AI actions before they execute</h1>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="eyebrow">Waveframe Guard</div>
+    <h1 id="hero-title">Deterministic enforcement at the execution boundary.</h1>
+    <p class="lede">
+      Waveframe Guard prevents unsafe AI and automated actions from reaching production systems.
+      Policies are compiled into contracts, proposals are normalized, and CRI-CORE decides
+      allowed or blocked before execution.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="https://github.com/Waveframe-Labs/Waveframe-Guard" target="_blank" rel="noopener">View Guard</a>
+      <a class="btn secondary" href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank" rel="noopener">View CRI-CORE</a>
+    </div>
+    <div class="install-line">pip install waveframe-guard cricore-contract-compiler cricore-proposal-normalizer</div>
+  </section>
 
-  <p>
-    Execution control for AI systems.
-  </p>
+  <section class="band" aria-labelledby="flow-title">
+    <div class="eyebrow">Core Flow</div>
+    <h2 id="flow-title">Human policy becomes an execution decision.</h2>
+    <p class="section-intro">
+      The memorable part is small by design: turn governed intent into deterministic authority,
+      bind every proposed action to that authority, then stop anything that fails.
+    </p>
 
-  <p>
-    AI systems can:
-    <br>• move money
-    <br>• deploy code
-    <br>• approve decisions
-    <br><br>
-    If those actions are wrong — they execute anyway.
-  </p>
-
-  <p>
-    This system decides:
-    <br>✓ allowed
-    <br>✗ blocked before execution
-  </p>
-
-  <div class="install">
-    pip install cricore
-    <br><span style="color:#9aa3b2;">Latest version: 0.12.0</span>
-  </div>
-
-  <a class="btn" href="https://github.com/Waveframe-Labs/governed-finance-mutation-demo" target="_blank">View demo</a>
-  <a class="btn secondary" href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">View kernel</a>
-
-</section>
-
-<!-- PRIMARY SCENARIO -->
-<section class="card">
-  <h2>Example: Financial action</h2>
-
-  <div class="grid">
-
-    <div class="decision">
-      <p><strong>Action</strong><br>
-      Reallocate $2M from Marketing → Operations</p>
-
-      <p class="bad"><strong>Result:</strong> ❌ BLOCKED</p>
-
-      <p>Reason:<br>
-      Role separation violation</p>
-
-      <p>Status:<br>
-      Never executed</p>
+    <div class="flow" aria-label="Waveframe enforcement flow">
+      <div class="flow-step">
+        <div class="flow-index">01</div>
+        <div><strong>Human Policy</strong><span>Governance language, approvals, roles, thresholds, and constraints.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">02</div>
+        <div><strong>Compiled Contract</strong><span>Deterministic contract identity with version and hash.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">03</div>
+        <div><strong>Canonical Proposal</strong><span>Actor, mutation, artifacts, and contract reference in one strict envelope.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">04</div>
+        <div><strong>CRI-CORE Enforcement</strong><span>The deterministic kernel evaluates admissibility at the boundary.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">05</div>
+        <div><strong>Execution Decision</strong><span>The action is allowed to continue or blocked before it can run.</span></div>
+        <div class="flow-arrow">END</div>
+      </div>
     </div>
 
-    <div class="decision">
-      <p><strong>Same action (valid approval)</strong></p>
-
-      <p class="good"><strong>Result:</strong> ✔ ALLOWED</p>
-
-      <p>Reason:<br>
-      All requirements satisfied</p>
-
-      <p>Status:<br>
-      Executed</p>
+    <div class="decision-row">
+      <div class="decision-pill allowed">ALLOWED</div>
+      <div class="decision-pill blocked">BLOCKED</div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- MULTI SCENARIOS -->
-<section class="card">
-  <h2>Other outcomes</h2>
-
-  <div class="grid">
-
-    <div class="decision">
-      <p><strong>Deploy production build</strong></p>
-      <p class="bad">❌ BLOCKED</p>
-      <p>Missing approval</p>
+  <section class="section" aria-labelledby="governance-title">
+    <div class="grid">
+      <div>
+        <div class="eyebrow">Why It Exists</div>
+        <h2 id="governance-title">Most AI governance arrives too late.</h2>
+        <p>
+          Logs, dashboards, and prompt instructions can be useful, but they do not reliably stop a
+          bad action at the moment it is about to execute.
+        </p>
+      </div>
+      <div>
+        <ul class="fail-list">
+          <li>Monitor after execution</li>
+          <li>Rely on prompts</li>
+          <li>Depend on model behavior</li>
+          <li>Cannot prevent execution</li>
+        </ul>
+        <div class="contrast">
+          Waveframe Guard enforces decisions before actions execute.
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="decision">
-      <p><strong>Modify permissions</strong></p>
-      <p class="bad">❌ BLOCKED</p>
-      <p>Insufficient authority</p>
+  <section class="section" aria-labelledby="developers-title">
+    <div class="eyebrow">Developer Use</div>
+    <h2 id="developers-title">Two lines to govern execution.</h2>
+    <p class="section-intro">
+      Install the SDK, bind a published contract, and wrap the function that should never run
+      unless governance requirements are satisfied.
+    </p>
+
+    <div class="grid">
+      <div class="panel">
+        <h3>Install</h3>
+        <pre class="code"><code>pip install waveframe-guard</code></pre>
+        <p>
+          Guard can enforce locally against published contract artifacts generated by the governance workflow.
+        </p>
+      </div>
+      <div class="panel">
+        <h3>SDK Example</h3>
+        <pre class="code"><code>from pathlib import Path
+from waveframe_guard import install_guard, guard
+
+install_guard(
+    actor={"id": "user-1", "role": "intern"},
+    contract_path=Path("contracts/finance-policy-1.0.0.contract.json")
+)
+
+@guard
+def transfer_funds(amount):
+    return bank.transfer(amount)</code></pre>
+        <div class="terminal">Execution blocked: required role not satisfied: manager</div>
+      </div>
     </div>
+  </section>
 
-    <div class="decision">
-      <p><strong>Update billing plan</strong></p>
-      <p class="good">✔ ALLOWED</p>
-      <p>Valid authorization</p>
+  <section class="band" aria-labelledby="local-cloud-title">
+    <div class="eyebrow">Deployment Model</div>
+    <h2 id="local-cloud-title">Local Guard and Cloud have different jobs.</h2>
+    <p class="section-intro">
+      Local enforcement gives developers fast feedback and resilient runtime checks. Cloud provides
+      authority distribution, audit durability, organizational identity, and verification.
+    </p>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="mode-title">
+          <h3>Local Guard</h3>
+          <span class="badge">SDK</span>
+        </div>
+        <ul class="mode-list">
+          <li>Simulation</li>
+          <li>Developer testing</li>
+          <li>Local policy evaluation</li>
+          <li>Cached contract enforcement</li>
+          <li>Blocks invalid function execution</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="mode-title">
+          <h3>Waveframe Cloud</h3>
+          <span class="badge">Authority</span>
+        </div>
+        <ul class="mode-list">
+          <li>Authoritative contract registry</li>
+          <li>Immutable audit logs</li>
+          <li>Organizational identities</li>
+          <li>Durable receipts</li>
+          <li>Production governance evidence</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <div class="decision">
-      <p><strong>Replay approval</strong></p>
-      <p class="bad">❌ BLOCKED</p>
-      <p>Integrity violation</p>
+  <section class="section" aria-labelledby="ecosystem-title">
+    <div class="eyebrow">Architecture</div>
+    <h2 id="ecosystem-title">A deterministic governance ecosystem.</h2>
+    <p class="section-intro">
+      Each component has a narrow responsibility, so authority can be inspected, replayed,
+      distributed, normalized, evaluated, and audited without relying on model behavior.
+    </p>
+
+    <div class="ecosystem" aria-label="Waveframe architecture ecosystem">
+      <div class="eco-node">
+        <strong>Governance Ledger</strong>
+        <span>Normalizes governance, gates publication, and preserves lineage.</span>
+      </div>
+      <div class="eco-node">
+        <strong>Contract Compiler</strong>
+        <span>Produces stable compiled contracts with deterministic identity.</span>
+      </div>
+      <div class="eco-node">
+        <strong>Compiled Contract</strong>
+        <span>Versioned authority artifact used by runtime enforcement.</span>
+      </div>
+      <div class="eco-node">
+        <strong>Proposal Normalizer</strong>
+        <span>Builds the canonical proposal envelope for CRI-CORE.</span>
+      </div>
+      <div class="eco-node">
+        <strong>CRI-CORE</strong>
+        <span>Evaluates admissibility before the proposed action runs.</span>
+      </div>
+      <div class="eco-node">
+        <strong>Execution Decision</strong>
+        <span>Allowed actions continue. Blocked actions never execute.</span>
+      </div>
     </div>
-
-  </div>
-</section>
-
-<!-- WHERE IT RUNS -->
-<section class="card">
-  <h2>Where this runs</h2>
-  <p>CI/CD pipelines → block unsafe deploys</p>
-  <p>Finance systems → block unauthorized transactions</p>
-  <p>Agent frameworks → block invalid actions</p>
-</section>
-
-</div>
+  </section>
+</main>
 
 <footer>
   <div class="footer-grid">
     <div>
-      <img src="waveframe-logo-mark.png" width="24">
+      <img src="waveframe-logo-mark.png" width="24" alt="Waveframe Labs mark">
       <div style="font-weight:700;margin:8px 0;">Waveframe Labs</div>
       <p style="font-size:0.9rem;">
-        Execution control for AI systems.
+        Deterministic enforcement at the execution boundary.
       </p>
     </div>
 
@@ -301,14 +559,14 @@ footer{
       <h4>Connect</h4>
       <div class="ft-links">
         <a href="mailto:swright@waveframelabs.org">Email</a>
-        <a href="https://github.com/Waveframe-Labs" target="_blank">GitHub</a>
+        <a href="https://github.com/Waveframe-Labs" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </div>
 
   <div class="ft-bottom">
-    <span>© <span id="year"></span> Waveframe Labs</span>
-    <span>Execution control for AI systems</span>
+    <span>&copy; <span id="year"></span> Waveframe Labs</span>
+    <span>Deterministic enforcement at the execution boundary</span>
   </div>
 </footer>
 
