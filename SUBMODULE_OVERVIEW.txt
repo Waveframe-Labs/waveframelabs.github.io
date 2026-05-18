@@ -1,0 +1,1496 @@
+SUBMODULE OVERVIEW
+
+REPO: Waveframe-Labs/Waveframe-Guard
+
+pypi: pip install waveframe-guard
+
+VERSION: 
+Waveframe Guard v0.5.0
+
+README:
+# Waveframe Guard
+
+Stop unsafe AI and automated actions **before they execute**.
+
+Waveframe Guard enforces governance at the execution boundary. If an action violates policy, it never runs.
+
+Current release: `0.5.0`.
+
+## Example
+
+This example assumes a published contract artifact exists at `contracts/finance-policy-1.0.0.contract.json`. In your application, point `contract_path` at the contract published by your governance workflow.
+
+```python
+from pathlib import Path
+
+from waveframe_guard import install_guard, guard
+
+install_guard(
+    actor={"id": "user-1", "type": "human", "role": "intern"},
+    contract_path=Path("contracts") / "finance-policy-1.0.0.contract.json"
+)
+
+@guard
+def transfer(amount):
+    print(f"Transferred ${amount}")
+
+transfer(100)
+```
+
+```text
+Execution blocked: required role not satisfied: manager
+```
+
+## Governed Runtime
+
+For applications that want to resolve published contracts from a registry, use `GovernedRuntime`:
+
+```python
+from waveframe_guard import GovernedRuntime
+
+runtime = GovernedRuntime(
+    registry_path="contracts/index.json"
+)
+runtime.bind_contract("finance-policy@1.0.0")
+
+runtime.execute(
+    actor={"id": "user-1", "type": "human", "role": "intern"},
+    fn=transfer,
+    args=(1250000,),
+)
+```
+
+Runtime authority refs are explicit and versioned. Bind or pass `finance-policy@1.0.0`; unversioned contract IDs such as `finance-policy` are rejected because replay, audit, and cache integrity depend on deterministic authority identity.
+
+By default, blocked execution raises `GovernanceError`. To observe the decision without raising, pass `raise_on_block=False`:
+
+```python
+result = runtime.execute(
+    actor={"id": "user-1", "type": "human", "role": "intern"},
+    contract_id="finance-policy@1.0.0",
+    fn=transfer,
+    args=(1250000,),
+    raise_on_block=False,
+)
+
+print(result.allowed)
+print(result.reason)
+print(result.contract_hash)
+```
+
+Allowed executions return `GovernedExecutionResult(allowed=True, reason="execution allowed", value=<function return value>, ...)`.
+Blocked executions return `GovernedExecutionResult(allowed=False, reason=<policy reason>, error=<block error>, ...)`.
+
+The registry can map contract IDs to published contract artifacts:
+
+```json
+{
+  "contracts": [
+    {
+      "contract_id": "finance-policy",
+      "contract_version": "1.0.0",
+      "contract_hash": "sha256:...",
+      "path": "finance-policy-1.0.0.contract.json"
+    }
+  ]
+}
+```
+
+Runtime execution is intentionally small: registry lookup, load the published contract, install the Guard context, execute the guarded function, then allow or block.
+
+You can also bind runtime context once and omit it from each execution:
+
+```python
+runtime = GovernedRuntime(registry_path="contracts/index.json")
+runtime.install_actor({"id": "user-1", "type": "human", "role": "manager"})
+runtime.bind_contract("finance-policy@1.0.0")
+
+result = runtime.execute(
+    fn=transfer,
+    args=(1250000,),
+    raise_on_block=False,
+)
+```
+
+Per-call `actor` and versioned `contract_id` values still work and override the bound context for that call.
+
+## Replay Admissibility
+
+Replay systems can evaluate approval evidence without executing the governed function:
+
+```python
+from waveframe_guard import evaluate_admissibility
+
+decision = evaluate_admissibility(contract, execution_state)
+```
+
+The returned decision includes `allowed`, `reason`, `missing_approvals`, and a governed decision trace.
+
+For proposal-bound execution, pass a normalized proposal directly:
+
+```python
+result = runtime.execute_proposal(
+    proposal,
+    raise_on_block=False,
+)
+```
+
+`execute_proposal` evaluates the proposal against the bound or supplied contract and returns the same `GovernedExecutionResult` shape.
+
+Each runtime execution also emits a structured SDK-local audit event. Events are kept in memory on the runtime and attached to non-raising results:
+
+```python
+result = runtime.execute(
+    fn=transfer,
+    args=(1250000,),
+    raise_on_block=False,
+)
+
+print(result.event)
+print(runtime.last_event)
+print(runtime.audit_events)
+```
+
+Example event:
+
+```python
+{
+    "event_type": "governed_execution",
+    "execution_type": "function",
+    "allowed": False,
+    "authority_ref": "finance-policy@1.0.0",
+    "reason": "required role not satisfied: manager",
+    "error": "Execution blocked: required role not satisfied: manager",
+    "contract_id": "finance-policy",
+    "contract_version": "1.0.0",
+    "contract_hash": "...",
+    "actor": {"id": "user-1", "type": "human", "role": "intern"},
+    "target": "transfer",
+    "timestamp": "2026-05-12T12:00:00+00:00",
+}
+```
+
+To append events locally as JSON lines:
+
+```python
+runtime = GovernedRuntime(
+    registry_path="contracts/index.json",
+    audit_path="runtime-audit.jsonl",
+)
+```
+
+## What Waveframe Guard Does
+
+- Intercepts function execution
+- Loads published contract artifacts
+- Evaluates governance rules before execution
+- Blocks invalid actions deterministically
+- Continues enforcement even if Cloud is unavailable
+
+## Local vs Cloud
+
+| Mode | Behavior |
+| --- | --- |
+| Local | Fast, local enforcement |
+| Cloud | Policy sync, audit, and attestation |
+
+Guard enforces locally. Cloud provides authority, audit, and verification.
+
+## Fail Modes
+
+| Mode | Behavior |
+| --- | --- |
+| `cache` (default) | Use cached policy if Cloud is unavailable |
+| `closed` | Block if Cloud is unavailable and no cached policy exists |
+| `open` | Allow execution if policy is unavailable and mark the decision unverified |
+
+## Install
+
+```bash
+pip install waveframe-guard cricore-contract-compiler cricore-proposal-normalizer
+```
+
+## Live Demo
+
+```bash
+python examples/live_enforcement_demo.py
+```
+
+The demo shows:
+
+- an intern blocked by policy
+- a manager allowed by policy
+- cached local enforcement during a simulated Cloud outage
+
+## Published Contracts
+
+Guard runtime consumes published governance authority artifacts:
+
+```python
+from pathlib import Path
+
+install_guard(
+    actor={"id": "user-1", "type": "human", "role": "manager"},
+    contract_path=Path("contracts") / "finance-policy-1.0.0.contract.json"
+)
+```
+
+Inline policy dictionaries are authored and compiled before runtime. Guard loads the compiled contract artifact and enforces against it locally.
+
+Guard also records contract metadata in runtime context for audit and telemetry:
+
+```python
+{
+    "contract_id": "finance-policy",
+    "contract_version": "1.0.0",
+    "contract_hash": "..."
+}
+```
+
+## Why This Exists
+
+Most AI systems can suggest, warn, or log.
+
+Waveframe Guard is the layer that can **stop execution**.
+
+## Architecture Note
+
+The Waveframe Guard SDK operates independently and does not require Cloud components to enforce governance locally.
+
+The cloud directory contains experimental Cloud control plane components and is not required for SDK operation.
+
+
+
+
+====================================================
+REPO: Waveframe-Labs/CRI-CORE
+
+pypi: pip install cricore
+
+VERSION: V0.13.0
+
+README:
+---
+title: "CRI-CORE — Deterministic Enforcement Kernel"
+filetype: "documentation"
+type: "repository-overview"
+domain: "enforcement"
+version: "0.13.0"
+doi: "10.5281/zenodo.19080238"
+status: "Active"
+created: "2026-02-19"
+updated: "2026-05-03"
+
+author:
+  name: "Shawn C. Wright"
+  email: "swright@waveframelabs.org"
+  orcid: "https://orcid.org/0009-0006-6043-9295"
+
+maintainer:
+  name: "Waveframe Labs"
+  url: "https://waveframelabs.org"
+
+license: "Apache-2.0"
+
+copyright:
+  holder: "Waveframe Labs"
+  year: "2026"
+
+ai_assisted: "partial"
+
+dependencies: []
+
+anchors:
+  - "CRI-CORE v0.13.0"
+  - "Deterministic Enforcement Kernel"
+  - "Execution Boundary Enforcement"
+---
+
+# CRI-CORE — Execution Boundary Enforcement Kernel
+
+CRI-CORE is a deterministic enforcement engine that decides whether an action is allowed to execute.
+
+It does not generate actions.
+It does not manage workflows.
+It does not store state.
+
+It enforces one thing:
+
+> Whether a proposed action is admissible at the moment of execution.
+
+---
+
+## Core Concept
+
+All actions must pass through a single evaluation boundary:
+
+```
+
+
+
+INPUT:
+
+
+
+\* compiled\_contract
+
+\* proposal
+
+\* run\_context
+
+
+
+OUTPUT:
+
+
+
+\* commit\_allowed (True / False)
+
+\* stage\_results (full trace of evaluation)
+
+
+
+````
+
+If `commit\_allowed` is `False`, the action must not execute.
+
+---
+
+## Usage
+
+```python
+
+from cricore.api import evaluate\_structured
+
+
+
+result = evaluate\_structured(
+
+&#x20;   proposal=proposal,
+
+&#x20;   compiled\_contract=compiled\_contract,
+
+&#x20;   run\_context=run\_context
+
+)
+
+
+
+if result.commit\_allowed:
+
+&#x20;   execute\_action()
+
+else:
+
+&#x20;   block\_action()
+
+````
+
+---
+
+## Execution Model
+
+CRI-CORE evaluates proposals through a fixed pipeline:
+
+1. Structure
+2. Contract binding
+3. Independence (role separation)
+4. Integrity (context validation)
+5. Publication
+6. Final commit decision
+
+Each stage produces a deterministic result.
+
+---
+
+## Enforcement Guarantees
+
+### 1. Contract Identity
+
+The proposal must reference the exact contract used for evaluation.
+
+```text
+
+proposal.contract.hash == compiled\_contract.contract\_hash
+
+```
+
+Mismatch results in a blocked decision.
+
+---
+
+### 2. Proposal Immutability
+
+The evaluation process does not modify the proposal.
+
+All decisions are based on the caller’s original input.
+
+---
+
+### 3. Explicit Execution Mode
+
+Execution mode is never silently downgraded.
+
+```
+
+function argument > run\_context\["mode"] > "local"
+
+```
+
+---
+
+### 4. Deterministic Outputs
+
+Identical inputs produce identical results.
+
+Payload generation is byte-stable across runs.
+
+---
+
+### 5. Full Decision Trace
+
+Every evaluation returns a complete stage-by-stage trace.
+
+No hidden logic.
+
+---
+
+## Execution Modes
+
+### Local (default)
+
+* advisory enforcement
+* missing integrity/publication does not block
+* emits warnings
+
+### Strict
+
+* full enforcement
+* all required conditions must pass
+* no soft failures
+
+---
+
+## Non-Goals
+
+CRI-CORE does not:
+
+* execute actions
+* manage identity systems
+* persist logs
+* provide audit guarantees
+
+Those belong to higher layers (e.g., Waveframe Guard / Cloud).
+
+---
+
+## Status
+
+Structured evaluation pipeline is stable.
+
+Legacy filesystem-based execution is deprecated and retained only for reference.
+
+---
+
+## License
+
+Apache 2.0
+
+---
+
+<div align="center">
+  <sub>© 2026 Waveframe Labs — Independent Open-Science Research Entity</sub>
+</div>
+
+
+
+===================================================
+REPO: Waveframe-Labs/Governance-Ledger
+
+pypi: pip install governance-ledger
+
+VERSION: 
+Governance-Ledger v0.2.0
+
+README:
+---
+title: "Governance-Ledger"
+document_type: "overview"
+system: "Governance-Ledger"
+component: "core"
+version: "0.2.0"
+status: "draft"
+
+created: "2026-05-08"
+updated: "2026-05-17"
+
+authors:
+  - "Waveframe Labs"
+
+maintainers:
+  - "Waveframe Labs"
+
+license: "Apache-2.0"
+
+repository: "https://github.com/Waveframe-Labs/Governance-Ledger"
+
+summary: >
+  Governance-Ledger is governance compiler and semantic validation
+  infrastructure for deterministic governance operationalization.
+---
+
+# Governance-Ledger
+
+Governance-Ledger turns governed source text into deterministic, reviewable, publishable governance authority. It is best understood as **Governance Compiler + Semantic Validation Infrastructure**.
+
+Ledger is not an AI policy interpreter, workflow automation layer, orchestration engine, or runtime execution system. It does not guess meaning from policy language. It normalizes supported governance statements, emits semantic diagnostics for unsafe or ambiguous structure, gates publication, preserves lineage, and makes governance authority replayable.
+
+## What It Provides
+
+- Governance normalization from source text into canonical governance statements.
+- Semantic diagnostics for ambiguous, conflicting, incomplete, or unsafe authority.
+- Governance compilation reports with coverage, diagnostics, statement traces, and report hashes.
+- Publication gating so governance authority cannot be published when blocking diagnostics are present.
+- Provenance chains from source governance to compilation reports to published authority contracts.
+- Publication manifests and contract registries with integrity hashes.
+- Lineage verification for authority artifacts.
+- Replay tooling for compilation and admissibility evidence.
+- Deterministic snapshots, rollback artifacts, diffs, and review lifecycle state.
+- Canonical schemas for generated governance, diagnostics, replay, publication, review, registry, and snapshot artifacts.
+
+## Why This Exists
+
+Governance used by runtime systems must be deterministic, inspectable, and reproducible. Human governance language can enter the system, but publication authority should only come from normalized statements, explicit diagnostics, approved reviews, canonical compilation reports, and traceable provenance.
+
+Governance-Ledger exists to make that path auditable:
+
+```text
+Governance Source
+  -> Normalized Statements
+  -> Semantic Diagnostics
+  -> Governance Compilation Report
+  -> Human Review and Approval
+  -> Published Authority Contract
+  -> Manifest, Registry, Snapshot
+  -> Lineage Verification and Replay
+```
+
+## Core Concepts
+
+**Governance normalization**
+
+Ledger classifies governance statements and converts supported language into canonical policy structures. Unsupported or ambiguous language remains visible as diagnostics; it is not silently converted into executable authority.
+
+**Semantic diagnostics**
+
+Diagnostics identify governance risks such as missing authority, overlapping thresholds, duplicate roles, weak normalization coverage, and publication-blocking compiler issues. Diagnostics are structured artifacts with stable codes, severity, domains, and publication impact.
+
+**Governance compilation reports**
+
+Compilation reports bind source governance identity, normalized statement traces, coverage metrics, diagnostics, compiler summaries, and a deterministic `report_hash`. They are evidence objects, not log output.
+
+**Publication gating**
+
+Publishing requires an approved review and generated policy that passes compiler-ingestion validation. Blocking diagnostics prevent publication. Published contract, manifest, registry, deployed review, and snapshot artifacts are written as one transaction.
+
+**Lineage verification**
+
+Published authority contracts include `governance_authority_lineage.v1` linking the authority to source governance and compilation report hashes. Ledger can verify that lineage independently.
+
+**Replayability**
+
+Replay tooling reproduces compilation evidence from source governance and can replay admissibility decisions against authority and execution state. Replay failures produce diagnostics rather than silent disagreement.
+
+**Deterministic governance operationalization**
+
+Ledger records governance state transitions and publication artifacts with deterministic identifiers, hashes, normalized paths, immutable publication outputs, and rollback-capable snapshots.
+
+## What It Is Not
+
+Governance-Ledger is not:
+
+- AI policy interpretation.
+- Legal advice or legal reasoning.
+- A workflow automation product.
+- An orchestration engine.
+- A runtime mutation executor.
+- A replacement for CRI-CORE Contract Compiler semantics.
+- A replacement for Waveframe Guard runtime enforcement.
+- A system that infers unsupported governance meaning.
+
+## Install
+
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install governance-ledger
+```
+
+Ledger relies on installed package contracts for integration behavior:
+
+- `cricore-contract-compiler>=0.3.0`
+- `waveframe-guard>=0.5.0`
+
+Local checkout path resolution is not part of production behavior.
+
+## Command Workflow
+
+Generate normalized governance drafts and validation artifacts:
+
+```powershell
+governance-ledger run policies/
+```
+
+Check publication readiness:
+
+```powershell
+governance-ledger check generated/
+```
+
+Approve a reviewed governance artifact:
+
+```powershell
+governance-ledger approve reviews/finance_policy.review.json --actor governance-team
+```
+
+Publish approved governance authority:
+
+```powershell
+governance-ledger publish reviews/finance_policy.review.json
+```
+
+Inspect published authority:
+
+```powershell
+governance-ledger list contracts
+governance-ledger show contracts/finance-policy-0.1.0.contract.json
+```
+
+Verify authority lineage:
+
+```powershell
+governance-ledger verify-lineage --contract contracts/finance-policy-0.1.0.contract.json
+```
+
+Replay source governance into compilation evidence:
+
+```powershell
+governance-ledger replay-authority `
+  --source policies/finance_policy.txt `
+  --report reviews/finance_policy.deployed.review.json `
+  --contract contracts/finance-policy-0.1.0.contract.json
+```
+
+Replay execution admissibility:
+
+```powershell
+governance-ledger replay-execution `
+  --contract contracts/finance-policy-0.1.0.contract.json `
+  --execution-state execution_state.json
+```
+
+## Artifact Layout
+
+```text
+policies/      source governance text
+generated/     normalized policy drafts and validation artifacts
+reviews/       review, approval, compilation, and deployment evidence
+contracts/     immutable published authority contracts, manifests, registry
+snapshots/     deterministic governance state snapshots
+schemas/       canonical JSON schemas
+```
+
+Publication produces:
+
+- `contracts/<contract-id>-<version>.contract.json`
+- `contracts/<policy>.publication_manifest.json`
+- `contracts/index.json`
+- `reviews/<policy>.deployed.review.json`
+- `snapshots/<snapshot-id>.json`
+
+Publication artifacts use normalized POSIX-style paths such as `contracts/finance-policy-0.1.0.contract.json`, even on Windows.
+
+## Example Normalization
+
+Source governance:
+
+```text
+Transfers above $1M require manager approval.
+Requester and approver must be separate.
+All transfer approvals must be recorded for audit purposes.
+```
+
+Normalized policy excerpt:
+
+```json
+{
+  "contract_id": "finance-policy",
+  "contract_version": "0.1.0",
+  "authority": {
+    "required_roles": ["manager"],
+    "separation_of_duties": true
+  },
+  "approvals": {
+    "required": [
+      {
+        "role": "manager",
+        "condition": {
+          "field": "amount",
+          "operator": ">",
+          "value": 1000000
+        }
+      }
+    ],
+    "thresholds": [
+      {
+        "field": "amount",
+        "operator": ">",
+        "value": 1000000,
+        "requires_role": "manager"
+      }
+    ]
+  },
+  "artifacts": {
+    "required": ["approval_audit_record"]
+  }
+}
+```
+
+## Diagnostics and Gates
+
+Validation artifacts and review artifacts include structured warnings and compiler diagnostics. A diagnostic may be informational, warning-level, or publication-blocking.
+
+Examples of publication-blocking conditions:
+
+- Ambiguous authority, such as approval without a named approving role.
+- Low governance normalization coverage.
+- Overlapping approval thresholds.
+- Duplicate or conflicting approval requirements.
+- Compiler schema violations.
+- Missing or mismatched provenance lineage.
+
+`governance-ledger check generated/` exits non-zero when validation contains error-severity diagnostics.
+
+## Lineage and Integrity
+
+Published authority contracts include lineage:
+
+```json
+{
+  "lineage": {
+    "schema_version": "governance_authority_lineage.v1",
+    "source_hash": "sha256:...",
+    "compilation_report_hash": "sha256:...",
+    "review_id": "review-finance_policy"
+  }
+}
+```
+
+Publication manifests and registries carry source and report hashes so consumers can verify the authority chain without trusting local build state.
+
+## Schemas
+
+Canonical schemas live in [schemas/](schemas/), including:
+
+- Governance source identity.
+- Governance diagnostics.
+- Governance compilation reports.
+- Replay authority requests.
+- Replay execution requests.
+- Publication manifests.
+- Contract registries.
+- Reviews.
+- Snapshots.
+
+## Documentation
+
+- [CHANGELOG.md](CHANGELOG.md)
+- [GOVERNANCE_OBJECT_MODEL.md](GOVERNANCE_OBJECT_MODEL.md)
+- [LIFECYCLE.md](LIFECYCLE.md)
+- [PROVENANCE.md](PROVENANCE.md)
+- [NON_GOALS.md](NON_GOALS.md)
+- [schemas/](schemas/)
+
+
+=================================================
+REPO: Waveframe-Labs/proposal-normalizer
+
+pypi: pip install cricore-proposal-normalizer
+
+VERSION: V0.2.0
+
+README:
+---
+title: "Proposal Normalizer - Canonical Proposal Assembly Layer"
+filetype: "documentation"
+type: "repository-overview"
+domain: "governance-integration"
+version: "0.2.0"
+doi: "TBD"
+status: "Active"
+created: "2026-03-16"
+updated: "2026-05-03"
+
+author:
+  name: "Shawn C. Wright"
+  email: "swright@waveframelabs.org"
+  orcid: "https://orcid.org/0009-0006-6043-9295"
+
+maintainer:
+  name: "Waveframe Labs"
+  url: "https://waveframelabs.org"
+
+license: "Apache-2.0"
+
+copyright:
+  holder: "Waveframe Labs"
+  year: "2026"
+
+ai_assisted: "partial"
+
+dependencies:
+  - "https://waveframelabs.org/schemas/cricore-proposal-0.2.0.json"
+
+anchors:
+  - "Proposal-Normalizer-v0.2.0"
+  - "Canonical-Proposal-Assembly-Layer"
+---
+
+# Proposal Normalizer
+
+Strict proposal assembly layer for canonical CRI-CORE proposal objects.
+
+The normalizer binds caller-supplied proposal references into one envelope. It validates boundary shape, computes artifact file hashes, and preserves governance truth supplied by upstream systems.
+
+## Installation
+
+Install from PyPI:
+
+```bash
+
+pip install cricore-proposal-normalizer
+
+```
+
+Requires Python 3.10+.
+
+## Purpose
+
+Real workflows produce:
+
+- artifact files
+- actor identity declarations
+- mutation requests
+- compiled contract references
+
+CRI-CORE evaluates only a single canonical structure:
+
+```text
+
+canonical proposal object
+
+```
+
+The proposal normalizer bridges this boundary.
+
+```text
+
+artifacts + actor + mutation + contract
+
+&#x20; -> proposal normalizer
+
+&#x20; -> canonical proposal object
+
+&#x20; -> CRI-CORE enforcement
+
+```
+
+## Responsibilities
+
+The normalizer performs strict, deterministic binding:
+
+1. **Artifact Binding**
+
+   Verifies each supplied artifact path exists and records its SHA256 hash.
+
+2. **Mutation Binding**
+
+   Requires exactly the mutation boundary shape used by CRI-CORE:
+
+   ```python
+   {
+       "domain": str,
+       "resource": str,
+       "action": str,
+   }
+   ```
+
+3. **Contract Binding**
+
+   Requires a caller-supplied contract reference and preserves it without computing, coercing, or inferring contract truth:
+
+   ```python
+   {
+       "id": "...",
+       "version": "...",
+       "hash": "...",
+   }
+   ```
+
+4. **Actor Binding**
+
+   Requires explicit actor identity, type, and role:
+
+   ```python
+   {
+       "id": str,
+       "type": str,
+       "role": str,
+   }
+   ```
+
+5. **Proposal Assembly**
+
+   Produces a canonical proposal object with no mutation after construction.
+
+## Proposal Shape
+
+```python
+
+{
+
+&#x20;   "proposal\_id": str,
+
+&#x20;   "timestamp": str,
+
+&#x20;   "actor": {
+
+&#x20;       "id": str,
+
+&#x20;       "type": str,
+
+&#x20;       "role": str,
+
+&#x20;   },
+
+&#x20;   "contract": {
+
+&#x20;       "id": "...",
+
+&#x20;       "version": "...",
+
+&#x20;       "hash": "...",
+
+&#x20;   },
+
+&#x20;   "requested\_mutation": {
+
+&#x20;       "domain": str,
+
+&#x20;       "resource": str,
+
+&#x20;       "action": str,
+
+&#x20;   },
+
+&#x20;   "artifacts": \[
+
+&#x20;       {
+
+&#x20;           "path": str,
+
+&#x20;           "sha256": str,
+
+&#x20;       }
+
+&#x20;   ],
+
+}
+
+```
+
+When supplied, `run\_context` is copied into the proposal envelope.
+
+## Design Constraints
+
+The normalizer is strict, not forgiving. Missing required contract, mutation, or actor fields raise `ValueError`.
+
+It does **not**:
+
+- compute contract hashes
+- infer contract identifiers or versions
+- infer actor roles
+- inject defaults
+- accept optional mutation ambiguity
+- interpret governance policy
+- enforce lifecycle rules
+- perform approvals
+- evaluate proposal correctness
+
+Those responsibilities belong to **CRI-CORE**.
+
+## Output
+
+The normalizer produces a canonical proposal envelope suitable for evaluation by the CRI-CORE enforcement pipeline.
+
+<div align="center">
+  <sub>Copyright 2026 Waveframe Labs - Independent Open-Science Research Entity</sub>
+</div>
+
+
+================================================
+REPO: Waveframe-Labs/cricore-contract-compiler
+
+pypi: pip install cricore-contract-compiler
+
+VERSION: V0.3.0
+
+README:
+---
+title: "CRI-CORE Contract Compiler - Repository Overview"
+filetype: "documentation"
+type: "overview"
+domain: "governance-tooling"
+version: "0.3.0"
+doi: "TBD-0.3.0"
+status: "Stable (Protocol-Aligned)"
+created: "2026-03-11"
+updated: "2026-05-03"
+
+author:
+  name: "Waveframe Labs"
+  email: "swright@waveframelabs.org"
+
+maintainer:
+  name: "Waveframe Labs"
+  url: "https://waveframelabs.org"
+
+license: "Apache-2.0"
+
+ai_assisted: "partial"
+---
+
+# CRI-CORE Contract Compiler
+
+The CRI-CORE Contract Compiler is a deterministic compiler for governance
+policies into CRI-CORE contract artifacts.
+
+It bridges governance design and runtime enforcement by converting a
+human-authored JSON policy into a stable, machine-readable compiled contract.
+The compiled contract is a required input to CRI-CORE and defines the
+governance constraints evaluated at the execution boundary.
+
+The compiler does not execute governance logic, make runtime decisions, or
+enforce policy. Its role is limited to producing reproducible contract
+artifacts with a stable structure and deterministic hash.
+
+## Installation
+
+Install from PyPI:
+
+```bash
+
+pip install cricore-contract-compiler
+
+```
+
+Requires Python 3.9 or later.
+
+## CLI Usage
+
+Compile a governance policy into a compiled contract artifact:
+
+```bash
+
+cricore-compile-policy policy.json compiled\_contract.json
+
+```
+
+The output is a deterministic JSON artifact that includes compiler metadata,
+compiled governance requirements, invariants, and a contract hash.
+
+## Python Usage
+
+The compiler can also be used programmatically:
+
+```python
+
+from compiler.compile\_policy import compile\_policy
+
+
+
+policy = {
+
+&#x20;   "contract\_id": "finance-policy",
+
+&#x20;   "contract\_version": "0.3.0",
+
+&#x20;   "authority": {
+
+&#x20;       "required\_roles": \["proposer", "reviewer"]
+
+&#x20;   },
+
+&#x20;   "approvals": {
+
+&#x20;       "thresholds": \[
+
+&#x20;           {
+
+&#x20;               "field": "amount",
+
+&#x20;               "operator": ">",
+
+&#x20;               "value": 1000,
+
+&#x20;               "requires\_role": "approver"
+
+&#x20;           }
+
+&#x20;       ]
+
+&#x20;   },
+
+&#x20;   "artifacts": {
+
+&#x20;       "required": \["proposal", "approval"]
+
+&#x20;   },
+
+&#x20;   "stages": {
+
+&#x20;       "allowed\_transitions": \[
+
+&#x20;           {"from": "proposed", "to": "approved"}
+
+&#x20;       ]
+
+&#x20;   },
+
+&#x20;   "constraints": \[
+
+&#x20;       {
+
+&#x20;           "type": "separation\_of\_duties",
+
+&#x20;           "roles": \["proposer", "reviewer"]
+
+&#x20;       }
+
+&#x20;   ]
+
+}
+
+
+
+compiled\_contract = compile\_policy(policy)
+
+```
+
+## Policy Input
+
+Policies are JSON objects with a required contract identity:
+
+```json
+
+{
+
+&#x20; "contract\_id": "finance-policy",
+
+&#x20; "contract\_version": "0.3.0"
+
+}
+
+```
+
+The compiler currently recognizes these optional sections:
+
+- `authority.required\_roles`: list of role names required by the contract.
+- `approvals.thresholds`: list of threshold-based approval requirements.
+- `artifacts.required`: list of required governance artifact names.
+- `stages.allowed\_transitions`: list of allowed lifecycle transition objects.
+- `constraints`: list of explicit structural constraints.
+
+`contract\_version` must follow semantic version format: `X.Y.Z`.
+
+## Compiled Output
+
+The compiled contract always includes these top-level sections:
+
+```json
+
+{
+
+&#x20; "contract\_id": "finance-policy",
+
+&#x20; "contract\_version": "0.3.0",
+
+&#x20; "authority\_requirements": {},
+
+&#x20; "approval\_requirements": {},
+
+&#x20; "artifact\_requirements": {},
+
+&#x20; "stage\_requirements": {},
+
+&#x20; "invariants": {},
+
+&#x20; "contract\_hash": "..."
+
+}
+
+```
+
+The required core identity fields of every compiled contract are:
+
+- `contract\_id`
+- `contract\_version`
+- `contract\_hash`
+
+These are the only identity fields emitted by the compiler. The compiler does
+not emit aliases such as `id` or `version`.
+
+The compiler maps policy fields into compiled contract fields as follows:
+
+- `policy.authority.required\_roles` becomes `authority\_requirements.required\_roles`.
+- `policy.approvals.thresholds` becomes `approval\_requirements.thresholds`.
+- `policy.artifacts.required` becomes `artifact\_requirements.required\_artifacts`.
+- `policy.stages.allowed\_transitions` becomes `stage\_requirements.allowed\_transitions`.
+- `constraints\[type="separation\_of\_duties"]` becomes `invariants.separation\_of\_duties`.
+
+Empty compiled sections remain present as empty objects to keep the contract
+shape stable for downstream validation and hashing.
+
+## Contract Identity Guarantee
+
+The compiler produces a deterministic contract identity composed of:
+
+- `contract\_id`
+- `contract\_version`
+- `contract\_hash`
+
+The `contract\_hash` is computed from the canonical compiled contract structure
+using sorted JSON serialization.
+
+For identical policy inputs, the compiler guarantees identical contract hashes.
+
+This identity is used by downstream systems (e.g., CRI-CORE) to verify that a
+proposal references the exact contract used for evaluation. Mismatches result
+in enforcement failure.
+
+## Contract Pass-Through Requirement
+
+Compiled contracts must be passed through downstream systems without
+modification.
+
+In particular:
+
+- Contract identity fields (`contract\_id`, `contract\_version`, `contract\_hash`)
+  must not be altered.
+- Downstream components must not recompute or overwrite the contract hash.
+
+CRI-CORE enforces this at evaluation time. Any mismatch between a proposal's
+declared contract hash and the compiled contract hash will result in a blocked
+decision.
+
+## Determinism
+
+Compiled contracts are hashed with SHA-256 after canonicalizing the compiled
+structure using sorted JSON keys.
+
+This ensures:
+
+- identical policy inputs produce identical compiled outputs
+- identical compiled outputs produce identical contract hashes
+
+This determinism is required for reproducible enforcement and contract identity
+verification in CRI-CORE.
+
+Written artifacts also include `\_compiler` metadata:
+
+```json
+
+{
+
+&#x20; "\_compiler": {
+
+&#x20;   "tool": "cricore-contract-compiler",
+
+&#x20;   "version": "0.2.0",
+
+&#x20;   "contract\_hash": "..."
+
+&#x20; }
+
+}
+
+```
+
+## Validation
+
+The compiler performs minimal compile-time validation for:
+
+- Policy root type.
+- Required `contract\_id`.
+- Required semantic `contract\_version`.
+- `authority.required\_roles` as a list of strings.
+- `approvals.thresholds` as a list of threshold objects.
+- `artifacts.required` as a list of strings.
+- `stages.allowed\_transitions` as a list of transition objects.
+- Separation-of-duties constraints with at least two roles.
+
+The JSON schema in `schema/policy.schema.json` defines the supported policy
+surface. Runtime enforcement remains outside this package.
+
+## Position in the Governance Pipeline
+
+```text
+
+Governance Policy
+
+&#x20;       |
+
+Contract Compiler
+
+&#x20;       |
+
+Compiled Contract
+
+&#x20;       |
+
+Proposal Normalizer
+
+&#x20;       |
+
+CRI-CORE Kernel
+
+&#x20;       |
+
+Commit Decision
+
+```
+
+The compiler sits upstream of CRI-CORE runtime enforcement. It produces the
+structural contract artifact that downstream systems can evaluate.
+
+## Role in the Execution Protocol
+
+The compiler is responsible for defining governance constraints in a
+deterministic, machine-readable form.
+
+Within the CRI-CORE execution model:
+
+- The compiler defines contract identity and constraints
+- The proposal normalizer constructs canonical proposals referencing the contract
+- CRI-CORE evaluates whether the proposed action is admissible
+
+The compiler does not participate in runtime evaluation.
+It defines the contract that runtime enforcement depends on.
+
+## Non-Responsibilities
+
+The compiler does not:
+
+- Execute governance validation.
+- Interpret policy semantics beyond structural compilation.
+- Perform runtime decision logic.
+- Enforce governance rules.
+- Modify or interpret proposal data at runtime.
+
+All runtime enforcement is handled by CRI-CORE or other downstream systems.
+
+## Forward Compatibility
+
+Compiled contracts may include additional sections beyond those currently
+enforced by CRI-CORE (e.g., approval requirements, artifact requirements,
+stage constraints, invariants).
+
+These fields are preserved for forward compatibility and may be enforced by
+future versions of the execution pipeline.
+
+## Project Status
+
+Version `0.3.0` aligns the compiler with the CRI-CORE structured execution model,
+ensuring deterministic contract identity, stable output structure, and compatibility
+with downstream proposal normalization and enforcement.
+
+## License
+
+Apache-2.0
+
+Copyright 2026 Waveframe Labs.
+
+
+
+=================================================
+
+REPO: Waveframe-Labs/Waveframe-Cloud
+
+VERSION: N/A (PRIVATE)
+
+README:
+# Waveframe Cloud
+
+Waveframe Cloud is the authority distribution and evidence durability layer for Waveframe. It serves registry metadata, immutable authority contract artifacts, audit ingestion, and receipt lookup.
+
+## Architectural Constraints
+
+Cloud does not evaluate admissibility decisions.
+
+Cloud does not normalize governance policy.
+
+Cloud does not orchestrate workflows.
+
+Cloud coordinates authority distribution and durable evidence persistence only.
+
+## API Surface
+
+- `GET /v1/registry/index.json` returns the normalized contract registry.
+- `GET /v1/contracts/{contract_id}/{contract_version}` returns an immutable contract artifact after registry and artifact hash validation.
+- `POST /v1/audit-events` accepts a `governed_execution.v1` audit event and returns a durable receipt.
+- `GET /v1/audit-events/{event_id}` returns the stored receipt metadata for an accepted event.
+
+The unversioned routes remain available as compatibility aliases for the current `v1` API. Responses include `X-API-Version: v1`.
+
+When an API key directory is configured, requests use `X-API-Key` and `X-Organization-ID`. Registry reads, contract retrieval, audit ingestion, and receipt lookup are scoped to the request organization.
+
+## Durable State
+
+Cloud durable state uses a fixed bucket layout:
+
+```text
+data/
+  registry/
+  contracts/
+  audits/
+  receipts/
+  cache/
+```
+
+Runtime-generated registry objects, contracts, audits, receipts, and cache entries are ignored by git by default. Deliberate examples belong in fixture or example paths, not live durability buckets.
+
+## Cloud-Owned Schemas
+
+Cloud owns the canonical semantics for:
+
+- `schemas/contract_registry.v1.json`
+- `schemas/contract_registry_entry.v1.json`
+- `schemas/audit_ingestion_request.v1.json`
+- `schemas/audit_ingestion_response.v1.json`
+- `schemas/audit_receipt.v1.json`
+- `schemas/organization.v1.json`
+- `schemas/api_key.v1.json`
+
+Registry and audit evidence discipline are defined in `docs/CLOUD_SEMANTICS.md`. The conceptual API key and tenancy model is defined in `docs/API_KEY_ARCHITECTURE.md`; it is not an auth implementation.
+
+## Tests
+
+Cloud-specific behavior is covered by focused pytest modules:
+
+- `tests/test_registry_integrity.py`
+- `tests/test_audit_ingestion.py`
+- `tests/test_receipt_integrity.py`
+- `tests/test_registry_hash_validation.py`
+- `tests/test_contract_retrieval_integrity.py`
+- `tests/test_audit_duplicate_rejection.py`
+- `tests/test_cloud_api_versioning.py`
