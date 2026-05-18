@@ -4,78 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Examples · Waveframe Labs</title>
+  <title>Execution Scenarios - Waveframe Labs</title>
 
-  <meta name="description" content="Real examples of how AI-generated actions are evaluated and either allowed or blocked before execution." />
+  <meta name="description" content="Concrete governed execution scenarios: finance transfers, CI/CD deployments, permission changes, approval replay, multi-role approval, and contract mismatch blocking." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/case-studies.html" />
 
 <style>
-:root{
-  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:18px;
-}
+:root{--bg:#0b0c10;--card:#14161b;--panel:#0f1116;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff7a18;--green:#3ddc84;--red:#ff5b5b;--maxw:1080px;--rad:8px}
 *{box-sizing:border-box}
-html,body{
-  margin:0; padding:0;
-  background:var(--bg); color:var(--ink);
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-}
-a{color:inherit;text-decoration:none;}
-a:hover{color:var(--accent);}
-
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:20px 20px 72px}
-
-/* Header (aligned with index) */
-.hdr{
-  padding:18px 24px;
-  border-bottom:1px solid var(--edge);
-  background:rgba(20,22,27,.88);
-  backdrop-filter:blur(12px);
-  display:flex; justify-content:space-between; align-items:center;
-  position:sticky; top:0; z-index:100; margin-bottom:28px;
-}
-.brand{display:flex;align-items:center;gap:12px;}
-.brand-text{font-weight:700;}
-
-.topnav{display:flex;gap:24px;font-size:.9rem;}
-.topnav a{opacity:.7;}
-.active-link{opacity:1!important;color:var(--accent)!important;}
-
-.hero{
-  margin-bottom:22px;
-  padding:22px;
-  border:1px solid var(--edge);
-  border-radius:18px;
-  background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--edge);
-  border-radius:18px;
-  padding:18px;
-  margin-top:16px;
-}
-
-h1{margin:0 0 .6rem;}
-h2{margin-top:24px;}
-p{color:var(--muted); line-height:1.6;}
-
-.kicker{
-  color:var(--accent);
-  font-size:.75rem;
-  text-transform:uppercase;
-}
-
-.result-allow{color:#4cd964;}
-.result-block{color:#ff3b30;}
-
-footer{
-  margin-top:40px;
-  color:var(--muted);
-  font-size:.9rem;
-}
+.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(20,22,27,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px}.brand-text{font-weight:700}.topnav{display:flex;gap:24px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}
+.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0))}
+.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}
+h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:34px 0 10px}h3{margin:0 0 8px}
+p{color:var(--muted);line-height:1.65}.lede{font-size:1.1rem;color:var(--soft);max-width:780px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.scenario{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px}.scenario p:last-child{margin-bottom:0}
+.label{display:inline-block;border:1px solid var(--edge);background:var(--panel);border-radius:999px;padding:5px 9px;color:var(--soft);font-size:.78rem;font-weight:800;margin-bottom:12px}
+.allow{color:var(--green);font-weight:850}.block{color:var(--red);font-weight:850}.details{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:12px;margin:12px 0}
+.details strong{color:var(--ink)}.cta{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:18px}
+footer{margin-top:40px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 
@@ -84,7 +36,7 @@ footer{
 
 <header class="hdr">
   <div class="brand">
-    <img src="waveframe-logo-mark.png" width="28">
+    <img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark">
     <div class="brand-text">Waveframe Labs</div>
   </div>
   <nav class="topnav">
@@ -96,88 +48,83 @@ footer{
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <span class="kicker">Real Behavior</span>
-  <h1>Examples</h1>
-  <p>
-    These examples show what happens when AI-generated actions reach the execution boundary.
-  </p>
-  <p>
-    Each action is evaluated and either allowed to execute or blocked before it happens.
+  <span class="kicker">Governed Execution Scenarios</span>
+  <h1>Concrete actions. Deterministic outcomes.</h1>
+  <p class="lede">
+    These scenarios show the operational surface Waveframe is built for: money movement, production
+    deployment, privileged changes, approval replay, multi-role workflows, and contract integrity.
   </p>
 </section>
 
-<!-- EXAMPLE 1 -->
 <section>
-  <h2>Example: Budget Reallocation</h2>
+  <h2>Operational Scenarios</h2>
+  <div class="grid">
+    <article class="scenario">
+      <span class="label">Finance Transfer Governance</span>
+      <h3>High-value transfer by an unapproved actor</h3>
+      <p>Proposed action: transfer $1.25M from operating reserves to a vendor account.</p>
+      <div class="details"><strong>Evaluation:</strong> actor role is intern; contract requires manager approval and finance controller approval.</div>
+      <p class="block">Result: BLOCKED before execution</p>
+    </article>
 
-  <div class="card">
-    <p><strong>Proposed action:</strong></p>
-    <p>
-      AI suggests reallocating $2M from Marketing to Operations.
-    </p>
+    <article class="scenario">
+      <span class="label">CI/CD Deployment Enforcement</span>
+      <h3>Production deployment without release evidence</h3>
+      <p>Proposed action: deploy a production build from an AI-generated change set.</p>
+      <div class="details"><strong>Evaluation:</strong> missing test artifact, missing reviewer approval, and unsigned release manifest.</div>
+      <p class="block">Result: BLOCKED before deployment</p>
+    </article>
 
-    <p><strong>Declared roles:</strong></p>
-    <p class="muted">
-      Proposer (AI) · Responsible (Finance Manager) · Accountable (CFO)
-    </p>
+    <article class="scenario">
+      <span class="label">Privileged Permission Change</span>
+      <h3>Admin role escalation</h3>
+      <p>Proposed action: grant organization administrator rights to a service account.</p>
+      <div class="details"><strong>Evaluation:</strong> actor lacks authority for privileged identity mutation.</div>
+      <p class="block">Result: BLOCKED before permissions change</p>
+    </article>
 
-    <p><strong>Evaluation:</strong></p>
-    <p class="muted">
-      Required approval missing. Separation of duties violated.
-    </p>
+    <article class="scenario">
+      <span class="label">Approval Replay Blocking</span>
+      <h3>Old approval reused against a new mutation</h3>
+      <p>Proposed action: execute a modified transfer using an approval from a previous transfer.</p>
+      <div class="details"><strong>Evaluation:</strong> approval artifact does not bind to the current mutation hash.</div>
+      <p class="block">Result: BLOCKED for integrity violation</p>
+    </article>
 
-    <p><strong>Result:</strong></p>
-    <p class="result-block">✗ Blocked before execution</p>
-  </div>
+    <article class="scenario">
+      <span class="label">Multi-Role Approval Flow</span>
+      <h3>Required approvals satisfied</h3>
+      <p>Proposed action: reallocate a budget after manager, controller, and CFO approvals are bound to the proposal.</p>
+      <div class="details"><strong>Evaluation:</strong> required roles, artifacts, and contract identity checks pass.</div>
+      <p class="allow">Result: ALLOWED to execute</p>
+    </article>
 
-  <div class="card">
-    <p><strong>Same action (corrected):</strong></p>
-    <p>
-      CFO approval added. All required roles satisfied.
-    </p>
-
-    <p><strong>Result:</strong></p>
-    <p class="result-allow">✓ Allowed to execute</p>
+    <article class="scenario">
+      <span class="label">Contract Mismatch Blocking</span>
+      <h3>Proposal references the wrong authority</h3>
+      <p>Proposed action: run a production mutation with a proposal that declares an outdated contract hash.</p>
+      <div class="details"><strong>Evaluation:</strong> proposal contract hash does not match the compiled authority contract.</div>
+      <p class="block">Result: BLOCKED for contract identity mismatch</p>
+    </article>
   </div>
 </section>
 
-<!-- EXAMPLE 2 -->
-<section>
-  <h2>Example: Code Deployment</h2>
-
-  <div class="card">
-    <p><strong>Proposed action:</strong></p>
-    <p>
-      AI attempts to deploy production code.
-    </p>
-
-    <p><strong>Evaluation:</strong></p>
-    <p class="muted">
-      Missing validation artifacts and approval.
-    </p>
-
-    <p><strong>Result:</strong></p>
-    <p class="result-block">✗ Blocked before execution</p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section style="margin-top:28px;">
-  <h2>Try it</h2>
+<section class="cta">
+  <h2 style="margin-top:0;">What these scenarios have in common</h2>
   <p>
-    These examples are implemented using CRI-CORE.
+    The model can propose. A workflow can request. A service can prepare an action. But the action
+    reaches the production system only after the contract-bound execution boundary returns an allowed
+    decision.
   </p>
   <p>
-    <a href="tools.html" style="color:var(--accent); font-weight:600;">
-      View tools →
-    </a>
+    <a href="tools.html" style="color:var(--accent);font-weight:800;">View the tools that implement the boundary</a>
   </p>
 </section>
 
 <footer>
-  <span>© <span id="year"></span> Waveframe Labs</span>
+  <span>&copy; <span id="year"></span> Waveframe Labs</span>
+  <span>Concrete governed execution scenarios</span>
 </footer>
 
 </div>
@@ -185,6 +132,5 @@ footer{
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>

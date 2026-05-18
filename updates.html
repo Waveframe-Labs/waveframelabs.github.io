@@ -1,15 +1,15 @@
 <!--
 ---
-title: "Updates · Waveframe Labs"
+title: "Protocol Updates - Waveframe Labs"
 short_title: "Updates"
-version: "1.3.0"
+version: "2.0.0"
 status: "Active"
 type: "canonical-log"
 author: "Waveframe Labs"
 maintainer: "Waveframe Labs"
 license: "CC-BY-4.0"
 policy_version: "ARI-Metadata-3.0.2"
-description: "Release log for execution control tooling and supporting systems."
+description: "Release engineering and protocol evolution log for the Waveframe execution governance stack."
 ai_assisted: "partial"
 ---
 -->
@@ -20,84 +20,27 @@ ai_assisted: "partial"
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Updates · Waveframe Labs</title>
-  <meta name="description" content="Recent releases and progress across execution control tooling." />
+  <title>Protocol Updates - Waveframe Labs</title>
+  <meta name="description" content="Structured release notes for Waveframe Guard, CRI-CORE, contract compiler, proposal normalizer, Governance-Ledger, and Cloud." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/updates.html" />
 
 <style>
-:root{
-  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:12px;
-}
-*{box-sizing:border-box;}
-html,body{
-  margin:0; padding:0;
-  background:var(--bg); color:var(--ink);
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-}
-a{color:inherit;text-decoration:none;}
-a:hover{color:var(--accent);}
-
-.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
-
-.hdr{
-  padding:18px 24px;
-  border-bottom:1px solid var(--edge);
-  background:rgba(20,22,27,.88);
-  backdrop-filter:blur(12px);
-  display:flex; justify-content:space-between; align-items:center;
-  position:sticky; top:0; z-index:100; margin-bottom:28px;
-}
-.brand{display:flex;align-items:center;gap:12px;}
-.brand-text{font-size:1.2rem;font-weight:700;}
-
-.topnav{display:flex;gap:24px;font-size:.9rem;}
-.topnav a{opacity:.7;}
-.active-link{opacity:1!important;color:var(--accent)!important;}
-
-.kicker{
-  color:var(--accent);
-  font-size:.75rem;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  margin-bottom:8px;
-  display:block;
-}
-h2{margin:0 0 10px;font-size:1.5rem;}
-h3{margin:0 0 6px;font-size:1.15rem;}
-p{line-height:1.65;color:var(--muted);}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--edge);
-  border-radius:var(--rad);
-  margin-bottom:24px;
-}
-
-.update-head{
-  padding:20px 24px;
-  border-bottom:1px solid var(--edge);
-  background:linear-gradient(180deg,rgba(255,122,24,.18),rgba(255,122,24,.05),rgba(0,0,0,0));
-}
-
-.update-body{padding:20px 24px 28px;}
-
-.meta{
-  color:var(--muted);
-  font-size:0.9rem;
-}
-
-footer{
-  margin-top:48px;
-  border-top:1px solid var(--edge);
-  padding-top:18px;
-  color:var(--muted);
-  font-size:.85rem;
-  display:flex;
-  justify-content:space-between;
-}
+:root{--bg:#0b0c10;--card:#14161b;--panel:#0f1116;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff7a18;--maxw:1080px;--rad:8px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}
+.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(20,22,27,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:24px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}
+.kicker{color:var(--accent);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;display:block}
+h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:0 0 10px;font-size:1.45rem}h3{margin:0 0 6px;font-size:1.15rem}
+p{line-height:1.65;color:var(--muted)}.hero{margin-bottom:28px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0))}.lede{font-size:1.1rem;color:var(--soft);max-width:780px}
+.release{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);margin-bottom:18px;overflow:hidden}.release-head{padding:18px 22px;border-bottom:1px solid var(--edge);background:var(--panel)}.release-body{padding:18px 22px 22px}
+.meta{color:var(--muted);font-size:.9rem}.tags{margin-top:10px}.tag{display:inline-block;border:1px solid rgba(255,122,24,.35);color:var(--accent);border-radius:999px;padding:4px 8px;font-size:.74rem;font-weight:800;margin-right:6px;margin-top:6px}
+ul{color:var(--muted);line-height:1.8}.field{display:grid;grid-template-columns:160px 1fr;gap:12px;border-top:1px solid var(--edge);padding-top:12px;margin-top:12px}.field strong{color:var(--ink)}
+footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.field{grid-template-columns:1fr}}
 </style>
 </head>
 
@@ -106,7 +49,7 @@ footer{
 
 <header class="hdr">
   <div class="brand">
-    <img src="waveframe-logo-mark.png" width="28">
+    <img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark">
     <div class="brand-text">Waveframe Labs</div>
   </div>
   <nav class="topnav">
@@ -118,121 +61,119 @@ footer{
   </nav>
 </header>
 
-<section style="margin-bottom:28px;">
-  <span class="kicker">Recent Work</span>
-  <h2>Updates</h2>
-  <p>
-    This log tracks what has been built and shipped.
-  </p>
-  <p>
-    Each update moves toward a single goal:
-    <strong>controlling whether AI-driven actions are allowed to execute.</strong>
+<section class="hero">
+  <span class="kicker">Release Engineering</span>
+  <h1>Protocol evolution log.</h1>
+  <p class="lede">
+    Updates are tracked as changes to execution-governance interfaces: authority publication,
+    contract identity, proposal shape, admissibility decisions, runtime enforcement, registry,
+    audit durability, and receipts.
   </p>
 </section>
 
-<!-- CRI-CORE -->
-<section class="card">
-  <div class="update-head">
-    <h3>CRI-CORE v0.11.0 — Execution Decision Stabilization</h3>
-    <div class="meta">2026-03-31 · Enforcement Kernel</div>
+<section>
+  <h2>Release Ledger</h2>
+</section>
+
+<section class="release">
+  <div class="release-head">
+    <h3>Waveframe Guard v0.5.0 - Runtime Enforcement Boundary</h3>
+    <div class="meta">2026-05-12 | Enforcement Layer</div>
+    <div class="tags"><span class="tag">runtime</span><span class="tag">guard</span><span class="tag">audit-event</span></div>
   </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Stabilized evaluation pipeline and entrypoint.</li>
-      <li>Reinforced deterministic allow / block behavior.</li>
-      <li>Aligned kernel with structured proposal and contract inputs.</li>
+  <div class="release-body">
+    <ul>
+      <li>Introduced installable Guard runtime for local execution enforcement.</li>
+      <li>Added governed execution results for allowed and blocked function calls.</li>
+      <li>Added local audit event capture and proposal-bound execution support.</li>
     </ul>
-    <p class="muted">
-      Output: <code>commit_allowed = true | false</code>
-    </p>
+    <div class="field"><strong>Boundary</strong><span>Guard enforces execution. It does not define authority.</span></div>
   </div>
 </section>
 
-<!-- Envelope -->
-<section class="card">
-  <div class="update-head">
-    <h3>Governed Action Envelope — Standardized Input</h3>
-    <div class="meta">2026-03-20 · Execution Interface</div>
+<section class="release">
+  <div class="release-head">
+    <h3>CRI-CORE v0.13.0 - Deterministic Enforcement Kernel</h3>
+    <div class="meta">2026-05 | Kernel Layer</div>
+    <div class="tags"><span class="tag">admissibility</span><span class="tag">commit_allowed</span><span class="tag">contract-identity</span></div>
   </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Unified proposal, contract, and context into a single structure.</li>
-      <li>Established stable input boundary for evaluation.</li>
+  <div class="release-body">
+    <ul>
+      <li>Aligned kernel behavior with canonical proposal and compiled contract inputs.</li>
+      <li>Reinforced deterministic allow/block decision outputs.</li>
+      <li>Clarified non-goals: no orchestration, no policy authoring, no action execution.</li>
     </ul>
+    <div class="field"><strong>Output</strong><span><code>commit_allowed = true | false</code> with deterministic reason fields.</span></div>
   </div>
 </section>
 
-<!-- Normalizer -->
-<section class="card">
-  <div class="update-head">
-    <h3>Proposal Normalizer v0.1.0 — Action Structuring</h3>
-    <div class="meta">2026-03-16 · Input Layer</div>
+<section class="release">
+  <div class="release-head">
+    <h3>Governance-Ledger - Authority Publication Infrastructure</h3>
+    <div class="meta">2026-05 | Governance Layer</div>
+    <div class="tags"><span class="tag">lineage</span><span class="tag">diagnostics</span><span class="tag">registry</span></div>
   </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Converts arbitrary actions into canonical proposals.</li>
-      <li>Ensures consistent evaluation inputs.</li>
+  <div class="release-body">
+    <ul>
+      <li>Defined governance normalization and semantic diagnostic responsibilities.</li>
+      <li>Established publication gating and authority lineage artifacts.</li>
+      <li>Produced registry-ready contract publication outputs.</li>
     </ul>
-    <p class="muted">
-      Install: <code>pip install cricore-proposal-normalizer</code>
-    </p>
+    <div class="field"><strong>Boundary</strong><span>Ledger publishes authority evidence. It does not run runtime enforcement.</span></div>
   </div>
 </section>
 
-<!-- Compiler -->
-<section class="card">
-  <div class="update-head">
-    <h3>Contract Compiler v0.1.0 — Rules → Enforcement</h3>
-    <div class="meta">2026-03-11 · Input Layer</div>
+<section class="release">
+  <div class="release-head">
+    <h3>Proposal Normalizer v0.1.0 - Canonical Proposal Interface</h3>
+    <div class="meta">2026-03-16 | Proposal Layer</div>
+    <div class="tags"><span class="tag">proposal</span><span class="tag">actor</span><span class="tag">mutation</span><span class="tag">contract-ref</span></div>
   </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Converts real-world constraints into enforceable contracts.</li>
-      <li>Introduces versioned contract identity.</li>
+  <div class="release-body">
+    <ul>
+      <li>Standardized proposal assembly for CRI-CORE evaluation.</li>
+      <li>Preserved caller-supplied contract truth without recomputing it.</li>
+      <li>Rejected missing mutation, actor, artifact, and contract fields.</li>
     </ul>
-    <p class="muted">
-      Install: <code>pip install cricore-contract-compiler</code>
-    </p>
+    <div class="field"><strong>Install</strong><span><code>pip install cricore-proposal-normalizer</code></span></div>
   </div>
 </section>
 
-<!-- CRI-CORE initial -->
-<section class="card">
-  <div class="update-head">
-    <h3>CRI-CORE v0.6.0 — First Public Release</h3>
-    <div class="meta">2026-03-02 · Enforcement Kernel</div>
+<section class="release">
+  <div class="release-head">
+    <h3>Contract Compiler v0.3.0 - Deterministic Contract Identity</h3>
+    <div class="meta">2026-03 | Compilation Layer</div>
+    <div class="tags"><span class="tag">contract_id</span><span class="tag">contract_version</span><span class="tag">contract_hash</span></div>
   </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Introduced installable enforcement kernel.</li>
-      <li>Enabled external systems to gate execution deterministically.</li>
+  <div class="release-body">
+    <ul>
+      <li>Converted human-authored policy JSON into stable compiled contract artifacts.</li>
+      <li>Produced deterministic contract identity and SHA-256 contract hashes.</li>
+      <li>Aligned contract output with CRI-CORE structured execution model.</li>
     </ul>
-    <p class="muted">
-      Install: <code>pip install cricore</code>
-    </p>
+    <div class="field"><strong>Install</strong><span><code>pip install cricore-contract-compiler</code></span></div>
   </div>
 </section>
 
-<!-- Stamp -->
-<section class="card">
-  <div class="update-head">
-    <h3>Stamp v0.1.1 — Validation Layer</h3>
-    <div class="meta">2026-02-01 · Validation</div>
+<section class="release">
+  <div class="release-head">
+    <h3>Waveframe Cloud - Authority Distribution and Evidence Durability</h3>
+    <div class="meta">2026-05 | Authority / Audit Layer</div>
+    <div class="tags"><span class="tag">registry</span><span class="tag">contracts</span><span class="tag">audits</span><span class="tag">receipts</span></div>
   </div>
-  <div class="update-body">
-    <ul class="muted">
-      <li>Introduced structured validation and diagnostics.</li>
-      <li>Separated validation from enforcement.</li>
+  <div class="release-body">
+    <ul>
+      <li>Defined registry, contract retrieval, audit ingestion, and receipt lookup surfaces.</li>
+      <li>Scoped requests by API key and organization identity.</li>
+      <li>Separated authority distribution from admissibility decisioning.</li>
     </ul>
-    <p class="muted">
-      Install: <code>pip install waveframe-stamp</code>
-    </p>
+    <div class="field"><strong>Boundary</strong><span>Cloud does not decide admissibility, normalize governance, or orchestrate workflows.</span></div>
   </div>
 </section>
 
 <footer>
-  <span>© <span id="year"></span> Waveframe Labs</span>
-  <span>Execution control for AI systems</span>
+  <span>&copy; <span id="year"></span> Waveframe Labs</span>
+  <span>Structured protocol evolution log</span>
 </footer>
 
 </div>

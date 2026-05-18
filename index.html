@@ -350,9 +350,9 @@ footer{
     <div class="eyebrow">Waveframe Guard</div>
     <h1 id="hero-title">Deterministic enforcement at the execution boundary.</h1>
     <p class="lede">
-      Waveframe Guard prevents unsafe AI and automated actions from reaching production systems.
-      Policies are compiled into contracts, proposals are normalized, and CRI-CORE decides
-      allowed or blocked before execution.
+      Waveframe turns human governance into deterministic execution control. Authority is
+      compiled, proposals are normalized, CRI-CORE decides admissibility, and Waveframe Guard
+      prevents blocked actions from reaching production systems.
     </p>
     <div class="hero-actions">
       <a class="btn" href="https://github.com/Waveframe-Labs/Waveframe-Guard" target="_blank" rel="noopener">View Guard</a>
@@ -363,36 +363,62 @@ footer{
 
   <section class="band" aria-labelledby="flow-title">
     <div class="eyebrow">Core Flow</div>
-    <h2 id="flow-title">Human policy becomes an execution decision.</h2>
+    <h2 id="flow-title">Human governance becomes production control.</h2>
     <p class="section-intro">
-      The memorable part is small by design: turn governed intent into deterministic authority,
-      bind every proposed action to that authority, then stop anything that fails.
+      This is the canonical Waveframe architecture: authority is authored, compiled, bound to
+      proposals, evaluated, enforced, and then allowed to touch production only when the contract
+      permits it.
     </p>
 
     <div class="flow" aria-label="Waveframe enforcement flow">
       <div class="flow-step">
         <div class="flow-index">01</div>
-        <div><strong>Human Policy</strong><span>Governance language, approvals, roles, thresholds, and constraints.</span></div>
+        <div><strong>Human Governance</strong><span>Human-authored policy, approvals, roles, thresholds, and constraints.</span></div>
         <div class="flow-arrow">v</div>
       </div>
       <div class="flow-step">
         <div class="flow-index">02</div>
-        <div><strong>Compiled Contract</strong><span>Deterministic contract identity with version and hash.</span></div>
+        <div><strong>Governance-Ledger</strong><span>Normalizes governance, emits diagnostics, gates publication, and preserves lineage.</span></div>
         <div class="flow-arrow">v</div>
       </div>
       <div class="flow-step">
         <div class="flow-index">03</div>
-        <div><strong>Canonical Proposal</strong><span>Actor, mutation, artifacts, and contract reference in one strict envelope.</span></div>
+        <div><strong>Contract Compiler</strong><span>Turns approved governance into deterministic contract artifacts.</span></div>
         <div class="flow-arrow">v</div>
       </div>
       <div class="flow-step">
         <div class="flow-index">04</div>
-        <div><strong>CRI-CORE Enforcement</strong><span>The deterministic kernel evaluates admissibility at the boundary.</span></div>
+        <div><strong>Compiled Authority Contract</strong><span>Versioned authority with contract identity and hash.</span></div>
         <div class="flow-arrow">v</div>
       </div>
       <div class="flow-step">
         <div class="flow-index">05</div>
-        <div><strong>Execution Decision</strong><span>The action is allowed to continue or blocked before it can run.</span></div>
+        <div><strong>Proposal Normalizer</strong><span>Assembles actor, mutation, artifacts, and contract reference into a strict proposal.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">06</div>
+        <div><strong>Canonical Proposal</strong><span>The single proposal shape CRI-CORE evaluates.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">07</div>
+        <div><strong>CRI-CORE</strong><span>Deterministic admissibility kernel with no hidden orchestration.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">08</div>
+        <div><strong>Execution Decision</strong><span>Allowed or blocked, with deterministic output.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">09</div>
+        <div><strong>Waveframe Guard</strong><span>Runtime boundary that prevents blocked actions from executing.</span></div>
+        <div class="flow-arrow">v</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-index">10</div>
+        <div><strong>Production System</strong><span>The action reaches production only after enforcement succeeds.</span></div>
         <div class="flow-arrow">END</div>
       </div>
     </div>
@@ -400,6 +426,7 @@ footer{
     <div class="decision-row">
       <div class="decision-pill allowed">ALLOWED</div>
       <div class="decision-pill blocked">BLOCKED</div>
+      <div class="decision-pill">NEVER EXECUTES WHEN BLOCKED</div>
     </div>
   </section>
 
@@ -465,8 +492,8 @@ def transfer_funds(amount):
     <div class="eyebrow">Deployment Model</div>
     <h2 id="local-cloud-title">Local Guard and Cloud have different jobs.</h2>
     <p class="section-intro">
-      Local enforcement gives developers fast feedback and resilient runtime checks. Cloud provides
-      authority distribution, audit durability, organizational identity, and verification.
+      Local enforcement gives developers fast feedback and resilient runtime checks. Waveframe Cloud
+      is the authority and evidence plane: distribution, registry, audit durability, and receipts.
     </p>
 
     <div class="grid">
@@ -490,6 +517,7 @@ def transfer_funds(amount):
         </div>
         <ul class="mode-list">
           <li>Authoritative contract registry</li>
+          <li>Authority distribution</li>
           <li>Immutable audit logs</li>
           <li>Organizational identities</li>
           <li>Durable receipts</li>

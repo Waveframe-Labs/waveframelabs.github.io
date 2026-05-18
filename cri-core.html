@@ -4,83 +4,36 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CRI-CORE · Waveframe Labs</title>
+  <title>CRI-CORE - Waveframe Labs</title>
 
-  <meta name="description" content="CRI-CORE decides whether AI-generated actions are allowed to execute — before they happen." />
+  <meta name="description" content="CRI-CORE is the deterministic admissibility kernel for execution-boundary enforcement." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/cri-core.html" />
 
 <style>
 :root{
-  --bg:#0b0c10; --card:#14161b; --ink:#e7eaef; --muted:#9aa3b2;
-  --edge:#22242b; --accent:#ff7a18; --maxw:1080px; --rad:12px;
+  --bg:#0b0c10; --card:#14161b; --panel:#0f1116; --ink:#e7eaef; --muted:#9aa3b2;
+  --edge:#252832; --accent:#ff7a18; --green:#3ddc84; --red:#ff5b5b; --maxw:1080px; --rad:8px;
 }
 *{box-sizing:border-box}
-html,body{
-  margin:0; padding:0;
-  background:var(--bg); color:var(--ink);
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-}
-a{color:inherit;text-decoration:none;}
-a:hover{color:var(--accent);}
-
-.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px;}
-
-.hdr{
-  padding:18px 24px;
-  border-bottom:1px solid var(--edge);
-  background:rgba(20,22,27,.88);
-  backdrop-filter:blur(12px);
-  display:flex; justify-content:space-between; align-items:center;
-  position:sticky; top:0; z-index:100; margin-bottom:28px;
-}
-.brand{display:flex;align-items:center;gap:12px;}
-.brand-text{font-size:1.2rem;font-weight:700;}
-
-.topnav{display:flex;gap:24px;font-size:.9rem;}
-.topnav a{opacity:.7;}
-.active-link{opacity:1!important;color:var(--accent)!important;}
-
-.hero{
-  margin-bottom:22px;
-  padding:22px;
-  border:1px solid var(--edge);
-  border-radius:12px;
-  background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0));
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--edge);
-  border-radius:12px;
-  padding:18px;
-  margin-top:16px;
-}
-
-h1{margin:0 0 .6rem;}
-h2{margin-top:28px;}
-p{color:var(--muted); line-height:1.6;}
-
-.kicker{
-  color:var(--accent);
-  font-size:.75rem;
-  text-transform:uppercase;
-  margin-bottom:8px;
-  display:block;
-}
-
-.result-allow{color:#4cd964;}
-.result-block{color:#ff3b30;}
-
-footer{
-  margin-top:48px;
-  border-top:1px solid var(--edge);
-  padding-top:18px;
-  color:var(--muted);
-  font-size:.85rem;
-  display:flex;
-  justify-content:space-between;
-}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit;text-decoration:none} a:hover{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}
+.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(20,22,27,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}
+.topnav{display:flex;gap:24px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}
+.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0))}
+h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.4rem);line-height:1.05} h2{margin:34px 0 10px} h3{margin:0 0 8px}
+p{color:var(--muted);line-height:1.65}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}
+.lede{font-size:1.12rem;color:#c5cad3;max-width:780px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:16px}.panel{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:16px}
+.code{background:#090a0d;border:1px solid var(--edge);border-radius:var(--rad);padding:16px;overflow:auto;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:#dfe4ed;line-height:1.55}
+.pipeline{display:grid;gap:10px;max-width:760px}.step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:14px}
+.num{width:34px;height:34px;display:grid;place-items:center;border-radius:6px;background:rgba(255,122,24,.12);color:var(--accent);font-weight:850}
+.yes{color:var(--green);font-weight:800}.no{color:var(--red);font-weight:800}
+ul{color:var(--muted);line-height:1.8}.boundary{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}
+footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 
@@ -89,7 +42,7 @@ footer{
 
 <header class="hdr">
   <div class="brand">
-    <img src="waveframe-logo-mark.png" width="28">
+    <img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark">
     <div class="brand-text">Waveframe Labs</div>
   </div>
   <nav class="topnav">
@@ -101,111 +54,112 @@ footer{
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <span class="kicker">Execution Control</span>
+  <span class="kicker">Runtime Kernel</span>
   <h1>CRI-CORE</h1>
-
-  <p>
-    What actually stops an AI system from executing a bad decision?
-  </p>
-
-  <p>
-    CRI-CORE sits at the execution boundary and decides:
-  </p>
-
-  <p>
-    <span class="result-allow">✓ allow this action</span><br>
-    <span class="result-block">✗ block it before it happens</span>
+  <p class="lede">
+    CRI-CORE is the deterministic admissibility kernel. It receives a canonical proposal and a
+    compiled authority contract, evaluates the fixed stage pipeline, and returns an execution
+    decision before any action is allowed to run.
   </p>
 </section>
 
-<!-- INSTALL -->
+<section>
+  <h2>Kernel Contract</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Input</h3>
+      <ul>
+        <li>Canonical proposal</li>
+        <li>Compiled authority contract</li>
+        <li>Exact contract identity: id, version, hash</li>
+        <li>Actor, mutation, artifacts, and context supplied by upstream layers</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Output</h3>
+      <pre class="code"><code>{
+  "commit_allowed": false,
+  "reason": "required approval missing",
+  "contract_hash": "sha256:...",
+  "stage": "approval_requirements"
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Deterministic Stage Pipeline</h2>
+  <div class="pipeline">
+    <div class="step"><div class="num">01</div><div><strong>Shape validation</strong><p>Reject proposals that do not match the canonical boundary structure.</p></div></div>
+    <div class="step"><div class="num">02</div><div><strong>Contract identity check</strong><p>Verify the proposal references the exact contract used for evaluation.</p></div></div>
+    <div class="step"><div class="num">03</div><div><strong>Artifact and integrity checks</strong><p>Validate required evidence and immutable references supplied by upstream systems.</p></div></div>
+    <div class="step"><div class="num">04</div><div><strong>Authority and approval checks</strong><p>Evaluate roles, approvals, separation requirements, and contract constraints.</p></div></div>
+    <div class="step"><div class="num">05</div><div><strong>Decision emission</strong><p>Return the deterministic admissibility result: allowed or blocked.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Guarantees</h2>
+  <div class="grid">
+    <div class="panel">
+      <h3>Deterministic outputs</h3>
+      <p>Identical proposal and contract inputs produce the same admissibility result.</p>
+    </div>
+    <div class="panel">
+      <h3>No hidden logic</h3>
+      <p>The kernel evaluates explicit contract and proposal data. It does not infer policy meaning.</p>
+    </div>
+    <div class="panel">
+      <h3>Contract identity enforcement</h3>
+      <p>Contract hash mismatch blocks execution instead of silently accepting drift.</p>
+    </div>
+    <div class="panel">
+      <h3>Boundary-safe decisioning</h3>
+      <p>The result is suitable for Waveframe Guard to enforce before production execution.</p>
+    </div>
+  </div>
+</section>
+
 <section>
   <h2>Install</h2>
-
   <div class="card">
-    <p><code>pip install cricore</code></p>
-
+    <pre class="code"><code>pip install cricore</code></pre>
     <p>
-      <strong>PyPI:</strong>
-      <a href="https://pypi.org/project/cricore/" target="_blank">cricore</a><br>
-      <strong>GitHub:</strong>
-      <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank">CRI-CORE</a>
+      <strong>PyPI:</strong> <a href="https://pypi.org/project/cricore/" target="_blank" rel="noopener">cricore</a><br>
+      <strong>GitHub:</strong> <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank" rel="noopener">Waveframe-Labs/CRI-CORE</a>
     </p>
   </div>
 </section>
 
-<!-- WHAT IT DOES -->
 <section>
-  <h2>What it does</h2>
-
+  <h2>Boundary Responsibility</h2>
   <div class="card">
-    <ul class="muted">
-      <li>Evaluates every proposed action before execution</li>
-      <li>Enforces roles, approvals, and constraints</li>
-      <li>Validates integrity and required artifacts</li>
-      <li>Applies deterministic contract checks</li>
-      <li>Returns a single decision: <code>true | false</code></li>
+    <p class="boundary">CRI-CORE decides admissibility. It does not execute actions.</p>
+    <ul>
+      <li>Does not author governance policy.</li>
+      <li>Does not compile contracts.</li>
+      <li>Does not normalize proposals.</li>
+      <li>Does not orchestrate workflows.</li>
+      <li>Does not distribute authority or store audit receipts.</li>
     </ul>
   </div>
 </section>
 
-<!-- WHY -->
 <section>
-  <h2>Why it exists</h2>
-
+  <h2>Where It Fits</h2>
   <p>
-    AI systems can now:
+    Governance-Ledger and the Contract Compiler define authority upstream. Proposal Normalizer
+    supplies the canonical input shape. CRI-CORE evaluates. Waveframe Guard enforces the result.
   </p>
   <p>
-    move money · deploy code · approve decisions
-  </p>
-
-  <p>
-    Most systems:
-    detect problems or log them after the fact
-  </p>
-
-  <p>
-    CRI-CORE:
-    <strong>prevents the action from happening in the first place</strong>
-  </p>
-</section>
-
-<!-- HOW IT FITS -->
-<section>
-  <h2>Where it fits</h2>
-
-  <div class="card">
-    <p>
-      CRI-CORE is the final step before execution.
-    </p>
-    <p>
-      It does not generate actions.  
-      It does not interpret meaning.  
-      It does not make policy decisions.
-    </p>
-    <p>
-      It only decides:
-      <strong>does this action execute or not?</strong>
-    </p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section style="margin-top:28px;">
-  <h2>See it in action</h2>
-  <p>
-    <a href="case-studies.html" style="color:var(--accent); font-weight:600;">
-      View examples →
-    </a>
+    <a href="hierarchy.html" style="color:var(--accent);font-weight:700;">View execution architecture</a>
   </p>
 </section>
 
 <footer>
-  <span>© <span id="year"></span> Waveframe Labs</span>
-  <span>Execution control for AI systems</span>
+  <span>&copy; <span id="year"></span> Waveframe Labs</span>
+  <span>Deterministic admissibility kernel</span>
 </footer>
 
 </div>
