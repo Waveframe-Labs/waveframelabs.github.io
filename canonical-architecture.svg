@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1420" viewBox="0 0 1200 1420" role="img" aria-labelledby="title desc">
+  <title id="title">Waveframe canonical governance execution architecture</title>
+  <desc id="desc">Human Governance flows through Governance-Ledger, Contract Compiler, Compiled Authority Contract, Proposal Normalizer, Canonical Proposal, CRI-CORE, Execution Decision, Waveframe Guard, and Production System. Waveframe Cloud provides authority distribution, audit durability, registry, and receipts.</desc>
+  <defs>
+    <linearGradient id="page" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#15171d"/>
+      <stop offset="1" stop-color="#0b0c10"/>
+    </linearGradient>
+    <linearGradient id="box" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#171a21"/>
+      <stop offset="1" stop-color="#101218"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M 2 1 L 10 6 L 2 11 Z" fill="#ff7a18"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="1420" rx="28" fill="url(#page)"/>
+  <rect x="34" y="34" width="1132" height="1352" rx="22" fill="none" stroke="#252832" stroke-width="2"/>
+
+  <text x="80" y="104" fill="#ff7a18" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="3">WAVEFRAME CANONICAL ARCHITECTURE</text>
+  <text x="80" y="152" fill="#e7eaef" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="42" font-weight="800">Governance to production execution</text>
+  <text x="80" y="190" fill="#9aa3b2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20">Policy becomes authority. Authority becomes contract. Contract governs execution.</text>
+
+  <g filter="url(#shadow)">
+    <g id="main-flow" font-family="Inter, Segoe UI, Arial, sans-serif">
+      <g transform="translate(120 250)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">01</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">Human Governance</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">Policy, roles, approvals, thresholds, constraints</text>
+      </g>
+
+      <g transform="translate(120 370)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">02</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">Governance-Ledger</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">Normalization, diagnostics, publication gates, lineage</text>
+      </g>
+
+      <g transform="translate(120 490)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">03</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">Contract Compiler</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">Deterministic contract build</text>
+      </g>
+
+      <g transform="translate(120 610)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">04</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">Compiled Authority Contract</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">contract_id + contract_version + contract_hash</text>
+      </g>
+
+      <g transform="translate(120 730)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">05</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">Proposal Normalizer</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">Actor, mutation, artifacts, contract reference</text>
+      </g>
+
+      <g transform="translate(120 850)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">06</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">Canonical Proposal</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">The single proposal envelope evaluated by CRI-CORE</text>
+      </g>
+
+      <g transform="translate(120 970)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">07</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">CRI-CORE</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">Deterministic admissibility kernel</text>
+      </g>
+
+      <g transform="translate(120 1090)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">08</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">Execution Decision</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">commit_allowed true or false</text>
+      </g>
+
+      <g transform="translate(120 1210)">
+        <rect width="620" height="84" rx="10" fill="url(#box)" stroke="#333743"/>
+        <rect x="20" y="20" width="44" height="44" rx="8" fill="#2a1a12" stroke="#59321c"/>
+        <text x="42" y="49" text-anchor="middle" fill="#ff7a18" font-size="18" font-weight="800">09</text>
+        <text x="86" y="36" fill="#e7eaef" font-size="23" font-weight="800">Waveframe Guard</text>
+        <text x="86" y="62" fill="#9aa3b2" font-size="16">Runtime boundary that blocks invalid execution</text>
+      </g>
+
+      <g transform="translate(120 1330)">
+        <rect width="620" height="64" rx="10" fill="#111816" stroke="#2d6f4c"/>
+        <text x="36" y="40" fill="#3ddc84" font-size="22" font-weight="900">10</text>
+        <text x="86" y="40" fill="#e7eaef" font-size="23" font-weight="800">Production System</text>
+      </g>
+    </g>
+
+    <path d="M430 334 V358" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M430 454 V478" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M430 574 V598" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M430 694 V718" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M430 814 V838" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M430 934 V958" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M430 1054 V1078" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M430 1174 V1198" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M430 1294 V1318" stroke="#ff7a18" stroke-width="3" marker-end="url(#arrow)"/>
+  </g>
+
+  <g filter="url(#shadow)" font-family="Inter, Segoe UI, Arial, sans-serif">
+    <rect x="800" y="330" width="310" height="500" rx="16" fill="#101218" stroke="#3a2b22" stroke-width="2"/>
+    <text x="830" y="380" fill="#ff7a18" font-size="20" font-weight="900" letter-spacing="2">WAVEFRAME CLOUD</text>
+    <text x="830" y="420" fill="#e7eaef" font-size="25" font-weight="800">Authority and evidence plane</text>
+    <line x1="830" y1="448" x2="1080" y2="448" stroke="#252832" stroke-width="2"/>
+    <text x="830" y="492" fill="#e7eaef" font-size="20" font-weight="800">Authority distribution</text>
+    <text x="830" y="525" fill="#e7eaef" font-size="20" font-weight="800">Contract registry</text>
+    <text x="830" y="558" fill="#e7eaef" font-size="20" font-weight="800">Immutable contracts</text>
+    <text x="830" y="591" fill="#e7eaef" font-size="20" font-weight="800">Audit durability</text>
+    <text x="830" y="624" fill="#e7eaef" font-size="20" font-weight="800">Receipts</text>
+    <text x="830" y="690" fill="#9aa3b2" font-size="17">Cloud does not decide</text>
+    <text x="830" y="716" fill="#9aa3b2" font-size="17">admissibility. It distributes</text>
+    <text x="830" y="742" fill="#9aa3b2" font-size="17">authority and stores durable</text>
+    <text x="830" y="768" fill="#9aa3b2" font-size="17">evidence.</text>
+  </g>
+
+  <path d="M740 650 C780 650 780 520 800 520" fill="none" stroke="#ff7a18" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+  <text x="780" y="630" fill="#9aa3b2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">registry + contracts</text>
+  <path d="M740 1130 C780 1130 780 690 800 690" fill="none" stroke="#ff7a18" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+  <text x="780" y="1082" fill="#9aa3b2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">audit events + receipts</text>
+</svg>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="WF-WEB-README.PNG" alt="Waveframe Labs Banner" width="650">
+  <img src="canonical-architecture.svg" alt="Waveframe canonical architecture diagram" width="760">
 </p>
 
 # Waveframe Labs — Website Repository
@@ -19,6 +19,14 @@ The website functions as the **public interface and reference surface** for the 
 ---
 
 ## Purpose and Scope
+
+## Canonical Architecture Diagram
+
+The diagram above is the shared website and README asset for the Waveframe execution-governance architecture:
+
+Human Governance -> Governance-Ledger -> Contract Compiler -> Compiled Authority Contract -> Proposal Normalizer -> Canonical Proposal -> CRI-CORE -> Execution Decision -> Waveframe Guard -> Production System.
+
+Waveframe Cloud provides authority distribution, audit durability, registry, and receipts.
 
 This repository exists to serve a single, well-defined role:
 
@@ -64,6 +72,8 @@ In the event of any conflict, authority flows outward to the referenced document
 The site consists of hand-authored static HTML files.
 
 ### Primary Pages
+
+- `compatibility.html` - compatibility matrix and dependency specification
 
 - `index.html` — institutional overview and Aurora stack entry point  
 - `hierarchy.html` — Aurora layer architecture and authority boundaries  

@@ -1,0 +1,208 @@
+<!--
+---
+title: "Compatibility - Waveframe Labs"
+short_title: "Compatibility"
+version: "1.0.0"
+status: "Active"
+type: "website"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "CC-BY-4.0"
+policy_version: "ARI-Metadata-3.0.2"
+ai_assisted: "partial"
+---
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Compatibility - Waveframe Labs</title>
+  <meta name="description" content="Compatibility matrix and dependency specification for the Waveframe execution-governance stack." />
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <link rel="canonical" href="https://waveframelabs.org/compatibility.html" />
+
+<style>
+:root{--bg:#0b0c10;--card:#14161b;--panel:#0f1116;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff7a18;--green:#3ddc84;--red:#ff5b5b;--maxw:1080px;--rad:8px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}
+.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(20,22,27,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:20px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}
+.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0))}
+.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}
+h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:34px 0 10px}h3{margin:0 0 8px}
+p{color:var(--muted);line-height:1.65}.lede{font-size:1.1rem;color:var(--soft);max-width:820px}
+.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.matrix{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);overflow:hidden;display:table}
+.matrix th,.matrix td{border-bottom:1px solid var(--edge);padding:13px 14px;text-align:left;vertical-align:top}.matrix th{color:var(--ink);background:var(--panel);font-size:.86rem;text-transform:uppercase;letter-spacing:.08em}.matrix td{color:var(--muted);line-height:1.45}.matrix tr:last-child td{border-bottom:0}
+code{background:#090a0d;border:1px solid var(--edge);border-radius:5px;padding:2px 5px;color:#dfe4ed}.status{color:var(--green);font-weight:800}.warn{color:var(--accent);font-weight:800}
+ul{color:var(--muted);line-height:1.8}.note{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}.diagram-link{display:inline-block;margin-top:8px;color:var(--accent);font-weight:800}
+footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.matrix{display:block;overflow-x:auto;white-space:nowrap}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header class="hdr">
+  <div class="brand">
+    <img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark">
+    <div class="brand-text">Waveframe Labs</div>
+  </div>
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="hierarchy.html">How It Works</a>
+    <a href="tools.html">Tools</a>
+    <a class="active-link" href="compatibility.html">Compatibility</a>
+    <a href="case-studies.html">Examples</a>
+    <a href="updates.html">Updates</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="kicker">Compatibility Matrix</span>
+  <h1>Dependency specification for governed execution.</h1>
+  <p class="lede">
+    Waveframe components interoperate through explicit authority, contract, proposal, decision,
+    registry, audit, and receipt boundaries. This page defines the current public compatibility
+    surface for the website and README architecture.
+  </p>
+</section>
+
+<section>
+  <h2>Current Compatibility Set</h2>
+  <p class="note">Compatibility profile: <code>waveframe-execution-governance-2026-05</code></p>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Component</th>
+        <th>Current public surface</th>
+        <th>Consumes</th>
+        <th>Produces</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Governance</td>
+        <td>Governance-Ledger</td>
+        <td><span class="status">Compatible</span><br><code>pip install governance-ledger</code></td>
+        <td>Source governance, reviews, policy inputs</td>
+        <td>Publication evidence, lineage, registry-ready contracts</td>
+      </tr>
+      <tr>
+        <td>Compilation</td>
+        <td>CRI-CORE Contract Compiler</td>
+        <td><span class="status">Compatible</span><br><code>&gt;=0.3.0</code></td>
+        <td>Governance policy JSON with contract identity</td>
+        <td>Compiled authority contract with hash</td>
+      </tr>
+      <tr>
+        <td>Proposal</td>
+        <td>Proposal Normalizer</td>
+        <td><span class="status">Compatible</span><br><code>&gt;=0.1.0</code></td>
+        <td>Actor, mutation, artifacts, contract reference</td>
+        <td>Canonical proposal envelope</td>
+      </tr>
+      <tr>
+        <td>Kernel</td>
+        <td>CRI-CORE</td>
+        <td><span class="status">Compatible</span><br><code>0.13.x</code></td>
+        <td>Canonical proposal and compiled contract</td>
+        <td><code>commit_allowed</code>, reason, decision trace</td>
+      </tr>
+      <tr>
+        <td>Runtime</td>
+        <td>Waveframe Guard</td>
+        <td><span class="status">Compatible</span><br><code>0.5.x</code></td>
+        <td>Function call, actor, contract artifact or authority ref</td>
+        <td>Governed execution result and audit event</td>
+      </tr>
+      <tr>
+        <td>Authority / Audit</td>
+        <td>Waveframe Cloud</td>
+        <td><span class="warn">Private surface</span><br><code>v1 API semantics</code></td>
+        <td>Registry requests, contract requests, audit events</td>
+        <td>Registry, immutable contracts, audit receipts</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Required Interface Contracts</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Authority References</h3>
+      <ul>
+        <li>Runtime authority refs must be explicit and versioned.</li>
+        <li>Use forms such as <code>finance-policy@1.0.0</code>.</li>
+        <li>Unversioned contract ids are not compatibility-safe for replay, audit, or cache integrity.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Contract Identity</h3>
+      <ul>
+        <li>Contracts require <code>contract_id</code>, <code>contract_version</code>, and <code>contract_hash</code>.</li>
+        <li><code>contract_version</code> must use semantic versioning.</li>
+        <li>Downstream components must not recompute or overwrite contract hashes.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Proposal Shape</h3>
+      <ul>
+        <li>CRI-CORE evaluates canonical proposal envelopes only.</li>
+        <li>Actor, mutation, artifacts, and contract reference are required.</li>
+        <li>Missing required proposal fields are hard errors, not warnings.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Cloud API Semantics</h3>
+      <ul>
+        <li>Registry and contract retrieval use <code>v1</code> API semantics.</li>
+        <li>Cloud distributes authority and stores durable evidence.</li>
+        <li>Cloud does not decide admissibility or normalize governance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Recommended Install Set</h2>
+  <div class="card">
+    <p>For local development and runtime enforcement:</p>
+    <p><code>pip install waveframe-guard cricore cricore-contract-compiler cricore-proposal-normalizer</code></p>
+    <p>For governance publication workflows:</p>
+    <p><code>pip install governance-ledger</code></p>
+  </div>
+</section>
+
+<section>
+  <h2>Compatibility Rules</h2>
+  <ul>
+    <li>Compiler output is the source of compiled contract identity.</li>
+    <li>Proposal Normalizer preserves caller-supplied contract truth.</li>
+    <li>CRI-CORE blocks contract identity mismatches.</li>
+    <li>Waveframe Guard enforces the decision before production execution.</li>
+    <li>Waveframe Cloud stores authority and audit evidence; it is not the admissibility engine.</li>
+  </ul>
+  <a class="diagram-link" href="canonical-architecture.svg">Open canonical architecture diagram</a>
+</section>
+
+<footer>
+  <span>&copy; <span id="year"></span> Waveframe Labs</span>
+  <span>Compatibility matrix and dependency specification</span>
+</footer>
+
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

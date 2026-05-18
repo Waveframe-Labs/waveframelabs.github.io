@@ -132,12 +132,14 @@ p{color:var(--muted);line-height:1.65}
   border-bottom:1px solid var(--edge);
 }
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid>*{min-width:0}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .panel{
   background:var(--card);
   border:1px solid var(--edge);
   border-radius:var(--rad);
   padding:22px;
+  min-width:0;
 }
 .panel p:last-child{margin-bottom:0}
 .btn{
@@ -197,6 +199,15 @@ p{color:var(--muted);line-height:1.65}
   padding:9px 14px;
   font-weight:800;
 }
+.architecture-asset{
+  display:block;
+  width:100%;
+  max-width:980px;
+  margin:28px 0;
+  border:1px solid var(--edge);
+  border-radius:var(--rad);
+  background:var(--panel);
+}
 .allowed{color:var(--green)}
 .blocked{color:var(--red)}
 
@@ -243,6 +254,7 @@ p{color:var(--muted);line-height:1.65}
   padding:14px 16px;
   font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
   color:var(--red);
+  overflow-wrap:anywhere;
 }
 .mode-title{
   display:flex;
@@ -278,6 +290,7 @@ p{color:var(--muted);line-height:1.65}
   margin-top:16px;
   color:var(--muted);
   font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  overflow-wrap:anywhere;
 }
 
 /* FOOTER */
@@ -337,6 +350,7 @@ footer{
       <a href="index.html">Home</a>
       <a href="hierarchy.html">How It Works</a>
       <a href="tools.html">Tools</a>
+      <a href="compatibility.html">Compatibility</a>
       <a href="case-studies.html">Examples</a>
       <a href="updates.html">Updates</a>
     </nav>
@@ -370,58 +384,7 @@ footer{
       permits it.
     </p>
 
-    <div class="flow" aria-label="Waveframe enforcement flow">
-      <div class="flow-step">
-        <div class="flow-index">01</div>
-        <div><strong>Human Governance</strong><span>Human-authored policy, approvals, roles, thresholds, and constraints.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">02</div>
-        <div><strong>Governance-Ledger</strong><span>Normalizes governance, emits diagnostics, gates publication, and preserves lineage.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">03</div>
-        <div><strong>Contract Compiler</strong><span>Turns approved governance into deterministic contract artifacts.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">04</div>
-        <div><strong>Compiled Authority Contract</strong><span>Versioned authority with contract identity and hash.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">05</div>
-        <div><strong>Proposal Normalizer</strong><span>Assembles actor, mutation, artifacts, and contract reference into a strict proposal.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">06</div>
-        <div><strong>Canonical Proposal</strong><span>The single proposal shape CRI-CORE evaluates.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">07</div>
-        <div><strong>CRI-CORE</strong><span>Deterministic admissibility kernel with no hidden orchestration.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">08</div>
-        <div><strong>Execution Decision</strong><span>Allowed or blocked, with deterministic output.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">09</div>
-        <div><strong>Waveframe Guard</strong><span>Runtime boundary that prevents blocked actions from executing.</span></div>
-        <div class="flow-arrow">v</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-index">10</div>
-        <div><strong>Production System</strong><span>The action reaches production only after enforcement succeeds.</span></div>
-        <div class="flow-arrow">END</div>
-      </div>
-    </div>
+    <img class="architecture-asset" src="canonical-architecture.svg" alt="Waveframe canonical architecture diagram showing governance becoming production execution through Ledger, Compiler, Contract, Normalizer, CRI-CORE, Guard, and Cloud evidence services.">
 
     <div class="decision-row">
       <div class="decision-pill allowed">ALLOWED</div>
@@ -579,6 +542,7 @@ def transfer_funds(amount):
       <div class="ft-links">
         <a href="hierarchy.html">How It Works</a>
         <a href="tools.html">Tools</a>
+        <a href="compatibility.html">Compatibility</a>
         <a href="case-studies.html">Examples</a>
       </div>
     </div>
