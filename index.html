@@ -184,20 +184,14 @@ p{color:var(--muted);line-height:1.65}
   letter-spacing:.12em;
   text-transform:uppercase;
 }
-.waveform-svg{
+.waveform-mark{
   position:absolute;
-  inset:84px 34px auto;
-  width:calc(100% - 68px);
-  height:135px;
-  overflow:visible;
-}
-.waveform-svg path{
-  fill:none;
-  stroke:var(--accent);
-  stroke-width:8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  filter:drop-shadow(0 0 12px rgba(255,122,24,.45));
+  top:96px;
+  left:50%;
+  width:min(76%,440px);
+  height:auto;
+  transform:translateX(-50%);
+  filter:drop-shadow(0 0 18px rgba(255,122,24,.42));
 }
 .decision-stack{
   position:absolute;
@@ -451,8 +445,7 @@ footer{
   .hero{padding:48px 0 46px}
   .hero:before{inset:0 -16px}
   .hero-visual{min-height:300px;border-radius:14px}
-  .waveform-svg{inset:78px 18px auto;width:calc(100% - 36px);height:112px}
-  .waveform-svg path{stroke-width:7}
+  .waveform-mark{top:82px;width:82%}
   .boundary-label{font-size:.62rem;top:18px}
   .decision-stack{left:18px;right:18px;bottom:22px;grid-template-columns:1fr;gap:10px}
   .decision-card{padding:12px 13px}
@@ -503,9 +496,7 @@ footer{
       <div class="hero-visual" aria-label="Abstract Waveframe execution boundary diagram">
         <div class="boundary-label">Execution Boundary</div>
         <div class="boundary-line"></div>
-        <svg class="waveform-svg" viewBox="0 0 520 150" role="img" aria-label="Orange waveform crossing an execution boundary">
-          <path d="M14 76 C50 76 50 112 86 112 C122 112 116 22 150 22 C184 22 176 128 214 128 C252 128 248 62 284 62 C318 62 318 82 354 82 C390 82 390 76 426 76 C462 76 462 76 506 76" />
-        </svg>
+        <img src="assets/brand/canon_wf_logo_mark_transparent.png" class="waveform-mark" alt="Canonical Waveframe waveform crossing an execution boundary">
         <div class="decision-stack">
           <div class="decision-card allowed-card">
             <strong>ALLOWED</strong>
