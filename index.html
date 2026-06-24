@@ -57,7 +57,9 @@ body:before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,122,24,.09),transparent 340px);
+  background:
+    radial-gradient(circle at 82% 18%,rgba(255,122,24,.10),transparent 28%),
+    linear-gradient(180deg,rgba(255,122,24,.08),transparent 360px);
 }
 a{text-decoration:none;color:inherit}
 a:hover{color:var(--accent)}
@@ -90,10 +92,10 @@ a:hover{color:var(--accent)}
 /* TYPOGRAPHY */
 h1,h2,h3,p{margin-top:0}
 h1{
-  max-width:860px;
-  font-size:clamp(2.4rem,5vw,5rem);
+  max-width:880px;
+  font-size:clamp(2.55rem,5vw,5.15rem);
   line-height:.98;
-  letter-spacing:0;
+  letter-spacing:-.035em;
   margin-bottom:20px;
 }
 h2{font-size:clamp(1.7rem,3vw,2.65rem);line-height:1.1;margin-bottom:14px}
@@ -110,26 +112,132 @@ p{color:var(--muted);line-height:1.65}
 .lede{font-size:1.2rem;max-width:760px;color:var(--soft)}
 .section-intro{max-width:760px;margin-bottom:28px}
 
-/* LAYOUT */
-.hero-masthead{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin:26px auto 0;
-  padding:42px 20px;
-  border:1px solid var(--edge);
-  border-radius:var(--rad);
-  background:radial-gradient(circle at center,rgba(255,90,10,.08),transparent 54%),#050505;
-}
-.hero-brand-image{
-  display:block;
-  width:min(820px,92%);
-  height:auto;
-}
+/* HERO */
 .hero{
-  padding:56px 0 34px;
+  position:relative;
+  overflow:hidden;
+  padding:72px 0 64px;
+  border-bottom:1px solid var(--edge);
 }
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:18px -22px 0;
+  z-index:-1;
+  background:
+    linear-gradient(90deg,rgba(255,122,24,.08) 1px,transparent 1px),
+    linear-gradient(180deg,rgba(255,122,24,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(90deg,transparent,black 16%,black 72%,transparent);
+  opacity:.38;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);
+  align-items:center;
+  gap:46px;
+}
+.hero-copy{min-width:0}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-visual{
+  position:relative;
+  min-height:360px;
+  border:1px solid var(--edge);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 45% 50%,rgba(255,122,24,.16),transparent 30%),
+    linear-gradient(145deg,rgba(20,22,27,.92),rgba(5,5,5,.96));
+  box-shadow:0 30px 80px rgba(0,0,0,.36);
+  overflow:hidden;
+}
+.hero-visual:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(180deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:34px 34px;
+  opacity:.28;
+}
+.boundary-line{
+  position:absolute;
+  top:58px;
+  bottom:58px;
+  left:50%;
+  width:1px;
+  background:linear-gradient(180deg,transparent,rgba(255,122,24,.9),transparent);
+  box-shadow:0 0 18px rgba(255,122,24,.36);
+}
+.boundary-label{
+  position:absolute;
+  top:22px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--accent);
+  border:1px solid rgba(255,122,24,.35);
+  background:rgba(5,5,5,.72);
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:.68rem;
+  font-weight:850;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.waveform-svg{
+  position:absolute;
+  inset:84px 34px auto;
+  width:calc(100% - 68px);
+  height:135px;
+  overflow:visible;
+}
+.waveform-svg path{
+  fill:none;
+  stroke:var(--accent);
+  stroke-width:8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:drop-shadow(0 0 12px rgba(255,122,24,.45));
+}
+.decision-stack{
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:32px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.decision-card{
+  border:1px solid var(--edge);
+  border-radius:12px;
+  padding:16px;
+  background:rgba(10,11,15,.82);
+  backdrop-filter:blur(10px);
+}
+.decision-card strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:.92rem;
+  letter-spacing:.08em;
+}
+.decision-card span{
+  color:var(--muted);
+  font-size:.83rem;
+  line-height:1.45;
+}
+.decision-card.allowed-card{border-color:rgba(61,220,132,.35)}
+.decision-card.blocked-card{border-color:rgba(255,91,91,.35)}
+.allowed-card strong{color:var(--green)}
+.blocked-card strong{color:var(--red)}
+.install-line{
+  margin-top:16px;
+  color:var(--muted);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  overflow-wrap:anywhere;
+}
+
+/* LAYOUT */
 .section{
   padding:56px 0;
   border-top:1px solid var(--edge);
@@ -296,12 +404,6 @@ p{color:var(--muted);line-height:1.65}
 }
 .eco-node strong{display:block;margin-bottom:8px}
 .eco-node span{color:var(--muted);font-size:.9rem;line-height:1.45}
-.install-line{
-  margin-top:16px;
-  color:var(--muted);
-  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
-  overflow-wrap:anywhere;
-}
 
 /* FOOTER */
 footer{
@@ -331,6 +433,10 @@ footer{
   font-size:.82rem;
 }
 
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-visual{min-height:330px}
+}
 @media(max-width:900px){
   .hdr-inner{align-items:flex-start;flex-direction:column}
   .topnav{justify-content:flex-start;gap:14px}
@@ -342,9 +448,14 @@ footer{
   .band{margin:0 -16px;padding:44px 16px}
   .brand img{height:30px;max-width:44px}
   .topnav{font-size:.84rem;gap:12px 14px}
-  .hero-masthead{padding:32px 10px}
-  .hero-brand-image{width:94%}
-  .hero{padding-top:40px}
+  .hero{padding:48px 0 46px}
+  .hero:before{inset:0 -16px}
+  .hero-visual{min-height:300px;border-radius:14px}
+  .waveform-svg{inset:78px 18px auto;width:calc(100% - 36px);height:112px}
+  .waveform-svg path{stroke-width:7}
+  .boundary-label{font-size:.62rem;top:18px}
+  .decision-stack{left:18px;right:18px;bottom:22px;grid-template-columns:1fr;gap:10px}
+  .decision-card{padding:12px 13px}
   .flow-step{grid-template-columns:48px 1fr}
   .flow-arrow{display:none}
   .ecosystem{grid-template-columns:1fr}
@@ -372,23 +483,41 @@ footer{
 </header>
 
 <main class="wrap">
-  <div class="hero-masthead" aria-label="Waveframe Labs canonical brand masthead">
-    <img src="assets/brand/canon_wf_logo_extended.png" class="hero-brand-image" alt="Waveframe Labs - Governed Execution Infrastructure">
-  </div>
-
   <section class="hero" aria-labelledby="hero-title">
-    <div class="eyebrow">Waveframe Guard</div>
-    <h1 id="hero-title">Deterministic enforcement at the execution boundary.</h1>
-    <p class="lede">
-      Waveframe turns human governance into deterministic execution control. Authority is
-      compiled, proposals are normalized, CRI-CORE decides admissibility, and Waveframe Guard
-      prevents blocked actions from reaching production systems.
-    </p>
-    <div class="hero-actions">
-      <a class="btn" href="https://github.com/Waveframe-Labs/Waveframe-Guard" target="_blank" rel="noopener">View Guard</a>
-      <a class="btn secondary" href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank" rel="noopener">View CRI-CORE</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Waveframe Guard</div>
+        <h1 id="hero-title">Deterministic enforcement at the execution boundary.</h1>
+        <p class="lede">
+          Waveframe turns human governance into deterministic execution control. Authority is
+          compiled, proposals are normalized, CRI-CORE decides admissibility, and Waveframe Guard
+          prevents blocked actions from reaching production systems.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="https://github.com/Waveframe-Labs/Waveframe-Guard" target="_blank" rel="noopener">View Guard</a>
+          <a class="btn secondary" href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank" rel="noopener">View CRI-CORE</a>
+        </div>
+        <div class="install-line">pip install waveframe-guard cricore-contract-compiler cricore-proposal-normalizer</div>
+      </div>
+
+      <div class="hero-visual" aria-label="Abstract Waveframe execution boundary diagram">
+        <div class="boundary-label">Execution Boundary</div>
+        <div class="boundary-line"></div>
+        <svg class="waveform-svg" viewBox="0 0 520 150" role="img" aria-label="Orange waveform crossing an execution boundary">
+          <path d="M14 76 C50 76 50 112 86 112 C122 112 116 22 150 22 C184 22 176 128 214 128 C252 128 248 62 284 62 C318 62 318 82 354 82 C390 82 390 76 426 76 C462 76 462 76 506 76" />
+        </svg>
+        <div class="decision-stack">
+          <div class="decision-card allowed-card">
+            <strong>ALLOWED</strong>
+            <span>Admissible proposals continue to execution.</span>
+          </div>
+          <div class="decision-card blocked-card">
+            <strong>BLOCKED</strong>
+            <span>Invalid actions stop before mutation.</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="install-line">pip install waveframe-guard cricore-contract-compiler cricore-proposal-normalizer</div>
   </section>
 
   <section class="band" aria-labelledby="flow-title">
