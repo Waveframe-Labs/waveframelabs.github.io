@@ -193,20 +193,28 @@ p{color:var(--muted);line-height:1.65}
   top:50%;
   height:2px;
   transform:translateY(-50%);
-  background:linear-gradient(90deg,transparent,rgba(255,122,24,.35),rgba(255,122,24,.95),rgba(255,122,24,.28),transparent);
-  box-shadow:0 0 18px rgba(255,122,24,.28);
+  background:linear-gradient(90deg,transparent,rgba(255,122,24,.28),rgba(255,122,24,.85),rgba(255,122,24,.24),transparent);
+  box-shadow:0 0 18px rgba(255,122,24,.24);
 }
 .signal-line:after{
   content:"";
   position:absolute;
-  left:50%;
   top:50%;
-  width:16px;
-  height:16px;
+  left:8%;
+  width:13px;
+  height:13px;
   transform:translate(-50%,-50%);
   border-radius:50%;
   background:var(--accent);
-  box-shadow:0 0 30px rgba(255,122,24,.7);
+  box-shadow:0 0 28px rgba(255,122,24,.72);
+  animation:signalPulse 4.8s ease-in-out infinite;
+}
+@keyframes signalPulse{
+  0%,12%{left:8%;opacity:.25;transform:translate(-50%,-50%) scale(.78)}
+  34%{left:38%;opacity:1;transform:translate(-50%,-50%) scale(1)}
+  56%{left:55%;opacity:1;transform:translate(-50%,-50%) scale(1.18)}
+  78%{left:86%;opacity:.6;transform:translate(-50%,-50%) scale(.9)}
+  100%{left:86%;opacity:0;transform:translate(-50%,-50%) scale(.7)}
 }
 .flow-node{
   position:relative;
@@ -228,7 +236,8 @@ p{color:var(--muted);line-height:1.65}
 }
 .flow-node span{
   color:var(--muted);
-  font-size:.84rem;
+  font-size:.88rem;
+  font-weight:650;
   line-height:1.45;
 }
 .boundary-gate{
@@ -277,7 +286,8 @@ p{color:var(--muted);line-height:1.65}
 }
 .result-card span{
   color:var(--muted);
-  font-size:.82rem;
+  font-size:.86rem;
+  font-weight:650;
   line-height:1.45;
 }
 .result-card.allowed-card{border-color:rgba(61,220,132,.35)}
@@ -537,7 +547,6 @@ footer{
       <span>Waveframe Labs</span>
     </a>
     <nav class="topnav" aria-label="Primary">
-      <a href="index.html">Home</a>
       <a href="hierarchy.html">How It Works</a>
       <a href="tools.html">Tools</a>
       <a href="compatibility.html">Compatibility</a>
@@ -567,31 +576,31 @@ footer{
 
       <div class="hero-visual" aria-label="Waveframe execution-boundary flow diagram">
         <div class="flow-diagram">
-          <div class="flow-title">Execution Boundary</div>
+          <div class="flow-title">Live Enforcement Path</div>
           <div class="flow-map">
             <div class="signal-line"></div>
             <div class="flow-node">
-              <strong>Proposal</strong>
-              <span>An action asks to mutate a production system.</span>
+              <strong>Mutation Request</strong>
+              <span>Actor + action + resource</span>
             </div>
             <div class="flow-node">
-              <strong>Contract Check</strong>
-              <span>Guard binds authority and asks CRI-CORE for admissibility.</span>
+              <strong>Guard Check</strong>
+              <span>Authority-bound admissibility</span>
             </div>
             <div class="boundary-gate" aria-hidden="true"></div>
             <div class="result-stack">
               <div class="result-card allowed-card">
                 <strong>ALLOWED</strong>
-                <span>Admissible actions continue.</span>
+                <span>Execute</span>
               </div>
               <div class="result-card blocked-card">
                 <strong>BLOCKED</strong>
-                <span>Invalid actions stop here.</span>
+                <span>Stop before mutation</span>
               </div>
             </div>
           </div>
           <div class="flow-caption">
-            The model can propose. The workflow can request. Only governed execution crosses the boundary.
+            Models can propose. Workflows can request. Only governed execution crosses the boundary.
           </div>
         </div>
       </div>
