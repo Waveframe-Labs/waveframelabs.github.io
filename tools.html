@@ -1,8 +1,8 @@
 <!--
 ---
-title: "Tools - Waveframe Labs"
-short_title: "Tools"
-version: "2.0.0"
+title: "Public Tools - Waveframe Labs"
+short_title: "Public Tools"
+version: "2.1.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -18,222 +18,79 @@ ai_assisted: "partial"
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Tools - Waveframe Labs</title>
-
-  <meta name="description" content="Waveframe tools organized by governance, compilation, proposal, enforcement, and authority layers." />
+  <title>Public Tools - Waveframe Labs</title>
+  <meta name="description" content="Public Waveframe tools organized by governance, compilation, proposal, enforcement, and authority layers." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/tools.html" />
-
 <style>
-:root{--bg:#0b0c10;--card:#14161b;--panel:#0f1116;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff7a18;--maxw:1080px;--rad:8px}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}
-.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(20,22,27,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}
-.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:24px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}
-.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0))}
-.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}
-h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:34px 0 10px}h3{margin:0 0 8px}
-p{color:var(--muted);line-height:1.65}.lede{font-size:1.1rem;color:var(--soft);max-width:780px}
-.layer{display:grid;grid-template-columns:210px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--edge)}
-.layer-label{color:var(--accent);font-weight:850;text-transform:uppercase;font-size:.8rem;letter-spacing:.1em}
-.tool-card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-bottom:12px}
-.tool-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}.badge{border:1px solid rgba(255,122,24,.4);color:var(--accent);border-radius:999px;padding:4px 8px;font-size:.75rem;font-weight:800}
-.meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}.meta div{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:12px}.meta strong{display:block;color:var(--ink);margin-bottom:4px}.meta span{color:var(--muted);font-size:.92rem;line-height:1.45}
-.code{background:#090a0d;border:1px solid var(--edge);border-radius:var(--rad);padding:14px;overflow:auto;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:#dfe4ed}
-.start{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:16px}
-footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-@media(max-width:860px){.hdr{align-items:flex-start;flex-direction:column}.layer{grid-template-columns:1fr}.meta{grid-template-columns:1fr}}
+:root{--bg:#050505;--card:#141414;--panel:#0d0d0f;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff5a0a;--maxw:1080px;--rad:8px}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(10,10,10,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:24px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,90,10,.12),rgba(0,0,0,0))}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:34px 0 10px}h3{margin:0 0 8px}p{color:var(--muted);line-height:1.65}.lede{font-size:1.1rem;color:var(--soft);max-width:820px}.layer{display:grid;grid-template-columns:210px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--edge)}.layer-label{color:var(--accent);font-weight:850;text-transform:uppercase;font-size:.8rem;letter-spacing:.1em}.tool-card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-bottom:12px}.tool-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}.badge{border:1px solid rgba(255,90,10,.42);color:var(--accent);border-radius:999px;padding:4px 8px;font-size:.75rem;font-weight:800}.meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}.meta div{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:12px}.meta strong{display:block;color:var(--ink);margin-bottom:4px}.meta span{color:var(--muted);font-size:.92rem;line-height:1.45}.code{background:#090a0d;border:1px solid var(--edge);border-radius:var(--rad);padding:14px;overflow:auto;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:#dfe4ed}.start{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:16px}.note{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}@media(max-width:860px){.hdr{align-items:flex-start;flex-direction:column}.layer{grid-template-columns:1fr}.meta{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
 <div class="wrap">
-
 <header class="hdr">
-  <div class="brand">
-    <img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark">
-    <div class="brand-text">Waveframe Labs</div>
-  </div>
+  <div class="brand"><img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark"><div class="brand-text">Waveframe Labs</div></div>
   <nav class="topnav">
     <a href="index.html">Home</a>
-    <a href="hierarchy.html">How It Works</a>
-    <a class="active-link" href="tools.html">Tools</a>
+    <a href="hierarchy.html">Architecture</a>
+    <a class="active-link" href="tools.html">Public Tools</a>
     <a href="compatibility.html">Compatibility</a>
-    <a href="case-studies.html">Examples</a>
+    <a href="case-studies.html">Reference Scenarios</a>
     <a href="updates.html">Updates</a>
   </nav>
 </header>
 
 <section class="hero">
-  <span class="kicker">Developer Entrypoint</span>
-  <h1>Tools by execution layer.</h1>
-  <p class="lede">
-    Waveframe is not one monolith. It is a set of narrow infrastructure components that turn
-    governance into authority, authority into contracts, contracts into admissibility decisions,
-    and decisions into runtime enforcement.
-  </p>
+  <span class="kicker">Public Reference Index</span>
+  <h1>Tools by execution-governance layer.</h1>
+  <p class="lede">This page identifies the public and reference components in the Waveframe architecture. It is not a pricing page or hosted-product page; it explains which layer does what and where enforcement responsibility belongs.</p>
 </section>
 
 <section class="start">
-  <h2 style="margin-top:0;">Start with the runtime path</h2>
+  <h2 style="margin-top:0;">Runtime path</h2>
   <pre class="code"><code>pip install waveframe-guard cricore cricore-contract-compiler cricore-proposal-normalizer</code></pre>
-  <p>
-    For production systems, Guard is the runtime boundary. CRI-CORE is the decision kernel.
-    The compiler and normalizer prepare the authority and proposal inputs those runtime layers require.
-  </p>
+  <p>For production systems, Guard is the runtime boundary. CRI-CORE is the decision kernel. The compiler and normalizer prepare the authority and proposal inputs those runtime layers require.</p>
+  <p class="note">Commercial surfaces such as Cloud, Ledger Workspace, and Guard Inspector operationalize this model for teams, but the institutional reference remains here.</p>
 </section>
 
-<section>
-  <h2>Layered Ecosystem</h2>
-</section>
+<section><h2>Layered Ecosystem</h2></section>
 
 <section class="layer">
   <div class="layer-label">Governance Layer</div>
-  <div>
-    <div class="tool-card">
-      <div class="tool-head">
-        <h3>Governance-Ledger</h3>
-        <span class="badge">Authoring / Publication</span>
-      </div>
-      <p>
-        Normalizes human governance, produces diagnostics, gates publication, preserves lineage,
-        and writes registry-ready authority artifacts.
-      </p>
-      <div class="meta">
-        <div><strong>Consumes</strong><span>Source governance and reviews</span></div>
-        <div><strong>Emits</strong><span>Published authority, manifests, registry entries</span></div>
-        <div><strong>Does not</strong><span>Run enforcement or infer unsupported meaning</span></div>
-      </div>
-      <p><strong>Install:</strong> <code>pip install governance-ledger</code></p>
-    </div>
-  </div>
+  <div><div class="tool-card"><div class="tool-head"><h3>Governance Ledger</h3><span class="badge">Authoring / Publication</span></div><p>Normalizes human governance, produces diagnostics, gates publication, preserves lineage, and writes registry-ready authority artifacts.</p><div class="meta"><div><strong>Consumes</strong><span>Source governance and reviews</span></div><div><strong>Emits</strong><span>Published authority, manifests, registry entries</span></div><div><strong>Does not</strong><span>Run enforcement or infer unsupported meaning</span></div></div><p><strong>Install:</strong> <code>pip install governance-ledger</code></p></div></div>
 </section>
 
 <section class="layer">
   <div class="layer-label">Compilation Layer</div>
-  <div>
-    <div class="tool-card">
-      <div class="tool-head">
-        <h3>CRI-CORE Contract Compiler</h3>
-        <span class="badge">Deterministic Contract Build</span>
-      </div>
-      <p>
-        Converts approved governance policy into stable, machine-readable compiled authority contracts
-        with contract id, semantic version, and hash.
-      </p>
-      <div class="meta">
-        <div><strong>Consumes</strong><span>Governance policy JSON</span></div>
-        <div><strong>Emits</strong><span>Compiled authority contract</span></div>
-        <div><strong>Does not</strong><span>Evaluate actions or enforce governance</span></div>
-      </div>
-      <p><strong>Install:</strong> <code>pip install cricore-contract-compiler</code></p>
-    </div>
-  </div>
+  <div><div class="tool-card"><div class="tool-head"><h3>CRI-CORE Contract Compiler</h3><span class="badge">Deterministic Contract Build</span></div><p>Converts approved governance policy into stable, machine-readable compiled authority contracts with contract id, semantic version, and hash.</p><div class="meta"><div><strong>Consumes</strong><span>Governance policy JSON</span></div><div><strong>Emits</strong><span>Compiled authority contract</span></div><div><strong>Does not</strong><span>Evaluate actions or enforce governance</span></div></div><p><strong>Install:</strong> <code>pip install cricore-contract-compiler</code></p></div></div>
 </section>
 
 <section class="layer">
   <div class="layer-label">Proposal Layer</div>
-  <div>
-    <div class="tool-card">
-      <div class="tool-head">
-        <h3>Proposal Normalizer</h3>
-        <span class="badge">Canonical Input Shape</span>
-      </div>
-      <p>
-        Assembles actor, mutation, artifacts, and contract reference into the single canonical
-        proposal envelope CRI-CORE evaluates.
-      </p>
-      <div class="meta">
-        <div><strong>Consumes</strong><span>Caller-supplied action references</span></div>
-        <div><strong>Emits</strong><span>Canonical proposal</span></div>
-        <div><strong>Does not</strong><span>Compute contract truth or interpret policy</span></div>
-      </div>
-      <p><strong>Install:</strong> <code>pip install cricore-proposal-normalizer</code></p>
-    </div>
-  </div>
+  <div><div class="tool-card"><div class="tool-head"><h3>Proposal Normalizer</h3><span class="badge">Canonical Input Shape</span></div><p>Assembles actor, mutation, artifacts, and contract reference into the single canonical proposal envelope CRI-CORE evaluates.</p><div class="meta"><div><strong>Consumes</strong><span>Caller-supplied action references</span></div><div><strong>Emits</strong><span>Canonical proposal</span></div><div><strong>Does not</strong><span>Compute contract truth or interpret policy</span></div></div><p><strong>Install:</strong> <code>pip install cricore-proposal-normalizer</code></p></div></div>
 </section>
 
 <section class="layer">
   <div class="layer-label">Enforcement Layer</div>
   <div>
-    <div class="tool-card">
-      <div class="tool-head">
-        <h3>CRI-CORE</h3>
-        <span class="badge">Admissibility Kernel</span>
-      </div>
-      <p>
-        Evaluates the canonical proposal against the compiled authority contract and returns a
-        deterministic execution decision.
-      </p>
-      <div class="meta">
-        <div><strong>Consumes</strong><span>Canonical proposal and compiled contract</span></div>
-        <div><strong>Emits</strong><span><code>commit_allowed</code> and reason</span></div>
-        <div><strong>Does not</strong><span>Execute actions or orchestrate workflows</span></div>
-      </div>
-      <p><strong>Install:</strong> <code>pip install cricore</code></p>
-    </div>
-
-    <div class="tool-card">
-      <div class="tool-head">
-        <h3>Waveframe Guard</h3>
-        <span class="badge">Runtime Boundary</span>
-      </div>
-      <p>
-        Intercepts function execution, loads published contract artifacts, calls enforcement logic,
-        and blocks invalid actions before they run.
-      </p>
-      <div class="meta">
-        <div><strong>Consumes</strong><span>Function call, actor, contract artifact or registry ref</span></div>
-        <div><strong>Emits</strong><span>Governed execution result and local audit event</span></div>
-        <div><strong>Does not</strong><span>Define authority or author policy</span></div>
-      </div>
-      <p><strong>Install:</strong> <code>pip install waveframe-guard</code></p>
-    </div>
+    <div class="tool-card"><div class="tool-head"><h3>CRI-CORE</h3><span class="badge">Admissibility Kernel</span></div><p>Evaluates the canonical proposal against the compiled authority contract and returns a deterministic execution decision.</p><div class="meta"><div><strong>Consumes</strong><span>Canonical proposal and compiled contract</span></div><div><strong>Emits</strong><span><code>commit_allowed</code> and reason</span></div><div><strong>Does not</strong><span>Execute actions or orchestrate workflows</span></div></div><p><strong>Install:</strong> <code>pip install cricore</code></p></div>
+    <div class="tool-card"><div class="tool-head"><h3>Waveframe Guard</h3><span class="badge">Runtime Boundary</span></div><p>Intercepts function execution, loads published contract artifacts, calls enforcement logic, and blocks invalid actions before they run.</p><div class="meta"><div><strong>Consumes</strong><span>Function call, actor, contract artifact or registry ref</span></div><div><strong>Emits</strong><span>Governed execution result and local audit event</span></div><div><strong>Does not</strong><span>Define authority or author policy</span></div></div><p><strong>Install:</strong> <code>pip install waveframe-guard</code></p></div>
   </div>
 </section>
 
 <section class="layer">
-  <div class="layer-label">Authority / Audit Layer</div>
-  <div>
-    <div class="tool-card">
-      <div class="tool-head">
-        <h3>Waveframe Cloud</h3>
-        <span class="badge">Authority Distribution</span>
-      </div>
-      <p>
-        Serves registry metadata, immutable authority contracts, audit ingestion, organization-scoped
-        identities, and durable receipts.
-      </p>
-      <div class="meta">
-        <div><strong>Consumes</strong><span>Published contracts and governed audit events</span></div>
-        <div><strong>Emits</strong><span>Registry responses, contract artifacts, audit receipts</span></div>
-        <div><strong>Does not</strong><span>Decide admissibility, normalize policy, or orchestrate actions</span></div>
-      </div>
-    </div>
-  </div>
+  <div class="layer-label">Authority / Evidence Layer</div>
+  <div><div class="tool-card"><div class="tool-head"><h3>Waveframe Cloud</h3><span class="badge">Commercial Authority Plane</span></div><p>Serves registry metadata, immutable authority contracts, audit ingestion, organization-scoped identities, and durable receipts.</p><div class="meta"><div><strong>Consumes</strong><span>Published contracts and governed audit events</span></div><div><strong>Emits</strong><span>Registry responses, contract artifacts, audit receipts</span></div><div><strong>Does not</strong><span>Decide admissibility, normalize policy, or orchestrate actions</span></div></div></div></div>
 </section>
 
 <section>
   <h2>Architecture Map</h2>
-  <p>
-    To see how authority, proposals, execution decisions, and audit receipts move through the stack,
-    use the execution architecture page.
-  </p>
-  <p><a href="hierarchy.html" style="color:var(--accent);font-weight:800;">View how it works</a></p>
+  <p>To see how authority, proposals, execution decisions, and audit receipts move through the stack, use the canonical architecture page.</p>
+  <p><a href="hierarchy.html" style="color:var(--accent);font-weight:800;">Read architecture</a></p>
 </section>
 
-<footer>
-  <span>&copy; <span id="year"></span> Waveframe Labs</span>
-  <span>Ecosystem and developer entrypoint</span>
-</footer>
-
+<footer><span>&copy; <span id="year"></span> Waveframe Labs</span><span>Public tool reference index</span></footer>
 </div>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
