@@ -31,7 +31,7 @@ The site now centers:
 
 - Waveframe Labs as an independent research organization
 - governance, reproducibility, epistemic integrity, and deterministic execution
-- ARI, AWO, Neurotransparency, and CRI-CORE as complementary research programs
+- explicit status separation between foundational frameworks, published epistemic research, and active technical infrastructure
 - publications, versioned artifacts, source releases, and updates as the public record
 - open infrastructure as evidence of the research program
 - a clear boundary between the `.org` research institution and the `.com` commercial product
