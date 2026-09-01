@@ -3,10 +3,10 @@ title: "Site Deployment Log - WaveframeLabs.org"
 filetype: "documentation"
 type: "log"
 domain: "infrastructure"
-version: "2.0.0"
+version: "3.0.0"
 status: "Active"
 created: "2025-10-18"
-updated: "2026-05-18"
+updated: "2026-09-01"
 
 author:
   name: "Waveframe Labs"
@@ -33,7 +33,7 @@ authority_notes:
   - "Protocol and package release notes are surfaced in updates.html."
 
 anchors:
-  - "SITE-DEPLOYMENT-LOG-v2.0.0"
+  - "SITE-DEPLOYMENT-LOG-v3.0.0"
 ---
 
 # Site Deployment Log - WaveframeLabs.org
@@ -53,6 +53,20 @@ This log does not record:
 - Research outputs
 - Package publication events
 - Internal drafts
+
+---
+
+## 2026-09-01 — Website v3.0.0 Institutional Redesign
+
+- Restored `waveframelabs.org` as the canonical Waveframe Labs research and institutional surface.
+- Separated research and product responsibilities between `waveframelabs.org` and `waveframelabs.com`.
+- Replaced the product-led homepage with an institutional research narrative.
+- Added `research.html` as the program map for ARI, AWO, Neurotransparency, and CRI-CORE.
+- Added `about.html` for the organization, founder, contact, ORCID, and institutional boundary.
+- Reframed `updates.html` as the canonical institutional and technical record and refreshed current public releases.
+- Added the shared responsive institutional design system at `assets/institutional.css`.
+- Normalized primary navigation across existing research and technical reference pages.
+- Updated repository documentation and the website version contract to v3.0.0.
 
 ---
 

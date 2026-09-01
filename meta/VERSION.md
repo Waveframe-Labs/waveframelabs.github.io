@@ -2,137 +2,57 @@
 title: "Waveframe Labs Website - Version Contract"
 filetype: "documentation"
 type: "version"
-domain: "infrastructure"
-version: "2.0.0"
+domain: "institutional"
+version: "3.0.0"
 status: "Active"
 created: "2025-10-18"
-updated: "2026-05-18"
-
+updated: "2026-09-01"
 author:
   name: "Waveframe Labs"
   url: "https://waveframelabs.org"
-
 maintainer:
   name: "Waveframe Labs"
   url: "https://waveframelabs.org"
-
 license: "CC-BY-NC-SA-4.0"
-
 ai_assisted: "partial"
-
 anchors:
-  - "WF-WEBSITE-VERSION-v2.0.0"
+  - "WF-WEBSITE-VERSION-v3.0.0"
 ---
 
-# Version - WaveframeLabs.org
+# Version — WaveframeLabs.org
 
-**Current Version:** `2.0.0`
+**Current Version:** `3.0.0`
 
-## Version Semantics
+Version 3.0.0 restores `waveframelabs.org` as the canonical institutional and research surface for Waveframe Labs.
 
-Version `2.0.0` designates the second canonical public interface of the Waveframe Labs website.
+## Public interpretation
 
-This release materially changes the public interpretation of the site from an Aurora-first institutional overview into a product and protocol-facing execution-governance reference surface.
+The site now centers:
 
-The v2.0.0 website centers:
+- Waveframe Labs as an independent research organization
+- governance, reproducibility, epistemic integrity, and deterministic execution
+- ARI, AWO, Neurotransparency, and CRI-CORE as complementary research programs
+- publications, versioned artifacts, source releases, and updates as the public record
+- open infrastructure as evidence of the research program
+- a clear boundary between the `.org` research institution and the `.com` commercial product
 
-- deterministic enforcement at the execution boundary
-- the canonical governance-to-production architecture diagram
-- installable runtime and developer infrastructure
-- local Guard vs Cloud authority/audit responsibilities
-- component boundary responsibilities
-- compatibility and dependency specification
-- concrete governed execution scenarios
-- protocol evolution and release engineering notes
+## Domain contract
 
----
+`waveframelabs.org` explains and verifies the research. `waveframelabs.com` sells and onboards the Waveframe product. GitHub preserves source, release, and implementation evidence.
 
-## v2.0.0 Canonical Architecture
+## Included surfaces
 
-The v2.0.0 architecture is:
+- Institutional homepage
+- Research program map
+- Organization and founder page
+- Publication archive
+- Institutional and technical update log
+- Program-specific research pages
+- Open technical reference pages
+- Shared responsive institutional design system
 
-```text
-Human Governance
-  -> Governance-Ledger
-  -> Contract Compiler
-  -> Compiled Authority Contract
-  -> Proposal Normalizer
-  -> Canonical Proposal
-  -> CRI-CORE
-  -> Execution Decision
-  -> Waveframe Guard
-  -> Production System
-```
+## Site authority
 
-Waveframe Cloud provides:
-
-- authority distribution
-- audit durability
-- registry
-- receipts
-
-Cloud does not decide admissibility.
-
----
-
-## Scope of v2.0.0
-
-Included in the v2.0.0 canonical interface:
-
-- Product landing homepage aligned around execution-boundary enforcement
-- Single reusable canonical architecture diagram asset
-- Execution architecture map page
-- Compatibility matrix and dependency specification page
-- CRI-CORE kernel page focused on deterministic admissibility
-- Tools page organized by governance, compilation, proposal, enforcement, and authority/audit layers
-- Governed execution scenarios page
-- Protocol evolution release log
-- README aligned to v2.0.0 public architecture
-- Site metadata and deployment logs aligned to this release
-
-Out of scope for v2.0.0:
-
-- Runtime implementation code
-- Cloud service deployment
-- Package publication
-- Governance authority publication
-- Dynamic documentation generation
-- Analytics or telemetry
-
----
-
-## Compatibility Profile
-
-The v2.0.0 site documents compatibility profile:
-
-`waveframe-execution-governance-2026-05`
-
-The public compatibility surface includes:
-
-- Governance-Ledger
-- CRI-CORE Contract Compiler
-- Proposal Normalizer
-- CRI-CORE
-- Waveframe Guard
-- Waveframe Cloud v1 API semantics
-
-The authoritative compatibility page is:
-
-`compatibility.html`
-
----
-
-## Versioning Policy
-
-Website versions are incremented when:
-
-- the public interpretation of the site materially changes
-- canonical structure or authority relationships are altered
-- new permanent reference surfaces are added
-- the documented architecture changes compatibility expectations
-
-Minor copy edits, visual adjustments, and routine content refreshes may not trigger a website version change.
-
----
+The site is a human-readable index. In the event of conflict, authority flows to the cited governance documents, specifications, DOI-backed releases, registries, and implementation repositories—not inward to the website.
 
 Copyright 2026 Waveframe Labs.
