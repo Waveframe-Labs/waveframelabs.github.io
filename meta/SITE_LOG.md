@@ -67,6 +67,8 @@ This log does not record:
 - Added the shared responsive institutional design system at `assets/institutional.css`.
 - Normalized primary navigation across existing research and technical reference pages.
 - Updated repository documentation and the website version contract to v3.0.0.
+- Reclassified ARI and AWO as foundational maintenance-mode research and Neurotransparency as stable published research rather than current product dependencies.
+- Removed the claim that Waveframe Labs or its current product runtime operates under ARI authority.
 
 ---
 

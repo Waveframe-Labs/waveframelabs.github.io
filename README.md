@@ -19,13 +19,15 @@ This repository hosts the canonical institutional website for **Waveframe Labs**
 
 The `.org` site may explain how research becomes operational infrastructure, but it is not the product landing page.
 
-## Research structure
+## Research portfolio
 
-- **Aurora Research Initiative (ARI):** institutional governance and authority
-- **Aurora Workflow Orchestration (AWO):** reproducible AI–human method
-- **Neurotransparency:** epistemic doctrine and normative disclosure specification
-- **CRI-CORE:** deterministic admissibility and execution-boundary research
+- **Aurora Research Initiative (ARI):** foundational institutional-governance research; maintenance mode
+- **Aurora Workflow Orchestration (AWO):** foundational reproducibility methodology; maintenance mode
+- **Neurotransparency:** stable published doctrine and specification; not currently implemented by the product runtime
+- **Current technical research:** Ledger, Compiler, CRI-CORE, Guard, and the execution-governance boundary
 - **Publications and case studies:** DOI-backed artifacts and applied demonstrations
+
+Foundational lineage does not imply a current runtime dependency. Present behavior is defined by the active repositories' versioned contracts, source, tests, and releases.
 
 ## Site structure
 
