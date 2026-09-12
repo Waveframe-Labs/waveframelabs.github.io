@@ -2,7 +2,7 @@
 ---
 title: "Compatibility - Waveframe Labs"
 short_title: "Compatibility"
-version: "2.1.0"
+version: "2.2.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -12,89 +12,32 @@ policy_version: "ARI-Metadata-3.0.2"
 ai_assisted: "partial"
 ---
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Compatibility - Waveframe Labs</title>
-  <meta name="description" content="Public compatibility matrix and interface contract specification for the Waveframe execution-governance stack." />
+  <meta name="description" content="Current package, interface, and release compatibility for the Waveframe execution-governance stack." />
   <link rel="icon" type="image/png" href="favicon-32x32.png" />
   <link rel="canonical" href="https://waveframelabs.org/compatibility.html" />
 <style>
-:root{--bg:#050505;--card:#141414;--panel:#0d0d0f;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff5a0a;--green:#3ddc97;--red:#ff4d4d;--maxw:1080px;--rad:8px}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(10,10,10,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:20px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,90,10,.12),rgba(0,0,0,0))}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:34px 0 10px}h3{margin:0 0 8px}p{color:var(--muted);line-height:1.65}.lede{font-size:1.1rem;color:var(--soft);max-width:820px}.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.matrix{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);overflow:hidden;display:table}.matrix th,.matrix td{border-bottom:1px solid var(--edge);padding:13px 14px;text-align:left;vertical-align:top}.matrix th{color:var(--ink);background:var(--panel);font-size:.86rem;text-transform:uppercase;letter-spacing:.08em}.matrix td{color:var(--muted);line-height:1.45}.matrix tr:last-child td{border-bottom:0}code{background:#090a0d;border:1px solid var(--edge);border-radius:5px;padding:2px 5px;color:#dfe4ed}.status{color:var(--green);font-weight:800}.warn{color:var(--accent);font-weight:800}ul{color:var(--muted);line-height:1.8}.note{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}.diagram-link{display:inline-block;margin-top:8px;color:var(--accent);font-weight:800}footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.matrix{display:block;overflow-x:auto;white-space:nowrap}}
+:root{--bg:#050505;--card:#141414;--panel:#0d0d0f;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff5a0a;--green:#3ddc97;--red:#ff4d4d;--maxw:1080px;--rad:8px}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(10,10,10,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:20px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,90,10,.12),rgba(0,0,0,0))}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:34px 0 10px}h3{margin:0 0 8px}p{color:var(--muted);line-height:1.65}.lede{font-size:1.1rem;color:var(--soft);max-width:840px}.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.matrix{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--edge)}.matrix th,.matrix td{border-bottom:1px solid var(--edge);padding:13px 14px;text-align:left;vertical-align:top}.matrix th{color:var(--ink);background:var(--panel);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em}.matrix td{color:var(--muted);line-height:1.48}.matrix tr:last-child td{border-bottom:0}code{background:#090a0d;border:1px solid var(--edge);border-radius:5px;padding:2px 5px;color:#dfe4ed}.status{color:var(--green);font-weight:800}.warn{color:var(--accent);font-weight:800}.note{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}.hash{font-family:"SFMono-Regular",Consolas,monospace;word-break:break-all;color:var(--soft)}ul{color:var(--muted);line-height:1.8}footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.matrix{display:block;overflow-x:auto;white-space:normal}}
 </style>
-  <meta property="og:site_name" content="Waveframe Labs">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Waveframe Labs">
-  <meta property="og:description" content="Independent research for trustworthy AI work.">
-  <meta property="og:image" content="https://waveframelabs.org/assets/og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Waveframe Labs">
-  <meta name="twitter:description" content="Independent research for trustworthy AI work.">
-  <meta name="twitter:image" content="https://waveframelabs.org/assets/og.png">
 </head>
-<body>
-<div class="wrap">
-<header class="hdr">
-  <div class="brand"><img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark"><div class="brand-text">Waveframe Labs</div></div>
-  <nav class="topnav">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a class="active-link" href="tools.html">Open Source</a>
-    <a href="updates.html">Updates</a>
-    <a href="about.html">About</a>
-    <a href="https://waveframelabs.com">Waveframe ↗</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <span class="kicker">Public Interface Contract</span>
-  <h1>Compatibility surface for governed execution.</h1>
-  <p class="lede">Waveframe components interoperate through explicit authority, contract, proposal, decision, registry, audit, and receipt boundaries. This page defines the current public compatibility surface for verification and integration review.</p>
-</section>
-
-<section>
-  <h2>Current Compatibility Set</h2>
-  <p class="note">Compatibility profile: <code>waveframe-execution-governance-2026-05</code></p>
-  <table class="matrix">
-    <thead><tr><th>Layer</th><th>Component</th><th>Current public surface</th><th>Consumes</th><th>Produces</th></tr></thead>
-    <tbody>
-      <tr><td>Governance</td><td>Waveframe Ledger</td><td><span class="status">Compatible</span><br><code>pip install governance-ledger</code></td><td>Source governance, reviews, policy inputs</td><td>Publication evidence, lineage, registry-ready contracts</td></tr>
-      <tr><td>Compilation</td><td>CRI-CORE Contract Compiler</td><td><span class="status">Compatible</span><br><code>&gt;=0.3.0</code></td><td>Governance policy JSON with contract identity</td><td>Compiled authority contract with hash</td></tr>
-      <tr><td>Proposal</td><td>Proposal Normalizer</td><td><span class="status">Compatible</span><br><code>&gt;=0.1.0</code></td><td>Actor, mutation, artifacts, contract reference</td><td>Canonical proposal envelope</td></tr>
-      <tr><td>Kernel</td><td>CRI-CORE</td><td><span class="status">Compatible</span><br><code>0.13.x</code></td><td>Canonical proposal and compiled contract</td><td><code>commit_allowed</code>, reason, decision trace</td></tr>
-      <tr><td>Runtime</td><td>Waveframe Guard</td><td><span class="status">Compatible</span><br><code>0.5.x</code></td><td>Function call, actor, contract artifact or authority ref</td><td>Governed execution result and audit event</td></tr>
-      <tr><td>Authority / Evidence</td><td>Waveframe Cloud</td><td><span class="warn">Commercial surface</span><br><code>v1 API semantics</code></td><td>Registry requests, contract requests, audit events</td><td>Registry, immutable contracts, audit receipts</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section>
-  <h2>Required Interface Contracts</h2>
-  <div class="grid">
-    <div class="card"><h3>Authority References</h3><ul><li>Runtime authority refs must be explicit and versioned.</li><li>Use forms such as <code>finance-policy@1.0.0</code>.</li><li>Unversioned contract ids are not compatibility-safe for replay, audit, or cache integrity.</li></ul></div>
-    <div class="card"><h3>Contract Identity</h3><ul><li>Contracts require <code>contract_id</code>, <code>contract_version</code>, and <code>contract_hash</code>.</li><li><code>contract_version</code> must use semantic versioning.</li><li>Downstream components must not recompute or overwrite contract hashes.</li></ul></div>
-    <div class="card"><h3>Proposal Shape</h3><ul><li>CRI-CORE evaluates canonical proposal envelopes only.</li><li>Actor, mutation, artifacts, and contract reference are required.</li><li>Missing required proposal fields are hard errors, not warnings.</li></ul></div>
-    <div class="card"><h3>Cloud API Semantics</h3><ul><li>Registry and contract retrieval use <code>v1</code> API semantics.</li><li>Cloud distributes authority and stores durable evidence.</li><li>Cloud does not decide admissibility or normalize governance.</li></ul></div>
-  </div>
-</section>
-
-<section>
-  <h2>Recommended Install Set</h2>
-  <div class="card"><p>For local development and runtime enforcement:</p><p><code>pip install waveframe-guard cricore cricore-contract-compiler cricore-proposal-normalizer</code></p><p>For governance publication workflows:</p><p><code>pip install governance-ledger</code></p></div>
-</section>
-
-<section>
-  <h2>Compatibility Rules</h2>
-  <ul><li>Compiler output is the source of compiled contract identity.</li><li>Proposal Normalizer preserves caller-supplied contract truth.</li><li>CRI-CORE blocks contract identity mismatches.</li><li>Waveframe Guard enforces the decision before production execution.</li><li>Waveframe Cloud stores authority and audit evidence; it is not the admissibility engine.</li></ul>
-  <a class="diagram-link" href="canonical-architecture.svg">Open canonical architecture diagram</a>
-</section>
-
-<footer><span>&copy; <span id="year"></span> Waveframe Labs</span><span>Compatibility matrix and public interface contract</span></footer>
-</div>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<body><div class="wrap">
+<header class="hdr"><div class="brand"><img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark"><div class="brand-text">Waveframe Labs</div></div><nav class="topnav"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a class="active-link" href="tools.html">Open Source</a><a href="updates.html">Updates</a><a href="about.html">About</a><a href="https://waveframelabs.com">Waveframe ↗</a></nav></header>
+<section class="hero"><span class="kicker">Public Interface Contract · 2026-09</span><h1>Compatibility surface for governed execution.</h1><p class="lede">This page separates what is published on PyPI, what is released on GitHub, and what has only merged in source. Runtime integrations should use the published package set unless a release note explicitly documents another validated artifact.</p></section>
+<section><h2>Current compatibility set</h2><table class="matrix"><thead><tr><th>Layer</th><th>Component</th><th>Current public surface</th><th>Compatibility / notes</th></tr></thead><tbody>
+<tr><td>Governance</td><td>Waveframe Ledger</td><td><span class="status">PyPI 0.8.0</span><br><code>pip install governance-ledger==0.8.0</code></td><td>Native v3 publication support. The 0.8.0 <code>[guard]</code> extra still pins Guard 0.17.0; install Guard 0.18.0 directly for the current runtime path.</td></tr>
+<tr><td>Compilation</td><td>CRI-CORE Contract Compiler</td><td><span class="status">PyPI 0.4.0</span><br><code>pip install cricore-contract-compiler==0.4.0</code></td><td>Defines deterministic <code>target_requirements</code> and CLI <code>cricore-compile-policy</code>.</td></tr>
+<tr><td>Proposal</td><td>Proposal Normalizer</td><td><span class="status">0.2.0</span><br><code>pip install cricore-proposal-normalizer==0.2.0</code></td><td>Guard 0.18.0 declares <code>&gt;=0.2.0,&lt;0.3.0</code>.</td></tr>
+<tr><td>Kernel</td><td>CRI-CORE</td><td><span class="status">PyPI 0.13.0</span><br><span class="warn">GitHub v0.14.0; PyPI pending</span></td><td>Guard 0.18.0 declares <code>&gt;=0.13.0,&lt;0.15.0</code>. v0.14.0 changes public evaluation to strict-by-default; advisory evaluation requires explicit <code>mode="local"</code>.</td></tr>
+<tr><td>Runtime</td><td>Waveframe Guard</td><td><span class="status">PyPI 0.18.0</span><br><code>pip install waveframe-guard==0.18.0</code></td><td>Modern <code>Guard.local()</code>/<code>Guard.cloud()</code> tool mediation; repository writes use <code>repository_tool</code>. Legacy execution and permission entrypoints fail closed.</td></tr>
+<tr><td>Authority / evidence</td><td>Waveframe Cloud</td><td><span class="status">Release v0.5.7</span></td><td>v0.5.7 remains the latest published Cloud release. Later v2/v3 publication-serving and translation workflow work is merged in source but is not represented here as a hosted release.</td></tr>
+</tbody></table></section>
+<section><h2>Recommended install set</h2><div class="card"><p>For the current published runtime path:</p><p><code>pip install "waveframe-guard==0.18.0" "cricore==0.13.0" "cricore-contract-compiler==0.4.0" "cricore-proposal-normalizer==0.2.0"</code></p><p>For governance publication:</p><p><code>pip install "governance-ledger==0.8.0"</code></p><p class="note">Do not use <code>governance-ledger[guard]==0.8.0</code> to obtain the current Guard release; that extra selects Guard 0.17.0.</p></div></section>
+<section><h2>Runtime boundary rules</h2><div class="grid"><div class="card"><h3>Mediation</h3><ul><li>Guard protects the wrapped callable path, not the entire machine, agent, repository, or credential set.</li><li>Direct calls or alternate APIs can bypass a wrapper unless deployment permissions remove those paths.</li><li>Repository mutation assurance requires <code>repository_tool</code> and its bound repository target.</li></ul></div><div class="card"><h3>Target scope</h3><ul><li>Compiler 0.4.0 emits literal exact/prefix target requirements.</li><li>Rules are case-sensitive; deny rules take precedence.</li><li>Missing or malformed target data fails closed when scoped authority requires it.</li></ul></div><div class="card"><h3>CRI modes</h3><ul><li>Published PyPI 0.13.0 remains the ordinary-install baseline.</li><li>GitHub v0.14.0 defaults omitted mode to strict.</li><li>v0.14.0 accepts only explicit <code>strict</code> or <code>local</code>; configuration conflicts reject before policy evaluation.</li></ul></div><div class="card"><h3>Authority identity</h3><ul><li>Authority references are explicit and versioned.</li><li>Contract id, version, and hash remain bound through proposal and evaluation.</li><li>Ledger v3 adds publication commitment and receipt evidence without changing the v2 compiled runtime payload.</li></ul></div></div></section>
+<section><h2>Release artifact hashes</h2><div class="card"><p><strong>Guard 0.18.0 wheel</strong><br><span class="hash">sha256:5001ab5d528945912f27912d253c06e984d4e3c3443e0c8a42a2437dc668ed5f</span></p><p><strong>Ledger 0.8.0 wheel</strong><br><span class="hash">sha256:a78c0124899db2b63a689dcb1e3700b4326a8154e954253cde2328fedf5a1ce2</span></p><p><strong>CRI-CORE 0.14.0 GitHub wheel</strong> (not yet the PyPI baseline)<br><span class="hash">sha256:11a22b4fb15137a0e535b8dd71bf927260800559221f0e10512029d59fb18702</span></p></div></section>
+<section><h2>Verification sources</h2><div class="card"><p><a href="https://github.com/Waveframe-Labs/Waveframe-Guard/releases/tag/v0.18.0">Guard v0.18.0 release</a> · <a href="https://github.com/Waveframe-Labs/Waveframe-Ledger/releases/tag/v0.8.0">Ledger v0.8.0 release</a> · <a href="https://github.com/Waveframe-Labs/CRI-CORE/releases/tag/v0.14.0">CRI-CORE v0.14.0 GitHub release</a> · <a href="https://github.com/Waveframe-Labs/Waveframe-Cloud/releases/tag/v0.5.7">Cloud v0.5.7 release</a></p><p><a href="hierarchy.html" style="color:var(--accent);font-weight:800">Read the current execution architecture</a></p></div></section>
+<footer><span>&copy; <span id="year"></span> Waveframe Labs</span><span>Compatibility matrix · updated 2026-09-12</span></footer></div><script>document.getElementById('year').textContent=new Date().getFullYear();</script></body></html>

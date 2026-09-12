@@ -2,7 +2,7 @@
 ---
 title: "Reference Scenarios - Waveframe Labs"
 short_title: "Reference Scenarios"
-version: "2.1.0"
+version: "2.2.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -12,71 +12,18 @@ policy_version: "ARI-Metadata-3.0.2"
 ai_assisted: "partial"
 ---
 -->
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reference Scenarios - Waveframe Labs</title>
-  <meta name="description" content="Canonical governed execution scenarios: finance transfers, CI/CD deployments, permission changes, approval replay, multi-role approval, and contract mismatch blocking." />
-  <link rel="icon" type="image/png" href="favicon-32x32.png" />
-  <link rel="canonical" href="https://waveframelabs.org/case-studies.html" />
-<style>
-:root{--bg:#050505;--card:#141414;--panel:#0d0d0f;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff5a0a;--green:#3ddc97;--red:#ff4d4d;--maxw:1080px;--rad:8px}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--maxw);margin:0 auto;padding:20px 20px 72px}.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(10,10,10,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px}.brand-text{font-weight:700}.topnav{display:flex;gap:24px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,90,10,.12),rgba(0,0,0,0))}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:34px 0 10px}h3{margin:0 0 8px}p{color:var(--muted);line-height:1.65}.lede{font-size:1.1rem;color:var(--soft);max-width:820px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.scenario{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px}.scenario p:last-child{margin-bottom:0}.label{display:inline-block;border:1px solid var(--edge);background:var(--panel);border-radius:999px;padding:5px 9px;color:var(--soft);font-size:.78rem;font-weight:800;margin-bottom:12px}.allow{color:var(--green);font-weight:850}.block{color:var(--red);font-weight:850}.details{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:12px;margin:12px 0}.details strong{color:var(--ink)}.cta{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:18px}.note{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}footer{margin-top:40px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}
-</style>
-  <meta property="og:site_name" content="Waveframe Labs">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Waveframe Labs">
-  <meta property="og:description" content="Independent research for trustworthy AI work.">
-  <meta property="og:image" content="https://waveframelabs.org/assets/og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Waveframe Labs">
-  <meta name="twitter:description" content="Independent research for trustworthy AI work.">
-  <meta name="twitter:image" content="https://waveframelabs.org/assets/og.png">
-</head>
-<body>
-<div class="wrap">
-<header class="hdr">
-  <div class="brand"><img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark"><div class="brand-text">Waveframe Labs</div></div>
-  <nav class="topnav">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a class="active-link" href="tools.html">Open Source</a>
-    <a href="updates.html">Updates</a>
-    <a href="about.html">About</a>
-    <a href="https://waveframelabs.com">Waveframe ↗</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <span class="kicker">Reference Scenarios</span>
-  <h1>Concrete actions. Deterministic outcomes.</h1>
-  <p class="lede">These scenarios are canonical examples for understanding Waveframe's execution-governance boundary. They are not customer case studies; they are reference patterns for evaluating how authority, evidence, and runtime blocking work.</p>
-</section>
-
-<section>
-  <h2>Operational Reference Patterns</h2>
-  <p class="note">Each scenario follows the same structure: proposed mutation, authority check, contract-bound evaluation, and ALLOW/BLOCK outcome.</p>
-  <div class="grid">
-    <article class="scenario"><span class="label">Finance Transfer Governance</span><h3>High-value transfer by an unapproved actor</h3><p>Proposed action: transfer $1.25M from operating reserves to a vendor account.</p><div class="details"><strong>Evaluation:</strong> actor role is intern; contract requires manager approval and finance controller approval.</div><p class="block">Result: BLOCKED before execution</p></article>
-    <article class="scenario"><span class="label">CI/CD Deployment Enforcement</span><h3>Production deployment without release evidence</h3><p>Proposed action: deploy a production build from an AI-generated change set.</p><div class="details"><strong>Evaluation:</strong> missing test artifact, missing reviewer approval, and unsigned release manifest.</div><p class="block">Result: BLOCKED before deployment</p></article>
-    <article class="scenario"><span class="label">Privileged Permission Change</span><h3>Admin role escalation</h3><p>Proposed action: grant organization administrator rights to a service account.</p><div class="details"><strong>Evaluation:</strong> actor lacks authority for privileged identity mutation.</div><p class="block">Result: BLOCKED before permissions change</p></article>
-    <article class="scenario"><span class="label">Approval Replay Blocking</span><h3>Old approval reused against a new mutation</h3><p>Proposed action: execute a modified transfer using an approval from a previous transfer.</p><div class="details"><strong>Evaluation:</strong> approval artifact does not bind to the current mutation hash.</div><p class="block">Result: BLOCKED for integrity violation</p></article>
-    <article class="scenario"><span class="label">Multi-Role Approval Flow</span><h3>Required approvals satisfied</h3><p>Proposed action: reallocate a budget after manager, controller, and CFO approvals are bound to the proposal.</p><div class="details"><strong>Evaluation:</strong> required roles, artifacts, and contract identity checks pass.</div><p class="allow">Result: ALLOWED to execute</p></article>
-    <article class="scenario"><span class="label">Contract Mismatch Blocking</span><h3>Proposal references the wrong authority</h3><p>Proposed action: run a production mutation with a proposal that declares an outdated contract hash.</p><div class="details"><strong>Evaluation:</strong> proposal contract hash does not match the compiled authority contract.</div><p class="block">Result: BLOCKED for contract identity mismatch</p></article>
-  </div>
-</section>
-
-<section class="cta">
-  <h2 style="margin-top:0;">What these scenarios have in common</h2>
-  <p>The model can propose. A workflow can request. A service can prepare an action. But the action reaches the production system only after the contract-bound execution boundary returns an allowed decision.</p>
-  <p><a href="tools.html" style="color:var(--accent);font-weight:800;">View the public tools that implement the boundary</a></p>
-</section>
-
-<footer><span>&copy; <span id="year"></span> Waveframe Labs</span><span>Canonical governed execution scenarios</span></footer>
-</div>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Reference Scenarios - Waveframe Labs</title><meta name="description" content="Reference governed-execution scenarios for finance, repository deployment, privileged access, replay integrity, approvals, and authority mismatch."/><link rel="icon" type="image/png" href="favicon-32x32.png"/><link rel="canonical" href="https://waveframelabs.org/case-studies.html"/>
+<style>:root{--bg:#050505;--card:#141414;--panel:#0d0d0f;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff5a0a;--green:#3ddc97;--red:#ff4d4d;--maxw:1080px;--rad:8px}*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--maxw);margin:auto;padding:14px 20px 72px}.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(10,10,10,.88);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;margin-bottom:28px}.brand{display:flex;gap:12px;align-items:center}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}.hero{padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,90,10,.12),rgba(0,0,0,0));margin-bottom:22px}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em}h1{font-size:clamp(2rem,4vw,3.2rem);margin:.4rem 0 .7rem}h2{margin:34px 0 12px}h3{margin:0 0 8px}p{color:var(--muted);line-height:1.65}.lede{color:var(--soft);font-size:1.08rem;max-width:850px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.scenario,.cta{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px}.label{display:inline-block;border:1px solid var(--edge);background:var(--panel);border-radius:999px;padding:5px 9px;color:var(--soft);font-size:.78rem;font-weight:800;margin-bottom:12px}.details{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:12px;margin:12px 0}.details strong{color:var(--ink)}.allow{color:var(--green);font-weight:850}.block{color:var(--red);font-weight:850}.note{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}code{color:#dfe4ed}footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}</style></head>
+<body><div class="wrap"><header class="hdr"><div class="brand"><img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark"><div class="brand-text">Waveframe Labs</div></div><nav class="topnav"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a class="active-link" href="tools.html">Open Source</a><a href="updates.html">Updates</a><a href="about.html">About</a><a href="https://waveframelabs.com">Waveframe ↗</a></nav></header>
+<section class="hero"><span class="kicker">Reference Scenarios · 2026-09</span><h1>Concrete mediated actions. Deterministic outcomes.</h1><p class="lede">These are reference patterns, not customer claims. Each example assumes the sensitive capability is actually routed through the Guard boundary and that alternate mutation paths are independently restricted where required.</p></section>
+<section><h2>Operational patterns</h2><p class="note">The guarantee is path-specific: a BLOCK prevents the wrapped callback from running. It does not prove that an actor lacks every other route to the same underlying capability.</p><div class="grid">
+<article class="scenario"><span class="label">Finance Governance</span><h3>Budget allocation exceeds approved authority</h3><p>Proposed tool call: an allocator agent attempts a 12,500-unit allocation where the selected authority requires approval evidence above the configured threshold.</p><div class="details"><strong>Mediated evaluation:</strong> Guard binds actor, amount, target account, and exact authority; CRI-CORE returns blocked because required approval evidence is absent.</div><p class="block">Result: BLOCK — allocation callback never runs.</p></article>
+<article class="scenario"><span class="label">Repository / Deployment Governance</span><h3>Agent tries to modify a protected deployment path</h3><p>Proposed tool call: change a production deployment file while authority permits an exact documentation target but denies the <code>deployment/</code> prefix.</p><div class="details"><strong>Mediated evaluation:</strong> Guard 0.18.0 uses <code>repository_tool</code>, canonical repository-relative target identity, and the compiler-defined literal scope. Deny wins.</div><p class="block">Result: BLOCK — repository mutation callback never receives a usable target.</p></article>
+<article class="scenario"><span class="label">Privileged Access Governance</span><h3>Service account requests administrator role</h3><p>Proposed tool call: grant an organization-admin role through a Guard-wrapped identity mutation function.</p><div class="details"><strong>Mediated evaluation:</strong> actor role and target identity are bound to the proposal; the selected authority does not permit that actor to perform the privileged mutation.</div><p class="block">Result: BLOCK — permission-change callback does not execute.</p></article>
+<article class="scenario"><span class="label">Authority Publication Integrity</span><h3>Runtime receives an incomplete or mismatched Ledger publication</h3><p>Proposed tool call: evaluate against a publication package whose bundle/receipt/contract identities do not match.</p><div class="details"><strong>Mediated evaluation:</strong> Guard verifies the complete supported publication before evaluation or cache use. A mismatched publication is not treated as authority.</div><p class="block">Result: BLOCK / resolution failure — no governed mutation permission is established.</p></article>
+<article class="scenario"><span class="label">Human-Confirmed Translation</span><h3>Model proposes two controls from one source clause</h3><p>Authoring event: an external model proposes bounded controls while part of the clause remains unsupported.</p><div class="details"><strong>Publication evaluation:</strong> Ledger requires each proposed control to be independently confirmed and the residual unsupported span to remain explicit and acknowledged.</div><p class="allow">Result: only confirmed controls can enter published authority; residual meaning remains non-executable.</p></article>
+<article class="scenario"><span class="label">Allowed Mediated Action</span><h3>Approved allocation reaches the callback exactly once</h3><p>Proposed tool call: an authorized allocator requests a 500-unit allocation under a matching published authority.</p><div class="details"><strong>Mediated evaluation:</strong> authority resolves, proposal and runtime facts validate, CRI-CORE allows, then Guard invokes the exact wrapped callback and records the outcome.</div><p class="allow">Result: ALLOW — the mediated callback executes once.</p></article>
+</div></section>
+<section class="cta"><h2 style="margin-top:0">What the scenarios demonstrate</h2><p>Waveframe does not ask the model to self-police. The application exposes a mediated capability; published authority defines what that capability may do; Guard evaluates the actual call immediately before mutation; CRI-CORE returns the admissibility decision; and evidence records what happened at that boundary.</p><p><a href="hierarchy.html" style="color:var(--accent);font-weight:800">See the four operational flows</a> · <a href="tools.html" style="color:var(--accent);font-weight:800">See the public tools</a></p></section>
+<footer><span>&copy; <span id="year"></span> Waveframe Labs</span><span>Canonical governed-execution scenarios · updated 2026-09-12</span></footer></div><script>document.getElementById('year').textContent=new Date().getFullYear();</script></body></html>

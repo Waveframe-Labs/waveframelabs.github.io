@@ -1,182 +1,31 @@
+<!--
+---
+title: "CRI-CORE - Waveframe Labs"
+short_title: "CRI-CORE"
+version: "2.2.0"
+status: "Active"
+type: "website"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "CC-BY-4.0"
+policy_version: "ARI-Metadata-3.0.2"
+ai_assisted: "partial"
+---
+-->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>CRI-CORE - Waveframe Labs</title>
-
-  <meta name="description" content="CRI-CORE is the deterministic admissibility kernel for execution-boundary enforcement." />
-  <link rel="icon" type="image/png" href="favicon-32x32.png" />
-  <link rel="canonical" href="https://waveframelabs.org/cri-core.html" />
-
-<style>
-:root{
-  --bg:#0b0c10; --card:#14161b; --panel:#0f1116; --ink:#e7eaef; --muted:#9aa3b2;
-  --edge:#252832; --accent:#ff7a18; --green:#3ddc84; --red:#ff5b5b; --maxw:1080px; --rad:8px;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-a{color:inherit;text-decoration:none} a:hover{color:var(--accent)}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}
-.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(20,22,27,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}
-.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}
-.topnav{display:flex;gap:24px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}
-.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,122,24,.10),rgba(0,0,0,0))}
-h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.4rem);line-height:1.05} h2{margin:34px 0 10px} h3{margin:0 0 8px}
-p{color:var(--muted);line-height:1.65}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}
-.lede{font-size:1.12rem;color:#c5cad3;max-width:780px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px;margin-top:16px}.panel{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:16px}
-.code{background:#090a0d;border:1px solid var(--edge);border-radius:var(--rad);padding:16px;overflow:auto;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:#dfe4ed;line-height:1.55}
-.pipeline{display:grid;gap:10px;max-width:760px}.step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:14px}
-.num{width:34px;height:34px;display:grid;place-items:center;border-radius:6px;background:rgba(255,122,24,.12);color:var(--accent);font-weight:850}
-.yes{color:var(--green);font-weight:800}.no{color:var(--red);font-weight:800}
-ul{color:var(--muted);line-height:1.8}.boundary{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}
-footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}
-</style>
-  <meta property="og:site_name" content="Waveframe Labs">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Waveframe Labs">
-  <meta property="og:description" content="Independent research for trustworthy AI work.">
-  <meta property="og:image" content="https://waveframelabs.org/assets/og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Waveframe Labs">
-  <meta name="twitter:description" content="Independent research for trustworthy AI work.">
-  <meta name="twitter:image" content="https://waveframelabs.org/assets/og.png">
-</head>
-
-<body>
-<div class="wrap">
-
-<header class="hdr">
-  <div class="brand">
-    <img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark">
-    <div class="brand-text">Waveframe Labs</div>
-  </div>
-  <nav class="topnav">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a class="active-link" href="tools.html">Open Source</a>
-    <a href="updates.html">Updates</a>
-    <a href="about.html">About</a>
-    <a href="https://waveframelabs.com">Waveframe ↗</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <span class="kicker">Runtime Kernel</span>
-  <h1>CRI-CORE</h1>
-  <p class="lede">
-    CRI-CORE is the deterministic admissibility kernel. It receives a canonical proposal and a
-    compiled authority contract, evaluates the fixed stage pipeline, and returns an execution
-    decision before any action is allowed to run.
-  </p>
-</section>
-
-<section>
-  <h2>Kernel Contract</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Input</h3>
-      <ul>
-        <li>Canonical proposal</li>
-        <li>Compiled authority contract</li>
-        <li>Exact contract identity: id, version, hash</li>
-        <li>Actor, mutation, artifacts, and context supplied by upstream layers</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Output</h3>
-      <pre class="code"><code>{
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>CRI-CORE - Waveframe Labs</title><meta name="description" content="CRI-CORE is the deterministic admissibility kernel used by Waveframe Guard before mediated actions execute."/><link rel="icon" type="image/png" href="favicon-32x32.png"/><link rel="canonical" href="https://waveframelabs.org/cri-core.html"/>
+<style>:root{--bg:#050505;--card:#141414;--panel:#0d0d0f;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff5a0a;--green:#3ddc97;--red:#ff4d4d;--maxw:1080px;--rad:8px}*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--maxw);margin:auto;padding:14px 20px 72px}.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(10,10,10,.88);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;margin-bottom:28px}.brand{display:flex;gap:12px;align-items:center}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}.hero{padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,90,10,.12),rgba(0,0,0,0));margin-bottom:22px}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em}h1{font-size:clamp(2rem,4vw,3.3rem);margin:.4rem 0 .7rem}h2{margin:34px 0 12px}h3{margin:0 0 8px}p,li{color:var(--muted);line-height:1.65}.lede{color:var(--soft);font-size:1.08rem;max-width:850px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card,.step{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px}.code{background:#090a0d;border:1px solid var(--edge);border-radius:var(--rad);padding:14px;overflow:auto;color:#dfe4ed}.pipeline{display:grid;gap:10px}.step strong{color:var(--ink)}.boundary{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}.status{color:var(--green);font-weight:800}.warn{color:var(--accent);font-weight:800}code{color:#dfe4ed}.hash{font-family:"SFMono-Regular",Consolas,monospace;word-break:break-all;color:var(--soft)}footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}</style></head>
+<body><div class="wrap"><header class="hdr"><div class="brand"><img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark"><div class="brand-text">Waveframe Labs</div></div><nav class="topnav"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a class="active-link" href="tools.html">Open Source</a><a href="updates.html">Updates</a><a href="about.html">About</a><a href="https://waveframelabs.com">Waveframe ↗</a></nav></header>
+<section class="hero"><span class="kicker">Deterministic Admissibility Kernel</span><h1>CRI-CORE</h1><p class="lede">CRI-CORE evaluates canonical proposals against compiled authority and returns a deterministic decision. It does not invoke the production mutation; Waveframe Guard consumes the decision at the mediated execution boundary.</p></section>
+<section><h2>Release status</h2><div class="grid"><div class="card"><h3><span class="status">PyPI baseline: 0.13.0</span></h3><pre class="code"><code>pip install cricore==0.13.0</code></pre><p>This remains the ordinary published dependency resolved by Guard 0.18.0.</p></div><div class="card"><h3><span class="warn">GitHub release: v0.14.0</span></h3><p>Published September 9, 2026 with strict-by-default evaluation. The v0.14.0 release record states that PyPI publication and fresh external installation remain pending.</p><p><a href="https://github.com/Waveframe-Labs/CRI-CORE/releases/tag/v0.14.0" style="color:var(--accent);font-weight:800">Inspect v0.14.0 release</a></p></div></div></section>
+<section><h2>Kernel contract</h2><div class="grid"><div class="card"><h3>Input</h3><ul><li>Canonical proposal produced at the runtime boundary</li><li>Compiled authority contract</li><li>Exact contract identity and declared evaluation context</li></ul></div><div class="card"><h3>Output</h3><pre class="code"><code>{
   "commit_allowed": false,
-  "reason": "required approval missing",
-  "contract_hash": "sha256:...",
-  "stage": "approval_requirements"
-}</code></pre>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Deterministic Stage Pipeline</h2>
-  <div class="pipeline">
-    <div class="step"><div class="num">01</div><div><strong>Shape validation</strong><p>Reject proposals that do not match the canonical boundary structure.</p></div></div>
-    <div class="step"><div class="num">02</div><div><strong>Contract identity check</strong><p>Verify the proposal references the exact contract used for evaluation.</p></div></div>
-    <div class="step"><div class="num">03</div><div><strong>Artifact and integrity checks</strong><p>Validate required evidence and immutable references supplied by upstream systems.</p></div></div>
-    <div class="step"><div class="num">04</div><div><strong>Authority and approval checks</strong><p>Evaluate roles, approvals, separation requirements, and contract constraints.</p></div></div>
-    <div class="step"><div class="num">05</div><div><strong>Decision emission</strong><p>Return the deterministic admissibility result: allowed or blocked.</p></div></div>
-  </div>
-</section>
-
-<section>
-  <h2>Guarantees</h2>
-  <div class="grid">
-    <div class="panel">
-      <h3>Deterministic outputs</h3>
-      <p>Identical proposal and contract inputs produce the same admissibility result.</p>
-    </div>
-    <div class="panel">
-      <h3>No hidden logic</h3>
-      <p>The kernel evaluates explicit contract and proposal data. It does not infer policy meaning.</p>
-    </div>
-    <div class="panel">
-      <h3>Contract identity enforcement</h3>
-      <p>Contract hash mismatch blocks execution instead of silently accepting drift.</p>
-    </div>
-    <div class="panel">
-      <h3>Boundary-safe decisioning</h3>
-      <p>The result is suitable for Waveframe Guard to enforce before production execution.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Install</h2>
-  <div class="card">
-    <pre class="code"><code>pip install cricore</code></pre>
-    <p>
-      <strong>PyPI:</strong> <a href="https://pypi.org/project/cricore/" target="_blank" rel="noopener">cricore</a><br>
-      <strong>GitHub:</strong> <a href="https://github.com/Waveframe-Labs/CRI-CORE" target="_blank" rel="noopener">Waveframe-Labs/CRI-CORE</a>
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Boundary Responsibility</h2>
-  <div class="card">
-    <p class="boundary">CRI-CORE decides admissibility. It does not execute actions.</p>
-    <ul>
-      <li>Does not author governance policy.</li>
-      <li>Does not compile contracts.</li>
-      <li>Does not normalize proposals.</li>
-      <li>Does not orchestrate workflows.</li>
-      <li>Does not distribute authority or store audit receipts.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Where It Fits</h2>
-  <p>
-    Governance-Ledger and the Contract Compiler define authority upstream. Proposal Normalizer
-    supplies the canonical input shape. CRI-CORE evaluates. Waveframe Guard enforces the result.
-  </p>
-  <p>
-    <a href="hierarchy.html" style="color:var(--accent);font-weight:700;">View execution architecture</a>
-  </p>
-</section>
-
-<footer>
-  <span>&copy; <span id="year"></span> Waveframe Labs</span>
-  <span>Deterministic admissibility kernel</span>
-</footer>
-
-</div>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+  "reason": "...",
+  "stage_results": [...]
+}</code></pre><p>The caller must treat a blocked or configuration-error result as non-permission to mutate.</p></div></div></section>
+<section><h2>v0.14.0 mode behavior</h2><div class="pipeline"><div class="step"><strong>Strict is the default.</strong><p>Omitting mode selects <code>strict</code>. A context declaration cannot silently downgrade strict evaluation.</p></div><div class="step"><strong>Local advisory evaluation must be explicit.</strong><p>Use exact <code>mode="local"</code> only for advisory/local evaluation. Advisory <code>commit_allowed</code> output must not be treated as production mutation permission.</p></div><div class="step"><strong>Configuration errors reject early.</strong><p>Only exact <code>strict</code> and <code>local</code> strings are accepted. Invalid or conflicting declarations reject before policy evaluation.</p></div><div class="step"><strong>Guard remains stricter at the execution boundary.</strong><p>Guard 0.18.0 execution is never advisory: local versus cloud selects authority resolution/connectivity, not permission strength.</p></div></div></section>
+<section><h2>Truthful evidence boundary</h2><div class="card"><p class="boundary">CRI-CORE v0.14.0 does not by itself establish cryptographic provenance for the current structured pipeline.</p><p>The v0.14.0 release explicitly leaves the stronger integrity/publication evidence work open. Existing integrity and publication stages still accept empty mappings in cases documented by the release. Guard's separate Ledger publication verification remains the authority-verification boundary for the current mediated runtime path.</p></div></section>
+<section><h2>Where it fits</h2><div class="grid"><div class="card"><h3>Before CRI-CORE</h3><p>Guard receives the actual tool call, resolves and verifies published authority, derives approved runtime facts, and uses Proposal Normalizer to produce the canonical proposal.</p></div><div class="card"><h3>After CRI-CORE</h3><p>Guard enforces the result. A blocked callback never runs. An allowed callback is invoked only through the mediated path, followed by truthful execution/mutation attestation.</p></div></div><p><a href="hierarchy.html" style="color:var(--accent);font-weight:800">View the current runtime architecture</a></p></section>
+<section><h2>v0.14.0 release hashes</h2><div class="card"><p><strong>Wheel</strong><br><span class="hash">sha256:11a22b4fb15137a0e535b8dd71bf927260800559221f0e10512029d59fb18702</span></p><p><strong>Source distribution</strong><br><span class="hash">sha256:458c5f4742a041a3ed2e334fbe57b4e5bb85bf50b85aa56871537d58d9503dec</span></p></div></section>
+<section><h2>Boundary responsibility</h2><div class="card"><ul><li>Does not author or interpret source policy.</li><li>Does not compile authority contracts.</li><li>Does not normalize the caller's original tool invocation by itself.</li><li>Does not execute the production callback.</li><li>Does not prove that alternate mutation paths are unavailable.</li></ul></div></section>
+<footer><span>&copy; <span id="year"></span> Waveframe Labs</span><span>CRI-CORE public reference · updated 2026-09-12</span></footer></div><script>document.getElementById('year').textContent=new Date().getFullYear();</script></body></html>
