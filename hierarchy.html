@@ -2,7 +2,7 @@
 ---
 title: "Architecture - Waveframe Labs"
 short_title: "Architecture"
-version: "2.1.0"
+version: "2.2.0"
 status: "Active"
 type: "website"
 author: "Waveframe Labs"
@@ -12,94 +12,19 @@ policy_version: "ARI-Metadata-3.0.2"
 ai_assisted: "partial"
 ---
 -->
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Architecture - Waveframe Labs</title>
-  <meta name="description" content="Canonical Waveframe execution-governance architecture: authority flow, compilation flow, proposal flow, enforcement flow, audit flow, and contract identity flow." />
-  <link rel="icon" type="image/png" href="favicon-32x32.png" />
-  <link rel="canonical" href="https://waveframelabs.org/hierarchy.html" />
-<style>
-:root{--bg:#050505;--card:#141414;--panel:#0d0d0f;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff5a0a;--green:#3ddc97;--red:#ff4d4d;--maxw:1080px;--rad:8px}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px 72px}.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(10,10,10,.88);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:24px;font-size:.9rem;flex-wrap:wrap}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}.hero{margin-bottom:22px;padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,90,10,.12),rgba(0,0,0,0))}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em;margin-bottom:8px;display:block}h1{margin:0 0 .6rem;font-size:clamp(2rem,4vw,3.2rem);line-height:1.08}h2{margin:34px 0 10px}h3{margin:0 0 8px}p{color:var(--muted);line-height:1.65}.lede{font-size:1.1rem;color:var(--soft);max-width:820px}.architecture-asset{display:block;width:100%;max-width:980px;margin:22px 0;border:1px solid var(--edge);border-radius:var(--rad);background:var(--panel)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.flow-card{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px}.flow-card ul{margin-bottom:0}ul{color:var(--muted);line-height:1.8}.note{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}.tag{display:inline-block;border:1px solid var(--edge);background:var(--panel);border-radius:999px;padding:6px 10px;color:var(--soft);font-size:.86rem;margin:4px 6px 4px 0}.principles{display:grid;gap:12px}.principle{background:var(--panel);border:1px solid var(--edge);border-radius:var(--rad);padding:15px}.principle strong{display:block;color:var(--ink);margin-bottom:4px}.principle span{color:var(--muted);line-height:1.5}footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}
-</style>
-  <meta property="og:site_name" content="Waveframe Labs">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Waveframe Labs">
-  <meta property="og:description" content="Independent research for trustworthy AI work.">
-  <meta property="og:image" content="https://waveframelabs.org/assets/og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Waveframe Labs">
-  <meta name="twitter:description" content="Independent research for trustworthy AI work.">
-  <meta name="twitter:image" content="https://waveframelabs.org/assets/og.png">
-</head>
-<body>
-<div class="wrap">
-<header class="hdr">
-  <div class="brand"><img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark"><div class="brand-text">Waveframe Labs</div></div>
-  <nav class="topnav">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a class="active-link" href="tools.html">Open Source</a>
-    <a href="updates.html">Updates</a>
-    <a href="about.html">About</a>
-    <a href="https://waveframelabs.com">Waveframe ↗</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <span class="kicker">Canonical Architecture</span>
-  <h1>How organizational authority becomes execution permission.</h1>
-  <p class="lede">This page documents the institutional reference architecture for Waveframe. It is meant for technical verification, ecosystem orientation, and durable citation rather than product marketing.</p>
-</section>
-
-<section>
-  <h2>Architecture Diagram</h2>
-  <p class="note">Policy becomes authority before it becomes execution permission.</p>
-  <img class="architecture-asset" src="canonical-architecture.svg" alt="Waveframe canonical architecture diagram showing governance becoming production execution through Ledger, Compiler, Contract, Normalizer, CRI-CORE, Guard, and Cloud evidence services.">
-</section>
-
-<section>
-  <h2>Boundary Principles</h2>
-  <div class="principles">
-    <div class="principle"><strong>Authority is owned by the organization.</strong><span>Waveframe does not decide what an organization should allow. It provides deterministic infrastructure for enforcing declared authority.</span></div>
-    <div class="principle"><strong>Contracts are built before runtime.</strong><span>Runtime enforcement consumes compiled authority contracts. It should not improvise policy interpretation during execution.</span></div>
-    <div class="principle"><strong>Proposals are explicit.</strong><span>Actors, mutations, artifacts, and contract references must be represented before admissibility can be evaluated.</span></div>
-    <div class="principle"><strong>Blocked actions do not mutate production.</strong><span>The execution boundary exists to prevent invalid actions from reaching the system of record.</span></div>
-  </div>
-</section>
-
-<section>
-  <h2>Four Operational Flows</h2>
-  <div class="grid">
-    <div class="flow-card"><h3>Authority Flow</h3><ul><li>Human governance</li><li>Governance-Ledger diagnostics and approval</li><li>Contract Compiler</li><li>Compiled Authority Contract</li><li>Cloud registry distribution</li></ul></div>
-    <div class="flow-card"><h3>Proposal Flow</h3><ul><li>Caller supplies actor, mutation, artifacts, and contract reference</li><li>Proposal Normalizer validates the boundary shape</li><li>Canonical Proposal is passed to CRI-CORE</li></ul></div>
-    <div class="flow-card"><h3>Execution Flow</h3><ul><li>Waveframe Guard intercepts the action</li><li>CRI-CORE evaluates admissibility</li><li>Allowed actions continue</li><li>Blocked actions never execute</li></ul></div>
-    <div class="flow-card"><h3>Evidence Flow</h3><ul><li>Guard emits governed execution events</li><li>Cloud ingests audit evidence</li><li>Receipts provide durable proof of accepted events</li></ul></div>
-  </div>
-</section>
-
-<section>
-  <h2>Contract Identity Flow</h2>
-  <p>Contract identity is the thread that keeps the architecture replayable. The compiler produces contract id, version, and hash. The proposal references that exact identity. CRI-CORE verifies the proposal contract hash against the compiled authority contract before deciding. A mismatch is blocked.</p>
-  <div><span class="tag">contract_id</span><span class="tag">contract_version</span><span class="tag">contract_hash</span><span class="tag">authority_ref</span><span class="tag">registry_entry</span></div>
-</section>
-
-<section>
-  <h2>Boundary Responsibilities</h2>
-  <div class="grid">
-    <div class="flow-card"><h3>Cloud</h3><p>Distributes authority and stores durable evidence. It does not decide admissibility.</p></div>
-    <div class="flow-card"><h3>Guard</h3><p>Enforces the runtime decision. It does not define authority.</p></div>
-    <div class="flow-card"><h3>CRI-CORE</h3><p>Evaluates admissibility. It does not execute actions.</p></div>
-    <div class="flow-card"><h3>Compiler</h3><p>Builds contracts. It does not evaluate governance at runtime.</p></div>
-  </div>
-</section>
-
-<footer><span>&copy; <span id="year"></span> Waveframe Labs</span><span>Canonical execution-governance architecture</span></footer>
-</div>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Architecture - Waveframe Labs</title><meta name="description" content="Current Waveframe execution-governance architecture: authority, proposal, execution, and evidence flows with explicit mediation and publication boundaries."/><link rel="icon" type="image/png" href="favicon-32x32.png"/><link rel="canonical" href="https://waveframelabs.org/hierarchy.html"/>
+<style>:root{--bg:#050505;--card:#141414;--panel:#0d0d0f;--ink:#e7eaef;--muted:#9aa3b2;--soft:#c5cad3;--edge:#252832;--accent:#ff5a0a;--maxw:1080px;--rad:8px}*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}.wrap{max-width:var(--maxw);margin:auto;padding:14px 20px 72px}.hdr{padding:18px 24px;border-bottom:1px solid var(--edge);background:rgba(10,10,10,.88);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20;margin-bottom:28px}.brand{display:flex;gap:12px;align-items:center}.brand-text{font-size:1.2rem;font-weight:700}.topnav{display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem}.topnav a{opacity:.72}.active-link{opacity:1!important;color:var(--accent)!important}.hero{padding:24px;border:1px solid var(--edge);border-radius:var(--rad);background:linear-gradient(180deg,rgba(255,90,10,.12),rgba(0,0,0,0));margin-bottom:22px}.kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:800;letter-spacing:.12em}h1{font-size:clamp(2rem,4vw,3.2rem);margin:.4rem 0 .7rem}h2{margin:34px 0 12px}h3{margin:0 0 8px}p,li{color:var(--muted);line-height:1.65}.lede{color:var(--soft);font-size:1.08rem;max-width:850px}.architecture-asset{display:block;width:100%;max-width:980px;margin:20px 0;border:1px solid var(--edge);border-radius:var(--rad);background:var(--panel)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card,.principle{background:var(--card);border:1px solid var(--edge);border-radius:var(--rad);padding:18px}.principles{display:grid;gap:12px}.principle strong{display:block;margin-bottom:5px}.note{border-left:3px solid var(--accent);padding-left:14px;color:var(--ink);font-weight:750}.flow{counter-reset:step;list-style:none;padding:0;margin:0}.flow li{counter-increment:step;position:relative;padding:10px 10px 10px 42px;border-bottom:1px solid var(--edge)}.flow li:last-child{border-bottom:0}.flow li:before{content:counter(step);position:absolute;left:8px;top:10px;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:rgba(255,90,10,.14);color:var(--accent);font-weight:850}.tag{display:inline-block;border:1px solid var(--edge);background:var(--panel);border-radius:999px;padding:6px 10px;color:var(--soft);font-size:.84rem;margin:4px 6px 4px 0}code{color:#dfe4ed}footer{margin-top:48px;border-top:1px solid var(--edge);padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}@media(max-width:820px){.hdr{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}}</style></head>
+<body><div class="wrap"><header class="hdr"><div class="brand"><img src="waveframe-logo-mark.png" width="28" height="28" alt="Waveframe Labs mark"><div class="brand-text">Waveframe Labs</div></div><nav class="topnav"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a class="active-link" href="tools.html">Open Source</a><a href="updates.html">Updates</a><a href="about.html">About</a><a href="https://waveframelabs.com">Waveframe ↗</a></nav></header>
+<section class="hero"><span class="kicker">Canonical Architecture · 2026-09</span><h1>Authority is published before execution is mediated.</h1><p class="lede">Waveframe separates what a policy means, what authority was actually approved, whether a proposed action is admissible, whether the mediated callback executed, and what evidence was durably preserved.</p></section>
+<section><h2>Architecture diagram</h2><p class="note">The runtime begins at Guard's mediated tool boundary. Guard resolves authority and prepares evaluation; CRI-CORE decides admissibility; only then may Guard invoke the wrapped mutation.</p><img class="architecture-asset" src="canonical-architecture.svg" alt="Waveframe architecture showing policy publication into authority, then Guard-mediated runtime evaluation through Proposal Normalizer and CRI-CORE before an allowed callback can execute, with Cloud authority and evidence services alongside the runtime boundary."></section>
+<section><h2>Boundary principles</h2><div class="principles"><div class="principle"><strong>Policy prose is not runtime authority.</strong><span>Ledger must turn supported meaning into explicit, reviewed authority. Unsupported or residual meaning stays visible rather than becoming implicit behavior.</span></div><div class="principle"><strong>Model output is a proposal, not authority.</strong><span>Ledger 0.8.0 permits bounded translation proposals, but each control must be independently confirmed by a human before publication.</span></div><div class="principle"><strong>Guard owns mediation, CRI-CORE owns the decision.</strong><span>The call reaches Guard first. Guard resolves and verifies the selected authority, normalizes the real call into evaluation inputs, and invokes CRI-CORE immediately before the callback.</span></div><div class="principle"><strong>The guarantee is path-specific.</strong><span>Only calls routed through the wrapped boundary are governed by Guard. Alternate functions, APIs, shells, processes, credentials, or writers require independent restriction.</span></div></div></section>
+<section><h2>Four operational flows</h2><div class="grid">
+<div class="card"><h3>Authority Flow</h3><ol class="flow"><li>Organization supplies source policy and the intended governance domain.</li><li>Ledger classifies supported meaning and surfaces ambiguity, unsupported spans, and required answers.</li><li>External/model translation may propose controls, but human reviewers confirm each control and acknowledge residual meaning.</li><li>Contract Compiler deterministically produces the compiled runtime authority and hash.</li><li>Ledger publishes the approved authority bundle, commitment, receipt, lineage, and registry identity.</li><li>Cloud may distribute the tenant-scoped publication; local resolution remains possible.</li></ol></div>
+<div class="card"><h3>Proposal Flow</h3><ol class="flow"><li>The agent or application calls the Guard-wrapped tool with real arguments.</li><li>Guard derives the mediated action, target, actor identity, selected authority, and only approved decision-relevant facts.</li><li>Proposal Normalizer validates and assembles the canonical proposal without inventing contract truth.</li><li>The proposal and exact compiled authority are passed to CRI-CORE.</li></ol></div>
+<div class="card"><h3>Execution Flow</h3><ol class="flow"><li><code>Guard.local()</code> or <code>Guard.cloud()</code> receives the tool call.</li><li>Guard verifies the authority publication before using or caching it.</li><li>CRI-CORE returns the deterministic admissibility decision.</li><li>If blocked, the wrapped callback does not run.</li><li>If allowed, Guard invokes the exact mediated callback. Repository writes require <code>repository_tool</code> and its bound target capability.</li><li>Guard records the callback/mutation outcome without guessing unknown physical state.</li></ol></div>
+<div class="card"><h3>Evidence Flow</h3><ol class="flow"><li>Guard binds decision evidence to actor, authority, proposal, target, and mediation context.</li><li>Execution/mutation attestations record whether the callback ran, failed, or did not run.</li><li>Cloud can preserve governed evidence and return package, receipt, and proof identifiers.</li><li>Cloud preservation does not replace the local final mutation attestation, and replay reproduces logical decisions rather than physical mutation.</li></ol></div>
+</div></section>
+<section><h2>Identity carried across the boundary</h2><div class="card"><p>The replayable thread is explicit identity, not prose inference. The selected publication binds the runtime contract and its provenance; the proposal carries that exact authority into evaluation; the evidence binds the resulting decision back to the mediated call.</p><div><span class="tag">authority_ref</span><span class="tag">contract_id</span><span class="tag">contract_version</span><span class="tag">contract_hash</span><span class="tag">actor_identity</span><span class="tag">runtime_id</span><span class="tag">target</span><span class="tag">publication receipt</span><span class="tag">execution attestation</span></div></div></section>
+<section><h2>Current release boundary</h2><div class="grid"><div class="card"><h3>Published runtime</h3><p>Guard 0.18.0, Ledger 0.8.0, Compiler 0.4.0, and the compatible Proposal Normalizer 0.2.0 are the current public lines. CRI 0.13.0 remains the PyPI baseline accepted by Guard 0.18.0.</p></div><div class="card"><h3>Released but not PyPI baseline</h3><p>CRI-CORE v0.14.0 is released on GitHub with strict-by-default evaluation. Its release record still marks PyPI publication pending.</p></div><div class="card"><h3>Merged Cloud source</h3><p>Tenant v2/v3 publication serving and hosted translation/Console workflow code has merged after Cloud v0.5.7. The website does not treat those source merges as a newer hosted release.</p></div><div class="card"><h3>Commercial boundary</h3><p>Cloud, Console, Ledger Workspace, Guard Inspector, and multi-tenant operations remain separate from the Apache-2.0 Guard Core SDK.</p></div></div><p><a href="compatibility.html" style="color:var(--accent);font-weight:800">Read exact package compatibility</a></p></section>
+<footer><span>&copy; <span id="year"></span> Waveframe Labs</span><span>Canonical execution-governance architecture · updated 2026-09-12</span></footer></div><script>document.getElementById('year').textContent=new Date().getFullYear();</script></body></html>
