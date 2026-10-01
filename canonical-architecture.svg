@@ -1,4 +1,4 @@
-<!--
+<?ari-metadata
 ---
 title: "Waveframe Canonical Architecture"
 short_title: "Canonical Architecture"
@@ -11,7 +11,7 @@ license: "CC-BY-4.0"
 policy_version: "ARI-Metadata-3.0.2"
 ai_assisted: "partial"
 ---
--->
+?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1420" viewBox="0 0 1200 1420" role="img" aria-labelledby="title desc">
   <title id="title">Waveframe canonical execution-governance architecture</title>
   <desc id="desc">Source policy is reviewed and published through Waveframe Ledger and the Contract Compiler. At runtime an agent or application calls a Guard-mediated tool. Guard resolves the exact published authority, builds the canonical proposal through Proposal Normalizer, invokes CRI-CORE for admissibility, and only invokes the wrapped mutation when allowed. Cloud distributes authority and preserves evidence but does not replace CRI-CORE's decision or Guard's local mutation attestation.</desc>
